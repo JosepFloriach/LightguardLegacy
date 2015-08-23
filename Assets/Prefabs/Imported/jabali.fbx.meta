@@ -1,0 +1,1046 @@
+fileFormatVersion: 2
+guid: 49afdc3e5cf89764dae9dc52c32f8e69
+timeCreated: 1428846888
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: ArmatureJabali
+    100002: Farolillo_L
+    100004: Farolillo_L_end
+    100006: Farolillo_R
+    100008: Farolillo_R_end
+    100010: Head
+    100012: Head.001
+    100014: Head.001_end
+    100016: //RootNode
+    100018: jabali
+    100020: jabali.001
+    100022: jabali.002
+    100024: LegBack_L
+    100026: LegBack_L.001
+    100028: LegBack_L.002
+    100030: LegBack_L.003
+    100032: LegBack_L.003_end
+    100034: LegBack_R
+    100036: LegBack_R.001
+    100038: LegBack_R.002
+    100040: LegBack_R.003
+    100042: LegBack_R.003_end
+    100044: LegFront_L
+    100046: LegFront_L.001
+    100048: LegFront_L.002
+    100050: LegFront_L.002_end
+    100052: LegFront_R
+    100054: LegFront_R.001
+    100056: LegFront_R.002
+    100058: LegFront_R.002_end
+    100060: PeloDet.014
+    100062: Spine
+    100064: Spine.001
+    100066: Spine.002
+    100068: Spine.003
+    100070: Spine.004
+    100072: Spine.005
+    100074: Spine.005_end
+    100076: Tail
+    100078: Tail.001
+    100080: Tail.002
+    100082: Tail.002_end
+    400000: ArmatureJabali
+    400002: Farolillo_L
+    400004: Farolillo_L_end
+    400006: Farolillo_R
+    400008: Farolillo_R_end
+    400010: Head
+    400012: Head.001
+    400014: Head.001_end
+    400016: //RootNode
+    400018: jabali
+    400020: jabali.001
+    400022: jabali.002
+    400024: LegBack_L
+    400026: LegBack_L.001
+    400028: LegBack_L.002
+    400030: LegBack_L.003
+    400032: LegBack_L.003_end
+    400034: LegBack_R
+    400036: LegBack_R.001
+    400038: LegBack_R.002
+    400040: LegBack_R.003
+    400042: LegBack_R.003_end
+    400044: LegFront_L
+    400046: LegFront_L.001
+    400048: LegFront_L.002
+    400050: LegFront_L.002_end
+    400052: LegFront_R
+    400054: LegFront_R.001
+    400056: LegFront_R.002
+    400058: LegFront_R.002_end
+    400060: PeloDet.014
+    400062: Spine
+    400064: Spine.001
+    400066: Spine.002
+    400068: Spine.003
+    400070: Spine.004
+    400072: Spine.005
+    400074: Spine.005_end
+    400076: Tail
+    400078: Tail.001
+    400080: Tail.002
+    400082: Tail.002_end
+    4300000: jabali.002
+    4300002: jabali.001
+    4300004: PeloDet.014
+    4300006: jabali
+    7400000: JabaliWalking
+    7400002: JabaliIdle
+    7400004: JabaliDoChargeAttack
+    7400006: JabaliChargeHeadbutt
+    7400008: IsHurt
+    7400010: JabaliDie
+    7400012: JabaliDoHeadbutt
+    7400014: JabaliChargeChargeAttack
+    9500000: //RootNode
+    13700000: jabali
+    13700002: jabali.001
+    13700004: jabali.002
+    13700006: PeloDet.014
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: JabaliWalking
+      takeName: ArmatureJabali|ArmatureJabaliAction
+      firstFrame: 66
+      lastFrame: 95
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ArmatureJabali
+        weight: 1
+      - path: ArmatureJabali/Spine
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_L
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_L/LegBack_L.001
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_L/LegBack_L.001/LegBack_L.002
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_L/LegBack_L.001/LegBack_L.002/LegBack_L.003
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_L/LegBack_L.001/LegBack_L.002/LegBack_L.003/LegBack_L.003_end
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_R
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_R/LegBack_R.001
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_R/LegBack_R.001/LegBack_R.002
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_R/LegBack_R.001/LegBack_R.002/LegBack_R.003
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_R/LegBack_R.001/LegBack_R.002/LegBack_R.003/LegBack_R.003_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_L
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_L/LegFront_L.001
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_L/LegFront_L.001/LegFront_L.002
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_L/LegFront_L.001/LegFront_L.002/LegFront_L.002_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_R
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_R/LegFront_R.001
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_R/LegFront_R.001/LegFront_R.002
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_R/LegFront_R.001/LegFront_R.002/LegFront_R.002_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Farolillo_L
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Farolillo_L/Farolillo_L_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Farolillo_R
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Farolillo_R/Farolillo_R_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Head.001
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Head.001/Head.001_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Spine.004
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Spine.005_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Tail
+        weight: 1
+      - path: ArmatureJabali/Spine/Tail/Tail.001
+        weight: 1
+      - path: ArmatureJabali/Spine/Tail/Tail.001/Tail.002
+        weight: 1
+      - path: ArmatureJabali/Spine/Tail/Tail.001/Tail.002/Tail.002_end
+        weight: 1
+      - path: jabali
+        weight: 1
+      - path: jabali.001
+        weight: 1
+      - path: jabali.002
+        weight: 1
+      - path: PeloDet.014
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: JabaliIdle
+      takeName: ArmatureJabali|ArmatureJabaliAction
+      firstFrame: 0
+      lastFrame: 53
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ArmatureJabali
+        weight: 1
+      - path: ArmatureJabali/Spine
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_L
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_L/LegBack_L.001
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_L/LegBack_L.001/LegBack_L.002
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_L/LegBack_L.001/LegBack_L.002/LegBack_L.003
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_L/LegBack_L.001/LegBack_L.002/LegBack_L.003/LegBack_L.003_end
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_R
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_R/LegBack_R.001
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_R/LegBack_R.001/LegBack_R.002
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_R/LegBack_R.001/LegBack_R.002/LegBack_R.003
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_R/LegBack_R.001/LegBack_R.002/LegBack_R.003/LegBack_R.003_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_L
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_L/LegFront_L.001
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_L/LegFront_L.001/LegFront_L.002
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_L/LegFront_L.001/LegFront_L.002/LegFront_L.002_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_R
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_R/LegFront_R.001
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_R/LegFront_R.001/LegFront_R.002
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_R/LegFront_R.001/LegFront_R.002/LegFront_R.002_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Farolillo_L
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Farolillo_L/Farolillo_L_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Farolillo_R
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Farolillo_R/Farolillo_R_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Head.001
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Head.001/Head.001_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Spine.004
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Spine.005_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Tail
+        weight: 1
+      - path: ArmatureJabali/Spine/Tail/Tail.001
+        weight: 1
+      - path: ArmatureJabali/Spine/Tail/Tail.001/Tail.002
+        weight: 1
+      - path: ArmatureJabali/Spine/Tail/Tail.001/Tail.002/Tail.002_end
+        weight: 1
+      - path: jabali
+        weight: 1
+      - path: jabali.001
+        weight: 1
+      - path: jabali.002
+        weight: 1
+      - path: PeloDet.014
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: JabaliDoChargeAttack
+      takeName: ArmatureJabali|ArmatureJabaliAction
+      firstFrame: 66
+      lastFrame: 115
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ArmatureJabali
+        weight: 1
+      - path: ArmatureJabali/Spine
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_L
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_L/LegBack_L.001
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_L/LegBack_L.001/LegBack_L.002
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_L/LegBack_L.001/LegBack_L.002/LegBack_L.003
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_L/LegBack_L.001/LegBack_L.002/LegBack_L.003/LegBack_L.003_end
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_R
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_R/LegBack_R.001
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_R/LegBack_R.001/LegBack_R.002
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_R/LegBack_R.001/LegBack_R.002/LegBack_R.003
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_R/LegBack_R.001/LegBack_R.002/LegBack_R.003/LegBack_R.003_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_L
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_L/LegFront_L.001
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_L/LegFront_L.001/LegFront_L.002
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_L/LegFront_L.001/LegFront_L.002/LegFront_L.002_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_R
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_R/LegFront_R.001
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_R/LegFront_R.001/LegFront_R.002
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_R/LegFront_R.001/LegFront_R.002/LegFront_R.002_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Farolillo_L
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Farolillo_L/Farolillo_L_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Farolillo_R
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Farolillo_R/Farolillo_R_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Head.001
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Head.001/Head.001_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Spine.004
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Spine.005_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Tail
+        weight: 1
+      - path: ArmatureJabali/Spine/Tail/Tail.001
+        weight: 1
+      - path: ArmatureJabali/Spine/Tail/Tail.001/Tail.002
+        weight: 1
+      - path: ArmatureJabali/Spine/Tail/Tail.001/Tail.002/Tail.002_end
+        weight: 1
+      - path: jabali
+        weight: 1
+      - path: jabali.001
+        weight: 1
+      - path: jabali.002
+        weight: 1
+      - path: PeloDet.014
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: JabaliChargeHeadbutt
+      takeName: ArmatureJabali|ArmatureJabaliAction
+      firstFrame: 101
+      lastFrame: 105
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ArmatureJabali
+        weight: 1
+      - path: ArmatureJabali/Spine
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_L
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_L/LegBack_L.001
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_L/LegBack_L.001/LegBack_L.002
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_L/LegBack_L.001/LegBack_L.002/LegBack_L.003
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_L/LegBack_L.001/LegBack_L.002/LegBack_L.003/LegBack_L.003_end
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_R
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_R/LegBack_R.001
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_R/LegBack_R.001/LegBack_R.002
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_R/LegBack_R.001/LegBack_R.002/LegBack_R.003
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_R/LegBack_R.001/LegBack_R.002/LegBack_R.003/LegBack_R.003_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_L
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_L/LegFront_L.001
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_L/LegFront_L.001/LegFront_L.002
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_L/LegFront_L.001/LegFront_L.002/LegFront_L.002_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_R
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_R/LegFront_R.001
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_R/LegFront_R.001/LegFront_R.002
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_R/LegFront_R.001/LegFront_R.002/LegFront_R.002_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Farolillo_L
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Farolillo_L/Farolillo_L_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Farolillo_R
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Farolillo_R/Farolillo_R_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Head.001
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Head.001/Head.001_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Spine.004
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Spine.005_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Tail
+        weight: 1
+      - path: ArmatureJabali/Spine/Tail/Tail.001
+        weight: 1
+      - path: ArmatureJabali/Spine/Tail/Tail.001/Tail.002
+        weight: 1
+      - path: ArmatureJabali/Spine/Tail/Tail.001/Tail.002/Tail.002_end
+        weight: 1
+      - path: jabali
+        weight: 1
+      - path: jabali.001
+        weight: 1
+      - path: jabali.002
+        weight: 1
+      - path: PeloDet.014
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: IsHurt
+      takeName: ArmatureJabali|ArmatureJabaliAction
+      firstFrame: 126
+      lastFrame: 135
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ArmatureJabali
+        weight: 1
+      - path: ArmatureJabali/Spine
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_L
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_L/LegBack_L.001
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_L/LegBack_L.001/LegBack_L.002
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_L/LegBack_L.001/LegBack_L.002/LegBack_L.003
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_L/LegBack_L.001/LegBack_L.002/LegBack_L.003/LegBack_L.003_end
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_R
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_R/LegBack_R.001
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_R/LegBack_R.001/LegBack_R.002
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_R/LegBack_R.001/LegBack_R.002/LegBack_R.003
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_R/LegBack_R.001/LegBack_R.002/LegBack_R.003/LegBack_R.003_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_L
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_L/LegFront_L.001
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_L/LegFront_L.001/LegFront_L.002
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_L/LegFront_L.001/LegFront_L.002/LegFront_L.002_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_R
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_R/LegFront_R.001
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_R/LegFront_R.001/LegFront_R.002
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_R/LegFront_R.001/LegFront_R.002/LegFront_R.002_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Farolillo_L
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Farolillo_L/Farolillo_L_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Farolillo_R
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Farolillo_R/Farolillo_R_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Head.001
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Head.001/Head.001_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Spine.004
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Spine.005_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Tail
+        weight: 1
+      - path: ArmatureJabali/Spine/Tail/Tail.001
+        weight: 1
+      - path: ArmatureJabali/Spine/Tail/Tail.001/Tail.002
+        weight: 1
+      - path: ArmatureJabali/Spine/Tail/Tail.001/Tail.002/Tail.002_end
+        weight: 1
+      - path: jabali
+        weight: 1
+      - path: jabali.001
+        weight: 1
+      - path: jabali.002
+        weight: 1
+      - path: PeloDet.014
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: JabaliDie
+      takeName: ArmatureJabali|ArmatureJabaliAction
+      firstFrame: 145
+      lastFrame: 165
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ArmatureJabali
+        weight: 1
+      - path: ArmatureJabali/Spine
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_L
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_L/LegBack_L.001
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_L/LegBack_L.001/LegBack_L.002
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_L/LegBack_L.001/LegBack_L.002/LegBack_L.003
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_L/LegBack_L.001/LegBack_L.002/LegBack_L.003/LegBack_L.003_end
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_R
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_R/LegBack_R.001
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_R/LegBack_R.001/LegBack_R.002
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_R/LegBack_R.001/LegBack_R.002/LegBack_R.003
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_R/LegBack_R.001/LegBack_R.002/LegBack_R.003/LegBack_R.003_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_L
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_L/LegFront_L.001
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_L/LegFront_L.001/LegFront_L.002
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_L/LegFront_L.001/LegFront_L.002/LegFront_L.002_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_R
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_R/LegFront_R.001
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_R/LegFront_R.001/LegFront_R.002
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_R/LegFront_R.001/LegFront_R.002/LegFront_R.002_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Farolillo_L
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Farolillo_L/Farolillo_L_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Farolillo_R
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Farolillo_R/Farolillo_R_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Head.001
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Head.001/Head.001_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Spine.004
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Spine.005_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Tail
+        weight: 1
+      - path: ArmatureJabali/Spine/Tail/Tail.001
+        weight: 1
+      - path: ArmatureJabali/Spine/Tail/Tail.001/Tail.002
+        weight: 1
+      - path: ArmatureJabali/Spine/Tail/Tail.001/Tail.002/Tail.002_end
+        weight: 1
+      - path: jabali
+        weight: 1
+      - path: jabali.001
+        weight: 1
+      - path: jabali.002
+        weight: 1
+      - path: PeloDet.014
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: JabaliDoHeadbutt
+      takeName: ArmatureJabali|ArmatureJabaliAction
+      firstFrame: 105
+      lastFrame: 113
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ArmatureJabali
+        weight: 1
+      - path: ArmatureJabali/Spine
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_L
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_L/LegBack_L.001
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_L/LegBack_L.001/LegBack_L.002
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_L/LegBack_L.001/LegBack_L.002/LegBack_L.003
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_L/LegBack_L.001/LegBack_L.002/LegBack_L.003/LegBack_L.003_end
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_R
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_R/LegBack_R.001
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_R/LegBack_R.001/LegBack_R.002
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_R/LegBack_R.001/LegBack_R.002/LegBack_R.003
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_R/LegBack_R.001/LegBack_R.002/LegBack_R.003/LegBack_R.003_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_L
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_L/LegFront_L.001
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_L/LegFront_L.001/LegFront_L.002
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_L/LegFront_L.001/LegFront_L.002/LegFront_L.002_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_R
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_R/LegFront_R.001
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_R/LegFront_R.001/LegFront_R.002
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_R/LegFront_R.001/LegFront_R.002/LegFront_R.002_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Farolillo_L
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Farolillo_L/Farolillo_L_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Farolillo_R
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Farolillo_R/Farolillo_R_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Head.001
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Head.001/Head.001_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Spine.004
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Spine.005_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Tail
+        weight: 1
+      - path: ArmatureJabali/Spine/Tail/Tail.001
+        weight: 1
+      - path: ArmatureJabali/Spine/Tail/Tail.001/Tail.002
+        weight: 1
+      - path: ArmatureJabali/Spine/Tail/Tail.001/Tail.002/Tail.002_end
+        weight: 1
+      - path: jabali
+        weight: 1
+      - path: jabali.001
+        weight: 1
+      - path: jabali.002
+        weight: 1
+      - path: PeloDet.014
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: JabaliChargeChargeAttack
+      takeName: ArmatureJabali|ArmatureJabaliAction
+      firstFrame: 113
+      lastFrame: 116
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ArmatureJabali
+        weight: 1
+      - path: ArmatureJabali/Spine
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_L
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_L/LegBack_L.001
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_L/LegBack_L.001/LegBack_L.002
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_L/LegBack_L.001/LegBack_L.002/LegBack_L.003
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_L/LegBack_L.001/LegBack_L.002/LegBack_L.003/LegBack_L.003_end
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_R
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_R/LegBack_R.001
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_R/LegBack_R.001/LegBack_R.002
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_R/LegBack_R.001/LegBack_R.002/LegBack_R.003
+        weight: 1
+      - path: ArmatureJabali/Spine/LegBack_R/LegBack_R.001/LegBack_R.002/LegBack_R.003/LegBack_R.003_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_L
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_L/LegFront_L.001
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_L/LegFront_L.001/LegFront_L.002
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_L/LegFront_L.001/LegFront_L.002/LegFront_L.002_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_R
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_R/LegFront_R.001
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_R/LegFront_R.001/LegFront_R.002
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/LegFront_R/LegFront_R.001/LegFront_R.002/LegFront_R.002_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Farolillo_L
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Farolillo_L/Farolillo_L_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Farolillo_R
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Farolillo_R/Farolillo_R_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Head.001
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Head/Head.001/Head.001_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Spine.004
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005
+        weight: 1
+      - path: ArmatureJabali/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Spine.005_end
+        weight: 1
+      - path: ArmatureJabali/Spine/Tail
+        weight: 1
+      - path: ArmatureJabali/Spine/Tail/Tail.001
+        weight: 1
+      - path: ArmatureJabali/Spine/Tail/Tail.001/Tail.002
+        weight: 1
+      - path: ArmatureJabali/Spine/Tail/Tail.001/Tail.002/Tail.002_end
+        weight: 1
+      - path: jabali
+        weight: 1
+      - path: jabali.001
+        weight: 1
+      - path: jabali.002
+        weight: 1
+      - path: PeloDet.014
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,976 @@
+fileFormatVersion: 2
+guid: 4e0475d0a8a28e648b53b557f808eeca
+timeCreated: 1429613582
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: arbol
+    100004: arbol.001
+    100006: arbol.002
+    100008: arbol.003
+    100010: arbol.004
+    100012: arbol.005
+    100014: arbol.006
+    100016: arbol.007
+    100018: arbol.008
+    100020: arbol.009
+    100022: arbol.010
+    100024: camino
+    100026: camino.001
+    100028: camino.002
+    100030: camino.004
+    100032: camino.048
+    100034: Cubo agua 2.001
+    100036: Cylinder
+    100038: Cylinder.001
+    100040: Cylinder.002
+    100042: Cylinder.003
+    100044: Cylinder.004
+    100046: Farolillo.001
+    100048: Farolillo.002
+    100050: Farolillo.003
+    100052: Farolillo.004
+    100054: Farolillo.005
+    100056: Plane
+    100058: Pozo
+    100060: Puerta shinto.001
+    100062: Roca.008
+    100064: Sphere
+    100066: Sphere.001
+    100068: Sphere.002
+    100070: Sphere.004
+    100072: Sphere.005
+    100074: templo.007
+    100076: templo3
+    100078: templo4
+    100080: templo5
+    100082: templo6
+    100084: templo7
+    100086: templo8
+    100088: templo9
+    100090: water
+    100092: Altar
+    100094: Cube
+    100096: Cube.001
+    100098: Cube.002
+    100100: Cube.003
+    100102: Cube.004
+    100104: Cube.005
+    100106: Cube.006
+    100108: Cube.007
+    100110: Cube.008
+    100112: Cube.009
+    100114: Cube.010
+    100116: Cube.011
+    100118: Cube.012
+    100120: Cube.013
+    100122: Cube.014
+    100124: Cube.015
+    100126: Cube.016
+    100128: Cube.017
+    100130: Cylinder.005
+    100132: Cylinder.006
+    100134: Cylinder.007
+    100136: EstructuraIntPlanet
+    100138: EstructuraIntPlanet.001
+    100140: EstructuraIntPlanet.002
+    100142: EstructuraIntPlanet.003
+    100144: EstructuraIntPlanet.004
+    100146: EstructuraIntPlanet.005
+    100148: EstructuraIntPlanet.006
+    100150: EstructuraIntPlanet.007
+    100152: EstructuraIntPlanet.008
+    100154: Icosphere
+    100156: Icosphere.001
+    100158: Icosphere.002
+    100160: Icosphere.003
+    100162: Icosphere.004
+    100164: Icosphere.005
+    100166: raices
+    100168: raices.001
+    100170: raices.002
+    100172: raices.003
+    100174: raices.004
+    100176: raices.005
+    100178: raices.006
+    100180: raices.007
+    100182: raices.008
+    100184: raices.009
+    100186: raices.010
+    100188: raices.011
+    100190: raices.012
+    100192: raices.013
+    100194: raices.014
+    100196: raices.015
+    100198: raices.016
+    100200: raices.017
+    100202: raices.018
+    100204: raices.019
+    100206: raices.020
+    100208: raices.021
+    100210: raices.022
+    100212: raices.023
+    100214: raices.024
+    100216: raices.025
+    100218: raices.026
+    100220: raices.027
+    100222: raices.028
+    100224: raices.029
+    100226: raices.030
+    100228: raices.031
+    100230: raices.032
+    100232: raices.033
+    100234: raices.034
+    100236: raices.035
+    100238: raices.036
+    100240: raices.037
+    100242: raices.038
+    100244: raices.039
+    100246: raices.040
+    100248: raices.041
+    100250: raices.042
+    100252: raices.043
+    100254: raices.044
+    100256: raices.045
+    100258: raices.046
+    100260: raices.047
+    100262: raices.048
+    100264: raices.049
+    100266: raices.050
+    100268: raices.051
+    100270: raices.052
+    100272: raices.053
+    100274: raices.054
+    100276: raices.055
+    100278: raices.056
+    100280: raices.057
+    100282: raices.058
+    100284: raices.059
+    100286: raices.060
+    100288: raices.061
+    100290: raices.062
+    100292: raices.063
+    100294: raices.064
+    100296: raices.065
+    100298: raices.066
+    100300: raices.067
+    100302: raices.068
+    100304: raices.069
+    100306: raices.070
+    100308: raices.071
+    100310: Templo 2
+    100312: tentacles
+    100314: tentacles.001
+    100316: tentacles.002
+    100318: tentacles.003
+    100320: tentacles.004
+    100322: mitadDelantera
+    100324: MitadTrasera
+    100326: Cube.018
+    100328: Cube.019
+    400000: //RootNode
+    400002: arbol
+    400004: arbol.001
+    400006: arbol.002
+    400008: arbol.003
+    400010: arbol.004
+    400012: arbol.005
+    400014: arbol.006
+    400016: arbol.007
+    400018: arbol.008
+    400020: arbol.009
+    400022: arbol.010
+    400024: camino
+    400026: camino.001
+    400028: camino.002
+    400030: camino.004
+    400032: camino.048
+    400034: Cubo agua 2.001
+    400036: Cylinder
+    400038: Cylinder.001
+    400040: Cylinder.002
+    400042: Cylinder.003
+    400044: Cylinder.004
+    400046: Farolillo.001
+    400048: Farolillo.002
+    400050: Farolillo.003
+    400052: Farolillo.004
+    400054: Farolillo.005
+    400056: Plane
+    400058: Pozo
+    400060: Puerta shinto.001
+    400062: Roca.008
+    400064: Sphere
+    400066: Sphere.001
+    400068: Sphere.002
+    400070: Sphere.004
+    400072: Sphere.005
+    400074: templo.007
+    400076: templo3
+    400078: templo4
+    400080: templo5
+    400082: templo6
+    400084: templo7
+    400086: templo8
+    400088: templo9
+    400090: water
+    400092: Altar
+    400094: Cube
+    400096: Cube.001
+    400098: Cube.002
+    400100: Cube.003
+    400102: Cube.004
+    400104: Cube.005
+    400106: Cube.006
+    400108: Cube.007
+    400110: Cube.008
+    400112: Cube.009
+    400114: Cube.010
+    400116: Cube.011
+    400118: Cube.012
+    400120: Cube.013
+    400122: Cube.014
+    400124: Cube.015
+    400126: Cube.016
+    400128: Cube.017
+    400130: Cylinder.005
+    400132: Cylinder.006
+    400134: Cylinder.007
+    400136: EstructuraIntPlanet
+    400138: EstructuraIntPlanet.001
+    400140: EstructuraIntPlanet.002
+    400142: EstructuraIntPlanet.003
+    400144: EstructuraIntPlanet.004
+    400146: EstructuraIntPlanet.005
+    400148: EstructuraIntPlanet.006
+    400150: EstructuraIntPlanet.007
+    400152: EstructuraIntPlanet.008
+    400154: Icosphere
+    400156: Icosphere.001
+    400158: Icosphere.002
+    400160: Icosphere.003
+    400162: Icosphere.004
+    400164: Icosphere.005
+    400166: raices
+    400168: raices.001
+    400170: raices.002
+    400172: raices.003
+    400174: raices.004
+    400176: raices.005
+    400178: raices.006
+    400180: raices.007
+    400182: raices.008
+    400184: raices.009
+    400186: raices.010
+    400188: raices.011
+    400190: raices.012
+    400192: raices.013
+    400194: raices.014
+    400196: raices.015
+    400198: raices.016
+    400200: raices.017
+    400202: raices.018
+    400204: raices.019
+    400206: raices.020
+    400208: raices.021
+    400210: raices.022
+    400212: raices.023
+    400214: raices.024
+    400216: raices.025
+    400218: raices.026
+    400220: raices.027
+    400222: raices.028
+    400224: raices.029
+    400226: raices.030
+    400228: raices.031
+    400230: raices.032
+    400232: raices.033
+    400234: raices.034
+    400236: raices.035
+    400238: raices.036
+    400240: raices.037
+    400242: raices.038
+    400244: raices.039
+    400246: raices.040
+    400248: raices.041
+    400250: raices.042
+    400252: raices.043
+    400254: raices.044
+    400256: raices.045
+    400258: raices.046
+    400260: raices.047
+    400262: raices.048
+    400264: raices.049
+    400266: raices.050
+    400268: raices.051
+    400270: raices.052
+    400272: raices.053
+    400274: raices.054
+    400276: raices.055
+    400278: raices.056
+    400280: raices.057
+    400282: raices.058
+    400284: raices.059
+    400286: raices.060
+    400288: raices.061
+    400290: raices.062
+    400292: raices.063
+    400294: raices.064
+    400296: raices.065
+    400298: raices.066
+    400300: raices.067
+    400302: raices.068
+    400304: raices.069
+    400306: raices.070
+    400308: raices.071
+    400310: Templo 2
+    400312: tentacles
+    400314: tentacles.001
+    400316: tentacles.002
+    400318: tentacles.003
+    400320: tentacles.004
+    400322: mitadDelantera
+    400324: MitadTrasera
+    400326: Cube.018
+    400328: Cube.019
+    2300000: arbol
+    2300002: arbol.001
+    2300004: arbol.002
+    2300006: arbol.003
+    2300008: arbol.004
+    2300010: arbol.005
+    2300012: arbol.006
+    2300014: arbol.007
+    2300016: arbol.008
+    2300018: arbol.009
+    2300020: arbol.010
+    2300022: camino
+    2300024: camino.001
+    2300026: camino.002
+    2300028: camino.004
+    2300030: camino.048
+    2300032: Cubo agua 2.001
+    2300034: Cylinder
+    2300036: Cylinder.001
+    2300038: Cylinder.002
+    2300040: Cylinder.003
+    2300042: Cylinder.004
+    2300044: Farolillo.001
+    2300046: Farolillo.002
+    2300048: Farolillo.003
+    2300050: Farolillo.004
+    2300052: Farolillo.005
+    2300054: Plane
+    2300056: Pozo
+    2300058: Puerta shinto.001
+    2300060: Roca.008
+    2300062: Sphere
+    2300064: Sphere.001
+    2300066: Sphere.002
+    2300068: Sphere.005
+    2300070: templo.007
+    2300072: templo3
+    2300074: templo4
+    2300076: templo5
+    2300078: templo6
+    2300080: templo7
+    2300082: templo8
+    2300084: templo9
+    2300086: Altar
+    2300088: Cube
+    2300090: Cube.001
+    2300092: Cube.002
+    2300094: Cube.003
+    2300096: Cube.004
+    2300098: Cube.005
+    2300100: Cube.006
+    2300102: Cube.007
+    2300104: Cube.008
+    2300106: Cube.009
+    2300108: Cube.010
+    2300110: Cube.011
+    2300112: Cube.012
+    2300114: Cube.013
+    2300116: Cube.014
+    2300118: Cube.015
+    2300120: Cube.016
+    2300122: Cube.017
+    2300124: Cylinder.005
+    2300126: Cylinder.006
+    2300128: Cylinder.007
+    2300130: EstructuraIntPlanet
+    2300132: EstructuraIntPlanet.001
+    2300134: EstructuraIntPlanet.002
+    2300136: EstructuraIntPlanet.003
+    2300138: EstructuraIntPlanet.004
+    2300140: EstructuraIntPlanet.005
+    2300142: EstructuraIntPlanet.006
+    2300144: EstructuraIntPlanet.007
+    2300146: EstructuraIntPlanet.008
+    2300148: Icosphere
+    2300150: Icosphere.001
+    2300152: Icosphere.002
+    2300154: Icosphere.003
+    2300156: Icosphere.004
+    2300158: Icosphere.005
+    2300160: raices
+    2300162: raices.001
+    2300164: raices.002
+    2300166: raices.003
+    2300168: raices.004
+    2300170: raices.005
+    2300172: raices.006
+    2300174: raices.007
+    2300176: raices.008
+    2300178: raices.009
+    2300180: raices.010
+    2300182: raices.011
+    2300184: raices.012
+    2300186: raices.013
+    2300188: raices.014
+    2300190: raices.015
+    2300192: raices.016
+    2300194: raices.017
+    2300196: raices.018
+    2300198: raices.019
+    2300200: raices.020
+    2300202: raices.021
+    2300204: raices.022
+    2300206: raices.023
+    2300208: raices.024
+    2300210: raices.025
+    2300212: raices.026
+    2300214: raices.027
+    2300216: raices.028
+    2300218: raices.029
+    2300220: raices.030
+    2300222: raices.031
+    2300224: raices.032
+    2300226: raices.033
+    2300228: raices.034
+    2300230: raices.035
+    2300232: raices.036
+    2300234: raices.037
+    2300236: raices.038
+    2300238: raices.039
+    2300240: raices.040
+    2300242: raices.041
+    2300244: raices.042
+    2300246: raices.043
+    2300248: raices.044
+    2300250: raices.045
+    2300252: raices.046
+    2300254: raices.047
+    2300256: raices.048
+    2300258: raices.049
+    2300260: raices.050
+    2300262: raices.051
+    2300264: raices.052
+    2300266: raices.053
+    2300268: raices.054
+    2300270: raices.055
+    2300272: raices.056
+    2300274: raices.057
+    2300276: raices.058
+    2300278: raices.059
+    2300280: raices.060
+    2300282: raices.061
+    2300284: raices.062
+    2300286: raices.063
+    2300288: raices.064
+    2300290: raices.065
+    2300292: raices.066
+    2300294: raices.067
+    2300296: raices.068
+    2300298: raices.069
+    2300300: raices.070
+    2300302: raices.071
+    2300304: Templo 2
+    2300306: tentacles
+    2300308: tentacles.001
+    2300310: tentacles.002
+    2300312: tentacles.003
+    2300314: tentacles.004
+    2300316: mitadDelantera
+    2300318: MitadTrasera
+    2300320: Cube.018
+    2300322: Cube.019
+    3300000: arbol
+    3300002: arbol.001
+    3300004: arbol.002
+    3300006: arbol.003
+    3300008: arbol.004
+    3300010: arbol.005
+    3300012: arbol.006
+    3300014: arbol.007
+    3300016: arbol.008
+    3300018: arbol.009
+    3300020: arbol.010
+    3300022: camino
+    3300024: camino.001
+    3300026: camino.002
+    3300028: camino.004
+    3300030: camino.048
+    3300032: Cubo agua 2.001
+    3300034: Cylinder
+    3300036: Cylinder.001
+    3300038: Cylinder.002
+    3300040: Cylinder.003
+    3300042: Cylinder.004
+    3300044: Farolillo.001
+    3300046: Farolillo.002
+    3300048: Farolillo.003
+    3300050: Farolillo.004
+    3300052: Farolillo.005
+    3300054: Plane
+    3300056: Pozo
+    3300058: Puerta shinto.001
+    3300060: Roca.008
+    3300062: Sphere
+    3300064: Sphere.001
+    3300066: Sphere.002
+    3300068: Sphere.005
+    3300070: templo.007
+    3300072: templo3
+    3300074: templo4
+    3300076: templo5
+    3300078: templo6
+    3300080: templo7
+    3300082: templo8
+    3300084: templo9
+    3300086: Altar
+    3300088: Cube
+    3300090: Cube.001
+    3300092: Cube.002
+    3300094: Cube.003
+    3300096: Cube.004
+    3300098: Cube.005
+    3300100: Cube.006
+    3300102: Cube.007
+    3300104: Cube.008
+    3300106: Cube.009
+    3300108: Cube.010
+    3300110: Cube.011
+    3300112: Cube.012
+    3300114: Cube.013
+    3300116: Cube.014
+    3300118: Cube.015
+    3300120: Cube.016
+    3300122: Cube.017
+    3300124: Cylinder.005
+    3300126: Cylinder.006
+    3300128: Cylinder.007
+    3300130: EstructuraIntPlanet
+    3300132: EstructuraIntPlanet.001
+    3300134: EstructuraIntPlanet.002
+    3300136: EstructuraIntPlanet.003
+    3300138: EstructuraIntPlanet.004
+    3300140: EstructuraIntPlanet.005
+    3300142: EstructuraIntPlanet.006
+    3300144: EstructuraIntPlanet.007
+    3300146: EstructuraIntPlanet.008
+    3300148: Icosphere
+    3300150: Icosphere.001
+    3300152: Icosphere.002
+    3300154: Icosphere.003
+    3300156: Icosphere.004
+    3300158: Icosphere.005
+    3300160: raices
+    3300162: raices.001
+    3300164: raices.002
+    3300166: raices.003
+    3300168: raices.004
+    3300170: raices.005
+    3300172: raices.006
+    3300174: raices.007
+    3300176: raices.008
+    3300178: raices.009
+    3300180: raices.010
+    3300182: raices.011
+    3300184: raices.012
+    3300186: raices.013
+    3300188: raices.014
+    3300190: raices.015
+    3300192: raices.016
+    3300194: raices.017
+    3300196: raices.018
+    3300198: raices.019
+    3300200: raices.020
+    3300202: raices.021
+    3300204: raices.022
+    3300206: raices.023
+    3300208: raices.024
+    3300210: raices.025
+    3300212: raices.026
+    3300214: raices.027
+    3300216: raices.028
+    3300218: raices.029
+    3300220: raices.030
+    3300222: raices.031
+    3300224: raices.032
+    3300226: raices.033
+    3300228: raices.034
+    3300230: raices.035
+    3300232: raices.036
+    3300234: raices.037
+    3300236: raices.038
+    3300238: raices.039
+    3300240: raices.040
+    3300242: raices.041
+    3300244: raices.042
+    3300246: raices.043
+    3300248: raices.044
+    3300250: raices.045
+    3300252: raices.046
+    3300254: raices.047
+    3300256: raices.048
+    3300258: raices.049
+    3300260: raices.050
+    3300262: raices.051
+    3300264: raices.052
+    3300266: raices.053
+    3300268: raices.054
+    3300270: raices.055
+    3300272: raices.056
+    3300274: raices.057
+    3300276: raices.058
+    3300278: raices.059
+    3300280: raices.060
+    3300282: raices.061
+    3300284: raices.062
+    3300286: raices.063
+    3300288: raices.064
+    3300290: raices.065
+    3300292: raices.066
+    3300294: raices.067
+    3300296: raices.068
+    3300298: raices.069
+    3300300: raices.070
+    3300302: raices.071
+    3300304: Templo 2
+    3300306: tentacles
+    3300308: tentacles.001
+    3300310: tentacles.002
+    3300312: tentacles.003
+    3300314: tentacles.004
+    3300316: mitadDelantera
+    3300318: MitadTrasera
+    3300320: Cube.018
+    3300322: Cube.019
+    4300000: camino.001
+    4300002: Sphere.002
+    4300004: Plane
+    4300006: Cylinder
+    4300008: templo9
+    4300010: templo8
+    4300012: Pozo
+    4300014: templo5
+    4300016: Farolillo.002
+    4300018: templo4
+    4300020: Farolillo.003
+    4300022: Farolillo.005
+    4300024: templo3
+    4300026: templo7
+    4300028: Puerta shinto.001
+    4300030: Farolillo.001
+    4300032: templo6
+    4300034: camino
+    4300036: Sphere.001
+    4300038: Sphere
+    4300040: arbol.010
+    4300042: Sphere.005
+    4300044: arbol.007
+    4300046: arbol.008
+    4300048: arbol.009
+    4300050: arbol.004
+    4300052: templo.007
+    4300054: arbol.002
+    4300056: arbol.003
+    4300058: Cylinder.001
+    4300060: Cylinder.002
+    4300062: arbol
+    4300064: arbol.001
+    4300066: camino.004
+    4300068: Cylinder.004
+    4300070: Cylinder.003
+    4300072: arbol.006
+    4300074: arbol.005
+    4300076: Sphere.004
+    4300078: water
+    4300080: camino.002
+    4300082: Cubo agua 2.001
+    4300084: Farolillo.004
+    4300086: camino.048
+    4300088: Roca.008
+    4300090: tentacles.004
+    4300092: tentacles.003
+    4300094: tentacles.001
+    4300096: tentacles.002
+    4300098: tentacles
+    4300100: Cube.017
+    4300102: Cube.016
+    4300104: Cube.015
+    4300106: Cylinder.007
+    4300108: Cube.014
+    4300110: Cube.013
+    4300112: Cube.012
+    4300114: Cube.011
+    4300116: Cube.010
+    4300118: Cube.009
+    4300120: Cube.008
+    4300122: Cube.007
+    4300124: raices.071
+    4300126: raices.070
+    4300128: raices.069
+    4300130: raices.068
+    4300132: raices.067
+    4300134: raices.066
+    4300136: raices.065
+    4300138: raices.064
+    4300140: raices.063
+    4300142: raices.062
+    4300144: raices.061
+    4300146: raices.060
+    4300148: raices.059
+    4300150: raices.058
+    4300152: raices.057
+    4300154: raices.056
+    4300156: raices.055
+    4300158: raices.054
+    4300160: raices.053
+    4300162: raices.052
+    4300164: raices.051
+    4300166: raices.050
+    4300168: raices.049
+    4300170: raices.048
+    4300172: raices.047
+    4300174: raices.046
+    4300176: raices.045
+    4300178: raices.044
+    4300180: raices.043
+    4300182: raices.042
+    4300184: raices.041
+    4300186: raices.040
+    4300188: raices.039
+    4300190: raices.038
+    4300192: raices.037
+    4300194: raices.036
+    4300196: raices.035
+    4300198: raices.034
+    4300200: raices.033
+    4300202: raices.032
+    4300204: raices.031
+    4300206: raices.030
+    4300208: raices.029
+    4300210: raices.028
+    4300212: raices.027
+    4300214: raices.026
+    4300216: raices.025
+    4300218: raices.024
+    4300220: raices.023
+    4300222: raices.022
+    4300224: raices.021
+    4300226: raices.020
+    4300228: raices.019
+    4300230: raices.018
+    4300232: raices.017
+    4300234: raices.016
+    4300236: raices.015
+    4300238: raices.014
+    4300240: raices.013
+    4300242: raices.012
+    4300244: raices.011
+    4300246: raices.010
+    4300248: raices.009
+    4300250: raices.008
+    4300252: raices.007
+    4300254: raices.006
+    4300256: raices.005
+    4300258: raices.004
+    4300260: raices.003
+    4300262: raices.002
+    4300264: raices.001
+    4300266: raices
+    4300268: Icosphere.005
+    4300270: Icosphere.004
+    4300272: Icosphere.003
+    4300274: Icosphere.002
+    4300276: Icosphere.001
+    4300278: Icosphere
+    4300280: Cube.006
+    4300282: Cube.005
+    4300284: Cube.004
+    4300286: Cube.003
+    4300288: Cube.002
+    4300290: Cube.001
+    4300292: Cube
+    4300294: Cylinder.005
+    4300296: EstructuraIntPlanet.008
+    4300298: EstructuraIntPlanet.007
+    4300300: EstructuraIntPlanet.006
+    4300302: EstructuraIntPlanet.005
+    4300304: EstructuraIntPlanet.004
+    4300306: EstructuraIntPlanet.003
+    4300308: EstructuraIntPlanet.002
+    4300310: EstructuraIntPlanet.001
+    4300312: Cylinder.006
+    4300314: EstructuraIntPlanet
+    4300316: Templo 2
+    4300318: Altar
+    4300320: mitadDelantera
+    4300322: MitadTrasera
+    4300324: Cube.019
+    4300326: Cube.018
+    7400000: camino.001|templo2|Take 001|BaseLayer
+    7400002: camino.001|templo2|Take 001|BaseLayer.001
+    7400004: Sphere.002|templo2|Take 001|BaseLayer
+    7400006: Sphere.002|templo2|Take 001|BaseLayer.001
+    7400008: Plane|templo2|Take 001|BaseLayer
+    7400010: Plane|templo2|Take 001|BaseLayer.001
+    7400012: Cylinder|templo2|Take 001|BaseLayer
+    7400014: Cylinder|templo2|Take 001|BaseLayer.001
+    7400016: templo9|templo2|Take 001|BaseLayer
+    7400018: templo9|templo2|Take 001|BaseLayer.001
+    7400020: templo8|templo2|Take 001|BaseLayer
+    7400022: templo8|templo2|Take 001|BaseLayer.001
+    7400024: Pozo|templo2|Take 001|BaseLayer
+    7400026: Pozo|templo2|Take 001|BaseLayer.001
+    7400028: templo5|templo2|Take 001|BaseLayer
+    7400030: templo5|templo2|Take 001|BaseLayer.001
+    7400032: Farolillo.002|templo2|Take 001|BaseLayer
+    7400034: Farolillo.002|templo2|Take 001|BaseLayer.001
+    7400036: templo4|templo2|Take 001|BaseLayer
+    7400038: templo4|templo2|Take 001|BaseLayer.001
+    7400040: Farolillo.003|templo2|Take 001|BaseLayer
+    7400042: Farolillo.003|templo2|Take 001|BaseLayer.001
+    7400044: Farolillo.005|templo2|Take 001|BaseLayer
+    7400046: Farolillo.005|templo2|Take 001|BaseLayer.001
+    7400048: templo3|templo2|Take 001|BaseLayer
+    7400050: templo3|templo2|Take 001|BaseLayer.001
+    7400052: templo7|templo2|Take 001|BaseLayer
+    7400054: templo7|templo2|Take 001|BaseLayer.001
+    7400056: Puerta shinto.001|templo2|Take 001|BaseLayer
+    7400058: Puerta shinto.001|templo2|Take 001|BaseLayer.001
+    7400060: Farolillo.001|templo2|Take 001|BaseLayer
+    7400062: Farolillo.001|templo2|Take 001|BaseLayer.001
+    7400064: templo6|templo2|Take 001|BaseLayer
+    7400066: templo6|templo2|Take 001|BaseLayer.001
+    7400068: camino|templo2|Take 001|BaseLayer
+    7400070: camino|templo2|Take 001|BaseLayer.001
+    7400072: Sphere.001|templo2|Take 001|BaseLayer
+    7400074: Sphere.001|templo2|Take 001|BaseLayer.001
+    7400076: Sphere|templo2|Take 001|BaseLayer
+    7400078: Sphere|templo2|Take 001|BaseLayer.001
+    7400080: arbol.010|templo2|Take 001|BaseLayer
+    7400082: arbol.010|templo2|Take 001|BaseLayer.001
+    7400084: Sphere.005|templo2|Take 001|BaseLayer
+    7400086: Sphere.005|templo2|Take 001|BaseLayer.001
+    7400088: arbol.007|templo2|Take 001|BaseLayer
+    7400090: arbol.007|templo2|Take 001|BaseLayer.001
+    7400092: arbol.008|templo2|Take 001|BaseLayer
+    7400094: arbol.008|templo2|Take 001|BaseLayer.001
+    7400096: arbol.009|templo2|Take 001|BaseLayer
+    7400098: arbol.009|templo2|Take 001|BaseLayer.001
+    7400100: arbol.004|templo2|Take 001|BaseLayer
+    7400102: arbol.004|templo2|Take 001|BaseLayer.001
+    7400104: templo.007|templo2|Take 001|BaseLayer
+    7400106: templo.007|templo2|Take 001|BaseLayer.001
+    7400108: arbol.002|templo2|Take 001|BaseLayer
+    7400110: arbol.002|templo2|Take 001|BaseLayer.001
+    7400112: arbol.003|templo2|Take 001|BaseLayer
+    7400114: arbol.003|templo2|Take 001|BaseLayer.001
+    7400116: Cylinder.001|templo2|Take 001|BaseLayer
+    7400118: Cylinder.001|templo2|Take 001|BaseLayer.001
+    7400120: Cylinder.002|templo2|Take 001|BaseLayer
+    7400122: Cylinder.002|templo2|Take 001|BaseLayer.001
+    7400124: arbol|templo2|Take 001|BaseLayer
+    7400126: arbol|templo2|Take 001|BaseLayer.001
+    7400128: arbol.001|templo2|Take 001|BaseLayer
+    7400130: arbol.001|templo2|Take 001|BaseLayer.001
+    7400132: camino.004|templo2|Take 001|BaseLayer
+    7400134: camino.004|templo2|Take 001|BaseLayer.001
+    7400136: Cylinder.004|templo2|Take 001|BaseLayer
+    7400138: Cylinder.004|templo2|Take 001|BaseLayer.001
+    7400140: Cylinder.003|templo2|Take 001|BaseLayer
+    7400142: Cylinder.003|templo2|Take 001|BaseLayer.001
+    7400144: arbol.006|templo2|Take 001|BaseLayer
+    7400146: arbol.006|templo2|Take 001|BaseLayer.001
+    7400148: arbol.005|templo2|Take 001|BaseLayer
+    7400150: arbol.005|templo2|Take 001|BaseLayer.001
+    7400152: Sphere.004|templo2|Take 001|BaseLayer
+    7400154: Sphere.004|templo2|Take 001|BaseLayer.001
+    7400156: water|templo2|Take 001|BaseLayer
+    7400158: water|templo2|Take 001|BaseLayer.001
+    7400160: camino.002|templo2|Take 001|BaseLayer
+    7400162: camino.002|templo2|Take 001|BaseLayer.001
+    7400164: Cubo agua 2.001|templo2|Take 001|BaseLayer
+    7400166: Cubo agua 2.001|templo2|Take 001|BaseLayer.001
+    7400168: Farolillo.004|templo2|Take 001|BaseLayer
+    7400170: Farolillo.004|templo2|Take 001|BaseLayer.001
+    7400172: camino.048|templo2|Take 001|BaseLayer
+    7400174: camino.048|templo2|Take 001|BaseLayer.001
+    7400176: Roca.008|templo2|Take 001|BaseLayer
+    7400178: Roca.008|templo2|Take 001|BaseLayer.001
+    9500000: //RootNode
+    13700000: Sphere.004
+    13700002: water
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: Sphere.002
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

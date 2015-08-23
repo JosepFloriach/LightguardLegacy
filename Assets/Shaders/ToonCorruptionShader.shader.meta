@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: af6e577fac5e6ba4c9e69f6a27e649c0
+timeCreated: 1433159444
+licenseType: Free
+ShaderImporter:
+  defaultTextures:
+  - _MainTex: {instanceID: 0}
+  - _ToonShade: {instanceID: 0}
+  - _CorruptionTexture: {fileID: 2800000, guid: c012cd004cede244c96a82228fed4480,
+      type: 3}
+  - _DissolveNoise: {fileID: 2800000, guid: fdcc49f69a12f0e41b9ed2c94e230662, type: 3}
+  - _Ramp: {fileID: 2800000, guid: 0d2d5756caa62a248b563de79e26635b, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<weapons>
+	<weapon>
+		<name>Bushido</name>
+		<distance>0.25</distance>
+		<damage>40</damage>
+		<area>false</area>
+		<side>front</side>
+		<speed>0.40</speed>
+	</weapon>
+	<weapon>
+		<name>Bringer</name>
+		<distance>0.5</distance>
+		<damage>20</damage>
+		<area>false</area>
+		<side>rear</side>
+		<speed>0.20</speed>
+	</weapon>
+	<weapon>
+		<name>The Death</name>
+		<distance>0.25</distance>
+		<damage>10</damage>
+		<area>false</area>
+		<side>middle</side>
+		<speed>0.20</speed>
+	</weapon>
+</weapons>

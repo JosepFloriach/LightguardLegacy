@@ -1,0 +1,437 @@
+fileFormatVersion: 2
+guid: 9aeae2a3eb2fa1e44a43ecad5b6322c6
+timeCreated: 1429804730
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Herreria001
+    100004: Plane
+    100006: "Planeta peque\xF1o"
+    100008: pozo
+    100010: rama010.000
+    100012: rama010.001
+    100014: rama010.002
+    100016: rama010.003
+    100018: rama010.004
+    100020: rama010.006
+    100022: rama010.007
+    100024: rama010.008
+    100026: ramalon006.000
+    100028: ramalon006.001
+    100030: ramalon006.002
+    100032: ramalon006.003
+    100034: ramalon006.004
+    100036: ramalon006.005
+    100038: ramalon006.007
+    100040: ramalon006.008
+    100042: Roca001.000
+    100044: Roca001.001
+    100046: Roca001.002
+    100048: Roca001.003
+    100050: Roca001.004
+    100052: Roca001.005
+    100054: Roca001.006
+    100056: Roca001.008
+    100058: Roca001.009
+    100060: Roca001.010
+    100062: Roca001.011
+    100064: Roca001.012
+    100066: Roca001.013
+    100068: Roca001.014
+    100070: Roca001.015
+    100072: Roca001.016
+    100074: Roca001.017
+    100076: Roca001.018
+    100078: Roca001.019
+    100080: Roca001.020
+    100082: Roca001.021
+    400000: //RootNode
+    400002: Herreria001
+    400004: Plane
+    400006: "Planeta peque\xF1o"
+    400008: pozo
+    400010: rama010.000
+    400012: rama010.001
+    400014: rama010.002
+    400016: rama010.003
+    400018: rama010.004
+    400020: rama010.006
+    400022: rama010.007
+    400024: rama010.008
+    400026: ramalon006.000
+    400028: ramalon006.001
+    400030: ramalon006.002
+    400032: ramalon006.003
+    400034: ramalon006.004
+    400036: ramalon006.005
+    400038: ramalon006.007
+    400040: ramalon006.008
+    400042: Roca001.000
+    400044: Roca001.001
+    400046: Roca001.002
+    400048: Roca001.003
+    400050: Roca001.004
+    400052: Roca001.005
+    400054: Roca001.006
+    400056: Roca001.008
+    400058: Roca001.009
+    400060: Roca001.010
+    400062: Roca001.011
+    400064: Roca001.012
+    400066: Roca001.013
+    400068: Roca001.014
+    400070: Roca001.015
+    400072: Roca001.016
+    400074: Roca001.017
+    400076: Roca001.018
+    400078: Roca001.019
+    400080: Roca001.020
+    400082: Roca001.021
+    2300000: Herreria001
+    2300002: Plane
+    2300004: "Planeta peque\xF1o"
+    2300006: pozo
+    2300008: rama010.000
+    2300010: rama010.001
+    2300012: rama010.002
+    2300014: rama010.003
+    2300016: rama010.004
+    2300018: rama010.006
+    2300020: rama010.007
+    2300022: rama010.008
+    2300024: ramalon006.000
+    2300026: ramalon006.001
+    2300028: ramalon006.002
+    2300030: ramalon006.003
+    2300032: ramalon006.004
+    2300034: ramalon006.005
+    2300036: ramalon006.007
+    2300038: ramalon006.008
+    2300040: Roca001.000
+    2300042: Roca001.001
+    2300044: Roca001.002
+    2300046: Roca001.003
+    2300048: Roca001.004
+    2300050: Roca001.005
+    2300052: Roca001.006
+    2300054: Roca001.008
+    2300056: Roca001.009
+    2300058: Roca001.010
+    2300060: Roca001.011
+    2300062: Roca001.012
+    2300064: Roca001.013
+    2300066: Roca001.014
+    2300068: Roca001.015
+    2300070: Roca001.016
+    2300072: Roca001.017
+    2300074: Roca001.018
+    2300076: Roca001.019
+    2300078: Roca001.020
+    2300080: Roca001.021
+    3300000: Herreria001
+    3300002: Plane
+    3300004: "Planeta peque\xF1o"
+    3300006: pozo
+    3300008: rama010.000
+    3300010: rama010.001
+    3300012: rama010.002
+    3300014: rama010.003
+    3300016: rama010.004
+    3300018: rama010.006
+    3300020: rama010.007
+    3300022: rama010.008
+    3300024: ramalon006.000
+    3300026: ramalon006.001
+    3300028: ramalon006.002
+    3300030: ramalon006.003
+    3300032: ramalon006.004
+    3300034: ramalon006.005
+    3300036: ramalon006.007
+    3300038: ramalon006.008
+    3300040: Roca001.000
+    3300042: Roca001.001
+    3300044: Roca001.002
+    3300046: Roca001.003
+    3300048: Roca001.004
+    3300050: Roca001.005
+    3300052: Roca001.006
+    3300054: Roca001.008
+    3300056: Roca001.009
+    3300058: Roca001.010
+    3300060: Roca001.011
+    3300062: Roca001.012
+    3300064: Roca001.013
+    3300066: Roca001.014
+    3300068: Roca001.015
+    3300070: Roca001.016
+    3300072: Roca001.017
+    3300074: Roca001.018
+    3300076: Roca001.019
+    3300078: Roca001.020
+    3300080: Roca001.021
+    4300000: Roca001.006
+    4300002: Roca001.005
+    4300004: Roca001.004
+    4300006: Roca001.002
+    4300008: Roca001.003
+    4300010: Roca001.009
+    4300012: Roca001.001
+    4300014: Roca001.012
+    4300016: Roca001.011
+    4300018: Roca001.010
+    4300020: Roca001.000
+    4300022: Roca001.008
+    4300024: Roca001.014
+    4300026: Roca001.013
+    4300028: Roca001.021
+    4300030: Roca001.020
+    4300032: Roca001.018
+    4300034: Roca001.015
+    4300036: Roca001.016
+    4300038: Roca001.019
+    4300040: ramalon006.004
+    4300042: ramalon006.000
+    4300044: ramalon006.002
+    4300046: ramalon006.007
+    4300048: ramalon006.003
+    4300050: ramalon006.001
+    4300052: ramalon006.008
+    4300054: rama010.004
+    4300056: rama010.006
+    4300058: rama010.002
+    4300060: rama010.000
+    4300062: rama010.003
+    4300064: rama010.007
+    4300066: rama010.008
+    4300068: Roca001.017
+    4300070: ramalon006.005
+    4300072: rama010.001
+    4300074: Herreria001
+    4300076: "Planeta peque\xF1o"
+    4300078: Plane
+    4300080: pozo
+    7400000: Roca001.006|Cylinder.001|Take 001|BaseLayer
+    7400002: Roca001.006|Cylinder.002|Take 001|BaseLayer
+    7400004: Roca001.006|Cylinder.007|Take 001|BaseLayer
+    7400006: Roca001.006|jabali001|Take 001|BaseLayer
+    7400008: Roca001.005|Cylinder.001|Take 001|BaseLayer
+    7400010: Roca001.005|Cylinder.002|Take 001|BaseLayer
+    7400012: Roca001.005|Cylinder.007|Take 001|BaseLayer
+    7400014: Roca001.005|jabali001|Take 001|BaseLayer
+    7400016: Roca001.004|Cylinder.001|Take 001|BaseLayer
+    7400018: Roca001.004|Cylinder.002|Take 001|BaseLayer
+    7400020: Roca001.004|Cylinder.007|Take 001|BaseLayer
+    7400022: Roca001.004|jabali001|Take 001|BaseLayer
+    7400024: Roca001.002|Cylinder.001|Take 001|BaseLayer
+    7400026: Roca001.002|Cylinder.002|Take 001|BaseLayer
+    7400028: Roca001.002|Cylinder.007|Take 001|BaseLayer
+    7400030: Roca001.002|jabali001|Take 001|BaseLayer
+    7400032: Roca001.003|Cylinder.001|Take 001|BaseLayer
+    7400034: Roca001.003|Cylinder.002|Take 001|BaseLayer
+    7400036: Roca001.003|Cylinder.007|Take 001|BaseLayer
+    7400038: Roca001.003|jabali001|Take 001|BaseLayer
+    7400040: Roca001.009|Cylinder.001|Take 001|BaseLayer
+    7400042: Roca001.009|Cylinder.002|Take 001|BaseLayer
+    7400044: Roca001.009|Cylinder.007|Take 001|BaseLayer
+    7400046: Roca001.009|jabali001|Take 001|BaseLayer
+    7400048: Roca001.001|Cylinder.001|Take 001|BaseLayer
+    7400050: Roca001.001|Cylinder.002|Take 001|BaseLayer
+    7400052: Roca001.001|Cylinder.007|Take 001|BaseLayer
+    7400054: Roca001.001|jabali001|Take 001|BaseLayer
+    7400056: Roca001.012|Cylinder.001|Take 001|BaseLayer
+    7400058: Roca001.012|Cylinder.002|Take 001|BaseLayer
+    7400060: Roca001.012|Cylinder.007|Take 001|BaseLayer
+    7400062: Roca001.012|jabali001|Take 001|BaseLayer
+    7400064: Roca001.011|Cylinder.001|Take 001|BaseLayer
+    7400066: Roca001.011|Cylinder.002|Take 001|BaseLayer
+    7400068: Roca001.011|Cylinder.007|Take 001|BaseLayer
+    7400070: Roca001.011|jabali001|Take 001|BaseLayer
+    7400072: Roca001.010|Cylinder.001|Take 001|BaseLayer
+    7400074: Roca001.010|Cylinder.002|Take 001|BaseLayer
+    7400076: Roca001.010|Cylinder.007|Take 001|BaseLayer
+    7400078: Roca001.010|jabali001|Take 001|BaseLayer
+    7400080: Roca001.000|Cylinder.001|Take 001|BaseLayer
+    7400082: Roca001.000|Cylinder.002|Take 001|BaseLayer
+    7400084: Roca001.000|Cylinder.007|Take 001|BaseLayer
+    7400086: Roca001.000|jabali001|Take 001|BaseLayer
+    7400088: Roca001.008|Cylinder.001|Take 001|BaseLayer
+    7400090: Roca001.008|Cylinder.002|Take 001|BaseLayer
+    7400092: Roca001.008|Cylinder.007|Take 001|BaseLayer
+    7400094: Roca001.008|jabali001|Take 001|BaseLayer
+    7400096: Roca001.014|Cylinder.001|Take 001|BaseLayer
+    7400098: Roca001.014|Cylinder.002|Take 001|BaseLayer
+    7400100: Roca001.014|Cylinder.007|Take 001|BaseLayer
+    7400102: Roca001.014|jabali001|Take 001|BaseLayer
+    7400104: Roca001.013|Cylinder.001|Take 001|BaseLayer
+    7400106: Roca001.013|Cylinder.002|Take 001|BaseLayer
+    7400108: Roca001.013|Cylinder.007|Take 001|BaseLayer
+    7400110: Roca001.013|jabali001|Take 001|BaseLayer
+    7400112: Roca001.021|Cylinder.001|Take 001|BaseLayer
+    7400114: Roca001.021|Cylinder.002|Take 001|BaseLayer
+    7400116: Roca001.021|Cylinder.007|Take 001|BaseLayer
+    7400118: Roca001.021|jabali001|Take 001|BaseLayer
+    7400120: Roca001.020|Cylinder.001|Take 001|BaseLayer
+    7400122: Roca001.020|Cylinder.002|Take 001|BaseLayer
+    7400124: Roca001.020|Cylinder.007|Take 001|BaseLayer
+    7400126: Roca001.020|jabali001|Take 001|BaseLayer
+    7400128: Roca001.018|Cylinder.001|Take 001|BaseLayer
+    7400130: Roca001.018|Cylinder.002|Take 001|BaseLayer
+    7400132: Roca001.018|Cylinder.007|Take 001|BaseLayer
+    7400134: Roca001.018|jabali001|Take 001|BaseLayer
+    7400136: Roca001.015|Cylinder.001|Take 001|BaseLayer
+    7400138: Roca001.015|Cylinder.002|Take 001|BaseLayer
+    7400140: Roca001.015|Cylinder.007|Take 001|BaseLayer
+    7400142: Roca001.015|jabali001|Take 001|BaseLayer
+    7400144: Roca001.016|Cylinder.001|Take 001|BaseLayer
+    7400146: Roca001.016|Cylinder.002|Take 001|BaseLayer
+    7400148: Roca001.016|Cylinder.007|Take 001|BaseLayer
+    7400150: Roca001.016|jabali001|Take 001|BaseLayer
+    7400152: Roca001.019|Cylinder.001|Take 001|BaseLayer
+    7400154: Roca001.019|Cylinder.002|Take 001|BaseLayer
+    7400156: Roca001.019|Cylinder.007|Take 001|BaseLayer
+    7400158: Roca001.019|jabali001|Take 001|BaseLayer
+    7400160: ramalon006.004|Cylinder.001|Take 001|BaseLayer
+    7400162: ramalon006.004|Cylinder.002|Take 001|BaseLayer
+    7400164: ramalon006.004|Cylinder.007|Take 001|BaseLayer
+    7400166: ramalon006.004|jabali001|Take 001|BaseLayer
+    7400168: ramalon006.000|Cylinder.001|Take 001|BaseLayer
+    7400170: ramalon006.000|Cylinder.002|Take 001|BaseLayer
+    7400172: ramalon006.000|Cylinder.007|Take 001|BaseLayer
+    7400174: ramalon006.000|jabali001|Take 001|BaseLayer
+    7400176: ramalon006.002|Cylinder.001|Take 001|BaseLayer
+    7400178: ramalon006.002|Cylinder.002|Take 001|BaseLayer
+    7400180: ramalon006.002|Cylinder.007|Take 001|BaseLayer
+    7400182: ramalon006.002|jabali001|Take 001|BaseLayer
+    7400184: ramalon006.007|Cylinder.001|Take 001|BaseLayer
+    7400186: ramalon006.007|Cylinder.002|Take 001|BaseLayer
+    7400188: ramalon006.007|Cylinder.007|Take 001|BaseLayer
+    7400190: ramalon006.007|jabali001|Take 001|BaseLayer
+    7400192: ramalon006.003|Cylinder.001|Take 001|BaseLayer
+    7400194: ramalon006.003|Cylinder.002|Take 001|BaseLayer
+    7400196: ramalon006.003|Cylinder.007|Take 001|BaseLayer
+    7400198: ramalon006.003|jabali001|Take 001|BaseLayer
+    7400200: ramalon006.001|Cylinder.001|Take 001|BaseLayer
+    7400202: ramalon006.001|Cylinder.002|Take 001|BaseLayer
+    7400204: ramalon006.001|Cylinder.007|Take 001|BaseLayer
+    7400206: ramalon006.001|jabali001|Take 001|BaseLayer
+    7400208: ramalon006.008|Cylinder.001|Take 001|BaseLayer
+    7400210: ramalon006.008|Cylinder.002|Take 001|BaseLayer
+    7400212: ramalon006.008|Cylinder.007|Take 001|BaseLayer
+    7400214: ramalon006.008|jabali001|Take 001|BaseLayer
+    7400216: rama010.004|Cylinder.001|Take 001|BaseLayer
+    7400218: rama010.004|Cylinder.002|Take 001|BaseLayer
+    7400220: rama010.004|Cylinder.007|Take 001|BaseLayer
+    7400222: rama010.004|jabali001|Take 001|BaseLayer
+    7400224: rama010.006|Cylinder.001|Take 001|BaseLayer
+    7400226: rama010.006|Cylinder.002|Take 001|BaseLayer
+    7400228: rama010.006|Cylinder.007|Take 001|BaseLayer
+    7400230: rama010.006|jabali001|Take 001|BaseLayer
+    7400232: rama010.002|Cylinder.001|Take 001|BaseLayer
+    7400234: rama010.002|Cylinder.002|Take 001|BaseLayer
+    7400236: rama010.002|Cylinder.007|Take 001|BaseLayer
+    7400238: rama010.002|jabali001|Take 001|BaseLayer
+    7400240: rama010.000|Cylinder.001|Take 001|BaseLayer
+    7400242: rama010.000|Cylinder.002|Take 001|BaseLayer
+    7400244: rama010.000|Cylinder.007|Take 001|BaseLayer
+    7400246: rama010.000|jabali001|Take 001|BaseLayer
+    7400248: rama010.003|Cylinder.001|Take 001|BaseLayer
+    7400250: rama010.003|Cylinder.002|Take 001|BaseLayer
+    7400252: rama010.003|Cylinder.007|Take 001|BaseLayer
+    7400254: rama010.003|jabali001|Take 001|BaseLayer
+    7400256: rama010.007|Cylinder.001|Take 001|BaseLayer
+    7400258: rama010.007|Cylinder.002|Take 001|BaseLayer
+    7400260: rama010.007|Cylinder.007|Take 001|BaseLayer
+    7400262: rama010.007|jabali001|Take 001|BaseLayer
+    7400264: rama010.008|Cylinder.001|Take 001|BaseLayer
+    7400266: rama010.008|Cylinder.002|Take 001|BaseLayer
+    7400268: rama010.008|Cylinder.007|Take 001|BaseLayer
+    7400270: rama010.008|jabali001|Take 001|BaseLayer
+    7400272: Roca001.017|Cylinder.001|Take 001|BaseLayer
+    7400274: Roca001.017|Cylinder.002|Take 001|BaseLayer
+    7400276: Roca001.017|Cylinder.007|Take 001|BaseLayer
+    7400278: Roca001.017|jabali001|Take 001|BaseLayer
+    7400280: ramalon006.005|Cylinder.001|Take 001|BaseLayer
+    7400282: ramalon006.005|Cylinder.002|Take 001|BaseLayer
+    7400284: ramalon006.005|Cylinder.007|Take 001|BaseLayer
+    7400286: ramalon006.005|jabali001|Take 001|BaseLayer
+    7400288: rama010.001|Cylinder.001|Take 001|BaseLayer
+    7400290: rama010.001|Cylinder.002|Take 001|BaseLayer
+    7400292: rama010.001|Cylinder.007|Take 001|BaseLayer
+    7400294: rama010.001|jabali001|Take 001|BaseLayer
+    7400296: Herreria001|Cylinder.001|Take 001|BaseLayer
+    7400298: Herreria001|Cylinder.002|Take 001|BaseLayer
+    7400300: Herreria001|Cylinder.007|Take 001|BaseLayer
+    7400302: Herreria001|jabali001|Take 001|BaseLayer
+    7400304: "Planeta peque\xF1o|Cylinder.001|Take 001|BaseLayer"
+    7400306: "Planeta peque\xF1o|Cylinder.002|Take 001|BaseLayer"
+    7400308: "Planeta peque\xF1o|Cylinder.007|Take 001|BaseLayer"
+    7400310: "Planeta peque\xF1o|jabali001|Take 001|BaseLayer"
+    7400312: Plane|Cylinder.001|Take 001|BaseLayer
+    7400314: Plane|Cylinder.002|Take 001|BaseLayer
+    7400316: Plane|Cylinder.007|Take 001|BaseLayer
+    7400318: Plane|jabali001|Take 001|BaseLayer
+    7400320: pozo|Cylinder.001|Take 001|BaseLayer
+    7400322: pozo|Cylinder.002|Take 001|BaseLayer
+    7400324: pozo|Cylinder.007|Take 001|BaseLayer
+    7400326: pozo|jabali001|Take 001|BaseLayer
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 027d0d9397c81eb46b3fcdddaf9c0e97
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - mainMenuPrefab: {fileID: 128502, guid: 8bfbfdac8ae68c54cae3214a18a9996e, type: 2}
+  - controlsMenuPrefab: {fileID: 188242, guid: 2321a59d0499bc147927073d993d0082, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

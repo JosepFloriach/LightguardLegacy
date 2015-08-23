@@ -1,0 +1,152 @@
+fileFormatVersion: 2
+guid: 130c6b925cc38cb4484b6ce1d545037f
+timeCreated: 1435511013
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Crater 1
+    100002: Crater 2
+    100004: Crater 3
+    100006: Fragmento mundo 1
+    100008: Fragmento mundo 2
+    100010: Fragmento mundo 3
+    100012: Fragmento mundo 4
+    100014: Fragmento planeta 5
+    100016: Piedra 1
+    100018: Piedra 3
+    100020: Piedra 4
+    100022: Piedra 5
+    100024: Planet mundus
+    100026: Planeta fragemnto 7
+    100028: Planeta fragmento 6
+    100030: Planeta fragmento 8
+    100032: //RootNode
+    100034: Volcan
+    400000: Crater 1
+    400002: Crater 2
+    400004: Crater 3
+    400006: Fragmento mundo 1
+    400008: Fragmento mundo 2
+    400010: Fragmento mundo 3
+    400012: Fragmento mundo 4
+    400014: Fragmento planeta 5
+    400016: Piedra 1
+    400018: Piedra 3
+    400020: Piedra 4
+    400022: Piedra 5
+    400024: Planet mundus
+    400026: Planeta fragemnto 7
+    400028: Planeta fragmento 6
+    400030: Planeta fragmento 8
+    400032: //RootNode
+    400034: Volcan
+    2300000: Crater 1
+    2300002: Crater 2
+    2300004: Crater 3
+    2300006: Fragmento mundo 1
+    2300008: Fragmento mundo 2
+    2300010: Fragmento mundo 3
+    2300012: Fragmento mundo 4
+    2300014: Fragmento planeta 5
+    2300016: Piedra 1
+    2300018: Piedra 3
+    2300020: Piedra 4
+    2300022: Piedra 5
+    2300024: Planet mundus
+    2300026: Planeta fragemnto 7
+    2300028: Planeta fragmento 6
+    2300030: Planeta fragmento 8
+    2300032: Volcan
+    3300000: Crater 1
+    3300002: Crater 2
+    3300004: Crater 3
+    3300006: Fragmento mundo 1
+    3300008: Fragmento mundo 2
+    3300010: Fragmento mundo 3
+    3300012: Fragmento mundo 4
+    3300014: Fragmento planeta 5
+    3300016: Piedra 1
+    3300018: Piedra 3
+    3300020: Piedra 4
+    3300022: Piedra 5
+    3300024: Planet mundus
+    3300026: Planeta fragemnto 7
+    3300028: Planeta fragmento 6
+    3300030: Planeta fragmento 8
+    3300032: Volcan
+    4300000: Planet mundus
+    4300002: Fragmento mundo 1
+    4300004: Fragmento mundo 2
+    4300006: Fragmento mundo 3
+    4300008: Fragmento mundo 4
+    4300010: Fragmento planeta 5
+    4300012: Planeta fragmento 6
+    4300014: Planeta fragemnto 7
+    4300016: Planeta fragmento 8
+    4300018: Crater 1
+    4300020: Crater 2
+    4300022: Crater 3
+    4300024: Piedra 1
+    4300026: Piedra 3
+    4300028: Piedra 4
+    4300030: Volcan
+    4300032: Piedra 5
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
