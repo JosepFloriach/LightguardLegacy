@@ -7,7 +7,7 @@ public class Storm : MonoBehaviour {
 	public float stormDuration = 4.0f; 
 	public int stormDamage = 2; 
 	public float damageEveryXSeconds = 1.5f;
-	public LayerMask toCollide; 
+	public LayerMask toCollide;  
 
 	private float timeElapsedOff = 0f; 
 	private float timeElapsedOn = 0f; 
@@ -24,11 +24,11 @@ public class Storm : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		bool isInsideIceFirePlanet = GameManager.player.transform.parent.name.Equals ("Central Planet");
+		GameObject player = GameManager.player;
+		bool isInsideIceFirePlanet = player.transform.parent.name.Equals ("Central Planet");
 		if (isInsideIceFirePlanet) {
 			stormSwitch ();
 			if (ps.isPlaying) {
-				GameObject player = GameManager.player;
 				if (!Physics.Raycast(player.transform.position, player.transform.up, 100, toCollide)) {
 					timeElapsedLastHit += Time.deltaTime; 
 					if (timeElapsedLastHit >= damageEveryXSeconds ) {
