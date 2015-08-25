@@ -24,17 +24,18 @@ public class Storm : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		GameObject player = GameManager.player;
-		bool isInsideIceFirePlanet = player.transform.parent.name.Equals ("Central Planet");
-		if (isInsideIceFirePlanet) {
-			stormSwitch ();
-			if (ps.isPlaying) {
-				if (!Physics.Raycast(player.transform.position, player.transform.up, 100, toCollide)) {
-					timeElapsedLastHit += Time.deltaTime; 
-					if (timeElapsedLastHit >= damageEveryXSeconds ) {
-						timeElapsedLastHit = 0f; 
-						GameManager.playerController.getHurt (stormDamage,GameManager.player.GetComponent<Rigidbody>().worldCenterOfMass);
-					}				
+		if (GameManager.player.transform.parent != null) {
+			bool isInsideIceFirePlanet = GameManager.player.transform.parent.name.Equals ("Central Planet");
+			if (isInsideIceFirePlanet) {
+				stormSwitch ();
+				if (ps.isPlaying) {
+					if (!Physics.Raycast (GameManager.player.transform.position, GameManager.player.transform.up, 100, toCollide)) {
+						timeElapsedLastHit += Time.deltaTime; 
+						if (timeElapsedLastHit >= damageEveryXSeconds) {
+							timeElapsedLastHit = 0f; 
+							GameManager.playerController.getHurt (stormDamage, GameManager.player.GetComponent<Rigidbody> ().worldCenterOfMass);
+						}				
+					}
 				}
 			}
 		}
