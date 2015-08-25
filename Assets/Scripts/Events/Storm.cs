@@ -26,7 +26,7 @@ public class Storm : MonoBehaviour {
 	void Update () {
 		if (GameManager.player.transform.parent != null) {
 			bool isInsideIceFirePlanet = GameManager.player.transform.parent.name.Equals ("Central Planet");
-			if (isInsideIceFirePlanet) {
+			if (isInsideIceFirePlanet && !GetComponentInParent<FrostFirePlanetEventsManager>().runnerActivated) {
 				stormSwitch ();
 				if (ps.isPlaying) {
 					if (!Physics.Raycast (GameManager.player.transform.position, GameManager.player.transform.up, 100, toCollide)) {

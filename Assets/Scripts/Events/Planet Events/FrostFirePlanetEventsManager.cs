@@ -16,6 +16,8 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 	public GameObject penguinAttackEvent;
 	public GameObject hydraAttackEvent;
 
+	public bool runnerActivated = false; 
+
 	public GameObject burningCore;
 	public GameObject[] platforms;
 	private Vector3[] platformsOriginalPosition;
@@ -64,6 +66,7 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 	}
 
 	private IEnumerator doRunningEvent(){
+		runnerActivated = true;
 		GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().setCameraShaking ();
 		diedOnSegment = false;
 		rotatingFire.SetActive(true);
