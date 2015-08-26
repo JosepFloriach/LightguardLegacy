@@ -10,9 +10,7 @@ public class InputController : MonoBehaviour {
 	public float startChargeSpaceJump;
 	public float timeIsSpaceJumpCharged;
 	public float maxDistanceToInteract;
-	
-	private bool isSpaceJumpCharging = false;
-	private bool isSpaceJumpCharged;
+
 	private float timeJumpPressed;
 	private PlayerController character;
 	private CharacterAttackController attackController;
@@ -52,7 +50,7 @@ public class InputController : MonoBehaviour {
 			//MOVEMENT BUTTON
 			if(!attackController.isDoingDash()){
 				if (Input.GetAxis ("Horizontal")!=0f) {
-					if(isSpaceJumpCharged){
+					if(character.isSpaceJumpCharged){
 						character.MoveArrow(Input.GetAxisRaw ("Horizontal"),Input.GetAxis ("Vertical"));
 					}else if(isCharacterAllowedToMove()){
 						ResetJumping ();
@@ -115,14 +113,15 @@ public class InputController : MonoBehaviour {
 			} 
 
 			//JUMP BUTTON
-			if (Input.GetButtonDown("Jump") && isSpaceJumpCharged) {
+			if (Input.GetButtonDown("Jump") && character.isSpaceJumpCharged) {
 				ResetJumping(); 
 				character.SpaceJump(); 
 			}
 
-			if(Input.GetButtonDown("Jump") && (Input.GetAxisRaw("Vertical")<-0.5f || isSpaceJumpCharging)){
+			if(Input.GetButtonDown("Jump") && (Input.GetAxisRaw("Vertical")<-0.5f || character.isSpaceJumpCharging)){
 				if(isCharacterAllowedToSpaceJump()){
-					isSpaceJumpCharged = true; character.ChargeJump();
+					character.isSpaceJumpCharged = true; 
+					character.ChargeJump();
 				}
 			}else if(Input.GetButtonDown("Jump") && isCharacterAllowedToJump()) {
 				character.Jump(); 
@@ -140,7 +139,7 @@ public class InputController : MonoBehaviour {
 			if (Input.GetButtonDown("Block")) {
 				Interactuable entity = EntityManager.getClosestInteractuable();
 				SpaceGravityBody body = GetComponent<SpaceGravityBody>();
-				if(isSpaceJumpCharged){
+				if(character.isSpaceJumpCharged){
 					CancelChargingSpaceJump();
 				}else if(character.getIsSpaceJumping() && body.getIsOrbitingAroundPlanet()){
 					body.setIsFallingIntoPlanet(true);
@@ -256,14 +255,14 @@ public class InputController : MonoBehaviour {
 
 	void CancelChargingSpaceJump(){
 		timeJumpPressed = 0f;
-		isSpaceJumpCharged = false;
-		isSpaceJumpCharging = false;
+		character.isSpaceJumpCharged = false;
+		character.isSpaceJumpCharging = false;
 		character.CancelChargingSpaceJump ();
 	}
 
 	void ResetJumping () {
-		isSpaceJumpCharging = false;
-		isSpaceJumpCharged = false;
+		character.isSpaceJumpCharging = false;
+		character.isSpaceJumpCharged = false;
 		timeJumpPressed = 0f;
 	}
 

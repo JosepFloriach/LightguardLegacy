@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour {
 	public bool isInsidePlanet = false;
 
 	public GameObject pappada;
+	public GameObject getHurtBigPappada;
 
 	//SpaceJump line
 	public float lineJumpDistance;
@@ -63,7 +64,10 @@ public class PlayerController : MonoBehaviour {
 	private PappadaController pappadaC;
 	private bool canDrownInSpace = true;
 	private bool isFallingDown = false;
-	public GameObject getHurtBigPappada;
+	public bool isSpaceJumpCharging { get; set;}
+	public bool isSpaceJumpCharged { get; set;}
+
+
 
 	private bool isDematerialized = false;
 	void Awake(){
@@ -120,7 +124,11 @@ public class PlayerController : MonoBehaviour {
 			bpAnimator.SetBool("isWalking",false);
 			bpAnimator.SetBool("isDerribado",false);
 		}
-
+		isSpaceJumpCharging = false;
+		isSpaceJumpCharged = false;
+		isChargingSpaceJump = false;
+		ParticleSystem particles = particleSystemJumpCharge.GetComponent<ParticleSystem> ();
+		particles.Stop ();
 		isSpaceJumping = false;
 		GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().returnOriginalZ();
 		HideArrow();

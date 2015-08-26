@@ -204,7 +204,6 @@ public class PlanetSpawnerManager : MonoBehaviour {
 			//SpawnEnemy(enemy,spawnPoint);
 		}else{
 			onEnemyDead(enemy);
-			Debug.Log(currentEnemies.Count);
 			Destroy(enemy);
 		}
 	}
