@@ -107421,7 +107421,7 @@ MonoBehaviour:
     speedPlatforms: 0
     startingScale: .931784928
     endingScale: .97930181
-    timeItLasts: 15
+    timeItLasts: 20
     startingFireRotation: 35
     endingFireRotation: -180
     segmentCheckpoint: {fileID: 488821542}
@@ -107430,7 +107430,7 @@ MonoBehaviour:
     speedPlatforms: 0
     startingScale: .97930181
     endingScale: 1.54999995
-    timeItLasts: 15
+    timeItLasts: 10
     startingFireRotation: -180
     endingFireRotation: -355
     segmentCheckpoint: {fileID: 1876963427}
