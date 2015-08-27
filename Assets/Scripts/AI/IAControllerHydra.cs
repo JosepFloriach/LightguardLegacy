@@ -1,15 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class IAControllerHydra : MonoBehaviour {
+public class IAControllerHydra : IAController {
 
-	// Use this for initialization
-	void Start () {
-	
+
+	protected override void UpdateAI(){
+		GetComponentInChildren<Animator>().SetBool ("isHidding", false);
+		characterController.LookLeftOrRight (-1f);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
+
 }

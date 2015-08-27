@@ -36,7 +36,7 @@ public static class Constants{
 	public static float DISTANCE_SHOW_POPUP = 100f;
 
 	//MINIMAPA
-	public static float MINIMAP_DISTANCE = -110f;
+	public static float MINIMAP_DISTANCE = -200f;
 
 	//GUI NAMING CONSTANTS (BUTTON STRINGS).
 	public static string WEAPONSMITH_ROOT_MENU_TITLE = "Weaponsmith Ana Marrana";

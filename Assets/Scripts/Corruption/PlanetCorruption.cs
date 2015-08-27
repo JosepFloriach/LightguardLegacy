@@ -91,7 +91,7 @@ public class PlanetCorruption : MonoBehaviour {
 		corruptionParticles.GetComponent<ParticleSystem> ().Stop();
 		if(!cleaningCorruption){
 			cleaningCorruption = true;
-			GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().setObjectiveZCameraCleansePlanet ();
+			GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().setCameraRangeCleansePlanet();
 			corruptionOrigin.transform.up = corruptionOrigin.transform.position - transform.position;
 			GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().followObjective(corruptionOrigin,13f,2.5f);
 			GameManager.audioManager.playSong(5);
@@ -117,7 +117,7 @@ public class PlanetCorruption : MonoBehaviour {
 		GameManager.inputController.enableInputController ();
 		GUIManager.activatePlayingGUIWithFadeIn ();
 		cleaningCorruption = false;
-		GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().returnOriginalZ ();
+		GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().resetCameraRange ();
 		GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().resetObjective ();
 		GUIManager.activateMinimapGUI();
 		if(GameManager.playerSpaceBody.getClosestPlanet().isPlanetCorrupted()){

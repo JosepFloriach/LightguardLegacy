@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour {
 	public float moveSpeed = 5f;
 	public float normalJumpForce = 15f;
 	public float spaceJumpForce = 100f;
+	public float continuousForceWhileJumping = 4f;
+	public float maxTimeApplyForce = 1f;
 	public GameObject particleSystemJumpCharge;
 	public GameObject animationBigPappada;
 	public GameObject getHurtBigPappadaPrefab;
@@ -64,6 +66,8 @@ public class PlayerController : MonoBehaviour {
 	private PappadaController pappadaC;
 	private bool canDrownInSpace = true;
 	private bool isFallingDown = false;
+	private bool isApplyingForceOnJump = false;
+	private float timerApplyForce = 0f;
 	public bool isSpaceJumpCharging { get; set;}
 	public bool isSpaceJumpCharged { get; set;}
 
@@ -127,10 +131,11 @@ public class PlayerController : MonoBehaviour {
 		isSpaceJumpCharging = false;
 		isSpaceJumpCharged = false;
 		isChargingSpaceJump = false;
+		isApplyingForceOnJump = false;
 		ParticleSystem particles = particleSystemJumpCharge.GetComponent<ParticleSystem> ();
 		particles.Stop ();
 		isSpaceJumping = false;
-		GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().returnOriginalZ();
+		GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().resetCameraRange();
 		HideArrow();
 		isFinishedSpaceJump = true;
 		flyParticles.Stop();
@@ -212,9 +217,9 @@ public class PlayerController : MonoBehaviour {
 		isSpaceJumping = false;
 		flyParticles.Stop();
 		if(GameManager.playerSpaceBody.getClosestPlanet().GetComponent<Planet>().centerCameraOnLand){
-			GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().returnOriginalZ();
+			GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().resetCameraRange();
 		}else{
-			GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().setObjectiveZCameraSmallPlanet();
+			GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().setCameraRangeSmallPlanet();
 		}
 		HideArrow();
 		isFinishedSpaceJump = true;
@@ -271,6 +276,19 @@ public class PlayerController : MonoBehaviour {
 		bpAnimator.SetBool("isJumping",true);
 		characterController.Jump (normalJumpForce);
 		body.applySpaceBodyChangesOnJump ();
+		isApplyingForceOnJump = true;
+		timerApplyForce = 0f;
+	}
+
+	public void applyForceOnJump(){
+		timerApplyForce += Time.deltaTime;
+		if (isApplyingForceOnJump && timerApplyForce<maxTimeApplyForce) {
+			GetComponent<Rigidbody>().AddForce(transform.up * continuousForceWhileJumping * GetComponent<Rigidbody>().mass,ForceMode.Force);
+		}
+	}
+
+	public void stopApplyingForceOnJump(){
+		isApplyingForceOnJump = false;
 	}
 
 	public void Move(float amount) {
@@ -285,9 +303,9 @@ public class PlayerController : MonoBehaviour {
 		GUIManager.activatePlayingGUIWithFadeIn ();
 		//GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().returnOriginalZ();
 		if (GameManager.getActualPlanetIsRelevant ()) {
-			GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().returnOriginalZ ();
+			GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().resetCameraRange ();
 		} else {
-			GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().setObjectiveZCameraSmallPlanet();
+			GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().setCameraRangeSmallPlanet();
 		}
 		ParticleSystem particles = particleSystemJumpCharge.GetComponent<ParticleSystem> ();
 		particles.Stop ();
@@ -329,7 +347,7 @@ public class PlayerController : MonoBehaviour {
 		GUIManager.deactivatePlayingGUI ();
 		bpAnimator.SetBool("isChargingSpaceJumping",true);
 		isChargingSpaceJump = true;
-		GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().setObjectiveZCameraOnSpaceJump ();
+		GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().setCameraRangeSpaceJump ();
 		ParticleSystem particles = particleSystemJumpCharge.GetComponent<ParticleSystem> ();
 		particles.Play ();
 		StopMove ();

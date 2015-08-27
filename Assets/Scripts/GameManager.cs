@@ -28,6 +28,7 @@ public static class GameManager{
 	public static LightsManager lightsManager;
 	public static OptionsManager optionsManager;
 	public static EnemyPrefabManager enemyPrefabManager;
+	public static GalaxyCameraZone actualGalaxy;
 
 	public static bool isGameEnded = true;
 	public static bool isCameraLockedToPlayer = true;

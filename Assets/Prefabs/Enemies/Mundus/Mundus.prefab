@@ -15,6 +15,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &103038
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 460072}
+  m_Layer: 10
+  m_Name: SpeechPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &104536
 GameObject:
   m_ObjectHideFlags: 1
@@ -2337,6 +2352,7 @@ Transform:
   - {fileID: 479758}
   - {fileID: 466452}
   - {fileID: 401994}
+  - {fileID: 460072}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &446604
@@ -2454,6 +2470,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 466452}
   m_RootOrder: 1
+--- !u!4 &460072
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 103038}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.20000005, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 445628}
+  m_RootOrder: 9
 --- !u!4 &460384
 Transform:
   m_ObjectHideFlags: 1
@@ -3553,7 +3581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91653a1c793cdab40a84b9169199f51d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  positionOffset: {x: 0, y: 2, z: 0}
+  speechPosition: {fileID: 103038}
   bubbleColor: {r: 1, g: .375, b: 1, a: .90196079}
 --- !u!114 &11441284
 MonoBehaviour:

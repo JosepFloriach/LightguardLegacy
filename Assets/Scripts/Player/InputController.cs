@@ -127,6 +127,12 @@ public class InputController : MonoBehaviour {
 				character.Jump(); 
 			}
 
+			if(Input.GetButton("Jump") && character.GetComponent<CharacterController>().getIsGoingUp() && character.getIsJumping()){
+				character.applyForceOnJump();
+			}else if(!Input.GetButton("Jump")){
+				character.stopApplyingForceOnJump();
+			}
+
 			if (Input.GetButtonDown("Jump")){
 				if(character.getIsSpaceJumping()){
 					SpaceGravityBody body = GetComponent<SpaceGravityBody>();
@@ -163,6 +169,18 @@ public class InputController : MonoBehaviour {
 					}
 				}
 			}
+
+			//Camera range Up and Camera range down
+			if(Input.GetButtonUp("IncreaseCameraRange")){
+				if(isCharacterAllowedToChangeCameraRange()){
+					GameManager.mainCamera.GetComponent<CameraFollowingPlayer>().increaseCameraRange();
+				}
+			}else if(Input.GetButtonUp("DecreaseCameraRange")){
+				if(isCharacterAllowedToChangeCameraRange()){
+					GameManager.mainCamera.GetComponent<CameraFollowingPlayer>().decreaseCameraRange();
+				}
+			}
+
 		}else if(!isEnabled){
 			attackController.interruptActualAttacks();
 			if (Input.GetButtonUp("Jump")){
@@ -173,6 +191,14 @@ public class InputController : MonoBehaviour {
 					if(pem!=null){
 						pem.interrupt();
 					}
+				}
+			}
+
+		
+			if(Input.GetButtonUp("DecreaseCameraRange")){
+				if(isCharacterAllowedToChangeCameraRange() && GameManager.mainCamera.GetComponent<CameraFollowingPlayer>().isInGalaxyOverviewMode()){
+					GameManager.mainCamera.GetComponent<CameraFollowingPlayer>().decreaseCameraRange();
+					enableInputController();
 				}
 			}
 		}
@@ -248,6 +274,23 @@ public class InputController : MonoBehaviour {
 		}else if (attackController.isDoingAnyAttack ()) {
 			return false;
 		}else if (attackController.isDoingBlock () || attackController.isBlockOnCooldown ()) {
+			return false;
+		}
+		return true;
+	}
+
+	bool isCharacterAllowedToChangeCameraRange(){
+		if (character.getIsChargingSpaceJump ()) {
+			Debug.Log ("1");
+			return false;
+		} else if (character.getIsSpaceJumping ()) {
+			Debug.Log ("2");
+			return false;
+		} else if (GameManager.getIsInsidePlanet()) {
+			Debug.Log ("3");
+			return false;
+		} else if (!isCharacterAllowedToSpaceJump()){
+			Debug.Log ("4");
 			return false;
 		}
 		return true;

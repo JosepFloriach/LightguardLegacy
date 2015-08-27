@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public abstract class SpeechBubble : MonoBehaviour {
 
-	public GameObject BubbleStartPosition;
+	public GameObject speechPosition;
 	public float zPosition = -0.5f;
 	private float timeItLasts = 1f;
 	private GameObject gameObjectToFollow;
@@ -29,15 +29,15 @@ public abstract class SpeechBubble : MonoBehaviour {
 		gameObjectToFollow = goToFollow;
 		this.timeItLasts = timeItLasts;
 		isActive = true;
-		transform.parent = gameObjectToFollow.transform; 
-		offsetFromObject = transform.localPosition;
-		transform.parent = null;
+		//transform.parent = gameObjectToFollow.transform; 
+		offsetFromObject = Vector3.zero;
+		//transform.parent = null;
 		timer = 0f;
 		GetComponentInChildren<CanvasGroup> ().alpha = 1f;
 		/*if(originalScale==null){
 			originalScale = transform.localScale;
 		}else{*/
-			transform.localScale = originalScale;
+		transform.localScale = originalScale;
 
 		if(bouncingIn){
 			StartCoroutine ("beat");
@@ -55,7 +55,7 @@ public abstract class SpeechBubble : MonoBehaviour {
 		
 		float timer = 0f;
 		float beatTime = 0.15f;
-		float extraScale = 0.2f;
+		float extraScale = 0.01f;
 		Vector3 extraScaleV = new Vector3 (extraScale, extraScale, extraScale);
 		
 		
@@ -77,18 +77,18 @@ public abstract class SpeechBubble : MonoBehaviour {
 
 	private void putInPosition(){
 
-		if(firstFrameSkipped){
+		/*if(firstFrameSkipped){
 			firstFrameSkipped = true;
-		}else if(!calculatedVariablesAfterFirstFrame){
+		}else if(!calculatedVariablesAfterFirstFrame){*/
 			calculatedVariablesAfterFirstFrame = true;
 			GetComponentInChildren<CanvasGroup> ().alpha = 1f;
 			Vector3[] corners = new Vector3[4];
 			gameObject.transform.GetComponentInChildren<Image>().gameObject.GetComponent<RectTransform>().GetWorldCorners(corners);
 			Vector3 leftBottomPosition = corners [0];
 			cornerToCenter = transform.position - leftBottomPosition;
-		}
-		transform.parent = gameObjectToFollow.transform;
-		transform.localPosition = offsetFromObject;
+		//}
+		
+		transform.position = speechPosition.transform.position;
 		transform.parent = null;
 		float originalZ = transform.position.z;
 		float zDifference = zPosition - originalZ;
@@ -122,9 +122,4 @@ public abstract class SpeechBubble : MonoBehaviour {
 		onFinish ();
 		isActive = false;
 	}
-
-	void Start(){
-		originalScale = transform.localScale;
-	}
-
 }

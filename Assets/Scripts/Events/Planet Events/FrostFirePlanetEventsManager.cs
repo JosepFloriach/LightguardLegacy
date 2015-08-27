@@ -11,6 +11,8 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 
 	public RunnerSegment[] runnerSegments;
 
+	public GameObject hydraFirstPosition;
+
 	public Checkpoint planetCheckpoint;
 	public GameObject corruptionBlockade;
 	public GameObject penguinAttackEvent;
@@ -140,9 +142,10 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 	private IEnumerator hydraCombat(){
 		GameObject hydra = GameObject.Instantiate (hydraPrefab) as GameObject;
 		hydra.transform.position = GameManager.player.transform.position + (GameManager.player.transform.up * 3f);
-		IAController controller = hydra.GetComponent<IAController> ();
-		controller.isDead = false;
-		while (!controller.isDead) {
+		Killable killable = hydra.GetComponent<Killable> ();
+		hydra.transform.position = hydraFirstPosition.transform.position;
+		hydra.transform.rotation = hydraFirstPosition.transform.rotation;
+		while (!killable.isDead()) {
 			yield return null;
 		}
 		hydraDead ();

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class InitialPlanetEventsManager : PlanetEventsManager {
@@ -111,7 +111,7 @@ public class InitialPlanetEventsManager : PlanetEventsManager {
 				GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().resetXAngle();
 				GameManager.playerAnimator.SetBool("isDoingCranePosition",false);
 				GameManager.playerAnimator.SetBool ("isJumping", true);
-				GameManager.mainCamera.GetComponent<CameraFollowingPlayer>().returnOriginalZ();
+				GameManager.mainCamera.GetComponent<CameraFollowingPlayer>().resetCameraRange();
 				GameManager.mainCamera.GetComponent<CameraFollowingPlayer>().resetXAngle();
 				GameManager.mainCamera.GetComponent<CameraFollowingPlayer>().resetObjective();
 				GameManager.mainCamera.GetComponent<CameraFollowingPlayer>().resetUpMultiplyierWithAngle();

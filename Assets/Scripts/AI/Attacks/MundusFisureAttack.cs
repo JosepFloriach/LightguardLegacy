@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class MundusFisureAttack : Attack {
@@ -114,7 +114,7 @@ public class MundusFisureAttack : Attack {
 			}
 
 			GameManager.mainCamera.GetComponent<CameraFollowingPlayer>().lerpMultiplyierZPosition = originalZLerp;
-			GameManager.mainCamera.GetComponent<CameraFollowingPlayer>().returnOriginalZ();
+			GameManager.mainCamera.GetComponent<CameraFollowingPlayer>().resetCameraRange();
 
 			surroundingBall.SetActive(false);
 

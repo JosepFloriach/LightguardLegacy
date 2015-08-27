@@ -38,7 +38,12 @@ public class CameraFollowingPlayer : MonoBehaviour {
 	private float shake_intensity = 0f;
 	private float shake_decay = 0f;
 
+
+
 	private Vector3 staticUp;
+
+	private enum CameraDistanceOfPlayer{Close,MediumRange,GalaxyOverview,CleansePlanet,SpaceJumpRange,Custom}
+	private CameraDistanceOfPlayer cameraDistance;
 
 //Usado para controlar la camara en la zona de la pagoda
 	public bool regularMode = false;
@@ -49,6 +54,7 @@ public class CameraFollowingPlayer : MonoBehaviour {
 
 	void Awake(){
 		GameManager.registerMainCamera (gameObject);
+		cameraDistance = CameraDistanceOfPlayer.Close;
 	}
 
 
@@ -119,6 +125,74 @@ public class CameraFollowingPlayer : MonoBehaviour {
 		staticUp = newUp;
 	}
 
+	public void increaseCameraRange(){
+		if(cameraDistance.Equals(CameraDistanceOfPlayer.Close)){
+			changeCameraRange (CameraDistanceOfPlayer.MediumRange);
+		}else if(cameraDistance.Equals(CameraDistanceOfPlayer.MediumRange)){
+			changeCameraRange (CameraDistanceOfPlayer.GalaxyOverview);
+		}
+	}
+
+	public void decreaseCameraRange(){
+		if(cameraDistance.Equals(CameraDistanceOfPlayer.MediumRange)){
+			changeCameraRange (CameraDistanceOfPlayer.Close);
+		}else if(cameraDistance.Equals(CameraDistanceOfPlayer.GalaxyOverview)){
+			changeCameraRange (CameraDistanceOfPlayer.MediumRange);
+		}
+	}
+
+	private void changeCameraRange(CameraDistanceOfPlayer newRange){
+		if (!newRange.Equals (cameraDistance)) {
+			if (newRange.Equals (CameraDistanceOfPlayer.Close)) {
+				timerZPosition = 0f;
+				objectiveZ = originalZ;
+			} else if (newRange.Equals (CameraDistanceOfPlayer.MediumRange)) {
+				timerZPosition = 0f;
+				objectiveZ = -distanceCameraOnSmallPlanet;
+			} else if (newRange.Equals (CameraDistanceOfPlayer.SpaceJumpRange)) {
+				timerZPosition = 0f;
+				objectiveZ = -distanceCameraOnSpaceJump;
+			} else if (newRange.Equals (CameraDistanceOfPlayer.CleansePlanet)) {
+				timerZPosition = 0f;
+				objectiveZ = -distanceCameraOnCleansePlanet;
+			}  else if(newRange.Equals (CameraDistanceOfPlayer.GalaxyOverview)) {
+				timerZPosition = 0f;
+				objectiveZ = GameManager.actualGalaxy.cameraPositionOnGalaxyOverview.transform.position.z;
+				GameManager.inputController.disableInputController();
+			}
+			cameraDistance = newRange;
+		}
+	}
+
+	public bool isInGalaxyOverviewMode(){
+		return cameraDistance.Equals (CameraDistanceOfPlayer.GalaxyOverview);
+	}
+
+	
+	public void setObjectiveZ(float newObjectiveZ){
+		timerZPosition = 0f;
+		objectiveZ = -newObjectiveZ;
+		cameraDistance = CameraDistanceOfPlayer.Custom;
+	}
+
+	public void resetCameraRange(){
+		changeCameraRange (CameraDistanceOfPlayer.Close);
+	}
+	
+	public void setCameraRangeSmallPlanet(){
+		changeCameraRange (CameraDistanceOfPlayer.MediumRange);
+	}
+	
+	public void setCameraRangeSpaceJump(){
+		changeCameraRange (CameraDistanceOfPlayer.SpaceJumpRange);
+	}
+	
+	public void setCameraRangeCleansePlanet(){
+		changeCameraRange (CameraDistanceOfPlayer.CleansePlanet);
+	}
+
+
+
 	void updatePosition(){
 		timerZPosition += Time.deltaTime;
 		if(objective==null){
@@ -128,28 +202,32 @@ public class CameraFollowingPlayer : MonoBehaviour {
 		Vector3 objectiveUp;
 		Vector3 objectivePosition;
 		Vector3 objectiveVectorZ;
-		//If we are changing objectives we calculate the appropiate rotation around the planet
-		if(isChangingObjective && GameManager.playerSpaceBody.getClosestPlanet()!=null && GameManager.playerSpaceBody.getClosestPlanet().GetComponent<Planet>().centerCameraOnLand){
-			timerChangingObjective +=Time.deltaTime;
-			if(timerChangingObjective<timeItTakesToChangeObjective){
-				float ratio = timerChangingObjective/timeItTakesToChangeObjective;
-				Vector3 lastObjectDirection = lastObjective.transform.position - GameManager.playerSpaceBody.getClosestPlanet().gameObject.transform.position;
-				lastObjectDirection.z = 0f;
-				Vector3 newObjectiveDirection = objective.transform.position - GameManager.playerSpaceBody.getClosestPlanet().gameObject.transform.position;
-				newObjectiveDirection.z = 0f;
-				float newMagnitude = ((newObjectiveDirection.magnitude - lastObjectDirection.magnitude)*ratio)+lastObjectDirection.magnitude;
-				float angle = (Util.getAngleFromVectorAToB(newObjectiveDirection,lastObjectDirection) * ratio);
 
-				Vector3 newDirection = (((Quaternion.AngleAxis(angle,Vector3.forward)*lastObjectDirection).normalized)*newMagnitude);
-				objectivePosition = GameManager.playerSpaceBody.getClosestPlanet().gameObject.transform.position + newDirection;
+		//If we are changing objectives we calculate the appropiate rotation around the planet
+		if (isChangingObjective && GameManager.playerSpaceBody.getClosestPlanet () != null && cameraDistance.Equals (CameraDistanceOfPlayer.Close)) {
+			timerChangingObjective += Time.deltaTime;
+			if (timerChangingObjective < timeItTakesToChangeObjective) {
+				float ratio = timerChangingObjective / timeItTakesToChangeObjective;
+				Vector3 lastObjectDirection = lastObjective.transform.position - GameManager.playerSpaceBody.getClosestPlanet ().gameObject.transform.position;
+				lastObjectDirection.z = 0f;
+				Vector3 newObjectiveDirection = objective.transform.position - GameManager.playerSpaceBody.getClosestPlanet ().gameObject.transform.position;
+				newObjectiveDirection.z = 0f;
+				float newMagnitude = ((newObjectiveDirection.magnitude - lastObjectDirection.magnitude) * ratio) + lastObjectDirection.magnitude;
+				float angle = (Util.getAngleFromVectorAToB (newObjectiveDirection, lastObjectDirection) * ratio);
+
+				Vector3 newDirection = (((Quaternion.AngleAxis (angle, Vector3.forward) * lastObjectDirection).normalized) * newMagnitude);
+				objectivePosition = GameManager.playerSpaceBody.getClosestPlanet ().gameObject.transform.position + newDirection;
 				objectivePosition.z = transform.position.z;
 				objectiveUp = newDirection.normalized;
-			}else{
+			} else {
 				isChangingObjective = false;
-				objectiveUp = new Vector3(objective.transform.up.x,objective.transform.up.y,0f).normalized;
-				objectivePosition = new Vector3 (objective.transform.position.x, objective.transform.position.y,transform.position.z);
+				objectiveUp = new Vector3 (objective.transform.up.x, objective.transform.up.y, 0f).normalized;
+				objectivePosition = new Vector3 (objective.transform.position.x, objective.transform.position.y, transform.position.z);
 			}
-		}else{
+		} else if (cameraDistance.Equals (CameraDistanceOfPlayer.GalaxyOverview)) {
+			objectiveUp = GameManager.actualGalaxy.cameraPositionOnGalaxyOverview.transform.up;
+			objectivePosition = GameManager.actualGalaxy.cameraPositionOnGalaxyOverview.transform.position;
+		}else {
 			objectiveUp = new Vector3(objective.transform.up.x,objective.transform.up.y,0f).normalized;
 			objectivePosition = new Vector3 (objective.transform.position.x, objective.transform.position.y,transform.position.z);
 		}
@@ -160,7 +238,7 @@ public class CameraFollowingPlayer : MonoBehaviour {
 		Vector3 rightWithoutZ = new Vector3 (transform.right.x, transform.right.y, 0f).normalized;
 
 		//Modifying objective up
-		if (!GameManager.player.GetComponent<PlayerController> ().getIsSpaceJumping () && !GameManager.playerController.getIsChargingSpaceJump() && !GameManager.getIsInsidePlanet() && GameManager.playerSpaceBody.getClosestPlanet() != null && GameManager.playerSpaceBody.getClosestPlanet().GetComponent<Planet>().centerCameraOnLand) {
+		if (!GameManager.player.GetComponent<PlayerController> ().getIsSpaceJumping () && !GameManager.playerController.getIsChargingSpaceJump() && cameraDistance.Equals(CameraDistanceOfPlayer.Close)) {
 			if(Vector3.Distance(objectiveUp,transform.up)<=minimumUpDistanceOnStartLerpingXAngle){
 				Vector3 objectiveUpRotated = (Quaternion.AngleAxis (xAngle, rightWithoutZ) * objectiveUp);
 				timer+=Time.deltaTime;
@@ -180,6 +258,8 @@ public class CameraFollowingPlayer : MonoBehaviour {
 			newUp = transform.up;
 		}
 		Vector3 newForward = Quaternion.AngleAxis(90,rightWithoutZ) * newUp;
+		Quaternion rotation = Quaternion.LookRotation(newForward,newUp);
+
 		transform.rotation = Quaternion.LookRotation(newForward,newUp);
 		transform.position = Vector3.Lerp (transform.position, objectivePosition, Time.deltaTime * lerpMultiplyierPos);
 
@@ -212,31 +292,6 @@ public class CameraFollowingPlayer : MonoBehaviour {
 	}
 	public void stopCameraShaking(){
 		isStoppingShaking = true;
-	}
-
-	public void returnOriginalZ(){
-		timerZPosition = 0f;
-		objectiveZ = originalZ;
-	}
-
-	public void setObjectiveZCameraOnSpaceJump(){
-		timerZPosition = 0f;
-		objectiveZ = -distanceCameraOnSpaceJump;
-	}
-
-	public void setObjectiveZCameraCleansePlanet(){
-		timerZPosition = 0f;
-		objectiveZ = -distanceCameraOnCleansePlanet;
-	}
-
-	public void setObjectiveZCameraSmallPlanet(){
-		timerZPosition = 0f;
-		objectiveZ = -distanceCameraOnSmallPlanet;
-	}
-
-	public void setObjectiveZ(float newObjectiveZ){
-		timerZPosition = 0f;
-		objectiveZ = -newObjectiveZ;
 	}
 
 	public float getObjectiveZ(){

@@ -105,7 +105,7 @@ public class MundusPlanetEventsManager : PlanetEventsManager {
 
 	private IEnumerator CinematicEndGame(){
 
-		GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().returnOriginalZ ();
+		GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().resetCameraRange ();
 		//GameObject closestPlatform = getClosestPlatformTop (GameManager.player.transform.position);
 		GUIManager.fadeIn (Menu.BlackMenu);
 		littleGHopper.GetComponent<CharacterController> ().LookLeftOrRight (1f);
