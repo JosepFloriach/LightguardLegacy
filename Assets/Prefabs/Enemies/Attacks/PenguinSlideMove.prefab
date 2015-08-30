@@ -42,11 +42,11 @@ MonoBehaviour:
   damage: 1
   cost: 0
   elementAttack: 0
-  timeItLasts: 4
+  timeItLasts: 1
   speedMultiplyier: 2
   timeToCharge: .75
   timeToStand: .5
-  distanceStandUpBehindEnemy: .150000006
+  distanceStandUpBehindEnemy: .00100000005
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
