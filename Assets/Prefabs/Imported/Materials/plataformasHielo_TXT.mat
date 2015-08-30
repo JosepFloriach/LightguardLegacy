@@ -6,9 +6,9 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Spikes
+  m_Name: plataformasHielo_TXT
   m_Shader: {fileID: 4800000, guid: a021b6bfcab3cc44fbf4bc8ded279bae, type: 3}
-  m_ShaderKeywords: _COLOR_ON _CORR_ON _OUTL_ON _TEX_ON _TRANSP_ON
+  m_ShaderKeywords: _COLOR_ON _CORR_ON _DISS_ON _OUTL_ON _TEX_ON _TRANSP_ON
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -109,7 +109,7 @@ Material:
       data:
         first:
           name: _Cutoff
-        second: .469999999
+        second: .514999986
       data:
         first:
           name: _SrcBlend
@@ -149,7 +149,7 @@ Material:
       data:
         first:
           name: _Outline
-        second: .100000001
+        second: .00999999978
       data:
         first:
           name: _Asym
@@ -173,7 +173,7 @@ Material:
       data:
         first:
           name: _Dissolution
-        second: 0
+        second: 1
       data:
         first:
           name: _BurningWidth
@@ -238,7 +238,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .75, g: .879261613, b: 1, a: .337254912}
+        second: {r: .683853447, g: .632569194, b: .95588237, a: .533333361}
       data:
         first:
           name: _OutlineColor
