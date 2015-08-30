@@ -42,7 +42,7 @@ public class OnAirAttack : Attack {
 
 		triggerBox.transform.position = GameManager.player.GetComponent<Rigidbody> ().worldCenterOfMass + GameManager.player.transform.forward.normalized * positionInFrontPlayer;
 		triggerBox.SetActive (true);
-		GameManager.audioManager.PlaySound (3);
+		GameManager.audioManager.PlayBigpSound(SoundIDs.P_ATTACK,AudioManager.VARIABLE);
 		triggerBox.transform.parent = GameManager.player.transform;
 		triggerBox.transform.rotation = GameManager.player.transform.rotation;
 		yield return true;

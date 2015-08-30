@@ -5,14 +5,16 @@ public class AudioManager : MonoBehaviour {
 
 	public AudioSource musicplayer;
 	public AudioSource bigpplayer;
+	public AudioSource variablebigpPlayer;
 	public AudioSource miscPlayer;
+	
 
 //Music
 	public AudioClip[] music;
 	// 0 is opening
 	// 1 is main game peaceful
 	
-//SFX BigP 
+//SFX  
 	public AudioClip[] sfx;
 	// 0 for click on buttons
 	// 1 little g faling
@@ -23,7 +25,10 @@ public class AudioManager : MonoBehaviour {
 //SFX Enemies
 	public AudioClip[] sfxEnemies;
 	
-			
+//SFX Big P
+	public AudioClip[] sfxBigp;
+	
+									
 //SFX parameters
 
 	private float lowPitchRange = .75F;
@@ -59,7 +64,7 @@ public class AudioManager : MonoBehaviour {
 			selectedSoundType = sfxMisc;
 			break;
 		case BIGP:
-			selectedSoundType = sfx;
+			selectedSoundType = sfxBigp;
 			break;
 		case ENEMY: 
 			selectedSoundType = sfxEnemies;
@@ -73,6 +78,23 @@ public class AudioManager : MonoBehaviour {
 		} else {
 			return null;
 		}
+	}
+	
+	public AudioSource getVariableSource(int type) {
+		AudioSource selectedSource;
+		switch (type) {
+		case BIGP:
+			selectedSource = variablebigpPlayer;
+			break;
+		case ENEMY: 
+			selectedSource = miscPlayer;
+			break;
+		default:
+			return null;
+			
+		}
+		return selectedSource;
+	
 	}
 	
 	public AudioSource getSource(int type) {
@@ -101,6 +123,27 @@ public class AudioManager : MonoBehaviour {
 		AudioClip clipToPlay = getClip(id, MISC);
 		AudioSource mSource = getSource(MISC);
 		JustPlay(clipToPlay,mSource);
+	}
+	
+	public void PlayBigpSound(int id, int type) {
+		AudioClip clipToPlay = getClip(id, BIGP);
+		AudioSource mSource;
+		if (type == STABLE) {
+			mSource = getSource(BIGP);
+			JustPlay(clipToPlay,mSource);
+		} else {
+			mSource = getVariableSource(BIGP);
+			PlayVariableSound(clipToPlay,mSource);
+		}
+		 
+		
+	}
+	
+	private void PlayVariableSound(AudioClip sound, AudioSource source) {
+		float hitVol = volLowRange;
+		source.pitch = Random.Range (lowPitchRange,highPitchRange);
+		hitVol = Random.Range (volLowRange, volHighRange);
+		source.PlayOneShot(sound,hitVol);
 	}
 	
 	private void JustPlay(AudioClip sound, AudioSource audioSource) {

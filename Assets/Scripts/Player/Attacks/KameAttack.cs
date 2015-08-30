@@ -226,7 +226,7 @@ public class KameAttack : Attack,AnimationSubscriber {
 
 	public override void startAttack(){
 		if(canDoNext){
-			GameManager.audioManager.PlayStableSound(2);
+			GameManager.audioManager.PlayBigpSound(SoundIDs.P_HADOKEN_SHOT,AudioManager.STABLE);
 			GameManager.playerAnimator.SetTrigger("isChargingKame");
 			isFinished = false;
 			canDoNext = false;

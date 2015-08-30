@@ -268,7 +268,8 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	public void Jump() {
-		GameManager.audioManager.PlaySound(4);
+		GameManager.audioManager.PlayBigpSound(SoundIDs.P_JUMP, AudioManager.STABLE);
+		
 		ParticleSystem particles = particleSystemJumpCharge.GetComponent<ParticleSystem> ();
 		particles.Stop ();
 		bpAnimator.SetBool("isChargingSpaceJumping",false);
