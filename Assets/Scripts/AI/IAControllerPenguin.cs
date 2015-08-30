@@ -40,9 +40,9 @@ public class IAControllerPenguin : IAController {
 	
 	protected override void UpdateAI(){
 		changeBehaviour();
+		doActualBehaviour ();
 		meleeAttackTimer += Time.deltaTime;
 		slideTimer += Time.deltaTime;
-		doActualBehaviour ();
 	}
 
 	//Changes the behaviour of the enemy depending on the state of it's surroundings
@@ -55,27 +55,15 @@ public class IAControllerPenguin : IAController {
 			if(getPlayerDistance()>maxDistancePlayer){
 				actualBehaviour = ActualBehaviour.Idle;
 			}else{
+				Debug.Log (getPlayerDistance ());
 				//If it's far away it slides, if it's close it does the whirlwind attack
 				if(getPlayerDistance()>minDistanceMeleeAttack){
-					if(slideTimer>slideCooldown){
-						slideTimer = 0f;
-						if(Random.value<=chanceToSlide){
-							actualBehaviour = ActualBehaviour.Sliding;
-						}else{
-							actualBehaviour = ActualBehaviour.Idle;
-						}
-					}else{
-						actualBehaviour = ActualBehaviour.Idle;
-					}
+					actualBehaviour = ActualBehaviour.Sliding;
 				}else if(meleeAttackTimer>meleeAttackCooldown){
 					meleeAttackTimer = 0f;
-					if(Random.value<=chanceToMeleeAttack){
-						actualBehaviour = ActualBehaviour.WhirlwindAttack;
-					}else{
-						actualBehaviour = ActualBehaviour.Idle;
-					}
+					actualBehaviour = ActualBehaviour.WhirlwindAttack;
 				}else{
-					actualBehaviour = ActualBehaviour.Idle;
+					actualBehaviour = ActualBehaviour.Sliding;
 				}
 			}
 		}
@@ -100,7 +88,6 @@ public class IAControllerPenguin : IAController {
 				if(attackController.doAttack(meleeAttack,false)){
 					isDoingMeleeAttack = true;
 				}
-
 			}
 		}
 	}
