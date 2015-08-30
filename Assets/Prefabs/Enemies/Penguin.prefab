@@ -1307,8 +1307,8 @@ MonoBehaviour:
   hitResistance: 2
   isUnthrowable: 0
   isDead: 0
-  meleeAttack: 14
-  slideMove: 13
+  meleeAttack: 13
+  slideMove: 14
   minimumDistanceInFront: .800000012
   patrolTimeToTurn: 1.5
   maxDistancePlayer: 20
