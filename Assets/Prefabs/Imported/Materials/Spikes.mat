@@ -18,7 +18,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: c2a7fa4866ba9e74087694a2644c87a8, type: 3}
+          m_Texture: {fileID: 2800000, guid: f57170910d989634489734268d96c927, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -33,6 +33,20 @@ Material:
           name: _DetailNormalMap
         second:
           m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _ToonShade
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Ramp
+        second:
+          m_Texture: {fileID: 2800000, guid: 0d2d5756caa62a248b563de79e26635b, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -86,23 +100,9 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _ToonShade
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
           name: _CorruptionTexture
         second:
           m_Texture: {fileID: 2800000, guid: c012cd004cede244c96a82228fed4480, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _Ramp
-        second:
-          m_Texture: {fileID: 2800000, guid: 0d2d5756caa62a248b563de79e26635b, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -122,66 +122,6 @@ Material:
         first:
           name: _TintColor
         second: 1
-      data:
-        first:
-          name: _OutlineSize
-        second: 10
-      data:
-        first:
-          name: _YCutOut
-        second: 1000
-      data:
-        first:
-          name: _Dissolution
-        second: 0
-      data:
-        first:
-          name: _BurningWidth
-        second: .0500000007
-      data:
-        first:
-          name: _TileSize
-        second: .150000006
-      data:
-        first:
-          name: _Parallax
-        second: .0199999996
-      data:
-        first:
-          name: _ZWrite
-        second: 1
-      data:
-        first:
-          name: _Glossiness
-        second: .5
-      data:
-        first:
-          name: _BumpScale
-        second: 1
-      data:
-        first:
-          name: _OcclusionStrength
-        second: 1
-      data:
-        first:
-          name: _DetailNormalMapScale
-        second: 1
-      data:
-        first:
-          name: _UVSec
-        second: 0
-      data:
-        first:
-          name: _EmissionScaleUI
-        second: 0
-      data:
-        first:
-          name: _Mode
-        second: 0
-      data:
-        first:
-          name: _Metallic
-        second: 0
       data:
         first:
           name: _DetailTex
@@ -224,11 +164,71 @@ Material:
         second: 1
       data:
         first:
-          name: _Corruption
-        second: 1
+          name: _OutlineSize
+        second: 10
+      data:
+        first:
+          name: _YCutOut
+        second: 1000
+      data:
+        first:
+          name: _Dissolution
+        second: 0
+      data:
+        first:
+          name: _BurningWidth
+        second: .0500000007
+      data:
+        first:
+          name: _TileSize
+        second: .150000006
       data:
         first:
           name: _DissolveThreshold
+        second: 1
+      data:
+        first:
+          name: _Parallax
+        second: .0199999996
+      data:
+        first:
+          name: _ZWrite
+        second: 1
+      data:
+        first:
+          name: _Glossiness
+        second: .5
+      data:
+        first:
+          name: _BumpScale
+        second: 1
+      data:
+        first:
+          name: _OcclusionStrength
+        second: 1
+      data:
+        first:
+          name: _DetailNormalMapScale
+        second: 1
+      data:
+        first:
+          name: _UVSec
+        second: 0
+      data:
+        first:
+          name: _EmissionScaleUI
+        second: 0
+      data:
+        first:
+          name: _Mode
+        second: 0
+      data:
+        first:
+          name: _Metallic
+        second: 0
+      data:
+        first:
+          name: _Corruption
         second: 1
     m_Colors:
       data:
@@ -238,11 +238,15 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .348824233, g: .582103133, b: .800000072, a: .494117647}
+        second: {r: .75, g: .879261613, b: 1, a: .337254912}
       data:
         first:
           name: _OutlineColor
         second: {r: 0, g: 0, b: 0, a: 1}
+      data:
+        first:
+          name: _Asymmetry
+        second: {r: 0, g: .25, b: .5, a: 0}
       data:
         first:
           name: _BurningColor
@@ -251,10 +255,6 @@ Material:
         first:
           name: _EmissionColorUI
         second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
-          name: _Asymmetry
-        second: {r: 0, g: .25, b: .5, a: 0}
       data:
         first:
           name: _CorruptionColor

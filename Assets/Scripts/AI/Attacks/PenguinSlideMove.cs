@@ -67,13 +67,13 @@ public class PenguinSlideMove : Attack {
 		iaAnimator.SetBool("isSliding",false);
 
 		timer = 0f;
+		parent.GetComponent<CharacterController> ().StopMoving ();
 		while(timer<timeToStand  && !interrupted){
 			timer+=Time.deltaTime;
 			float ratio = (timer/timeToStand);
 			outlineChanger.setOutlineColor(Color.Lerp(Color.white,Color.black,ratio));
 			yield return null;
 		}
-		parent.GetComponent<CharacterController> ().StopMoving ();
 		outlineChanger.setOutlineColor (Color.black);
 
 		interrupted = false;

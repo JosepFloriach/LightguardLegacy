@@ -108,7 +108,7 @@ public class ComboAttack : Attack, AnimationSubscriber {
 
 	public void enableHitbox() {
 		if(!isFinished){
-			GameManager.audioManager.PlaySound(3);
+			GameManager.audioManager.PlayBigpSound(SoundIDs.P_ATTACK,AudioManager.VARIABLE);
 			if(getCorrespondingCollider()!=null){
 				getCorrespondingCollider().enabled = true;
 			}

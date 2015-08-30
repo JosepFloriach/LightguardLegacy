@@ -271,14 +271,15 @@ public class PlayerController : MonoBehaviour {
 		Jump (normalJumpForce);
 	}
 
-	public void Jump(float jumpForce) {
-		GameManager.audioManager.PlaySound(4);
+	public void Jump(float force){
+		GameManager.audioManager.PlayBigpSound(SoundIDs.P_JUMP, AudioManager.STABLE);
+		
 		ParticleSystem particles = particleSystemJumpCharge.GetComponent<ParticleSystem> ();
 		particles.Stop ();
 		bpAnimator.SetBool("isChargingSpaceJumping",false);
 		isChargingSpaceJump = false;
 		bpAnimator.SetBool("isJumping",true);
-		characterController.Jump (jumpForce);
+		characterController.Jump (normalJumpForce);
 		body.applySpaceBodyChangesOnJump ();
 		isApplyingForceOnJump = true;
 		timerApplyForce = 0f;
@@ -287,7 +288,7 @@ public class PlayerController : MonoBehaviour {
 	public void applyForceOnJump(){
 		timerApplyForce += Time.deltaTime;
 		if (isApplyingForceOnJump && timerApplyForce<maxTimeApplyForce) {
-			GetComponent<Rigidbody>().AddForce(transform.up * continuousForceWhileJumping * GetComponent<Rigidbody>().mass * Time.deltaTime,ForceMode.Force);
+			GetComponent<Rigidbody>().AddForce(transform.up * continuousForceWhileJumping * GetComponent<Rigidbody>().mass,ForceMode.Force);
 		}
 	}
 

@@ -72,6 +72,8 @@ public static class GameManager{
 	}
 
 	public static void pauseGame(){
+		GameManager.audioManager.setPause(true);
+		
 		Util.changeTime (0f);
 		GameManager.inputController.disableInputController ();
 		//iaManager.disableIAs ();
@@ -79,6 +81,8 @@ public static class GameManager{
 	}
 
 	public static void unPauseGame(){
+		GameManager.audioManager.setPause(false);
+		
 		Util.changeTime (1f);
 		GameManager.inputController.enableInputController ();
 		//iaManager.enableIAs ();
@@ -107,7 +111,7 @@ public static class GameManager{
 			}
 		}
 
-		GameManager.audioManager.PlayStableSound(0);
+		GameManager.audioManager.PlayMiscSound(SoundIDs.PRESS_BUTTON,AudioManager.STABLE);
 		GameManager.audioManager.playSong(1);
 	}
 

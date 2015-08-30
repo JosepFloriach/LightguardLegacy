@@ -113,7 +113,7 @@ public class KameAttackDirectionable : Attack,AnimationSubscriber {
 	public override void startAttack(){
 		if(!isCharging && !isDoingKame && !started){
 			started = true;
-			GameManager.audioManager.PlayStableSound(11);
+			GameManager.audioManager.PlayBigpSound(SoundIDs.P_HADOKEN_CHARGE, AudioManager.STABLE);
 			GameManager.playerAnimator.SetBool ("isChargingDirectionalKame",true);
 		}
 	}
@@ -247,7 +247,7 @@ public class KameAttackDirectionable : Attack,AnimationSubscriber {
 		kameEffect.SetActive (true);
 		
 		//THROW THE KAME START
-		GameManager.audioManager.PlayStableSound(2);
+		GameManager.audioManager.PlayBigpSound(SoundIDs.P_HADOKEN_SHOT, AudioManager.STABLE);
 		kameEffect.transform.position = GameManager.playerController.lightGemObject.transform.position - (kameEffect.transform.forward.normalized * speed * Time.deltaTime * 2f);
 		kameCore.GetComponent<ParticleSystem>().Stop();
 		if(!elementAttack.Equals(ElementType.None)){
@@ -288,6 +288,8 @@ public class KameAttackDirectionable : Attack,AnimationSubscriber {
 		timer = 0;
 		//Kame Explosion
 		enemiesHit.Clear ();
+		GameManager.audioManager.PlayBigpSound(SoundIDs.P_HADOKEN_EXPLODE, AudioManager.STABLE);
+		
 		while (timer < explosionTime) {
 			timer+=Time.deltaTime;
 			kameEffect.transform.localScale += (Time.deltaTime * explosionScale * scaleMultiplyier);

@@ -40,7 +40,7 @@ public class ThrowAttack : Attack, AnimationSubscriber {
 	}
 
 	private void enableHitbox(){
-		GameManager.audioManager.PlaySound(3);
+		GameManager.audioManager.PlayBigpSound(SoundIDs.P_ATTACK,AudioManager.VARIABLE);
 		enemiesHit = new List<GameObject> (0);
 		hasHitEnemy = false;
 		tongue.GetComponentInChildren<AttackCollider> ().attack = gameObject;

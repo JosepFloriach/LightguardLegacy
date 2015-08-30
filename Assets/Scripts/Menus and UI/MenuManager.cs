@@ -15,27 +15,28 @@ public class MenuManager : MonoBehaviour {
 	}
 
 	public void GoToControlsMenu(){
-		GameManager.audioManager.PlayStableSound(0);
+		GameManager.audioManager.PlayMiscSound(SoundIDs.PRESS_BUTTON,AudioManager.STABLE);
 		GUIManager.fadeOutChangeMenuFadeIn (Menu.ControlsMenu);
 	}
 
 	public void GoToOptionsMenu(){
-		GameManager.audioManager.PlayStableSound(0);
+		GameManager.audioManager.PlayMiscSound(SoundIDs.PRESS_BUTTON,AudioManager.STABLE);
+//		PlayStableSound(SoundIDs.PRESS_BUTTON);
 		GUIManager.fadeOutChangeMenuFadeIn (Menu.OptionsMenu);
 	}
 	
 	public void GoToCreditsMenu(){
-		GameManager.audioManager.PlayStableSound(0);
+		GameManager.audioManager.PlayMiscSound(SoundIDs.PRESS_BUTTON,AudioManager.STABLE);
 		GUIManager.fadeOutChangeMenuFadeIn (Menu.CreditsMenu);
 	}
 
 	public void GoToPauseMenu(){
-		GameManager.audioManager.PlayStableSound(0);
+		GameManager.audioManager.PlayMiscSound(SoundIDs.PRESS_BUTTON,AudioManager.STABLE);
 		GUIManager.fadeOutChangeMenuFadeIn (Menu.OnPauseMenu);
 	}
 
 	public void BackOptionsMenu(){
-		GameManager.audioManager.PlayStableSound(0);
+		GameManager.audioManager.PlayMiscSound(SoundIDs.PRESS_BUTTON,AudioManager.STABLE);
 		if(GameManager.isGamePaused){
 			GUIManager.fadeOutChangeMenuFadeIn (Menu.OnPauseMenu);
 		}else{
@@ -66,7 +67,7 @@ public class MenuManager : MonoBehaviour {
 	}
 	
 	public void StopGame(){
-		GameManager.audioManager.PlayStableSound(0);
+		GameManager.audioManager.PlayMiscSound(SoundIDs.PRESS_BUTTON,AudioManager.STABLE);
 		GameManager.actualSceneManager.CloseApplication ();
 	}
 	
@@ -81,7 +82,7 @@ public class MenuManager : MonoBehaviour {
 	}
 
 	public void GoToMainMenu(){
-		GameManager.audioManager.PlayStableSound(0);
+		GameManager.audioManager.PlayMiscSound(SoundIDs.PRESS_BUTTON,AudioManager.STABLE);
 		GUIManager.fadeOutChangeMenuFadeIn (Menu.MainMenu);
 	}
 
