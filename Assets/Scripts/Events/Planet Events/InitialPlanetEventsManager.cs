@@ -244,7 +244,7 @@ public class InitialPlanetEventsManager : PlanetEventsManager {
 	IEnumerator toTheBridgeCinematic(){
 		if (isEnabled) {
 			littleGHopper.GetComponentInChildren<ParticleSystem>().Play();
-			GameManager.player.GetComponent<PlayerController>().Jump();
+			GameManager.player.GetComponent<PlayerController>().Jump(15f);
 			GameManager.player.GetComponent<PlayerController>().Move(1f);
 			toTheBridgeGO.GetComponent<Cutscene>().isActive = false;
 			toTheBridge2GO.GetComponent<Cutscene>().isActive = true;
@@ -255,7 +255,7 @@ public class InitialPlanetEventsManager : PlanetEventsManager {
 	IEnumerator toTheBridge2Cinematic(){
 		if (isEnabled) {
 			littleGHopper.GetComponentInChildren<ParticleSystem>().Play();
-			GameManager.player.GetComponent<PlayerController>().Jump();
+			GameManager.player.GetComponent<PlayerController>().Jump(10f);
 			GameManager.player.GetComponent<PlayerController>().Move(1f);
 			toTheBridge2GO.GetComponent<Cutscene>().isActive = false;
 			bridgeFallGO.GetComponent<Cutscene>().isActive = true;
@@ -320,7 +320,7 @@ public class InitialPlanetEventsManager : PlanetEventsManager {
 
 	IEnumerator gemPowerAttackTutorial() {
 		//This event is activated when the player has kthe first wave.
-		Util.changeTime (0.1f);
+		//Util.changeTime (0.1f);
 		GUIManager.setTutorialText ("Press 'Y' to perform a powerful light attack.");
 		GUIManager.activateTutorialText();
 		yield return new WaitForSeconds(5f * Util.getTimeProportion());
@@ -328,17 +328,17 @@ public class InitialPlanetEventsManager : PlanetEventsManager {
 		//GUIManager.activateTutorialText();
 		//yield return new WaitForSeconds(5f * Util.getTimeProportion());
 		GUIManager.deactivateTutorialText();
-		Util.changeTime (1f);
+		//Util.changeTime (1f);
 	}
 
 	IEnumerator tongueAttackTutorial() {
 		//This event is activated when the player has kthe first wave.
-		Util.changeTime (0.1f);
+		//Util.changeTime (0.1f);
 		GUIManager.setTutorialText ("Press 'Up' and 'X' to perform a tongue attack");
 		GUIManager.activateTutorialText();
 		yield return new WaitForSeconds(5f * Util.getTimeProportion());
 		GUIManager.deactivateTutorialText();
-		Util.changeTime (1f);
+		//Util.changeTime (1f);
 	}
 
 	IEnumerator lightgemCinematic(){

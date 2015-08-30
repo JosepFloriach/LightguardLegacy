@@ -140,7 +140,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400184, guid: 4e0475d0a8a28e648b53b557f808eeca, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 23135821}
-  m_LocalRotation: {x: -.278865606, y: .649795294, z: -.278865606, w: .649795353}
+  m_LocalRotation: {x: -.278865635, y: .649795353, z: -.278865635, w: .649795413}
   m_LocalPosition: {x: .0151806725, y: -.353039831, z: -.351145923}
   m_LocalScale: {x: .0416574031, y: .0586441532, z: .0416573994}
   m_Children: []
@@ -307,7 +307,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 100
+      scalar: 30
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -467,7 +467,7 @@ ParticleSystem:
         rgba: 4278190080
       minMaxState: 0
     startSize:
-      scalar: 8
+      scalar: 3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -534,7 +534,7 @@ ParticleSystem:
       minMaxState: 0
     gravityModifier: 0
     inheritVelocity: 0
-    maxNumParticles: 600
+    maxNumParticles: 250
   ShapeModule:
     serializedVersion: 2
     enabled: 1
@@ -1582,7 +1582,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400158, guid: e97cb08648af68245b9a5b2f5e95bbc3, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 30945378}
-  m_LocalRotation: {x: -.577040076, y: .256062239, z: .546329856, w: .550436854}
+  m_LocalRotation: {x: -.577040017, y: .25606221, z: .546329796, w: .550436795}
   m_LocalPosition: {x: -1.78813934e-07, y: 2.07544231, z: 9.68575478e-08}
   m_LocalScale: {x: 1.00000024, y: 1, z: 1}
   m_Children: []
@@ -2480,6 +2480,7 @@ GameObject:
   - 33: {fileID: 48532907}
   - 23: {fileID: 48532906}
   - 64: {fileID: 48532908}
+  - 114: {fileID: 48532909}
   m_Layer: 8
   m_Name: Platform_Hydra.013
   m_TagString: Planet
@@ -2544,6 +2545,18 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300000, guid: 775c952dbd71e054988e733beb405c91, type: 3}
+--- !u!114 &48532909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 48532904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3fd7315676c42c4ba70b531ae0b6457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burningMaterial: {fileID: 2100000, guid: 5da978ff5a9363343a33ec82351bf318, type: 2}
 --- !u!1 &50702208
 GameObject:
   m_ObjectHideFlags: 0
@@ -3018,6 +3031,7 @@ GameObject:
   - 33: {fileID: 64319549}
   - 23: {fileID: 64319548}
   - 64: {fileID: 64319550}
+  - 114: {fileID: 64319551}
   m_Layer: 8
   m_Name: Platform_Hydra.011
   m_TagString: Planet
@@ -3082,6 +3096,18 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300006, guid: 775c952dbd71e054988e733beb405c91, type: 3}
+--- !u!114 &64319551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 64319546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3fd7315676c42c4ba70b531ae0b6457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burningMaterial: {fileID: 2100000, guid: 5da978ff5a9363343a33ec82351bf318, type: 2}
 --- !u!1 &64461945
 GameObject:
   m_ObjectHideFlags: 0
@@ -7599,7 +7625,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400320, guid: 4e0475d0a8a28e648b53b557f808eeca, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 141303744}
-  m_LocalRotation: {x: -.169250414, y: -.610675097, z: -.555844367, w: .538021803}
+  m_LocalRotation: {x: -.169250399, y: -.610675037, z: -.555844307, w: .538021743}
   m_LocalPosition: {x: .012810871, y: -.341880202, z: -.161119252}
   m_LocalScale: {x: .522203326, y: .522203386, z: .522203386}
   m_Children: []
@@ -14514,6 +14540,7 @@ GameObject:
   - 33: {fileID: 184686886}
   - 23: {fileID: 184686885}
   - 64: {fileID: 184686887}
+  - 114: {fileID: 184686888}
   m_Layer: 8
   m_Name: Platform_Hydra.012
   m_TagString: Planet
@@ -14578,6 +14605,18 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300004, guid: 775c952dbd71e054988e733beb405c91, type: 3}
+--- !u!114 &184686888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 184686883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3fd7315676c42c4ba70b531ae0b6457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burningMaterial: {fileID: 2100000, guid: 5da978ff5a9363343a33ec82351bf318, type: 2}
 --- !u!1001 &185791217
 Prefab:
   m_ObjectHideFlags: 0
@@ -21865,9 +21904,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 279166707}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1614c1826dbb3274db7e0889574bce03, type: 3}
+  m_Script: {fileID: 11500000, guid: 41cdfd30e1c81364fbc538b2cba60675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colorAmbientInsidePlanet: {r: .558823526, g: .558823526, b: .558823526, a: .294117659}
 --- !u!1 &279487488
 GameObject:
   m_ObjectHideFlags: 0
@@ -21997,9 +22037,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 283120712}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e3e1ba2a9582ba4ebfea4cf30f2cf9d, type: 3}
+  m_Script: {fileID: 11500000, guid: dacf534c3c6b7274f8b4c7ef00fda6d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aspectRatioWidth: 16
+  aspectRatioHeight: 9
 --- !u!4 &283120714
 Transform:
   m_ObjectHideFlags: 0
@@ -26610,6 +26652,7 @@ GameObject:
   - 33: {fileID: 344913579}
   - 23: {fileID: 344913578}
   - 64: {fileID: 344913580}
+  - 114: {fileID: 344913581}
   m_Layer: 8
   m_Name: Platform_Hydra.002
   m_TagString: Planet
@@ -26674,6 +26717,18 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300024, guid: 775c952dbd71e054988e733beb405c91, type: 3}
+--- !u!114 &344913581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 344913576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3fd7315676c42c4ba70b531ae0b6457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burningMaterial: {fileID: 2100000, guid: 5da978ff5a9363343a33ec82351bf318, type: 2}
 --- !u!1 &345238352
 GameObject:
   m_ObjectHideFlags: 0
@@ -26773,7 +26828,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 90dcb85e835276144bd68e217460d295, type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 90dcb85e835276144bd68e217460d295, type: 3}
       propertyPath: m_LocalScale.z
@@ -31702,7 +31757,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 90dcb85e835276144bd68e217460d295, type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 90dcb85e835276144bd68e217460d295, type: 3}
       propertyPath: m_LocalScale.z
@@ -32579,6 +32634,7 @@ GameObject:
   - 33: {fileID: 468698706}
   - 23: {fileID: 468698705}
   - 64: {fileID: 468698707}
+  - 114: {fileID: 468698708}
   m_Layer: 8
   m_Name: Platform_Hydra.007
   m_TagString: Planet
@@ -32643,6 +32699,18 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300014, guid: 775c952dbd71e054988e733beb405c91, type: 3}
+--- !u!114 &468698708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 468698703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3fd7315676c42c4ba70b531ae0b6457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burningMaterial: {fileID: 2100000, guid: 5da978ff5a9363343a33ec82351bf318, type: 2}
 --- !u!1 &469821006
 GameObject:
   m_ObjectHideFlags: 0
@@ -33177,120 +33245,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 3.71309352
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1001 &489256014
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 22414514, guid: 2bd3219069aa2b24c8cc1bc84f582041, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22414514, guid: 2bd3219069aa2b24c8cc1bc84f582041, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22414514, guid: 2bd3219069aa2b24c8cc1bc84f582041, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22414514, guid: 2bd3219069aa2b24c8cc1bc84f582041, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22414514, guid: 2bd3219069aa2b24c8cc1bc84f582041, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22414514, guid: 2bd3219069aa2b24c8cc1bc84f582041, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22414514, guid: 2bd3219069aa2b24c8cc1bc84f582041, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 22414514, guid: 2bd3219069aa2b24c8cc1bc84f582041, type: 2}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 22414514, guid: 2bd3219069aa2b24c8cc1bc84f582041, type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 26.4585075
-      objectReference: {fileID: 0}
-    - target: {fileID: 22414514, guid: 2bd3219069aa2b24c8cc1bc84f582041, type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -31.3460159
-      objectReference: {fileID: 0}
-    - target: {fileID: 22414514, guid: 2bd3219069aa2b24c8cc1bc84f582041, type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 126.010002
-      objectReference: {fileID: 0}
-    - target: {fileID: 22414514, guid: 2bd3219069aa2b24c8cc1bc84f582041, type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 100.910004
-      objectReference: {fileID: 0}
-    - target: {fileID: 22414514, guid: 2bd3219069aa2b24c8cc1bc84f582041, type: 2}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22414514, guid: 2bd3219069aa2b24c8cc1bc84f582041, type: 2}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22414514, guid: 2bd3219069aa2b24c8cc1bc84f582041, type: 2}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22414514, guid: 2bd3219069aa2b24c8cc1bc84f582041, type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22414514, guid: 2bd3219069aa2b24c8cc1bc84f582041, type: 2}
-      propertyPath: m_Pivot.x
-      value: .5
-      objectReference: {fileID: 0}
-    - target: {fileID: 22414514, guid: 2bd3219069aa2b24c8cc1bc84f582041, type: 2}
-      propertyPath: m_Pivot.y
-      value: .5
-      objectReference: {fileID: 0}
-    - target: {fileID: 22447036, guid: 2bd3219069aa2b24c8cc1bc84f582041, type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 125
-      objectReference: {fileID: 0}
-    - target: {fileID: 22447036, guid: 2bd3219069aa2b24c8cc1bc84f582041, type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 74.3333359
-      objectReference: {fileID: 0}
-    - target: {fileID: 22434682, guid: 2bd3219069aa2b24c8cc1bc84f582041, type: 2}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 22434682, guid: 2bd3219069aa2b24c8cc1bc84f582041, type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 22434682, guid: 2bd3219069aa2b24c8cc1bc84f582041, type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 72.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 22434682, guid: 2bd3219069aa2b24c8cc1bc84f582041, type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -37.1666679
-      objectReference: {fileID: 0}
-    - target: {fileID: 22434682, guid: 2bd3219069aa2b24c8cc1bc84f582041, type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 22434682, guid: 2bd3219069aa2b24c8cc1bc84f582041, type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 14.333333
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 2bd3219069aa2b24c8cc1bc84f582041, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &491170641
 GameObject:
   m_ObjectHideFlags: 0
@@ -33919,7 +33873,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &515812389
 Transform:
   m_ObjectHideFlags: 0
@@ -40087,7 +40041,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400294, guid: 4e0475d0a8a28e648b53b557f808eeca, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 581268650}
-  m_LocalRotation: {x: .654318631, y: .268080354, z: .654318631, w: .268080503}
+  m_LocalRotation: {x: .65431869, y: .268080384, z: .65431869, w: .268080533}
   m_LocalPosition: {x: -.00963960961, y: .556185544, z: .591061354}
   m_LocalScale: {x: .0273120515, y: .0384491421, z: .0273120571}
   m_Children: []
@@ -40965,6 +40919,7 @@ GameObject:
   - 33: {fileID: 601591974}
   - 23: {fileID: 601591973}
   - 64: {fileID: 601591975}
+  - 114: {fileID: 601591976}
   m_Layer: 8
   m_Name: Platform_Hydra.010
   m_TagString: Planet
@@ -41029,6 +40984,18 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300008, guid: 775c952dbd71e054988e733beb405c91, type: 3}
+--- !u!114 &601591976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 601591971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3fd7315676c42c4ba70b531ae0b6457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burningMaterial: {fileID: 2100000, guid: 5da978ff5a9363343a33ec82351bf318, type: 2}
 --- !u!1 &604582343
 GameObject:
   m_ObjectHideFlags: 0
@@ -41443,6 +41410,7 @@ GameObject:
   - 33: {fileID: 628400325}
   - 23: {fileID: 628400324}
   - 64: {fileID: 628400326}
+  - 114: {fileID: 628400327}
   m_Layer: 8
   m_Name: Platform_Hydra.008
   m_TagString: Planet
@@ -41507,6 +41475,18 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300012, guid: 775c952dbd71e054988e733beb405c91, type: 3}
+--- !u!114 &628400327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 628400322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3fd7315676c42c4ba70b531ae0b6457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burningMaterial: {fileID: 2100000, guid: 5da978ff5a9363343a33ec82351bf318, type: 2}
 --- !u!1 &630117256
 GameObject:
   m_ObjectHideFlags: 0
@@ -49029,6 +49009,7 @@ GameObject:
   - 33: {fileID: 796417806}
   - 23: {fileID: 796417805}
   - 64: {fileID: 796417807}
+  - 114: {fileID: 796417808}
   m_Layer: 8
   m_Name: Platform_Hydra.001
   m_TagString: Planet
@@ -49093,6 +49074,18 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300112, guid: 775c952dbd71e054988e733beb405c91, type: 3}
+--- !u!114 &796417808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 796417803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3fd7315676c42c4ba70b531ae0b6457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burningMaterial: {fileID: 2100000, guid: 5da978ff5a9363343a33ec82351bf318, type: 2}
 --- !u!1001 &796558920
 Prefab:
   m_ObjectHideFlags: 0
@@ -57101,6 +57094,7 @@ GameObject:
   - 33: {fileID: 945432241}
   - 23: {fileID: 945432240}
   - 64: {fileID: 945432242}
+  - 114: {fileID: 945432243}
   m_Layer: 8
   m_Name: Platform_Hydra.006
   m_TagString: Planet
@@ -57165,6 +57159,18 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300016, guid: 775c952dbd71e054988e733beb405c91, type: 3}
+--- !u!114 &945432243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 945432238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3fd7315676c42c4ba70b531ae0b6457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burningMaterial: {fileID: 2100000, guid: 5da978ff5a9363343a33ec82351bf318, type: 2}
 --- !u!1 &946664797
 GameObject:
   m_ObjectHideFlags: 0
@@ -57176,6 +57182,7 @@ GameObject:
   - 33: {fileID: 946664800}
   - 23: {fileID: 946664799}
   - 64: {fileID: 946664801}
+  - 114: {fileID: 946664802}
   m_Layer: 8
   m_Name: Platform_Hydra.003
   m_TagString: Planet
@@ -57240,6 +57247,18 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300022, guid: 775c952dbd71e054988e733beb405c91, type: 3}
+--- !u!114 &946664802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 946664797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3fd7315676c42c4ba70b531ae0b6457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burningMaterial: {fileID: 2100000, guid: 5da978ff5a9363343a33ec82351bf318, type: 2}
 --- !u!1 &949511309
 GameObject:
   m_ObjectHideFlags: 0
@@ -57591,7 +57610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 027d0d9397c81eb46b3fcdddaf9c0e97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingMenu: 1
+  startingMenu: 13
   mainMenuPrefab: {fileID: 128502, guid: 8bfbfdac8ae68c54cae3214a18a9996e, type: 2}
   controlsMenuPrefab: {fileID: 188242, guid: 2321a59d0499bc147927073d993d0082, type: 2}
   creditsMenuPrefab: {fileID: 100018, guid: 24fb714f0b8cc4f4283f050445656055, type: 2}
@@ -63401,6 +63420,7 @@ Transform:
   m_Children:
   - {fileID: 159600648}
   - {fileID: 840570858}
+  - {fileID: 1601920888}
   m_Father: {fileID: 1621289960}
   m_RootOrder: 1
 --- !u!4 &1025129308
@@ -77254,7 +77274,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 90dcb85e835276144bd68e217460d295, type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 90dcb85e835276144bd68e217460d295, type: 3}
       propertyPath: m_LocalScale.z
@@ -77848,7 +77868,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400046, guid: 9aeae2a3eb2fa1e44a43ecad5b6322c6, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1287743010}
-  m_LocalRotation: {x: -.646968007, y: .646968126, z: .285363555, w: .285363466}
+  m_LocalRotation: {x: -.646968067, y: .646968186, z: .285363585, w: .285363495}
   m_LocalPosition: {x: .227998003, y: .0436979383, z: -.0333273336}
   m_LocalScale: {x: .0268535018, y: .0268535186, z: .0268535167}
   m_Children: []
@@ -78154,10 +78174,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3.5
-  normalJumpForce: 8
+  normalJumpForce: 9
   spaceJumpForce: 37
-  continuousForceWhileJumping: 30
-  maxTimeApplyForce: .25
+  continuousForceWhileJumping: 1000
+  maxTimeApplyForce: .349999994
   particleSystemJumpCharge: {fileID: 89850112}
   animationBigPappada: {fileID: 588077704}
   getHurtBigPappadaPrefab: {fileID: 133408, guid: 9127f3bc1d558744ca6b6c5649aee5b5,
@@ -83848,7 +83868,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400012, guid: 775c952dbd71e054988e733beb405c91, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1379608182}
-  m_LocalRotation: {x: .0140346885, y: .832868814, z: -.50984621, w: .214916885}
+  m_LocalRotation: {x: .0140346903, y: .832868934, z: -.50984627, w: .214916915}
   m_LocalPosition: {x: -.0230751298, y: .00171592506, z: .00128534739}
   m_LocalScale: {x: .893033862, y: .893034041, z: .893033445}
   m_Children: []
@@ -103998,7 +104018,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400216, guid: 4e0475d0a8a28e648b53b557f808eeca, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1589257780}
-  m_LocalRotation: {x: .607177615, y: .362402201, z: .607177615, w: .362402171}
+  m_LocalRotation: {x: .607177675, y: .362402231, z: .607177675, w: .362402201}
   m_LocalPosition: {x: -.0157330204, y: .269925475, z: .317015529}
   m_LocalScale: {x: .0201963764, y: .0284318924, z: .0201963745}
   m_Children: []
@@ -104194,6 +104214,7 @@ GameObject:
   - 33: {fileID: 1592977188}
   - 23: {fileID: 1592977187}
   - 64: {fileID: 1592977189}
+  - 114: {fileID: 1592977190}
   m_Layer: 8
   m_Name: Platform_Hydra.000
   m_TagString: Planet
@@ -104258,6 +104279,18 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300002, guid: 775c952dbd71e054988e733beb405c91, type: 3}
+--- !u!114 &1592977190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1592977185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3fd7315676c42c4ba70b531ae0b6457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burningMaterial: {fileID: 2100000, guid: 5da978ff5a9363343a33ec82351bf318, type: 2}
 --- !u!1 &1593010505
 GameObject:
   m_ObjectHideFlags: 0
@@ -104408,6 +104441,65 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1596230887}
   m_Mesh: {fileID: 4300016, guid: 9aeae2a3eb2fa1e44a43ecad5b6322c6, type: 3}
+--- !u!1 &1601920887
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1601920888}
+  - 65: {fileID: 1601920890}
+  - 114: {fileID: 1601920889}
+  m_Layer: 8
+  m_Name: GoToRunnerCutscene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1601920888
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1601920887}
+  m_LocalRotation: {x: 6.33299351e-08, y: .847488046, z: .530814469, w: -5.0291419e-08}
+  m_LocalPosition: {x: 0, y: -.265419096, z: -.405930877}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1019958810}
+  m_RootOrder: 2
+--- !u!114 &1601920889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1601920887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea809213b2c8fba4ca2464049b30a007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endMode: 1
+  endTime: 0
+  isActive: 1
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 512
+  planetEventsManagerGO: {fileID: 1621289959}
+--- !u!65 &1601920890
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1601920887}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .200000003, y: .0298495404, z: .200000018}
+  m_Center: {x: 3.7520298e-10, y: -.00384226162, z: 2.45484989e-06}
 --- !u!1 &1602739243
 GameObject:
   m_ObjectHideFlags: 0
@@ -104484,7 +104576,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1604425113
 Transform:
   m_ObjectHideFlags: 0
@@ -106234,11 +106326,11 @@ MonoBehaviour:
     startingFireRotation: -355
     endingFireRotation: -400
     segmentCheckpoint: {fileID: 379289855}
-  hydraFirstPosition: {fileID: 341647134}
   planetCheckpoint: {fileID: 204084008}
   corruptionBlockade: {fileID: 1733728906}
   penguinAttackEvent: {fileID: 159600647}
   hydraAttackEvent: {fileID: 840570857}
+  goToRunnerEvent: {fileID: 1601920887}
   runnerActivated: 0
   burningCore: {fileID: 1270209722}
   platforms:
@@ -121438,6 +121530,7 @@ GameObject:
   - 33: {fileID: 1801632063}
   - 23: {fileID: 1801632062}
   - 64: {fileID: 1801632064}
+  - 114: {fileID: 1801632065}
   m_Layer: 8
   m_Name: Platform_Hydra.005
   m_TagString: Planet
@@ -121502,6 +121595,18 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300018, guid: 775c952dbd71e054988e733beb405c91, type: 3}
+--- !u!114 &1801632065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1801632060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3fd7315676c42c4ba70b531ae0b6457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burningMaterial: {fileID: 2100000, guid: 5da978ff5a9363343a33ec82351bf318, type: 2}
 --- !u!1 &1801701404
 GameObject:
   m_ObjectHideFlags: 0
@@ -124827,7 +124932,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400198, guid: 4e0475d0a8a28e648b53b557f808eeca, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1853232327}
-  m_LocalRotation: {x: .607177556, y: .36240229, z: .607177615, w: .362402141}
+  m_LocalRotation: {x: .607177615, y: .36240232, z: .607177675, w: .362402171}
   m_LocalPosition: {x: -.00567001849, y: .418582022, z: .230536938}
   m_LocalScale: {x: .0160649475, y: .0226157829, z: .0160649512}
   m_Children: []
@@ -125936,6 +126041,7 @@ GameObject:
   - 33: {fileID: 1898278371}
   - 23: {fileID: 1898278370}
   - 64: {fileID: 1898278372}
+  - 114: {fileID: 1898278373}
   m_Layer: 8
   m_Name: Platform_Hydra.004
   m_TagString: Planet
@@ -126000,6 +126106,18 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300020, guid: 775c952dbd71e054988e733beb405c91, type: 3}
+--- !u!114 &1898278373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1898278368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3fd7315676c42c4ba70b531ae0b6457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burningMaterial: {fileID: 2100000, guid: 5da978ff5a9363343a33ec82351bf318, type: 2}
 --- !u!1 &1899396782
 GameObject:
   m_ObjectHideFlags: 0
@@ -131616,7 +131734,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 90dcb85e835276144bd68e217460d295, type: 3}
       propertyPath: m_RootOrder
-      value: 23
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 90dcb85e835276144bd68e217460d295, type: 3}
       propertyPath: m_LocalScale.z
@@ -135498,6 +135616,7 @@ GameObject:
   - 33: {fileID: 2059012094}
   - 23: {fileID: 2059012093}
   - 64: {fileID: 2059012095}
+  - 114: {fileID: 2059012096}
   m_Layer: 8
   m_Name: Platform_Hydra.009
   m_TagString: Planet
@@ -135562,6 +135681,18 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300010, guid: 775c952dbd71e054988e733beb405c91, type: 3}
+--- !u!114 &2059012096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2059012091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3fd7315676c42c4ba70b531ae0b6457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burningMaterial: {fileID: 2100000, guid: 5da978ff5a9363343a33ec82351bf318, type: 2}
 --- !u!1 &2060461082
 GameObject:
   m_ObjectHideFlags: 0
@@ -138552,7 +138683,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 775c952dbd71e054988e733beb405c91, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2142138825}
-  m_LocalRotation: {x: .0140346885, y: .832868814, z: -.50984621, w: .214916885}
+  m_LocalRotation: {x: .0140346903, y: .832868934, z: -.50984627, w: .214916915}
   m_LocalPosition: {x: -.0230751298, y: .00171592506, z: .00128534739}
   m_LocalScale: {x: .893033862, y: .893034041, z: .893033445}
   m_Children: []

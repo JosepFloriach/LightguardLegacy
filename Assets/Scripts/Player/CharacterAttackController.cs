@@ -23,7 +23,10 @@ public enum AttackType{Missiles,
 					   MundusBaseAttack,
 					   MundusBallOfDeath,
 					   MundusSpawningAttack,
-					   MundusFisureAttack};
+					   MundusFisureAttack,
+					   HydraFlameAttack,
+				       HydraHeadAttack,
+ 					   HydraAppearAttack};
 
 public class CharacterAttackController : MonoBehaviour {
 

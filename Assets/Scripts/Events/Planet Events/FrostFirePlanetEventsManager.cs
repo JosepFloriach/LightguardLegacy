@@ -11,12 +11,11 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 
 	public RunnerSegment[] runnerSegments;
 
-	public GameObject hydraFirstPosition;
-
 	public Checkpoint planetCheckpoint;
 	public GameObject corruptionBlockade;
 	public GameObject penguinAttackEvent;
 	public GameObject hydraAttackEvent;
+	public GameObject goToRunnerEvent;
 
 	public bool runnerActivated = false; 
 
@@ -38,6 +37,7 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 
 	private bool hydraEventCinematicFinished = false;
 	private bool hydraEventCinematicOngoing = false;
+	private bool runnerStarted = false;
 
 	private bool hasPlayedOnLandCinematic = false;
 	private bool hasBeenAttackedByPenguins = false;
@@ -56,6 +56,10 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 				hydraEventCinematicOngoing = true;
 				startHydraCombat();
 			}
+		}else if(identifyier.Equals(CutsceneIdentifyier.FrostFirePlanetGoToRunner)){
+			if(!runnerStarted){
+				StartCoroutine(startRunner());
+			}
 		}
 	}
 
@@ -69,7 +73,6 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 
 	private IEnumerator doRunningEvent(){
 		runnerActivated = true;
-		GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().setCameraShaking ();
 		diedOnSegment = false;
 		rotatingFire.SetActive(true);
 		while (lastCompletedSegment<runnerSegments.Length && !diedOnSegment) {
@@ -83,6 +86,7 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 			burningCore.tag = "Planet";
 			GetComponent<MeteoriteSpawner>().enabled = false;
 			burningCore.GetComponent<Renderer>().material = materialCoreOnSolidify;
+			burningCore.GetComponent<ScrollingUVs_Layers>().uvAnimationRate = Vector2.zero;
 			burningCore.GetComponent<ParticleSystem>().Stop();
 			GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().stopCameraShaking ();
 			rotatingFire.SetActive(false);
@@ -90,9 +94,44 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 		//rotatingFire.SetActive(false);
 	}
 
-	public void hydraDead(){
-		runningEvent ();
+	private void resetPlatformsFromCombat(){
+		foreach (GameObject platform in platforms) {
+			if(!platform.GetComponent<HydraPlatform>().isActivated()){
+				platform.GetComponent<HydraPlatform>().repositionPlatform();
+			}
+		}
 	}
+
+	public void hydraDead(){
+		resetPlatformsFromCombat ();
+		goToRunnerEvent.SetActive (true);
+		StartCoroutine (goToRunner ());
+	}
+
+	private IEnumerator goToRunner(){
+		GameManager.inputController.disableInputController ();
+		bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("That was a tough fight...", 2f, false, false);
+		yield return StartCoroutine (WaitInterruptable (2f, bigPappadaDialogue));
+
+		GameManager.playerController.Move (-1f);
+
+		bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("I must find a way to get out of here!", 2f, false, false);
+		yield return StartCoroutine (WaitInterruptable (2f, bigPappadaDialogue));
+
+	}
+
+	private IEnumerator startRunner(){
+		GameManager.playerController.StopMove ();
+		GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().setCameraShaking ();
+		bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("Woooah!!", 1f, false, false);
+		yield return StartCoroutine (WaitInterruptable (1f, bigPappadaDialogue));
+
+		GameManager.inputController.enableInputController ();
+		runnerStarted = true;
+		runningEvent ();
+
+	}
+
 
 	private void runningEvent(){
 		StartCoroutine (doRunningEvent ());
@@ -135,20 +174,62 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 	}
 
 	private void startHydraCombat(){
-		//Temporarily there is no hydra
 		StartCoroutine (hydraCombat ());
 	}
 
-	private IEnumerator hydraCombat(){
+	public GameObject getCloserHydraPlatformToPlayer(GameObject notCloseToObject = null){
+		Vector3 playerPosition = GameManager.player.transform.position;
+		GameObject platform = null;
+		float minDistance = float.MaxValue;
+		for (int i = 0; i<platforms.Length; ++i) {
+			if(platforms[i].GetComponent<HydraPlatform>().isActivated()){
+		
+				Vector3 position = platforms[i].GetComponent<Renderer>().bounds.center;
+				if(notCloseToObject == null || Vector3.Distance(notCloseToObject.transform.position,position)>5f){
+					float distance = Vector3.Distance(position,playerPosition);
+					if(distance<minDistance){
+						minDistance = distance;
+						platform = platforms[i];
+					}
+				}
+			}
+		}
+		return platform;
+	}
+
+
+	private GameObject spawnHydra(GameObject other = null){
 		GameObject hydra = GameObject.Instantiate (hydraPrefab) as GameObject;
-		hydra.transform.position = GameManager.player.transform.position + (GameManager.player.transform.up * 3f);
+		hydra.GetComponent<IAControllerHydra> ().eventManager = this;
+		GameObject closestPlatform = getCloserHydraPlatformToPlayer (other);
+		Vector3 platformPosition = closestPlatform.GetComponent<Renderer>().bounds.center;
+		Vector3 direction = platformPosition - transform.position;
+		hydra.transform.position = platformPosition+direction.normalized;
+		return hydra;
+	}
+
+	private IEnumerator hydraCombat(){
+		GameObject hydra = spawnHydra ();
 		Killable killable = hydra.GetComponent<Killable> ();
-		hydra.transform.position = hydraFirstPosition.transform.position;
-		hydra.transform.rotation = hydraFirstPosition.transform.rotation;
 		while (!killable.isDead()) {
 			yield return null;
 		}
-		hydraDead ();
+
+		GameObject hydra2 = spawnHydra ();
+		Killable killable2 = hydra2.GetComponent<Killable> ();
+		yield return new WaitForSeconds (3f);
+
+		GameObject hydra3 = spawnHydra (hydra2);
+		Killable killable3 = hydra3.GetComponent<Killable> ();
+
+		hydra3.GetComponent<IAControllerHydra> ().otherHydra = hydra2;
+		hydra2.GetComponent<IAControllerHydra> ().otherHydra = hydra3;
+
+		while (!killable2.isDead() || !killable3.isDead()) {
+			yield return null;
+		}
+
+		hydraDead();
 	}
 
 	private void resetPlatformPositions(){
@@ -170,7 +251,9 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 			for(int i = 0;i<platforms.Length;i++){
 				platformsOriginalPosition[i] = platforms[i].transform.position;
 			}
+			goToRunnerEvent.SetActive(false);
 		}else{
+			goToRunnerEvent.SetActive(false);
 			corruptionBlockade.SetActive(false);
 		}
 	}
@@ -213,14 +296,14 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 	}
 
 	public override void playerDies (){
-		if(hydraEventCinematicOngoing){
+		if(runnerStarted){
 			diedOnSegment = true;
 		}
 	}
 
 	public override void playerRespawned (){
 		if (diedOnSegment) {
-			runningEvent();
+			runningEvent ();
 		}
 	}
 

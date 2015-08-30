@@ -3,8 +3,6 @@ using System.Collections;
 
 public class CraneMeleeAttack : Attack {
 
-	//NOT IMPLEMENTED YET
-
 	//Private variables
 	private GameObject parent;
 	private Animator iaAnimator;

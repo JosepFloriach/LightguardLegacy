@@ -8,7 +8,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: hydra_TXT
   m_Shader: {fileID: 4800000, guid: a021b6bfcab3cc44fbf4bc8ded279bae, type: 3}
-  m_ShaderKeywords: _ALPHABLEND_ON _COLOR_ON _DISS_ON _TEX_ON
+  m_ShaderKeywords: _ALPHABLEND_ON _COLOR_ON _DISS_ON _DS_ON _TEX_ON
   m_LightmapFlags: 5
   m_CustomRenderQueue: 3000
   m_SavedProperties:
@@ -167,7 +167,7 @@ Material:
       data:
         first:
           name: _Cull
-        second: 2
+        second: 0
       data:
         first:
           name: _Outl
@@ -183,7 +183,7 @@ Material:
       data:
         first:
           name: _DS
-        second: 0
+        second: 1
       data:
         first:
           name: _Outline

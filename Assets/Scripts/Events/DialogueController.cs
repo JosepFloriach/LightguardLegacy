@@ -13,7 +13,8 @@ public class DialogueController : MonoBehaviour {
 		newDialogue.transform.parent = null;
 		newDialogue.GetComponentInChildren<Image> ().color = bubbleColor;
 		newDialogue.GetComponent<Dialogue> ().speechPosition = speechPosition;
-		newDialogue.GetComponent<Dialogue> ().initialize (text, gameObject, timeToLast,bouncing,fadeOut);
+		//BOUNCING DISABLED
+		newDialogue.GetComponent<Dialogue> ().initialize (text, gameObject, timeToLast,false,fadeOut);
 
 		newDialogue.transform.up = transform.up;
 

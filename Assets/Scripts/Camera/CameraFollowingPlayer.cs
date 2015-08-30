@@ -204,7 +204,7 @@ public class CameraFollowingPlayer : MonoBehaviour {
 		Vector3 objectiveVectorZ;
 
 		//If we are changing objectives we calculate the appropiate rotation around the planet
-		if (isChangingObjective && GameManager.playerSpaceBody.getClosestPlanet () != null && cameraDistance.Equals (CameraDistanceOfPlayer.Close)) {
+		if (isChangingObjective && GameManager.playerSpaceBody.getClosestPlanet () != null && cameraHasUpInclination()) {
 			timerChangingObjective += Time.deltaTime;
 			if (timerChangingObjective < timeItTakesToChangeObjective) {
 				float ratio = timerChangingObjective / timeItTakesToChangeObjective;
@@ -238,7 +238,7 @@ public class CameraFollowingPlayer : MonoBehaviour {
 		Vector3 rightWithoutZ = new Vector3 (transform.right.x, transform.right.y, 0f).normalized;
 
 		//Modifying objective up
-		if (!GameManager.player.GetComponent<PlayerController> ().getIsSpaceJumping () && !GameManager.playerController.getIsChargingSpaceJump() && cameraDistance.Equals(CameraDistanceOfPlayer.Close)) {
+		if (!GameManager.player.GetComponent<PlayerController> ().getIsSpaceJumping () && !GameManager.playerController.getIsChargingSpaceJump() && cameraHasUpInclination()) {
 			if(Vector3.Distance(objectiveUp,transform.up)<=minimumUpDistanceOnStartLerpingXAngle){
 				Vector3 objectiveUpRotated = (Quaternion.AngleAxis (xAngle, rightWithoutZ) * objectiveUp);
 				timer+=Time.deltaTime;
@@ -282,6 +282,10 @@ public class CameraFollowingPlayer : MonoBehaviour {
 
 
 
+	}
+
+	private bool cameraHasUpInclination(){
+		return cameraDistance.Equals (CameraDistanceOfPlayer.Close) || cameraDistance.Equals (CameraDistanceOfPlayer.CleansePlanet);
 	}
 
 	public void setCameraShaking(){

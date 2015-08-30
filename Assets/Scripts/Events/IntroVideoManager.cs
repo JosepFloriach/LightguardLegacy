@@ -14,14 +14,14 @@ public class IntroVideoManager : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 
-		/*timer = 0f;
+		timer = 0f;
 		RawImage ri = this.GetComponent<RawImage>();
 		mat = ri.material;
 		mat.SetFloat("_DissolveThreshold",1f);
 		mat.SetColor ("_Color", Color.black);
 		mt = mat.mainTexture as MovieTexture;
 		mt.Play();
-		GameManager.audioManager.PlaySong( mt.audioClip);*/
+		GameManager.audioManager.PlaySong( mt.audioClip);
 	}
 	
 	// Update is called once per frame
