@@ -19,7 +19,7 @@ public class LifeGUIManager : MonoBehaviour {
 		for (int i = 1; i < 8; i++) {
 			strsprite =  "Leaf" + i.ToString (); 
 			Image img = transform.Find (strsprite).GetComponent<Image>();
-			img.color = new Color(161f,161f,161f,0.50f);
+			img.color = new Color(180f,180f,180f,0.50f);
 		}
 		currentSprite = 1; 
 	}
@@ -27,6 +27,7 @@ public class LifeGUIManager : MonoBehaviour {
 	public void addHitPoint() {
 		string strsprite = "Leaf" + currentSprite.ToString (); 
 		if (currentSprite < 8) {
+			Debug.Log(strsprite);
 			transform.Find (strsprite).GetComponent<Image> ().color = Color.clear;
 			currentSprite++;
 		}

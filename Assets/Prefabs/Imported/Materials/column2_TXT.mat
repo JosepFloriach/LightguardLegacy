@@ -8,7 +8,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: column2_TXT
   m_Shader: {fileID: 4800000, guid: af6e577fac5e6ba4c9e69f6a27e649c0, type: 3}
-  m_ShaderKeywords: _CORR_ON
+  m_ShaderKeywords: _COLOR_ON _CORR_ON _OUTL_ON
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -113,10 +113,6 @@ Material:
         second: 0
       data:
         first:
-          name: _TintColor
-        second: 0
-      data:
-        first:
           name: _OutlineSize
         second: 10
       data:
@@ -169,12 +165,16 @@ Material:
         second: 0
       data:
         first:
+          name: _TintColor
+        second: 1
+      data:
+        first:
           name: _Cull
         second: 2
       data:
         first:
           name: _Outl
-        second: 0
+        second: 1
       data:
         first:
           name: _VertexColor
@@ -190,7 +190,7 @@ Material:
       data:
         first:
           name: _Outline
-        second: .00999999978
+        second: .200000003
       data:
         first:
           name: _Asym
@@ -215,11 +215,11 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .800000012, g: .800000012, b: .800000012, a: 1}
+        second: {r: .669117689, g: .669117689, b: .669117689, a: 1}
       data:
         first:
           name: _OutlineColor
-        second: {r: .5, g: .5, b: .5, a: 1}
+        second: {r: 0, g: 0, b: 0, a: 1}
       data:
         first:
           name: _EmissionColorUI
@@ -231,7 +231,7 @@ Material:
       data:
         first:
           name: _CorruptionColor
-        second: {r: .5, g: .5, b: .5, a: .300000012}
+        second: {r: .213235319, g: .213235319, b: .213235319, a: .298039228}
       data:
         first:
           name: _OriginCorruption

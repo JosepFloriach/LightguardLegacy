@@ -1,0 +1,912 @@
+fileFormatVersion: 2
+guid: 49facc54c78896f48a8c48e47f5ae549
+timeCreated: 1441036975
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Arm_L
+    100002: Arm_L.001
+    100004: Arm_R
+    100006: Arm_R.001
+    100008: Belt_L
+    100010: Belt_L.001
+    100012: Belt_L.001_end
+    100014: Belt_L.002
+    100016: Belt_L.003
+    100018: Belt_L.004
+    100020: Belt_L.005
+    100022: Belt_L.006
+    100024: Belt_L.007
+    100026: Belt_L.008
+    100028: Belt_L.009
+    100030: Belt_L.010
+    100032: Belt_R
+    100034: Belt_R.001
+    100036: Belt_R.001_end
+    100038: Belt_R.002
+    100040: Belt_R.003
+    100042: Belt_R.004
+    100044: Belt_R.005
+    100046: Belt_R.006
+    100048: Belt_R.007
+    100050: Belt_R.008
+    100052: Belt_R.009
+    100054: Belt_R.010
+    100056: coat_L
+    100058: coat_L.001
+    100060: coat_L.001_end
+    100062: coat_L.002
+    100064: coat_L.003
+    100066: coat_R
+    100068: coat_R.001
+    100070: coat_R.001_end
+    100072: coat_R.002
+    100074: coat_R.003
+    100076: Finger_L
+    100078: Finger_L.001
+    100080: Finger_L.002
+    100082: Finger_L.002_end
+    100084: Finger_R
+    100086: Finger_R.001
+    100088: Finger_R.002
+    100090: Finger_R.002_end
+    100092: Foot_L
+    100094: Foot_L.001
+    100096: Foot_L.002
+    100098: Foot_L.003
+    100100: Foot_L.003_end
+    100102: Foot_R
+    100104: Foot_R.001
+    100106: Foot_R.002
+    100108: Foot_R.003
+    100110: Foot_R.003_end
+    100112: Hand_L
+    100114: Hand_L.001
+    100116: Hand_R
+    100118: Hand_R.001
+    100120: Head
+    100122: Head_end
+    100124: Hip_L
+    100126: Hip_R
+    100128: Leg_L
+    100130: Leg_L.001
+    100132: Leg_R
+    100134: Leg_R.001
+    100136: Neck
+    100138: Plane
+    100140: Shoulder_L
+    100142: Shoulder_R
+    100144: Spine
+    100146: Spine.001
+    100148: Spine.002
+    100150: Spine.003
+    100152: Spine.004
+    100154: Spine.005
+    100156: Tail
+    100158: Tail.001
+    100160: Tail.002
+    100162: Tail.003
+    100164: Tail.004
+    100166: Tail.005
+    100168: Tail.006
+    100170: Tail.006_end
+    100172: Thumb_L
+    100174: Thumb_L.001
+    100176: Thumb_L.001_end
+    100178: Thumb_R
+    100180: Thumb_R.001
+    100182: Thumb_R.001_end
+    100184: whiteHeart
+    100186: //RootNode
+    100188: WhiteHeart_Armature
+    400000: Arm_L
+    400002: Arm_L.001
+    400004: Arm_R
+    400006: Arm_R.001
+    400008: Belt_L
+    400010: Belt_L.001
+    400012: Belt_L.001_end
+    400014: Belt_L.002
+    400016: Belt_L.003
+    400018: Belt_L.004
+    400020: Belt_L.005
+    400022: Belt_L.006
+    400024: Belt_L.007
+    400026: Belt_L.008
+    400028: Belt_L.009
+    400030: Belt_L.010
+    400032: Belt_R
+    400034: Belt_R.001
+    400036: Belt_R.001_end
+    400038: Belt_R.002
+    400040: Belt_R.003
+    400042: Belt_R.004
+    400044: Belt_R.005
+    400046: Belt_R.006
+    400048: Belt_R.007
+    400050: Belt_R.008
+    400052: Belt_R.009
+    400054: Belt_R.010
+    400056: coat_L
+    400058: coat_L.001
+    400060: coat_L.001_end
+    400062: coat_L.002
+    400064: coat_L.003
+    400066: coat_R
+    400068: coat_R.001
+    400070: coat_R.001_end
+    400072: coat_R.002
+    400074: coat_R.003
+    400076: Finger_L
+    400078: Finger_L.001
+    400080: Finger_L.002
+    400082: Finger_L.002_end
+    400084: Finger_R
+    400086: Finger_R.001
+    400088: Finger_R.002
+    400090: Finger_R.002_end
+    400092: Foot_L
+    400094: Foot_L.001
+    400096: Foot_L.002
+    400098: Foot_L.003
+    400100: Foot_L.003_end
+    400102: Foot_R
+    400104: Foot_R.001
+    400106: Foot_R.002
+    400108: Foot_R.003
+    400110: Foot_R.003_end
+    400112: Hand_L
+    400114: Hand_L.001
+    400116: Hand_R
+    400118: Hand_R.001
+    400120: Head
+    400122: Head_end
+    400124: Hip_L
+    400126: Hip_R
+    400128: Leg_L
+    400130: Leg_L.001
+    400132: Leg_R
+    400134: Leg_R.001
+    400136: Neck
+    400138: Plane
+    400140: Shoulder_L
+    400142: Shoulder_R
+    400144: Spine
+    400146: Spine.001
+    400148: Spine.002
+    400150: Spine.003
+    400152: Spine.004
+    400154: Spine.005
+    400156: Tail
+    400158: Tail.001
+    400160: Tail.002
+    400162: Tail.003
+    400164: Tail.004
+    400166: Tail.005
+    400168: Tail.006
+    400170: Tail.006_end
+    400172: Thumb_L
+    400174: Thumb_L.001
+    400176: Thumb_L.001_end
+    400178: Thumb_R
+    400180: Thumb_R.001
+    400182: Thumb_R.001_end
+    400184: whiteHeart
+    400186: //RootNode
+    400188: WhiteHeart_Armature
+    2300000: Plane
+    3300000: Plane
+    4300000: Plane
+    4300002: whiteHeart
+    7400000: WhiteheartIdleSitting
+    7400002: WhiteheartStandUp
+    7400004: WhiteheartIdleStanding
+    9500000: //RootNode
+    13700000: whiteHeart
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: WhiteheartIdleSitting
+      takeName: WhiteHeart_Armature|WhiteHeart_ArmatureAction
+      firstFrame: 0
+      lastFrame: 62
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Plane
+        weight: 1
+      - path: whiteHeart
+        weight: 1
+      - path: WhiteHeart_Armature
+        weight: 1
+      - path: WhiteHeart_Armature/Spine
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Belt_L
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Belt_L/Belt_L.010
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Belt_L/Belt_L.010/Belt_L.009
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Belt_L/Belt_L.010/Belt_L.009/Belt_L.008
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Belt_L/Belt_L.010/Belt_L.009/Belt_L.008/Belt_L.007
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Belt_L/Belt_L.010/Belt_L.009/Belt_L.008/Belt_L.007/Belt_L.006
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Belt_L/Belt_L.010/Belt_L.009/Belt_L.008/Belt_L.007/Belt_L.006/Belt_L.005
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Belt_L/Belt_L.010/Belt_L.009/Belt_L.008/Belt_L.007/Belt_L.006/Belt_L.005/Belt_L.004
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Belt_L/Belt_L.010/Belt_L.009/Belt_L.008/Belt_L.007/Belt_L.006/Belt_L.005/Belt_L.004/Belt_L.003
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Belt_L/Belt_L.010/Belt_L.009/Belt_L.008/Belt_L.007/Belt_L.006/Belt_L.005/Belt_L.004/Belt_L.003/Belt_L.002
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Belt_L/Belt_L.010/Belt_L.009/Belt_L.008/Belt_L.007/Belt_L.006/Belt_L.005/Belt_L.004/Belt_L.003/Belt_L.002/Belt_L.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Belt_L/Belt_L.010/Belt_L.009/Belt_L.008/Belt_L.007/Belt_L.006/Belt_L.005/Belt_L.004/Belt_L.003/Belt_L.002/Belt_L.001/Belt_L.001_end
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Leg_L
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Leg_L/Leg_L.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Leg_L/Leg_L.001/Foot_L
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Leg_L/Leg_L.001/Foot_L/Foot_L.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Leg_L/Leg_L.001/Foot_L/Foot_L.001/Foot_L.002
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Leg_L/Leg_L.001/Foot_L/Foot_L.001/Foot_L.002/Foot_L.003
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Leg_L/Leg_L.001/Foot_L/Foot_L.001/Foot_L.002/Foot_L.003/Foot_L.003_end
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Belt_R
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Belt_R/Belt_R.010
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Belt_R/Belt_R.010/Belt_R.009
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Belt_R/Belt_R.010/Belt_R.009/Belt_R.008
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Belt_R/Belt_R.010/Belt_R.009/Belt_R.008/Belt_R.007
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Belt_R/Belt_R.010/Belt_R.009/Belt_R.008/Belt_R.007/Belt_R.006
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Belt_R/Belt_R.010/Belt_R.009/Belt_R.008/Belt_R.007/Belt_R.006/Belt_R.005
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Belt_R/Belt_R.010/Belt_R.009/Belt_R.008/Belt_R.007/Belt_R.006/Belt_R.005/Belt_R.004
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Belt_R/Belt_R.010/Belt_R.009/Belt_R.008/Belt_R.007/Belt_R.006/Belt_R.005/Belt_R.004/Belt_R.003
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Belt_R/Belt_R.010/Belt_R.009/Belt_R.008/Belt_R.007/Belt_R.006/Belt_R.005/Belt_R.004/Belt_R.003/Belt_R.002
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Belt_R/Belt_R.010/Belt_R.009/Belt_R.008/Belt_R.007/Belt_R.006/Belt_R.005/Belt_R.004/Belt_R.003/Belt_R.002/Belt_R.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Belt_R/Belt_R.010/Belt_R.009/Belt_R.008/Belt_R.007/Belt_R.006/Belt_R.005/Belt_R.004/Belt_R.003/Belt_R.002/Belt_R.001/Belt_R.001_end
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Leg_R
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Leg_R/Leg_R.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Leg_R/Leg_R.001/Foot_R
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Leg_R/Leg_R.001/Foot_R/Foot_R.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Leg_R/Leg_R.001/Foot_R/Foot_R.001/Foot_R.002
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Leg_R/Leg_R.001/Foot_R/Foot_R.001/Foot_R.002/Foot_R.003
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Leg_R/Leg_R.001/Foot_R/Foot_R.001/Foot_R.002/Foot_R.003/Foot_R.003_end
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Neck
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Neck/Head
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Neck/Head/Head_end
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/Arm_L
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/Arm_L/Arm_L.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/Arm_L/Arm_L.001/Hand_L
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/Arm_L/Arm_L.001/Hand_L/Finger_L
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/Arm_L/Arm_L.001/Hand_L/Finger_L/Finger_L.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/Arm_L/Arm_L.001/Hand_L/Finger_L/Finger_L.001/Finger_L.002
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/Arm_L/Arm_L.001/Hand_L/Finger_L/Finger_L.001/Finger_L.002/Finger_L.002_end
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/Arm_L/Arm_L.001/Hand_L.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/Arm_L/Arm_L.001/Hand_L.001/Thumb_L
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/Arm_L/Arm_L.001/Hand_L.001/Thumb_L/Thumb_L.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/Arm_L/Arm_L.001/Hand_L.001/Thumb_L/Thumb_L.001/Thumb_L.001_end
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/coat_L
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/coat_L/coat_L.003
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/coat_L/coat_L.003/coat_L.002
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/coat_L/coat_L.003/coat_L.002/coat_L.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/coat_L/coat_L.003/coat_L.002/coat_L.001/coat_L.001_end
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/Arm_R
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/Arm_R/Arm_R.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/Arm_R/Arm_R.001/Hand_R
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/Arm_R/Arm_R.001/Hand_R/Finger_R
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/Arm_R/Arm_R.001/Hand_R/Finger_R/Finger_R.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/Arm_R/Arm_R.001/Hand_R/Finger_R/Finger_R.001/Finger_R.002
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/Arm_R/Arm_R.001/Hand_R/Finger_R/Finger_R.001/Finger_R.002/Finger_R.002_end
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/Arm_R/Arm_R.001/Hand_R.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/Arm_R/Arm_R.001/Hand_R.001/Thumb_R
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/Arm_R/Arm_R.001/Hand_R.001/Thumb_R/Thumb_R.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/Arm_R/Arm_R.001/Hand_R.001/Thumb_R/Thumb_R.001/Thumb_R.001_end
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/coat_R
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/coat_R/coat_R.003
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/coat_R/coat_R.003/coat_R.002
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/coat_R/coat_R.003/coat_R.002/coat_R.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/coat_R/coat_R.003/coat_R.002/coat_R.001/coat_R.001_end
+        weight: 1
+      - path: WhiteHeart_Armature/Tail
+        weight: 1
+      - path: WhiteHeart_Armature/Tail/Tail.001
+        weight: 1
+      - path: WhiteHeart_Armature/Tail/Tail.001/Tail.002
+        weight: 1
+      - path: WhiteHeart_Armature/Tail/Tail.001/Tail.002/Tail.003
+        weight: 1
+      - path: WhiteHeart_Armature/Tail/Tail.001/Tail.002/Tail.003/Tail.004
+        weight: 1
+      - path: WhiteHeart_Armature/Tail/Tail.001/Tail.002/Tail.003/Tail.004/Tail.005
+        weight: 1
+      - path: WhiteHeart_Armature/Tail/Tail.001/Tail.002/Tail.003/Tail.004/Tail.005/Tail.006
+        weight: 1
+      - path: WhiteHeart_Armature/Tail/Tail.001/Tail.002/Tail.003/Tail.004/Tail.005/Tail.006/Tail.006_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: WhiteheartStandUp
+      takeName: WhiteHeart_Armature|WhiteHeart_ArmatureAction
+      firstFrame: 68
+      lastFrame: 176
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Plane
+        weight: 1
+      - path: whiteHeart
+        weight: 1
+      - path: WhiteHeart_Armature
+        weight: 1
+      - path: WhiteHeart_Armature/Spine
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Belt_L
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Belt_L/Belt_L.010
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Belt_L/Belt_L.010/Belt_L.009
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Belt_L/Belt_L.010/Belt_L.009/Belt_L.008
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Belt_L/Belt_L.010/Belt_L.009/Belt_L.008/Belt_L.007
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Belt_L/Belt_L.010/Belt_L.009/Belt_L.008/Belt_L.007/Belt_L.006
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Belt_L/Belt_L.010/Belt_L.009/Belt_L.008/Belt_L.007/Belt_L.006/Belt_L.005
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Belt_L/Belt_L.010/Belt_L.009/Belt_L.008/Belt_L.007/Belt_L.006/Belt_L.005/Belt_L.004
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Belt_L/Belt_L.010/Belt_L.009/Belt_L.008/Belt_L.007/Belt_L.006/Belt_L.005/Belt_L.004/Belt_L.003
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Belt_L/Belt_L.010/Belt_L.009/Belt_L.008/Belt_L.007/Belt_L.006/Belt_L.005/Belt_L.004/Belt_L.003/Belt_L.002
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Belt_L/Belt_L.010/Belt_L.009/Belt_L.008/Belt_L.007/Belt_L.006/Belt_L.005/Belt_L.004/Belt_L.003/Belt_L.002/Belt_L.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Belt_L/Belt_L.010/Belt_L.009/Belt_L.008/Belt_L.007/Belt_L.006/Belt_L.005/Belt_L.004/Belt_L.003/Belt_L.002/Belt_L.001/Belt_L.001_end
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Leg_L
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Leg_L/Leg_L.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Leg_L/Leg_L.001/Foot_L
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Leg_L/Leg_L.001/Foot_L/Foot_L.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Leg_L/Leg_L.001/Foot_L/Foot_L.001/Foot_L.002
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Leg_L/Leg_L.001/Foot_L/Foot_L.001/Foot_L.002/Foot_L.003
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Leg_L/Leg_L.001/Foot_L/Foot_L.001/Foot_L.002/Foot_L.003/Foot_L.003_end
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Belt_R
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Belt_R/Belt_R.010
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Belt_R/Belt_R.010/Belt_R.009
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Belt_R/Belt_R.010/Belt_R.009/Belt_R.008
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Belt_R/Belt_R.010/Belt_R.009/Belt_R.008/Belt_R.007
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Belt_R/Belt_R.010/Belt_R.009/Belt_R.008/Belt_R.007/Belt_R.006
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Belt_R/Belt_R.010/Belt_R.009/Belt_R.008/Belt_R.007/Belt_R.006/Belt_R.005
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Belt_R/Belt_R.010/Belt_R.009/Belt_R.008/Belt_R.007/Belt_R.006/Belt_R.005/Belt_R.004
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Belt_R/Belt_R.010/Belt_R.009/Belt_R.008/Belt_R.007/Belt_R.006/Belt_R.005/Belt_R.004/Belt_R.003
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Belt_R/Belt_R.010/Belt_R.009/Belt_R.008/Belt_R.007/Belt_R.006/Belt_R.005/Belt_R.004/Belt_R.003/Belt_R.002
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Belt_R/Belt_R.010/Belt_R.009/Belt_R.008/Belt_R.007/Belt_R.006/Belt_R.005/Belt_R.004/Belt_R.003/Belt_R.002/Belt_R.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Belt_R/Belt_R.010/Belt_R.009/Belt_R.008/Belt_R.007/Belt_R.006/Belt_R.005/Belt_R.004/Belt_R.003/Belt_R.002/Belt_R.001/Belt_R.001_end
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Leg_R
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Leg_R/Leg_R.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Leg_R/Leg_R.001/Foot_R
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Leg_R/Leg_R.001/Foot_R/Foot_R.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Leg_R/Leg_R.001/Foot_R/Foot_R.001/Foot_R.002
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Leg_R/Leg_R.001/Foot_R/Foot_R.001/Foot_R.002/Foot_R.003
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Leg_R/Leg_R.001/Foot_R/Foot_R.001/Foot_R.002/Foot_R.003/Foot_R.003_end
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Neck
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Neck/Head
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Neck/Head/Head_end
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/Arm_L
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/Arm_L/Arm_L.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/Arm_L/Arm_L.001/Hand_L
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/Arm_L/Arm_L.001/Hand_L/Finger_L
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/Arm_L/Arm_L.001/Hand_L/Finger_L/Finger_L.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/Arm_L/Arm_L.001/Hand_L/Finger_L/Finger_L.001/Finger_L.002
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/Arm_L/Arm_L.001/Hand_L/Finger_L/Finger_L.001/Finger_L.002/Finger_L.002_end
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/Arm_L/Arm_L.001/Hand_L.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/Arm_L/Arm_L.001/Hand_L.001/Thumb_L
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/Arm_L/Arm_L.001/Hand_L.001/Thumb_L/Thumb_L.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/Arm_L/Arm_L.001/Hand_L.001/Thumb_L/Thumb_L.001/Thumb_L.001_end
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/coat_L
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/coat_L/coat_L.003
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/coat_L/coat_L.003/coat_L.002
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/coat_L/coat_L.003/coat_L.002/coat_L.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/coat_L/coat_L.003/coat_L.002/coat_L.001/coat_L.001_end
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/Arm_R
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/Arm_R/Arm_R.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/Arm_R/Arm_R.001/Hand_R
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/Arm_R/Arm_R.001/Hand_R/Finger_R
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/Arm_R/Arm_R.001/Hand_R/Finger_R/Finger_R.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/Arm_R/Arm_R.001/Hand_R/Finger_R/Finger_R.001/Finger_R.002
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/Arm_R/Arm_R.001/Hand_R/Finger_R/Finger_R.001/Finger_R.002/Finger_R.002_end
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/Arm_R/Arm_R.001/Hand_R.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/Arm_R/Arm_R.001/Hand_R.001/Thumb_R
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/Arm_R/Arm_R.001/Hand_R.001/Thumb_R/Thumb_R.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/Arm_R/Arm_R.001/Hand_R.001/Thumb_R/Thumb_R.001/Thumb_R.001_end
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/coat_R
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/coat_R/coat_R.003
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/coat_R/coat_R.003/coat_R.002
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/coat_R/coat_R.003/coat_R.002/coat_R.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/coat_R/coat_R.003/coat_R.002/coat_R.001/coat_R.001_end
+        weight: 1
+      - path: WhiteHeart_Armature/Tail
+        weight: 1
+      - path: WhiteHeart_Armature/Tail/Tail.001
+        weight: 1
+      - path: WhiteHeart_Armature/Tail/Tail.001/Tail.002
+        weight: 1
+      - path: WhiteHeart_Armature/Tail/Tail.001/Tail.002/Tail.003
+        weight: 1
+      - path: WhiteHeart_Armature/Tail/Tail.001/Tail.002/Tail.003/Tail.004
+        weight: 1
+      - path: WhiteHeart_Armature/Tail/Tail.001/Tail.002/Tail.003/Tail.004/Tail.005
+        weight: 1
+      - path: WhiteHeart_Armature/Tail/Tail.001/Tail.002/Tail.003/Tail.004/Tail.005/Tail.006
+        weight: 1
+      - path: WhiteHeart_Armature/Tail/Tail.001/Tail.002/Tail.003/Tail.004/Tail.005/Tail.006/Tail.006_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: WhiteheartIdleStanding
+      takeName: WhiteHeart_Armature|WhiteHeart_ArmatureAction
+      firstFrame: 186
+      lastFrame: 222
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Plane
+        weight: 1
+      - path: whiteHeart
+        weight: 1
+      - path: WhiteHeart_Armature
+        weight: 1
+      - path: WhiteHeart_Armature/Spine
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Belt_L
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Belt_L/Belt_L.010
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Belt_L/Belt_L.010/Belt_L.009
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Belt_L/Belt_L.010/Belt_L.009/Belt_L.008
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Belt_L/Belt_L.010/Belt_L.009/Belt_L.008/Belt_L.007
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Belt_L/Belt_L.010/Belt_L.009/Belt_L.008/Belt_L.007/Belt_L.006
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Belt_L/Belt_L.010/Belt_L.009/Belt_L.008/Belt_L.007/Belt_L.006/Belt_L.005
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Belt_L/Belt_L.010/Belt_L.009/Belt_L.008/Belt_L.007/Belt_L.006/Belt_L.005/Belt_L.004
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Belt_L/Belt_L.010/Belt_L.009/Belt_L.008/Belt_L.007/Belt_L.006/Belt_L.005/Belt_L.004/Belt_L.003
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Belt_L/Belt_L.010/Belt_L.009/Belt_L.008/Belt_L.007/Belt_L.006/Belt_L.005/Belt_L.004/Belt_L.003/Belt_L.002
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Belt_L/Belt_L.010/Belt_L.009/Belt_L.008/Belt_L.007/Belt_L.006/Belt_L.005/Belt_L.004/Belt_L.003/Belt_L.002/Belt_L.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Belt_L/Belt_L.010/Belt_L.009/Belt_L.008/Belt_L.007/Belt_L.006/Belt_L.005/Belt_L.004/Belt_L.003/Belt_L.002/Belt_L.001/Belt_L.001_end
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Leg_L
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Leg_L/Leg_L.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Leg_L/Leg_L.001/Foot_L
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Leg_L/Leg_L.001/Foot_L/Foot_L.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Leg_L/Leg_L.001/Foot_L/Foot_L.001/Foot_L.002
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Leg_L/Leg_L.001/Foot_L/Foot_L.001/Foot_L.002/Foot_L.003
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_L/Leg_L/Leg_L.001/Foot_L/Foot_L.001/Foot_L.002/Foot_L.003/Foot_L.003_end
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Belt_R
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Belt_R/Belt_R.010
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Belt_R/Belt_R.010/Belt_R.009
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Belt_R/Belt_R.010/Belt_R.009/Belt_R.008
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Belt_R/Belt_R.010/Belt_R.009/Belt_R.008/Belt_R.007
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Belt_R/Belt_R.010/Belt_R.009/Belt_R.008/Belt_R.007/Belt_R.006
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Belt_R/Belt_R.010/Belt_R.009/Belt_R.008/Belt_R.007/Belt_R.006/Belt_R.005
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Belt_R/Belt_R.010/Belt_R.009/Belt_R.008/Belt_R.007/Belt_R.006/Belt_R.005/Belt_R.004
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Belt_R/Belt_R.010/Belt_R.009/Belt_R.008/Belt_R.007/Belt_R.006/Belt_R.005/Belt_R.004/Belt_R.003
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Belt_R/Belt_R.010/Belt_R.009/Belt_R.008/Belt_R.007/Belt_R.006/Belt_R.005/Belt_R.004/Belt_R.003/Belt_R.002
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Belt_R/Belt_R.010/Belt_R.009/Belt_R.008/Belt_R.007/Belt_R.006/Belt_R.005/Belt_R.004/Belt_R.003/Belt_R.002/Belt_R.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Belt_R/Belt_R.010/Belt_R.009/Belt_R.008/Belt_R.007/Belt_R.006/Belt_R.005/Belt_R.004/Belt_R.003/Belt_R.002/Belt_R.001/Belt_R.001_end
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Leg_R
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Leg_R/Leg_R.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Leg_R/Leg_R.001/Foot_R
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Leg_R/Leg_R.001/Foot_R/Foot_R.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Leg_R/Leg_R.001/Foot_R/Foot_R.001/Foot_R.002
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Leg_R/Leg_R.001/Foot_R/Foot_R.001/Foot_R.002/Foot_R.003
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Hip_R/Leg_R/Leg_R.001/Foot_R/Foot_R.001/Foot_R.002/Foot_R.003/Foot_R.003_end
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Neck
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Neck/Head
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Neck/Head/Head_end
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/Arm_L
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/Arm_L/Arm_L.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/Arm_L/Arm_L.001/Hand_L
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/Arm_L/Arm_L.001/Hand_L/Finger_L
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/Arm_L/Arm_L.001/Hand_L/Finger_L/Finger_L.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/Arm_L/Arm_L.001/Hand_L/Finger_L/Finger_L.001/Finger_L.002
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/Arm_L/Arm_L.001/Hand_L/Finger_L/Finger_L.001/Finger_L.002/Finger_L.002_end
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/Arm_L/Arm_L.001/Hand_L.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/Arm_L/Arm_L.001/Hand_L.001/Thumb_L
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/Arm_L/Arm_L.001/Hand_L.001/Thumb_L/Thumb_L.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/Arm_L/Arm_L.001/Hand_L.001/Thumb_L/Thumb_L.001/Thumb_L.001_end
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/coat_L
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/coat_L/coat_L.003
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/coat_L/coat_L.003/coat_L.002
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/coat_L/coat_L.003/coat_L.002/coat_L.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_L/coat_L/coat_L.003/coat_L.002/coat_L.001/coat_L.001_end
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/Arm_R
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/Arm_R/Arm_R.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/Arm_R/Arm_R.001/Hand_R
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/Arm_R/Arm_R.001/Hand_R/Finger_R
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/Arm_R/Arm_R.001/Hand_R/Finger_R/Finger_R.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/Arm_R/Arm_R.001/Hand_R/Finger_R/Finger_R.001/Finger_R.002
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/Arm_R/Arm_R.001/Hand_R/Finger_R/Finger_R.001/Finger_R.002/Finger_R.002_end
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/Arm_R/Arm_R.001/Hand_R.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/Arm_R/Arm_R.001/Hand_R.001/Thumb_R
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/Arm_R/Arm_R.001/Hand_R.001/Thumb_R/Thumb_R.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/Arm_R/Arm_R.001/Hand_R.001/Thumb_R/Thumb_R.001/Thumb_R.001_end
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/coat_R
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/coat_R/coat_R.003
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/coat_R/coat_R.003/coat_R.002
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/coat_R/coat_R.003/coat_R.002/coat_R.001
+        weight: 1
+      - path: WhiteHeart_Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.005/Shoulder_R/coat_R/coat_R.003/coat_R.002/coat_R.001/coat_R.001_end
+        weight: 1
+      - path: WhiteHeart_Armature/Tail
+        weight: 1
+      - path: WhiteHeart_Armature/Tail/Tail.001
+        weight: 1
+      - path: WhiteHeart_Armature/Tail/Tail.001/Tail.002
+        weight: 1
+      - path: WhiteHeart_Armature/Tail/Tail.001/Tail.002/Tail.003
+        weight: 1
+      - path: WhiteHeart_Armature/Tail/Tail.001/Tail.002/Tail.003/Tail.004
+        weight: 1
+      - path: WhiteHeart_Armature/Tail/Tail.001/Tail.002/Tail.003/Tail.004/Tail.005
+        weight: 1
+      - path: WhiteHeart_Armature/Tail/Tail.001/Tail.002/Tail.003/Tail.004/Tail.005/Tail.006
+        weight: 1
+      - path: WhiteHeart_Armature/Tail/Tail.001/Tail.002/Tail.003/Tail.004/Tail.005/Tail.006/Tail.006_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

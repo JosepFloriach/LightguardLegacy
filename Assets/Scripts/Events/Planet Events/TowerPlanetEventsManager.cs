@@ -7,6 +7,7 @@ public class TowerPlanetEventsManager : PlanetEventsManager {
 	public GameObject whiteHeartEncounter;
 	public GameObject corruptionChasing;
 	public GameObject jumpingToMundus;
+
 	private DialogueController whiteHeartDialogueController; 
 	private DialogueController bigPappadaDialogueController;
 	private GameObject whiteHeartDialogue;
@@ -58,6 +59,9 @@ public class TowerPlanetEventsManager : PlanetEventsManager {
 			GameManager.inputController.disableInputController ();
 			whiteHeartDialogue = whiteHeartDialogueController.createNewDialogue ("Big P.?! ...", 1f, false, false);
 			yield return StartCoroutine (WaitInterruptable (1f, whiteHeartDialogue));
+			Animator whiteHeartAnimator = whiteHeartEncounter.GetComponent<TowerPlanetWhiteHeartEncounter>().whiteHeartSensei.GetComponentInChildren<Animator>();
+			whiteHeartAnimator.SetTrigger("standUp");
+			yield return new WaitForSeconds(3f);
 			bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("...", 1f, false, false);
 			yield return StartCoroutine (WaitInterruptable (1f, bigPappadaDialogue));
 
