@@ -159,7 +159,7 @@ Material:
       data:
         first:
           name: _DissolveThreshold
-        second: -.00879454613
+        second: .00601089001
       data:
         first:
           name: _Parallax

@@ -40,7 +40,7 @@ public abstract class SpeechBubble : MonoBehaviour {
 		transform.localScale = originalScale;
 
 		if(bouncingIn){
-			StartCoroutine ("beat");
+			//StartCoroutine ("beat");
 		}
 
 		putInPosition();
@@ -76,11 +76,11 @@ public abstract class SpeechBubble : MonoBehaviour {
 	}
 
 	private void putInPosition(){
-
+		GetComponentInChildren<CanvasGroup> ().alpha = 1f;
 		/*if(firstFrameSkipped){
 			firstFrameSkipped = true;
 		}else if(!calculatedVariablesAfterFirstFrame){*/
-			calculatedVariablesAfterFirstFrame = true;
+			/*calculatedVariablesAfterFirstFrame = true;
 			GetComponentInChildren<CanvasGroup> ().alpha = 1f;
 			Vector3[] corners = new Vector3[4];
 			gameObject.transform.GetComponentInChildren<Image>().gameObject.GetComponent<RectTransform>().GetWorldCorners(corners);
@@ -94,7 +94,7 @@ public abstract class SpeechBubble : MonoBehaviour {
 		float zDifference = zPosition - originalZ;
 		Vector3 directionCamera = GameManager.mainCamera.transform.position - transform.position;
 		transform.position -= (directionCamera*zDifference);
-		transform.position += cornerToCenter;
+		transform.position += cornerToCenter;*/
 	}
 	
 	void Update(){
@@ -110,8 +110,8 @@ public abstract class SpeechBubble : MonoBehaviour {
 				}
 				putInPosition();
 				//transform.position = new Vector3(transform.position.x,transform.position.y,-0.5f);
-				transform.up = gameObjectToFollow.transform.up;
-				transform.rotation = Quaternion.LookRotation(/*transform.position-GameManager.mainCamera.transform.position*/ Vector3.forward,GameManager.mainCamera.transform.up);
+				//transform.up = gameObjectToFollow.transform.up;
+				//transform.rotation = Quaternion.LookRotation(/*transform.position-GameManager.mainCamera.transform.position*/ Vector3.forward,GameManager.mainCamera.transform.up);
 			}
 		}
 	}
