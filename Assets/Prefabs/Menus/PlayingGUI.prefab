@@ -844,6 +844,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99339e00d4d441a49a49b4b9a78dd600, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifeLeafs:
+  - {fileID: 126706}
+  - {fileID: 161564}
+  - {fileID: 124372}
+  - {fileID: 192822}
+  - {fileID: 109484}
+  - {fileID: 105270}
+  - {fileID: 100174}
+  updateTime: .0500000007
 --- !u!114 &11473226
 MonoBehaviour:
   m_ObjectHideFlags: 1

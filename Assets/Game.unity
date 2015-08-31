@@ -23765,6 +23765,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aspectRatioWidth: 16
   aspectRatioHeight: 9
+  initializeScreenResolution: 0
 --- !u!4 &283120714
 Transform:
   m_ObjectHideFlags: 0
@@ -49265,7 +49266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6219b76d882b6d043822e9cd6d010af3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEnabled: 0
+  isEnabled: 1
   bigPappadaInitialPosition: {fileID: 2013654545}
   littleGHopper: {fileID: 1973452111}
   boarHuntingGO: {fileID: 1806287929}
@@ -49551,6 +49552,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99339e00d4d441a49a49b4b9a78dd600, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifeLeafs: []
+  updateTime: .0500000007
 --- !u!4 &737543838
 Transform:
   m_PrefabParentObject: {fileID: 451792, guid: 5913ca3260765e940849bd3199325f3f, type: 2}

@@ -458,7 +458,6 @@ public class GUIManager : MonoBehaviour {
 
 	public static void fadeInWithAction(Action action,Menu newMenu){
 		activateMenu (newMenu);
-		LifeGUIManager.GetInstance ().resetHitPoints ();
 		fadeManager.fadeInWithAction(action, getMenu(newMenu));
 	}
 
@@ -485,11 +484,6 @@ public class GUIManager : MonoBehaviour {
 
 	public static void fadeAllIn(){
 		fadeManager.fadeAllIn ();
-	}
-
-	public static void getHurtEffect(){
-		//fadeManager.getHurtEffect ();
-		LifeGUIManager.GetInstance ().addHitPoint ();
 	}
 
 	public static void registerHightlightFollower(GameObject highlightGO){

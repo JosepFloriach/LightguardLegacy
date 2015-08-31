@@ -369,7 +369,6 @@ public class PlayerController : MonoBehaviour {
 			GameManager.playerAnimator.SetTrigger("isHurt");
 			GetComponent<DialogueController>().createNewExpression("Ouch!",0.5f,true,true);
 			GameManager.audioManager.PlayStableSound(8);
-			GUIManager.getHurtEffect ();
 			killable.TakeDamage (hitPointsToSubstract);
 			pappadaC.newProportionOfLife (killable.proportionHP ());
 			if (killable.HP <= 0 && !GameManager.isGameEnded) {

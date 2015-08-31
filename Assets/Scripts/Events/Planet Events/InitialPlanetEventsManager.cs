@@ -32,9 +32,9 @@ public class InitialPlanetEventsManager : PlanetEventsManager {
 		if(!hasBeenActivated){
 			if(isEnabled){
 				GameObject middlePointBigPLittleG = new GameObject();
-				GameManager.mainCamera.GetComponent<CameraFollowingPlayer>().setObjectiveZ(2.5f);
+				GameManager.mainCamera.GetComponent<CameraFollowingPlayer>().setObjectiveZ(3.3f);
 				GameManager.mainCamera.GetComponent<CameraFollowingPlayer>().setNewXAngle(0f);
-				GameManager.mainCamera.GetComponent<CameraFollowingPlayer>().setUpMultiplyierWithAngle(0.7f);
+				GameManager.mainCamera.GetComponent<CameraFollowingPlayer>().setUpMultiplyierWithAngle(6f);
 
 				littleGHopper.SetActive(true);
 				GameManager.player.transform.position = new Vector3(bigPappadaInitialPosition.transform.position.x,bigPappadaInitialPosition.transform.position.y,0f);

@@ -6,17 +6,22 @@ public class OptionsManager : MonoBehaviour {
 
 	public float aspectRatioWidth = 16f;
 	public float aspectRatioHeight = 9f;
+
+	public bool initializeScreenResolution = false;
+
 	void Awake(){
 		GameManager.registerOptionsManager (this);
 		initialize ();
 	}
 
 	void initialize(){
-		bool fullScreen = Screen.fullScreen;
-		if(fullScreen){
-			StartCoroutine(delayedCorrectScreenSize());
-		}else{
-			Screen.SetResolution(Screen.currentResolution.width,Screen.currentResolution.height,fullScreen);
+		if (initializeScreenResolution) {
+			bool fullScreen = Screen.fullScreen;
+			if (fullScreen) {
+				StartCoroutine (delayedCorrectScreenSize ());
+			} else {
+				Screen.SetResolution (Screen.currentResolution.width, Screen.currentResolution.height, fullScreen);
+			}
 		}
 	}
 	//We set fixed resolutions to keep the aspect ratio when in fullscreen
