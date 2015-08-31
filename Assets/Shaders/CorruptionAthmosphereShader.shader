@@ -14,12 +14,14 @@
 		_OriginCorruption ("OriginCorruption", Vector) = (0.0,0.0,0.0,0.0)     		
     }
     SubShader {
-    	Tags { "RenderType"="Opaque" }
+    	Tags {"Queue" = "Transparent" }
 		LOD 200
     	ZWrite On
 		Lighting Off
 		Fog { Mode Off }
         Pass {
+        	Blend SrcAlpha OneMinusSrcAlpha
+        	
             CGPROGRAM
             #include "UnityCG.cginc"
             #pragma fragmentoption ARB_precision_hint_fastest
@@ -27,7 +29,7 @@
             #pragma vertex vert
             #pragma fragment frag
             #pragma multi_compile _DISS_OFF _DISS_ON
-
+			
 			sampler2D _MainTex;
 			float4 _MainTex_ST;
 			float4 _OriginalColor;

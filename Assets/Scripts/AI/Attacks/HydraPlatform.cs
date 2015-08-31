@@ -40,7 +40,7 @@ public class HydraPlatform : MonoBehaviour {
 	}
 
 	IEnumerator burnAndGoDown(){
-		yield return new WaitForSeconds (1.2f);
+		yield return new WaitForSeconds (1f);
 		GetComponent<MeshRenderer> ().material = burningMaterial;
 		yield return new WaitForSeconds (1.5f);
 		float timer = 0f;

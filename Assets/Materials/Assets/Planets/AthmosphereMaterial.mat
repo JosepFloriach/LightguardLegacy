@@ -30,6 +30,13 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
+          name: _ToonShade
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
           name: _DissolveNoise
         second:
           m_Texture: {fileID: 2800000, guid: fdcc49f69a12f0e41b9ed2c94e230662, type: 3}
@@ -38,13 +45,6 @@ Material:
       data:
         first:
           name: _ParallaxMap
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _ToonShade
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -65,30 +65,6 @@ Material:
         first:
           name: _Shininess
         second: .699999988
-      data:
-        first:
-          name: _OutlineSize
-        second: 4
-      data:
-        first:
-          name: _YCutOut
-        second: 1000
-      data:
-        first:
-          name: _Dissolution
-        second: 1
-      data:
-        first:
-          name: _BurningWidth
-        second: 0
-      data:
-        first:
-          name: _TileSize
-        second: .204999998
-      data:
-        first:
-          name: _Parallax
-        second: .0199999996
       data:
         first:
           name: _TintColor
@@ -135,6 +111,30 @@ Material:
         second: 0
       data:
         first:
+          name: _OutlineSize
+        second: 4
+      data:
+        first:
+          name: _YCutOut
+        second: 1000
+      data:
+        first:
+          name: _Dissolution
+        second: 1
+      data:
+        first:
+          name: _BurningWidth
+        second: 0
+      data:
+        first:
+          name: _TileSize
+        second: .204999998
+      data:
+        first:
+          name: _Parallax
+        second: .0199999996
+      data:
+        first:
           name: _Corruption
         second: 1
     m_Colors:
@@ -148,41 +148,41 @@ Material:
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
-          name: _OutlineColor
-        second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
-          name: _BurningColor
-        second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
           name: _TintColor
         second: {r: 1, g: 1, b: 1, a: .501960814}
+      data:
+        first:
+          name: _OutlineColor
+        second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _Asymmetry
         second: {r: 0, g: .25, b: .5, a: 0}
       data:
         first:
+          name: _BurningColor
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
           name: _CorruptionColor
         second: {r: 1, g: 0, b: .931034565, a: 1}
+      data:
+        first:
+          name: _OriginalColor
+        second: {r: 1, g: 1, b: 1, a: .490196079}
+      data:
+        first:
+          name: _CorruptedColor
+        second: {r: .647058845, g: 0, b: .629209101, a: .490196079}
+      data:
+        first:
+          name: _OriginCorruption
+        second: {r: 0, g: 0, b: 0, a: 0}
       data:
         first:
           name: _Emission
         second: {r: 0, g: 0, b: 0, a: 0}
       data:
         first:
-          name: _OriginalColor
-        second: {r: 1, g: 1, b: 1, a: .501960814}
-      data:
-        first:
-          name: _CorruptedColor
-        second: {r: .786764741, g: .0983455926, b: .767774045, a: .36470589}
-      data:
-        first:
           name: _OriginPoint
-        second: {r: 0, g: 0, b: 0, a: 0}
-      data:
-        first:
-          name: _OriginCorruption
         second: {r: 0, g: 0, b: 0, a: 0}
