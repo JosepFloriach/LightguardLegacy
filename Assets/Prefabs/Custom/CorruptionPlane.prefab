@@ -63,7 +63,7 @@ ParticleSystem:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 109976}
-  lengthInSec: 5
+  lengthInSec: 2
   startDelay: 0
   speed: 1
   randomSeed: 0
@@ -231,7 +231,7 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 4294967295
+        rgba: 4281270316
       minMaxState: 0
     startSize:
       scalar: 1

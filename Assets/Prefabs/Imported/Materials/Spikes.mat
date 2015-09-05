@@ -149,7 +149,7 @@ Material:
       data:
         first:
           name: _Outline
-        second: .100000001
+        second: .200000003
       data:
         first:
           name: _Asym
@@ -172,20 +172,8 @@ Material:
         second: 1000
       data:
         first:
-          name: _Dissolution
-        second: 0
-      data:
-        first:
-          name: _BurningWidth
-        second: .0500000007
-      data:
-        first:
           name: _TileSize
         second: .150000006
-      data:
-        first:
-          name: _DissolveThreshold
-        second: 1
       data:
         first:
           name: _Parallax
@@ -230,6 +218,18 @@ Material:
         first:
           name: _Corruption
         second: 1
+      data:
+        first:
+          name: _Dissolution
+        second: 0
+      data:
+        first:
+          name: _BurningWidth
+        second: .0500000007
+      data:
+        first:
+          name: _DissolveThreshold
+        second: 1
     m_Colors:
       data:
         first:
@@ -242,15 +242,11 @@ Material:
       data:
         first:
           name: _OutlineColor
-        second: {r: 0, g: 0, b: 0, a: 1}
+        second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _Asymmetry
         second: {r: 0, g: .25, b: .5, a: 0}
-      data:
-        first:
-          name: _BurningColor
-        second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _EmissionColorUI
@@ -263,3 +259,7 @@ Material:
         first:
           name: _OriginCorruption
         second: {r: 0, g: 0, b: 0, a: 0}
+      data:
+        first:
+          name: _BurningColor
+        second: {r: 1, g: 1, b: 1, a: 1}

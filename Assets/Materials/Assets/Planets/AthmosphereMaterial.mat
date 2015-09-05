@@ -119,14 +119,6 @@ Material:
         second: 1000
       data:
         first:
-          name: _Dissolution
-        second: 1
-      data:
-        first:
-          name: _BurningWidth
-        second: 0
-      data:
-        first:
           name: _TileSize
         second: .204999998
       data:
@@ -137,6 +129,14 @@ Material:
         first:
           name: _Corruption
         second: 1
+      data:
+        first:
+          name: _Dissolution
+        second: 1
+      data:
+        first:
+          name: _BurningWidth
+        second: 0
     m_Colors:
       data:
         first:
@@ -160,12 +160,16 @@ Material:
         second: {r: 0, g: .25, b: .5, a: 0}
       data:
         first:
-          name: _BurningColor
-        second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
           name: _CorruptionColor
         second: {r: 1, g: 0, b: .931034565, a: 1}
+      data:
+        first:
+          name: _OriginCorruption
+        second: {r: 0, g: 0, b: 0, a: 0}
+      data:
+        first:
+          name: _BurningColor
+        second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _OriginalColor
@@ -174,10 +178,6 @@ Material:
         first:
           name: _CorruptedColor
         second: {r: .647058845, g: 0, b: .629209101, a: .627451003}
-      data:
-        first:
-          name: _OriginCorruption
-        second: {r: 0, g: 0, b: 0, a: 0}
       data:
         first:
           name: _Emission
