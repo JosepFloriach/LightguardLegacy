@@ -7,7 +7,7 @@ public class Killable:MonoBehaviour {
 
 	private int maxHP;
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		maxHP = HP;
 		//renderer.material.color = new Color (0.0f, 1.0f, 0.0f);
 
@@ -49,5 +49,12 @@ public class Killable:MonoBehaviour {
 		if(HP<=0){return true;}
 		else{return false;}
 	}
-	
+
+	public int getLife(){
+		return HP;
+	}
+
+	public void setLife(int life){
+		HP = life;
+	}
 }

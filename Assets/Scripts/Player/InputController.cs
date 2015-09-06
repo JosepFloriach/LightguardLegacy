@@ -145,6 +145,7 @@ public class InputController : MonoBehaviour {
 			if (Input.GetButtonDown("Block")) {
 				Interactuable entity = EntityManager.getClosestInteractuable();
 				SpaceGravityBody body = GetComponent<SpaceGravityBody>();
+
 				if(character.isSpaceJumpCharged){
 					CancelChargingSpaceJump();
 				}else if(character.getIsSpaceJumping() && body.getIsOrbitingAroundPlanet()){
@@ -153,6 +154,8 @@ public class InputController : MonoBehaviour {
 					entity.doInteractAction();
 				}else if(Input.GetAxis("Vertical")<-0.5f && isCharacterAllowedToBlock()){
 					attackController.doBlock();
+				}else if(GameManager.historyTextManager.hasAnyInRangeHistoryText()){
+					GameManager.historyTextManager.activateText();
 				}else if(isCharacterAllowedToDash()){
 					attackController.doDash();
 				}
@@ -191,6 +194,23 @@ public class InputController : MonoBehaviour {
 					if(pem!=null){
 						pem.interrupt();
 					}
+				}
+				if(GameManager.tutorialManager.getIsActive()){
+					GameManager.tutorialManager.deactivateActualTutorial();
+				}
+
+				if(GameManager.historyTextManager.getIsActive()){
+					GameManager.historyTextManager.deactivateHistoryText();
+				}
+			}
+
+			if(Input.GetButtonUp("Block")){
+				if(GameManager.tutorialManager.getIsActive()){
+					GameManager.tutorialManager.deactivateActualTutorial();
+				}
+				
+				if(GameManager.historyTextManager.getIsActive()){
+					GameManager.historyTextManager.deactivateHistoryText();
 				}
 			}
 
@@ -281,16 +301,12 @@ public class InputController : MonoBehaviour {
 
 	bool isCharacterAllowedToChangeCameraRange(){
 		if (character.getIsChargingSpaceJump ()) {
-			Debug.Log ("1");
 			return false;
 		} else if (character.getIsSpaceJumping ()) {
-			Debug.Log ("2");
 			return false;
 		} else if (GameManager.getIsInsidePlanet()) {
-			Debug.Log ("3");
 			return false;
 		} else if (!isCharacterAllowedToSpaceJump()){
-			Debug.Log ("4");
 			return false;
 		}
 		return true;

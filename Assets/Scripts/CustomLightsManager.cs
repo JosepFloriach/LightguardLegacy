@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-public class LightsManager : MonoBehaviour {
+public class CustomLightsManager : MonoBehaviour {
 
 	public Color colorAmbientInsidePlanet;
 	private List<Light> directionalLights;

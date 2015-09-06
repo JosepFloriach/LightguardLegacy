@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -25,10 +25,12 @@ public static class GameManager{
 	public static GrassManager grassManager;
 	public static IAManager iaManager;
 	public static AudioManager audioManager;
-	public static LightsManager lightsManager;
-	public static OptionsManager optionsManager;
+	public static CustomLightsManager lightsManager;
+	public static CustomOptionsManager optionsManager;
 	public static EnemyPrefabManager enemyPrefabManager;
 	public static GalaxyCameraZone actualGalaxy;
+	public static TutorialManager tutorialManager;
+	public static HistoryTextManager historyTextManager;
 
 	public static bool isGameEnded = true;
 	public static bool isCameraLockedToPlayer = true;
@@ -224,16 +226,24 @@ public static class GameManager{
 		iaManager = iaM;
 	}
 
-	public static void registerLightsManager(LightsManager lm){
+	public static void registerLightsManager(CustomLightsManager lm){
 		lightsManager = lm;
 	}
 
-	public static void registerOptionsManager(OptionsManager om){
+	public static void registerOptionsManager(CustomOptionsManager om){
 		optionsManager = om;
 	}
 
 	public static void registerEnemyPrefabManager(EnemyPrefabManager epm){
 		enemyPrefabManager = epm;
+	}
+
+	public static void registerTutorialManager(TutorialManager tm){
+		tutorialManager = tm;
+	}
+
+	public static void registerHistoryTextManager(HistoryTextManager htm){
+		historyTextManager = htm;
 	}
 
 }

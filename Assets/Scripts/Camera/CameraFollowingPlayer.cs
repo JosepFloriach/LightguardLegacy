@@ -42,7 +42,7 @@ public class CameraFollowingPlayer : MonoBehaviour {
 
 	private Vector3 staticUp;
 
-	private enum CameraDistanceOfPlayer{Close,MediumRange,GalaxyOverview,CleansePlanet,SpaceJumpRange,Custom}
+	private enum CameraDistanceOfPlayer{Close,MediumRange,GalaxyOverview,CleansePlanet,SpaceJumpRange,CustomInclined,CustomStraight}
 	private CameraDistanceOfPlayer cameraDistance;
 
 //Usado para controlar la camara en la zona de la pagoda
@@ -169,10 +169,16 @@ public class CameraFollowingPlayer : MonoBehaviour {
 	}
 
 	
-	public void setObjectiveZ(float newObjectiveZ){
+	public void setObjectiveZInclined(float newObjectiveZ){
 		timerZPosition = 0f;
 		objectiveZ = -newObjectiveZ;
-		cameraDistance = CameraDistanceOfPlayer.Custom;
+		cameraDistance = CameraDistanceOfPlayer.CustomInclined;
+	}
+
+	public void setObjectiveZStraight(float newObjectiveZ){
+		timerZPosition = 0f;
+		objectiveZ = -newObjectiveZ;
+		cameraDistance = CameraDistanceOfPlayer.CustomStraight;
 	}
 
 	public void resetCameraRange(){
@@ -285,7 +291,7 @@ public class CameraFollowingPlayer : MonoBehaviour {
 	}
 
 	private bool cameraHasUpInclination(){
-		return cameraDistance.Equals (CameraDistanceOfPlayer.Close) || cameraDistance.Equals (CameraDistanceOfPlayer.CleansePlanet);
+		return cameraDistance.Equals (CameraDistanceOfPlayer.Close) || cameraDistance.Equals (CameraDistanceOfPlayer.CleansePlanet)  || cameraDistance.Equals (CameraDistanceOfPlayer.CustomInclined);
 	}
 
 	public void setCameraShaking(){

@@ -74,7 +74,7 @@ public class MundusFisureAttack : Attack {
 			Vector3 originalScale = surroundingBall.transform.localScale;
 			Vector3 objectiveScale = new Vector3(maxScaleSphere,maxScaleSphere,maxScaleSphere);
 			timer = 0f;
-			GameManager.mainCamera.GetComponent<CameraFollowingPlayer>().setObjectiveZ(cameraZPositionTotal);
+			GameManager.mainCamera.GetComponent<CameraFollowingPlayer>().setObjectiveZInclined(cameraZPositionTotal);
 			GameManager.mainCamera.GetComponent<CameraFollowingPlayer>().setCameraShaking();
 			while(timer<timeToGrow){
 				timer+=Time.deltaTime;

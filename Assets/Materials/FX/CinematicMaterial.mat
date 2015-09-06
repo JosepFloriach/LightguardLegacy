@@ -150,6 +150,18 @@ Material:
         second: 0
       data:
         first:
+          name: _Dissolution
+        second: 1
+      data:
+        first:
+          name: _BurningWidth
+        second: 0
+      data:
+        first:
+          name: _DissolveThreshold
+        second: .00107747316
+      data:
+        first:
           name: _Parallax
         second: .0199999996
       data:
@@ -188,18 +200,6 @@ Material:
         first:
           name: _Metallic
         second: 0
-      data:
-        first:
-          name: _Dissolution
-        second: 1
-      data:
-        first:
-          name: _BurningWidth
-        second: 0
-      data:
-        first:
-          name: _DissolveThreshold
-        second: .000541090965
     m_Colors:
       data:
         first:
@@ -219,9 +219,9 @@ Material:
         second: {r: 0, g: .25, b: .5, a: 0}
       data:
         first:
-          name: _EmissionColorUI
-        second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
           name: _BurningColor
         second: {r: 1, g: .848275781, b: 0, a: 1}
+      data:
+        first:
+          name: _EmissionColorUI
+        second: {r: 1, g: 1, b: 1, a: 1}

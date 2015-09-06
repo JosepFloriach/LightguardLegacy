@@ -8,10 +8,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 486476}
-  - 65: {fileID: 6504458}
-  - 198: {fileID: 19895620}
-  - 199: {fileID: 19970506}
-  - 114: {fileID: 11418094}
+  - 65: {fileID: 6599324}
+  - 198: {fileID: 19805370}
+  - 199: {fileID: 19927074}
+  - 114: {fileID: 11478368}
   m_Layer: 0
   m_Name: CorruptionPlane
   m_TagString: Untagged
@@ -26,12 +26,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 109976}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 475.98999, y: 24.0100002, z: .439999998}
-  m_LocalScale: {x: 1, y: .299497932, z: 1}
+  m_LocalPosition: {x: 889.340027, y: 29.9099998, z: -1.36020005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!65 &6504458
+--- !u!65 &6599324
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -43,7 +43,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 12, y: .600000024, z: 6}
   m_Center: {x: -.200378418, y: -.0635910034, z: 0}
---- !u!114 &11418094
+--- !u!114 &11478368
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -57,7 +57,7 @@ MonoBehaviour:
   speed: 1
   distance: 50
   maxPlayerDistance: 6
---- !u!198 &19895620
+--- !u!198 &19805370
 ParticleSystem:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -231,7 +231,7 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 4281270316
+        rgba: 540934202
       minMaxState: 0
     startSize:
       scalar: 1
@@ -1115,7 +1115,7 @@ ParticleSystem:
     subEmitterCollision1: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterDeath1: {fileID: 0}
---- !u!199 &19970506
+--- !u!199 &19927074
 ParticleSystemRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

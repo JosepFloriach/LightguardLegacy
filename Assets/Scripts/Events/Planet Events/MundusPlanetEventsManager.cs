@@ -125,7 +125,7 @@ public class MundusPlanetEventsManager : PlanetEventsManager {
 		littleGHopper.GetComponentInChildren<Animator> ().SetBool ("isFallingDown",false);
 		yield return new WaitForSeconds (2f);
 
-		littleGDialogue = littleGDialogueController.createNewDialogue ("Master?", 2f, false, false);
+		littleGDialogue = littleGDialogueController.createNewDialogue ("Master?", 2f, false,TextureDialogue.LittleG,!littleGHopper.GetComponent<CharacterController>().getIsLookingRight());
 		yield return StartCoroutine (WaitInterruptable (2f, littleGDialogue));
 
 		littleGHopper.GetComponent<CharacterController> ().Move (1f);
@@ -134,10 +134,10 @@ public class MundusPlanetEventsManager : PlanetEventsManager {
 		littleGHopper.GetComponent<CharacterController> ().StopMoving ();
 		littleGHopper.GetComponentInChildren<Animator> ().SetBool ("isWalking", false);
 
-		littleGDialogue = littleGDialogueController.createNewDialogue ("Big P.?", 2f, false, false);
+		littleGDialogue = littleGDialogueController.createNewDialogue ("Big P.?", 2f, false,TextureDialogue.LittleG,!littleGHopper.GetComponent<CharacterController>().getIsLookingRight());
 		yield return StartCoroutine (WaitInterruptable (2f, littleGDialogue));
 
-		littleGDialogue = littleGDialogueController.createNewDialogue ("Nooooo!!", 2f, false, false);
+		littleGDialogue = littleGDialogueController.createNewDialogue ("Nooooo!!", 2f, false,TextureDialogue.LittleG,!littleGHopper.GetComponent<CharacterController>().getIsLookingRight());
 		yield return StartCoroutine (WaitInterruptable (2f, littleGDialogue));
 
 		GUIManager.fadeIn (Menu.BlackMenu);
@@ -159,7 +159,7 @@ public class MundusPlanetEventsManager : PlanetEventsManager {
 		//Deactivate player input and move camera
 		GameManager.inputController.disableInputController ();
 		GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().followObjective (positionOnPlanetExplode);
-		GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().setObjectiveZ (50f);
+		GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().setObjectiveZInclined (50f);
 		GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().setCameraShaking ();
 		yield return new WaitForSeconds (3f);
 		//Explosion of the planet
@@ -206,7 +206,7 @@ public class MundusPlanetEventsManager : PlanetEventsManager {
 		mundus.GetComponent<IAControllerMundus> ().setPhase (2);
 		GameManager.inputController.enableInputController ();
 		GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().stopCameraShaking ();
-		GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().setObjectiveZ (20f);
+		GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().setObjectiveZInclined (20f);
 		GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().resetObjective();
 		isFinishedTransition = true;
 	}
@@ -217,16 +217,16 @@ public class MundusPlanetEventsManager : PlanetEventsManager {
 		middlePosition.transform.up = middlePosition.transform.position - getInsidePlanetPosition ();
 		GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().followObjective (middlePosition);
 
-		mundusDialogue = mundusDialogueController.createNewDialogue ("You finally came!!", 2f, false, false);
+		mundusDialogue = mundusDialogueController.createNewDialogue ("You finally came!!", 2f, false,TextureDialogue.Mundus,!mundus.GetComponent<CharacterController>().getIsLookingRight());
 		yield return StartCoroutine (WaitInterruptable (2f, mundusDialogue));
 
-		bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("I came here to destroy \n you mundus!!", 2f, false, false);
+		bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("I came here to destroy  you mundus!!", 2f, true,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 		yield return StartCoroutine (WaitInterruptable (2f, bigPappadaDialogue));
 
-		mundusDialogue = mundusDialogueController.createNewDialogue ("HA HA HA!", 1f, false, false);
+		mundusDialogue = mundusDialogueController.createNewDialogue ("HA HA HA!", 1f,false,TextureDialogue.Mundus,!mundus.GetComponent<CharacterController>().getIsLookingRight());
 		yield return StartCoroutine (WaitInterruptable (1f, mundusDialogue));
 
-		mundusDialogue = mundusDialogueController.createNewDialogue ("Just try!", 2f, false, false);
+		mundusDialogue = mundusDialogueController.createNewDialogue ("Just try!", 2f,false,TextureDialogue.Mundus,!mundus.GetComponent<CharacterController>().getIsLookingRight());
 		yield return StartCoroutine (WaitInterruptable (2f, mundusDialogue));
 
 		GameManager.inputController.enableInputController();

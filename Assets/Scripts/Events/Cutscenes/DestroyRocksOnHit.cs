@@ -8,11 +8,13 @@ public class DestroyRocksOnHit : MonoBehaviour {
 	public float cooldownHit = 0.5f;
 	private int hitsMade = 0;
 	private float lastHit;
+
 	void Start(){
 		lastHit = Time.time;
 	}
+
 	void OnTriggerEnter(Collider other) {
-		if(other.gameObject.layer == LayerMask.NameToLayer("PlayerWeapon")){
+		if(other.gameObject.layer == LayerMask.NameToLayer("PlayerWeapon") && other.enabled){
 			if(((Time.time - lastHit)>cooldownHit)){
 				lastHit = Time.time;
 				hitsMade++;

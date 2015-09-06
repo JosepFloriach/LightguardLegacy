@@ -117,10 +117,10 @@ public class GravityAttractor : MonoBehaviour {
 			bool hasToAddForce = true;
 
 			float ratioDistance = distance/gravityDistance;
-			if(body.getUsesSpaceGravity()){
+			if(body.getUsesSpaceGravity() && !body.getIsGettingOutOfOrbit()){
 				
 				bool isOrbiting = body.getIsOrbitingAroundPlanet();
-				if(!isOrbiting){
+				if(!isOrbiting  && !separateGravityAndAir){
 					
 					float angle = Vector3.Angle(body.GetComponent<Rigidbody>().velocity,targetDir);
 					angle = Mathf.Abs(angle);
@@ -129,7 +129,6 @@ public class GravityAttractor : MonoBehaviour {
 							GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().followObjective (gameObject);
 							isOrbiting = true;
 							body.setIsOrbitingAroundPlanet(true);
-
 						}
 					}
 				}
