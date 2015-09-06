@@ -340,11 +340,8 @@ public class GUIManager : MonoBehaviour {
 	}
 
 	public static void setPercentageOfBreathing(float percentage){
-		if(spaceJumpGUIO!=null){
-			BreathingGUI breathingGUI = spaceJumpGUIO.GetComponentInChildren<BreathingGUI> ();
-			if(breathingGUI!=null){
-				spaceJumpGUIO.GetComponentInChildren<BreathingGUI> ().setPercentage (percentage);
-			}
+		if(playingGUIO!=null){
+			playingGUIO.GetComponentInChildren<BreathingGUI> ().setPercentage (percentage);
 		}
 	}
 	

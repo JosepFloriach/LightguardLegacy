@@ -174,7 +174,7 @@ public class PlayerController : MonoBehaviour {
 		if((body.getIsOutsideAthmosphere() || !canBreatheInActualPlanet) && canDrownInSpace){
 
 			//breathingBubble.SetActive(true);
-			GUIManager.activateSpaceJumpGUI();
+			//GUIManager.activateSpaceJumpGUI();
 			//rigidbody.velocity = rigidbody.velocity.normalized * (Constants.GRAVITY_FORCE_OF_PLANETS/1.5f);
 
 			if(!GameManager.isGameEnded){
@@ -242,7 +242,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	public void SpaceJump() {
-		GUIManager.activateSpaceJumpGUI();
+		//GUIManager.activateSpaceJumpGUI();
 		characterController.Jump (spaceJumpForce);
 		GetComponent<Rigidbody> ().velocity = lineJumpDirection * spaceJumpForce;
 		//If we jump into the space, stop the particle system.
@@ -349,7 +349,7 @@ public class PlayerController : MonoBehaviour {
 				}
 			}
 		}
-		GUIManager.deactivatePlayingGUI ();
+		//GUIManager.deactivatePlayingGUI ();
 		bpAnimator.SetBool("isChargingSpaceJumping",true);
 		isChargingSpaceJump = true;
 		GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().setCameraRangeSpaceJump ();
@@ -376,6 +376,7 @@ public class PlayerController : MonoBehaviour {
 				GameManager.playerAnimator.SetBool("isDerribado",true);
 				StopMove();
 				isInvulnerable = true;
+				GUIManager.setPercentageOfBreathing(100);
 				GameManager.audioManager.StopSong();
 				GameManager.audioManager.PlayStableSound(9);
 				StartCoroutine(dissolveAndLose());
