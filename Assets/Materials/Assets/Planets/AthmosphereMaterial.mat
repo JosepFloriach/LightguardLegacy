@@ -30,6 +30,13 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
+          name: _ToonShade
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
           name: _DissolveNoise
         second:
           m_Texture: {fileID: 2800000, guid: fdcc49f69a12f0e41b9ed2c94e230662, type: 3}
@@ -40,13 +47,6 @@ Material:
           name: _CorruptionTexture
         second:
           m_Texture: {fileID: 2800000, guid: c012cd004cede244c96a82228fed4480, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _ToonShade
-        second:
-          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -107,6 +107,10 @@ Material:
         second: 0
       data:
         first:
+          name: _DetailTex
+        second: 1
+      data:
+        first:
           name: _OutlineSize
         second: 4
       data:
@@ -120,10 +124,6 @@ Material:
       data:
         first:
           name: _Corruption
-        second: 1
-      data:
-        first:
-          name: _DetailTex
         second: 1
       data:
         first:
@@ -160,6 +160,10 @@ Material:
         second: {r: 0, g: .25, b: .5, a: 0}
       data:
         first:
+          name: _Emission
+        second: {r: 0, g: 0, b: 0, a: 0}
+      data:
+        first:
           name: _CorruptionColor
         second: {r: 1, g: 0, b: .931034565, a: 1}
       data:
@@ -168,20 +172,16 @@ Material:
         second: {r: 0, g: 0, b: 0, a: 0}
       data:
         first:
-          name: _Emission
-        second: {r: 0, g: 0, b: 0, a: 0}
-      data:
-        first:
           name: _BurningColor
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _OriginalColor
-        second: {r: 1, g: 1, b: 1, a: .352941185}
+        second: {r: 1, g: 1, b: 1, a: .627451003}
       data:
         first:
           name: _CorruptedColor
-        second: {r: .647058845, g: 0, b: .629209101, a: .352941185}
+        second: {r: .647058845, g: 0, b: .629209101, a: .627451003}
       data:
         first:
           name: _OriginPoint

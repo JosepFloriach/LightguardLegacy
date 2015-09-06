@@ -2,11 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 
+public enum TextureDialogue {BigPappada,LittleG,Whiteheart,Mundus}
+
 public class DialogueManager : MonoBehaviour {
 
 	public GameObject prefabDialogue;
 	public GameObject prefabExpression;
 
+	public Texture bigPTexture, littleGTexture, WhiteheartTexture, MundusTexture;
 
 	private List<GameObject> dialoguesPool;
 	private List<GameObject> expressionPool;
@@ -15,6 +18,19 @@ public class DialogueManager : MonoBehaviour {
 		dialoguesPool = new List<GameObject> (0);
 		expressionPool = new List<GameObject> (0);
 		GameManager.registerDialogueManager (this);
+	}
+
+	public Texture getTextureDialogue(TextureDialogue t){
+		if(t.Equals(TextureDialogue.BigPappada)){
+			return bigPTexture;
+		}else if(t.Equals(TextureDialogue.LittleG)){
+			return littleGTexture;
+		}else if(t.Equals(TextureDialogue.Mundus)){
+			return MundusTexture;
+		}else if(t.Equals(TextureDialogue.Whiteheart)){
+			return WhiteheartTexture;
+		}
+		return null;
 	}
 
 	public GameObject getDialogue(){

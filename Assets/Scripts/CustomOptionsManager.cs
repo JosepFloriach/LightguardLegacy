@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class OptionsManager : MonoBehaviour {
+public class CustomOptionsManager : MonoBehaviour {
 
 
 	public float aspectRatioWidth = 16f;

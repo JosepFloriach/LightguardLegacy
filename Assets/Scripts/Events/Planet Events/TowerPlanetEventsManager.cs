@@ -41,7 +41,7 @@ public class TowerPlanetEventsManager : PlanetEventsManager {
 			GameManager.inputController.disableInputController();
 			GameManager.mainCamera.GetComponent<CameraFollowingPlayer>().setCameraShaking();
 			yield return new WaitForSeconds (2f);
-			bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("What is this?!", 1f, false, false);
+			bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("What is this?!", 1f, true,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			yield return StartCoroutine(WaitInterruptable (1f,bigPappadaDialogue));
 
 			corruptionOngoing = GameObject.Instantiate (corruptionPlanetPrefab) as GameObject;
@@ -57,32 +57,32 @@ public class TowerPlanetEventsManager : PlanetEventsManager {
 		if (!whiteHeartTalkedTo) {
 			whiteHeartEncounter.GetComponent<TowerPlanetWhiteHeartEncounter>().isActive = false;
 			GameManager.inputController.disableInputController ();
-			whiteHeartDialogue = whiteHeartDialogueController.createNewDialogue ("Big P.?! ...", 1f, false, false);
+			whiteHeartDialogue = whiteHeartDialogueController.createNewDialogue ("Big P.?! ...", 1f, true,TextureDialogue.Whiteheart,true);
 			yield return StartCoroutine (WaitInterruptable (1f, whiteHeartDialogue));
 			Animator whiteHeartAnimator = whiteHeartEncounter.GetComponent<TowerPlanetWhiteHeartEncounter>().whiteHeartSensei.GetComponentInChildren<Animator>();
 			whiteHeartAnimator.SetTrigger("standUp");
 			yield return new WaitForSeconds(3f);
-			bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("...", 1f, false, false);
+			bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("...", 1f, true,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			yield return StartCoroutine (WaitInterruptable (1f, bigPappadaDialogue));
 
-			bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("Master?!", 1f, false, false);
+			bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("Master?!", 1f, true,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			yield return StartCoroutine (WaitInterruptable (1f, bigPappadaDialogue));
 
-			bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("What are you\n doing here?!", 1f, false, false);
+			bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("What are you doing here?!", 1f, true,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			yield return StartCoroutine (WaitInterruptable (1f, bigPappadaDialogue));
 
-			whiteHeartDialogue = whiteHeartDialogueController.createNewDialogue ("It's a long story... ", 2f, false, false);
+			whiteHeartDialogue = whiteHeartDialogueController.createNewDialogue ("It's a long story... ", 2f, true,TextureDialogue.Whiteheart,true);
 			yield return StartCoroutine (WaitInterruptable (2f, whiteHeartDialogue));
-			bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("Tell me everything!\n Master! ", 2f, false, false);
+			bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("Tell me everything! Master! ", 2f, true,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			yield return StartCoroutine (WaitInterruptable (2f, bigPappadaDialogue));
 			GUIManager.fadeIn (Menu.BlackMenu);
 			yield return new WaitForSeconds (2f);
 			GUIManager.fadeOut (null);
-			bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("I see... So that's why \n they kidnapped Little G...! ", 2f, false, false);
+			bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("I see... So that's why  they kidnapped Little G...! ", 2f, true,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			yield return StartCoroutine (WaitInterruptable (2f, bigPappadaDialogue));
-			whiteHeartDialogue = whiteHeartDialogueController.createNewDialogue ("Yes, you are our\n only option now! ", 2f, false, false);
+			whiteHeartDialogue = whiteHeartDialogueController.createNewDialogue ("Yes, you are our only option now! ", 2f, true,TextureDialogue.Whiteheart,true);
 			yield return StartCoroutine (WaitInterruptable (2f, whiteHeartDialogue));
-			bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("I'll make them pay! ", 2f, false, false);
+			bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("I'll make them pay! ", 2f, true,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			yield return StartCoroutine (WaitInterruptable (2f, bigPappadaDialogue));
 			GameManager.inputController.enableInputController ();
 			whiteHeartTalkedTo = true;
@@ -95,10 +95,10 @@ public class TowerPlanetEventsManager : PlanetEventsManager {
 
 		stopCorruptionChasingEvent ();
 		corruptionChased = true;
-		bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("Well, this is it!", 1f, false, false);
+		bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("Well, this is it!", 1f, true,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 		yield return StartCoroutine(WaitInterruptable (1f,bigPappadaDialogue));
 
-		bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("Here I come Little G.!!", 2f, false, false);
+		bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("Here I come Little G.!!", 2f, true,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 		yield return StartCoroutine(WaitInterruptable (2f,bigPappadaDialogue));
 
 		GameManager.inputController.enableInputController();

@@ -32,7 +32,7 @@ public class InitialPlanetEventsManager : PlanetEventsManager {
 		if(!hasBeenActivated){
 			if(isEnabled){
 				GameObject middlePointBigPLittleG = new GameObject();
-				GameManager.mainCamera.GetComponent<CameraFollowingPlayer>().setObjectiveZ(3.3f);
+				GameManager.mainCamera.GetComponent<CameraFollowingPlayer>().setObjectiveZStraight(3.3f);
 				GameManager.mainCamera.GetComponent<CameraFollowingPlayer>().setNewXAngle(0f);
 				GameManager.mainCamera.GetComponent<CameraFollowingPlayer>().setUpMultiplyierWithAngle(6f);
 
@@ -96,7 +96,7 @@ public class InitialPlanetEventsManager : PlanetEventsManager {
 				littleGHopper.GetComponent<SpaceGravityBody> ().setStatic (false);
 				float originalZ = littleGHopper.transform.position.z;
 
-				littleGDialogue = littleGHopper.GetComponent<DialogueController> ().createNewDialogue ("AAaaah..", 2.5f, true, false);
+				littleGDialogue = littleGHopper.GetComponent<DialogueController> ().createNewDialogue ("AAaaah..", 2.5f, false,TextureDialogue.LittleG,!littleGHopper.GetComponent<CharacterController>().getIsLookingRight());
 				while(timer<time){
 					timer+=Time.deltaTime;
 					float ratio = timer/time;
@@ -134,15 +134,15 @@ public class InitialPlanetEventsManager : PlanetEventsManager {
 				yield return new WaitForSeconds (1f);
 				littleGHopper.GetComponentInChildren<Animator>().SetBool("isFallingDown",false);
 				yield return new WaitForSeconds (1f);
-				bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("You must focus \n Little G.", 4f, false, false);
+				bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("You must focus  Little G.", 4f,false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 				yield return StartCoroutine(WaitInterruptable (4f,bigPappadaDialogue));
-				bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("The balance is not in your body \n It's in your mind ", 4f, false, false);
+				bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("The balance is not in your body. It's in your mind ", 4f,false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 				yield return StartCoroutine(WaitInterruptable (4f,bigPappadaDialogue));
-				littleGDialogue = littleGHopper.GetComponent<DialogueController> ().createNewDialogue ("Yes master!", 3f, false, false);
+				littleGDialogue = littleGHopper.GetComponent<DialogueController> ().createNewDialogue ("Yes master!", 3f,false,TextureDialogue.LittleG,!littleGHopper.GetComponent<CharacterController>().getIsLookingRight());
 				yield return StartCoroutine(WaitInterruptable (3f,littleGDialogue));
-				bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("It's enough training \n for today ", 4f, false, false);
+				bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("It's enough training  for today ", 4f,false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 				yield return StartCoroutine(WaitInterruptable (4f,bigPappadaDialogue));
-				bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("Go to the temple \n I'll go to hunt something to eat ", 4f, false, false);
+				bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("Go to the temple  I'll go to hunt something to eat ", 4f,false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 				yield return StartCoroutine(WaitInterruptable (4f,bigPappadaDialogue));
 				littleGHopper.GetComponent<CharacterController> ().Move (-1f);
 				littleGHopper.GetComponentInChildren<Animator> ().SetBool ("isWalking", true);
@@ -152,10 +152,11 @@ public class InitialPlanetEventsManager : PlanetEventsManager {
 				boarHuntingGO.GetComponent<Cutscene>().isActive = true;
 				shintoDoorGO.GetComponent<FirstPlanetShintoDoor>().isActive = true;
 
-				GUIManager.setTutorialText("Move with left joystick, jump with 'A' ");
-				GUIManager.activateTutorialText();
+				//GUIManager.setTutorialText("Move with left joystick, jump with 'A' ");
+				GameManager.tutorialManager.activateTutorial(TutorialSplashScreen.HowToMove);
+				//GUIManager.activateTutorialText();
 				yield return new WaitForSeconds (5f);
-				GUIManager.deactivateTutorialText();
+				//GUIManager.deactivateTutorialText();
 				yield return new WaitForSeconds (12f);
 				littleGHopper.GetComponent<CharacterController> ().StopMoving ();
 				littleGHopper.GetComponentInChildren<Animator> ().SetBool ("isWalking", false);
@@ -167,7 +168,7 @@ public class InitialPlanetEventsManager : PlanetEventsManager {
 	IEnumerator boarHuntingCinematic(){
 		if(isEnabled){
 			boarHuntingGO.GetComponent<FirstPlanetBoarHunting>().makeBoarGoAway();
-			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("A boar!", 2f, false, false);
+			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("A boar!", 2f,false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			yield return null;
 		}
 	}
@@ -177,15 +178,17 @@ public class InitialPlanetEventsManager : PlanetEventsManager {
 		if(isEnabled){
 			rocksBlockingPathGO.GetComponent<FirstPlanetBlockPathRocks>().isActive = false;
 			GameManager.inputController.disableInputController ();
-			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("Mh...", 1f, false, false);
+			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("Mh...", 1f,false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			yield return StartCoroutine(WaitInterruptable (1f,bigPappadaDialogue));
-			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("This rocks \n are in the way", 3f, false, false);
+			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("This rocks  are in the way", 3f,false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			yield return StartCoroutine(WaitInterruptable (3f,bigPappadaDialogue));
-			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("I must find a \n way to break them! ", 3f, false, false);
+			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("I must find a  way to break them! ", 3f,false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			yield return StartCoroutine(WaitInterruptable (3f,bigPappadaDialogue));
-			GameManager.inputController.enableInputController ();
-			GUIManager.setTutorialText("Press 'X' to attack \n and clear the path!");
-			GUIManager.activateTutorialText();
+
+			GameManager.tutorialManager.activateTutorial(TutorialSplashScreen.HowToAttack);
+			//GameManager.inputController.enableInputController ();
+			//GUIManager.setTutorialText("Press 'X' to attack  and clear the path!");
+			//GUIManager.activateTutorialText();
 		}
 	}
 
@@ -193,17 +196,18 @@ public class InitialPlanetEventsManager : PlanetEventsManager {
 		if(isEnabled){
 			corruptionSeepingGO.GetComponent<FirstPlanetCorruptionSeeping>().isActive = false;
 			GameManager.inputController.disableInputController ();
-			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("Hmph...", 1f, true, false);
+			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("Hmph...", 1f,false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			yield return StartCoroutine(WaitInterruptable (1f,bigPappadaDialogue));
-			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("The corruption has \n gotten this far!", 3f, true, false);
+			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("The corruption has  gotten this far!", 3f,false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			yield return StartCoroutine(WaitInterruptable (3f,bigPappadaDialogue));
-			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("I'll dash through it! ", 3f, false, false);
+			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("I'll dash through it! ", 3f,false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			yield return StartCoroutine(WaitInterruptable (3f,bigPappadaDialogue));
-			GameManager.inputController.enableInputController ();
-			GUIManager.setTutorialText("Press 'B' to dash \n and pass through the corruption!");
-			GUIManager.activateTutorialText();
-			yield return new WaitForSeconds (4f);
-			GUIManager.deactivateTutorialText();
+			GameManager.tutorialManager.activateTutorial(TutorialSplashScreen.HowToDash);
+			//GameManager.inputController.enableInputController ();
+			//GUIManager.setTutorialText("Press 'B' to dash  and pass through the corruption!");
+			//GUIManager.activateTutorialText();
+			//yield return new WaitForSeconds (4f);
+			//GUIManager.deactivateTutorialText();
 			yield return null;
 		}
 	}
@@ -215,9 +219,9 @@ public class InitialPlanetEventsManager : PlanetEventsManager {
 			boarHuntingGO.GetComponent<Cutscene>().isActive = false;
 			boarHuntingGO.GetComponent<FirstPlanetBoarHunting>().boar.SetActive(false);
 			GameManager.inputController.disableInputController ();
-			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("That's weird... ", 1.5f, false, false);
+			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("That's weird... ", 1.5f,false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			yield return StartCoroutine(WaitInterruptable (1.5f,bigPappadaDialogue));
-			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("I had never seen \n the seals shine this way...", 4f, false, false);
+			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("I had never seen  the seals shine this way...", 4f,false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			yield return StartCoroutine(WaitInterruptable (4f,bigPappadaDialogue));
 			GetComponent<PlanetCorruption>().corrupt();
 			GameManager.mainCamera.GetComponent<CameraFollowingPlayer>().setCameraShaking();
@@ -225,11 +229,11 @@ public class InitialPlanetEventsManager : PlanetEventsManager {
 			
 			shintoDoorGO.GetComponent<FirstPlanetShintoDoor>().shintoDoor.GetComponent<ShintoDoor>().disableKanjis();
 			yield return new WaitForSeconds(2f);
-			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("Woah!!", 1f, true, false);
+			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("Woah!!", 1f,false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			yield return StartCoroutine(WaitInterruptable (1f,bigPappadaDialogue));
-			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("¡¿What's this?!", 1f, true, false);
+			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("¡¿What's this?!", 1f,false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			yield return StartCoroutine(WaitInterruptable (5f,bigPappadaDialogue));
-			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("¡Little G.!", 2f, true, false);
+			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("¡Little G.!", 2f,false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			yield return StartCoroutine(WaitInterruptable (2f,bigPappadaDialogue));
 			bridgeFallGO.GetComponent<FirstPlanetFallingFromTheBridge>().planetGettingCorrupted.SetActive(true);
 			GameManager.player.GetComponent<PlayerController>().Move(1f);
@@ -266,15 +270,15 @@ public class InitialPlanetEventsManager : PlanetEventsManager {
 		if(isEnabled){
 			bridgeFallGO.GetComponent<FirstPlanetFallingFromTheBridge>().isActive = false;
 			GameManager.player.GetComponent<PlayerController>().StopMove();
-			littleGDialogue = littleGHopper.GetComponent<DialogueController> ().createNewDialogue ("Aaahhh!!\n MASTEEER!!", 1.5f, true, false);
+			littleGDialogue = littleGHopper.GetComponent<DialogueController> ().createNewDialogue ("Aaahhh!! MASTEEER!!", 1.5f,false,TextureDialogue.LittleG,!littleGHopper.GetComponent<CharacterController>().getIsLookingRight());
 			yield return StartCoroutine(WaitInterruptable (1f,littleGDialogue));
 			littleGHopper.GetComponent<CharacterController>().Jump(25f);
-			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("¡Hold on!!", 1f, false, false);
+			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("¡Hold on!!", 1f,false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			yield return StartCoroutine(WaitInterruptable (1f,bigPappadaDialogue));
 			GameManager.inputController.disableInputController ();
 			//bridgeFallGO.GetComponent<FirstPlanetFallingFromTheBridge>().bridge.GetComponent<Collider>().enabled = false;
 			bridgeFallGO.GetComponent<FirstPlanetFallingFromTheBridge>().bridge.GetComponent<RotateAndMoveOverTime>().changeOverTime(2f);
-			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("¡Aaaaah!!", 1.5f, false, false);
+			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("¡Aaaaah!!", 1.5f,false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			GameManager.playerAnimator.SetTrigger("isHurt");
 			GUIManager.fadeIn(Menu.BlackMenu);
 			yield return new WaitForSeconds(2f);
@@ -288,66 +292,92 @@ public class InitialPlanetEventsManager : PlanetEventsManager {
 			GUIManager.fadeOut(null);
 			rocksBlockingPathGO.GetComponent<FirstPlanetBlockPathRocks>().rocks.SetActive(true);
 			GameManager.audioManager.playSong(3);
-			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("¿Where am I? \n ¿What is this place?", 3f, false, false);
+			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("¿Where am I?  ¿What is this place?", 3f, false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			yield return StartCoroutine(WaitInterruptable (3f,bigPappadaDialogue));
-			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("Looks like i have no choice \n but to must press onwards...", 3f, false, false);
+			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("Looks like i have no choice... I must press onwards...", 3f, false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			yield return StartCoroutine(WaitInterruptable (3f,bigPappadaDialogue));
 			GameManager.inputController.enableInputController();
 		}
 	}
 
-	IEnumerator IPTutorial() {
-		GUIManager.setTutorialText ("Press 'Down' and Jump to perform a interplanetary jump.");
-		GUIManager.activateTutorialText();
-		yield return new WaitForSeconds(5f);
-	}
-
-	IEnumerator IPTutorialDirections(){
-		if(!hasDoneTutorialSpaceJumpDirections){
-			GUIManager.setTutorialText ("You can control the jump direction with 'Left' and 'Right'");
-			GUIManager.activateTutorialText();
-			yield return new WaitForSeconds(5f);
-			GUIManager.deactivateTutorialText();
-			hasDoneTutorialSpaceJumpDirections = true;
+	
+	public override void planetCleansed(){
+		if(isEnabled){
+			corruptionSeepingGO.GetComponent<FirstPlanetCorruptionSeeping>().corruptionSeeping.SetActive(false);
+			StartCoroutine("planetCleansedCinematic");
 		}
 	}
+
+	IEnumerator planetCleansedCinematic() {
+		GameManager.inputController.disableInputController ();
+		yield return new WaitForSeconds(1.5f);
+
+		bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("Huh! That settles it!", 1.5f,false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
+		yield return StartCoroutine(WaitInterruptable (1.5f,bigPappadaDialogue));
+
+		bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("I must find Little G.! Maybe I can find some clues in the nearby planets...", 4f,false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
+		yield return StartCoroutine(WaitInterruptable (4f,bigPappadaDialogue));
+
+		yield return new WaitForSeconds(0.5f);
+
+		GameManager.tutorialManager.activateTutorial(TutorialSplashScreen.HowToSpaceJump);
+		while (GameManager.tutorialManager.getIsActive()) {
+			yield return null;
+		}
+
+		GameManager.tutorialManager.activateTutorial(TutorialSplashScreen.HowToSpaceJumpOrbit);
+	}
+
+	/*IEnumerator IPTutorialDirections(){
+		if(!hasDoneTutorialSpaceJumpDirections){
+			//GameManager.tutorialManager.activateTutorial(TutorialSplashScreen.HowToSpaceJumpOrbit);
+			//GUIManager.setTutorialText ("You can control the jump direction with 'Left' and 'Right'");
+			//GUIManager.activateTutorialText();
+			//yield return new WaitForSeconds(5f);
+			//GUIManager.deactivateTutorialText();
+			hasDoneTutorialSpaceJumpDirections = true;
+			yield return null;
+		}
+	}*/
 
 	public override void chargeSpaceJumping(){
-		if(isEnabled){
-			StartCoroutine (IPTutorialDirections ());
-		}
+		//if(isEnabled){
+			//StartCoroutine (IPTutorialDirections ());
+		//}
 	}
 
-	IEnumerator gemPowerAttackTutorial() {
+	/*IEnumerator gemPowerAttackTutorial() {
 		//This event is activated when the player has kthe first wave.
 		//Util.changeTime (0.1f);
-		GUIManager.setTutorialText ("Press 'Y' to perform a powerful light attack.");
-		GUIManager.activateTutorialText();
+		GameManager.tutorialManager.activateTutorial(TutorialSplashScreen.HowToKame);
+		//GUIManager.setTutorialText ("Press 'Y' to perform a powerful light attack.");
+		//GUIManager.activateTutorialText();
 		yield return new WaitForSeconds(5f * Util.getTimeProportion());
 		//GUIManager.setTutorialText ("You can control the attack direction holding 'Y' and then pressing 'Up' and 'Down'");
 		//GUIManager.activateTutorialText();
 		//yield return new WaitForSeconds(5f * Util.getTimeProportion());
-		GUIManager.deactivateTutorialText();
+		//GUIManager.deactivateTutorialText();
 		//Util.changeTime (1f);
-	}
+	}*/
 
-	IEnumerator tongueAttackTutorial() {
+	/*IEnumerator tongueAttackTutorial() {
 		//This event is activated when the player has kthe first wave.
 		//Util.changeTime (0.1f);
-		GUIManager.setTutorialText ("Press 'Up' and 'X' to perform a tongue attack");
-		GUIManager.activateTutorialText();
+		GameManager.tutorialManager.activateTutorial(TutorialSplashScreen.HowToThrow);
+		//GUIManager.setTutorialText ("Press 'Up' and 'X' to perform a tongue attack");
+		//GUIManager.activateTutorialText();
 		yield return new WaitForSeconds(5f * Util.getTimeProportion());
-		GUIManager.deactivateTutorialText();
+		//GUIManager.deactivateTutorialText();
 		//Util.changeTime (1f);
-	}
+	}*/
 
 	IEnumerator lightgemCinematic(){
 		if(isEnabled){
 			GameManager.inputController.disableInputController ();
 			lightGemGO.GetComponent<SanctuaryLightGem>().isActive = false;
-			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("Is that the lightgem of \n Whiteheart sensei!?", 3f, false, false);
+			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("Is that the lightgem of  Whiteheart sensei!?", 3f, false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			yield return StartCoroutine(WaitInterruptable (3f,bigPappadaDialogue));
-			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("I wonder what's it doing here...", 3f, false, false);
+			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("What's it doing here? ...", 3f, false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			yield return StartCoroutine(WaitInterruptable (3f,bigPappadaDialogue));
 			GameManager.player.GetComponent<PlayerController>().Move(-1f);
 			
@@ -367,7 +397,7 @@ public class InitialPlanetEventsManager : PlanetEventsManager {
 			foreach(ParticleSystem particles in lightGemGO.GetComponentsInChildren<ParticleSystem>()){
 				particles.Stop();
 			}
-			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("Maybe I can use this \n to get out of here!", 3f, true, false);
+			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("Maybe I can use this  to get out of here!", 3f, true,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			yield return StartCoroutine(WaitInterruptable (3f,bigPappadaDialogue));
 			GameManager.audioManager.playSong(4);
 			foreach(Collider collider in bridgeFallGO.GetComponent<FirstPlanetFallingFromTheBridge>().fallenRocks.GetComponentsInChildren<Collider>()){
@@ -398,21 +428,16 @@ public class InitialPlanetEventsManager : PlanetEventsManager {
 			yield return new WaitForSeconds(1f);
 			GameManager.player.GetComponent<PlayerController>().StopMove();
 			yield return new WaitForSeconds(2f);
-			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("¡Finally! I'm outside!", 2f, true, false);
+			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("¡Finally! I'm outside!", 2f, true,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			yield return StartCoroutine(WaitInterruptable (2f,bigPappadaDialogue));
-			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("¡¿Where is Little G??!", 2f, true, false);
+			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("¡¿Where is Little G??!", 2f, true,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			yield return StartCoroutine(WaitInterruptable (2f,bigPappadaDialogue));
-			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("¡I must find him!", 2f, true, false);
+			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("¡I must find him!", 2f, true,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			yield return StartCoroutine(WaitInterruptable (2f,bigPappadaDialogue));
-			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("¡But first i must \n find a way to \n cleanse this mess!", 4f, true, false);
+			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("¡But first i must  find a way to  cleanse this mess!", 4f, true,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			yield return StartCoroutine(WaitInterruptable (4f,bigPappadaDialogue));
 			GetComponent<PlanetCorruption>().activateSpawning();
-			GameManager.inputController.enableInputController();
-			GameManager.inputController.enableInputController ();
-			GUIManager.setTutorialText("Press 'A' to perform a consecutive attack series");
-			GUIManager.activateTutorialText();			
-			yield return new WaitForSeconds(5f);
-			GUIManager.deactivateTutorialText();
+			GameManager.inputController.enableInputController();		
 		}
 	}
 
@@ -422,13 +447,6 @@ public class InitialPlanetEventsManager : PlanetEventsManager {
 			StartCoroutine("initialCinematic");
 		}else{
 			GameManager.persistentData.spaceJumpUnlocked = true;
-		}
-	}
-
-	public override void planetCleansed(){
-		if(isEnabled){
-			corruptionSeepingGO.GetComponent<FirstPlanetCorruptionSeeping>().corruptionSeeping.SetActive(false);
-			StartCoroutine("IPTutorial");
 		}
 	}
 
@@ -462,10 +480,12 @@ public class InitialPlanetEventsManager : PlanetEventsManager {
 	}
 
 	public override void firstWaveFinished(){
-		StartCoroutine("gemPowerAttackTutorial");
+		GameManager.tutorialManager.activateTutorial(TutorialSplashScreen.HowToThrow);
+		//StartCoroutine("gemPowerAttackTutorial");
 	}
 	public override void secondWaveFinished(){
-		StartCoroutine("tongueAttackTutorial");
+		GameManager.tutorialManager.activateTutorial(TutorialSplashScreen.HowToKame);
+		//StartCoroutine("tongueAttackTutorial");
 	}
 
 }

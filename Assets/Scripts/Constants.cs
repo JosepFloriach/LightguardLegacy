@@ -63,6 +63,9 @@ public static class Constants{
 
 	public static float TIME_BETWEEN_CHECK_PLAYER_DISTANCE_FOR_DESPAWN = 2f;
 
+	//DIALOGUES
+	public static float DIALOGUE_PRINT_SPEED = 0.02f;
+
 
 
 }

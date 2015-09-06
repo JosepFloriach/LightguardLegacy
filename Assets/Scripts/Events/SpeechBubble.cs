@@ -9,7 +9,7 @@ public abstract class SpeechBubble : MonoBehaviour {
 	private float timeItLasts = 1f;
 	private GameObject gameObjectToFollow;
 	
-	private Text textO;
+	protected Text textO;
 	bool isActive = false;
 	float timer = 0f;
 	Vector3 offsetFromObject;
@@ -22,26 +22,18 @@ public abstract class SpeechBubble : MonoBehaviour {
 	void Awake(){
 		originalScale = transform.localScale;
 	}
-	public virtual void initialize(string text,GameObject goToFollow,float timeItLasts,bool bouncingIn,bool fadeOut){
+
+	public virtual void initialize(string text,GameObject goToFollow,float timeItLasts,bool fadeOut){
 		this.fadeOut = fadeOut;
 		textO = GetComponentInChildren<Text> ();
 		textO.text = text;
 		gameObjectToFollow = goToFollow;
 		this.timeItLasts = timeItLasts;
 		isActive = true;
-		//transform.parent = gameObjectToFollow.transform; 
 		offsetFromObject = Vector3.zero;
-		//transform.parent = null;
 		timer = 0f;
 		GetComponentInChildren<CanvasGroup> ().alpha = 1f;
-		/*if(originalScale==null){
-			originalScale = transform.localScale;
-		}else{*/
 		transform.localScale = originalScale;
-
-		if(bouncingIn){
-			//StartCoroutine ("beat");
-		}
 
 		putInPosition();
 
@@ -77,24 +69,6 @@ public abstract class SpeechBubble : MonoBehaviour {
 
 	private void putInPosition(){
 		GetComponentInChildren<CanvasGroup> ().alpha = 1f;
-		/*if(firstFrameSkipped){
-			firstFrameSkipped = true;
-		}else if(!calculatedVariablesAfterFirstFrame){*/
-			/*calculatedVariablesAfterFirstFrame = true;
-			GetComponentInChildren<CanvasGroup> ().alpha = 1f;
-			Vector3[] corners = new Vector3[4];
-			gameObject.transform.GetComponentInChildren<Image>().gameObject.GetComponent<RectTransform>().GetWorldCorners(corners);
-			Vector3 leftBottomPosition = corners [0];
-			cornerToCenter = transform.position - leftBottomPosition;
-		//}
-		
-		transform.position = speechPosition.transform.position;
-		transform.parent = null;
-		float originalZ = transform.position.z;
-		float zDifference = zPosition - originalZ;
-		Vector3 directionCamera = GameManager.mainCamera.transform.position - transform.position;
-		transform.position -= (directionCamera*zDifference);
-		transform.position += cornerToCenter;*/
 	}
 	
 	void Update(){
@@ -109,12 +83,12 @@ public abstract class SpeechBubble : MonoBehaviour {
 					GetComponentInChildren<CanvasGroup>().alpha = 1f-ratio;
 				}
 				putInPosition();
-				//transform.position = new Vector3(transform.position.x,transform.position.y,-0.5f);
-				//transform.up = gameObjectToFollow.transform.up;
-				//transform.rotation = Quaternion.LookRotation(/*transform.position-GameManager.mainCamera.transform.position*/ Vector3.forward,GameManager.mainCamera.transform.up);
 			}
 		}
+		virtualUpdate ();
 	}
+
+	protected virtual void virtualUpdate(){}
 
 	protected abstract void onFinish();
 

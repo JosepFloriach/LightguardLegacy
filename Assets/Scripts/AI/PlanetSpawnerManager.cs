@@ -14,18 +14,10 @@ public class PlanetSpawnerManager : MonoBehaviour {
 
 	private List<GameObject> currentEnemies = new List<GameObject> (0);
 
-	//public int pointsUntilSealShintoDoor;
-	//public int maxPointsSpawnedAtSameTime;
-
-	//public float timeBetweenSpawns;
-	//private int ammountOfActualPointsSpawned = 0;
-	//private int accumulatedPoints = 0;
-
-	//public List<EnemyTypeAmmount> enemiesAmmount = new List<EnemyTypeAmmount> (0);
-
 	private float timerSpawn = 0f;
 	private PlanetCorruption planetCorruption;
 	private bool ongoingCurrentWave = false;
+	private bool currentWaveEnded = false;
 	private int currentWave = 0;
 	private bool isFinished = false;
 
@@ -59,44 +51,29 @@ public class PlanetSpawnerManager : MonoBehaviour {
 					GetComponent<PlanetCorruption>().cleanCorruption();
 				}else{
 					//If the time between waves has passed and the last wave was finished we spawn the next wave
-					ongoingCurrentWave = true;
-					if (currentWave==1){
-						if(GetComponent<PlanetCorrupted>().getPlanetEventsManager()!=null){
-							GetComponent<PlanetCorrupted>().getPlanetEventsManager().firstWaveFinished();
-						}
-					}else if (currentWave==2){
-						if(GetComponent<PlanetCorrupted>().getPlanetEventsManager()!=null){
-							GetComponent<PlanetCorrupted>().getPlanetEventsManager().secondWaveFinished();
+
+					if(!currentWaveEnded){
+						currentWaveEnded = true;
+						if (currentWave==1){
+							if(GetComponent<PlanetCorrupted>().getPlanetEventsManager()!=null){
+								GetComponent<PlanetCorrupted>().getPlanetEventsManager().firstWaveFinished();
+							}
+						}else if (currentWave==2){
+							if(GetComponent<PlanetCorrupted>().getPlanetEventsManager()!=null){
+								GetComponent<PlanetCorrupted>().getPlanetEventsManager().secondWaveFinished();
+							}
 						}
 					}
-					SpawnWave(waves[currentWave]);
-					timerSpawn = 0f;
+
+					if(!GameManager.tutorialManager.getIsActive()){
+						ongoingCurrentWave = true;
+						currentWaveEnded = false;
+						SpawnWave(waves[currentWave]);
+						timerSpawn = 0f;
+					}
 				}
 			}
 
-			/*timerSpawn += Time.deltaTime;
-			if(ammountOfActualPointsSpawned< maxPointsSpawnedAtSameTime && timerSpawn > timeBetweenSpawns){
-				timerSpawn = 0f;
-				//Check if any of the spawners is in range for spawning
-				List<Spawner> inRangeSpawners = new List<Spawner>(0);
-
-				foreach(GameObject spawn in spawners){
-					Spawner s = spawn.GetComponent<Spawner>();
-					if(s.isInRange()){
-						inRangeSpawners.Add(s);
-					}
-				}
-				//We get a random spawner and we make him spawn a random creature
-				if(inRangeSpawners.Count>0){
-					Spawner randomSpawner = inRangeSpawners[Random.Range(0,inRangeSpawners.Count)];
-					EnemyType type;
-					int ammountLeft = pointsUntilSealShintoDoor -(ammountOfActualPointsSpawned + accumulatedPoints);
-					ammountOfActualPointsSpawned = ammountOfActualPointsSpawned + randomSpawner.spawnRandomEnemy(onEnemyDead,onEnemyDespawned,out type,enemiesAmmount,ammountLeft);
-					if(!type.Equals(EnemyType.None)){
-						addEnemyType(type);
-					}
-				}
-			}*/
 		}
 	}
 
@@ -121,7 +98,7 @@ public class PlanetSpawnerManager : MonoBehaviour {
 		toSpawn.SetActive(false);
 		
 		GameObject spawnBall = GameObject.Instantiate(GameManager.enemyPrefabManager.getSpawnBall()) as GameObject;
-		
+		spawnBall.GetComponent<SpawnBall> ().timeTillSpawn += Random.value;
 		spawnBall.GetComponent<SpawnBall>().spawned = toSpawn;
 		float forceX = Random.value-0.5f;
 		float forceY = Random.value-0.5f;
@@ -129,35 +106,6 @@ public class PlanetSpawnerManager : MonoBehaviour {
 		spawnBall.transform.position = position + force;
 		spawnBall.GetComponent<Rigidbody>().AddForce(force,ForceMode.Impulse);
 	}
-
-	/*private void addEnemyType(EnemyType type){
-		bool found = false;
-		foreach(EnemyTypeAmmount ea in enemiesAmmount){
-			if(ea.type.Equals(type)){
-				ea.ammount++;
-				found = true;
-				break;
-			}
-		}
-		if(!found){
-			EnemyTypeAmmount ea = new EnemyTypeAmmount();
-			ea.type = type;
-			ea.ammount = 1;
-			enemiesAmmount.Add(ea);
-		}
-	}*/
-
-	/*private void substractEnemyType(EnemyType type){
-
-		bool found = false;
-		foreach(EnemyTypeAmmount ea in enemiesAmmount){
-			if(ea.type.Equals(type)){
-				ea.ammount--;
-				found = true;
-				break;
-			}
-		}
-	}*/
 
 	public void onEnemyDead(GameObject enemy){
 		if (isActive) {
@@ -168,27 +116,8 @@ public class PlanetSpawnerManager : MonoBehaviour {
 				ongoingCurrentWave = false;
 			}
 			GUIManager.setPercentageCorruption ((float)accumulatedPoints / (float)totalPoints);
-			/*EnemySpawned enemySpawned = enemy.GetComponent<EnemySpawned> ();
-			//accumulatedPoints += enemySpawned.pointsCost;
-			ammountOfActualPointsSpawned -= enemySpawned.pointsCost;
-	
-			substractEnemyType (enemySpawned.enemyType);*/
 		}
 	}
-
-	/*public void incrementAccumulatedPoints(int ammountPoints){
-		/*accumulatedPoints += ammountPoints;
-		GUIManager.setPercentageCorruption ((float)accumulatedPoints / (float)pointsUntilSealShintoDoor);
-		if(accumulatedPoints>=pointsUntilSealShintoDoor){
-			isActive = false;
-			GUIManager.deactivateCorruptionBar();
-			GetComponent<PlanetCorruption>().cleanCorruption();
-			//We clean all the enemies of the planet
-			foreach(IAController iaController in GameManager.iaManager.getActualAIs()){
-				iaController.die(true);
-			}
-		}
-	}*/
 
 	private IEnumerator SpawnEnemyWithDelay(GameObject enemy,Vector3 position){
 		yield return new WaitForSeconds(3f);
@@ -199,22 +128,19 @@ public class PlanetSpawnerManager : MonoBehaviour {
 		if(isActive){
 			enemy.GetComponent<IAController>().interruptAttack();
 			Vector3 spawnPoint = GameManager.player.transform.position + GameManager.player.transform.up * 3f;
-			enemy.SetActive(false);
-			StartCoroutine(SpawnEnemyWithDelay(enemy,spawnPoint));
-			//SpawnEnemy(enemy,spawnPoint);
+			int life = enemy.GetComponent<Killable>().getLife();
+			GameObject enemyReborn = GameObject.Instantiate(GameManager.enemyPrefabManager.getPrefab(enemy.GetComponent<EnemySpawned>().enemyType)) as GameObject;
+			enemyReborn.GetComponent<Killable>().setLife(life);
+			enemyReborn.SetActive(false);
+			currentEnemies.Remove(enemy);
+			currentEnemies.Add(enemyReborn);
+			Destroy (enemy);
+			StartCoroutine(SpawnEnemyWithDelay(enemyReborn,spawnPoint));
 		}else{
 			onEnemyDead(enemy);
 			Destroy(enemy);
 		}
 	}
-
-
-	/*public void shintoDoorEffect(int level){
-		if(level>lastLevelShintoActivated){
-			lastLevelShintoActivated = level;
-			shinto.activateKanjiLevel (level);
-		}
-	}*/
 
 	public void activate(){
 		if(!isFinished){

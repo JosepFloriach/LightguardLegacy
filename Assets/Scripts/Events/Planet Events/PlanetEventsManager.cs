@@ -49,8 +49,13 @@ abstract public class PlanetEventsManager : MonoBehaviour {
 	protected IEnumerator WaitInterruptable(float timeToWait,GameObject dialogue){
 		isInterrupted = false;
 		float timer = 0f;
+		float timeToWaitToInterrupt = 0.3f;
 		while(timer<timeToWait){
 			timer+=Time.deltaTime;
+			if(timer<=timeToWaitToInterrupt){
+				isInterrupted = false;
+			}
+
 			if(isInterrupted){
 				isInterrupted = false; 
 				if(dialogue!=null && dialogue.activeSelf){

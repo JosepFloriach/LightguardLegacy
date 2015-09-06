@@ -110,12 +110,12 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 
 	private IEnumerator goToRunner(){
 		GameManager.inputController.disableInputController ();
-		bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("That was a tough fight...", 2f, false, false);
+		bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("That was a tough fight...", 2f, false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 		yield return StartCoroutine (WaitInterruptable (2f, bigPappadaDialogue));
 
 		GameManager.playerController.Move (-1f);
 
-		bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("I must find a way to get out of here!", 2f, false, false);
+		bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("I must find a way to get out of here!", 2f, false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 		yield return StartCoroutine (WaitInterruptable (2f, bigPappadaDialogue));
 
 	}
@@ -123,7 +123,7 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 	private IEnumerator startRunner(){
 		GameManager.playerController.StopMove ();
 		GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().setCameraShaking ();
-		bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("Woooah!!", 1f, false, false);
+		bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("Woooah!!", 1f, false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 		yield return StartCoroutine (WaitInterruptable (1f, bigPappadaDialogue));
 
 		GameManager.inputController.enableInputController ();
@@ -267,23 +267,43 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 			GameManager.inputController.disableInputController ();
 			yield return new WaitForSeconds(1.5f);
 
-			bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("Tsk...", 1f, false, false);
+			bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("Tsk...", 1f, false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			yield return StartCoroutine (WaitInterruptable (1f, bigPappadaDialogue));
 
-			bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("Another corrupted planet...", 2f, false, false);
+			bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("Another corrupted planet...", 2f, false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			yield return StartCoroutine (WaitInterruptable (2f, bigPappadaDialogue));
 
-			bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("I must find a way to cleanse it!", 2f, false, false);
+			bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("I must find a way to cleanse it!", 2f, false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			yield return StartCoroutine (WaitInterruptable (2f, bigPappadaDialogue));
 			
 			GameManager.inputController.enableInputController ();
 			hasPlayedOnLandCinematic = true;
 		}
 	}
+	
+	IEnumerator planetCleansedCinematic() {
+		GameManager.inputController.disableInputController ();
+		yield return new WaitForSeconds(2.5f);
+		
+		bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("It's gonna be hard to leave this planet with the storm outside... ", 3f,false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
+		yield return StartCoroutine(WaitInterruptable (3f,bigPappadaDialogue));
+		
+		bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("But I can't give up now! Little G needs me!", 3f,false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
+		yield return StartCoroutine(WaitInterruptable (3f,bigPappadaDialogue));
+
+		GameManager.inputController.enableInputController ();
+
+	}
 
 	public override void planetCleansed(){
 		if(isEnabled){
-			corruptionBlockade.SetActive(false);
+			foreach(ParticleSystem c in corruptionBlockade.GetComponentsInChildren<ParticleSystem>()){
+				c.Stop();
+			}
+			foreach(Collider c in corruptionBlockade.GetComponentsInChildren<Collider>()){
+				c.enabled = false;
+			}
+			StartCoroutine("planetCleansedCinematic");
 		}
 	}
 	
