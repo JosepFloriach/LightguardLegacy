@@ -44,16 +44,16 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _ParallaxMap
+          name: _CorruptionTexture
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: c012cd004cede244c96a82228fed4480, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _CorruptionTexture
+          name: _ParallaxMap
         second:
-          m_Texture: {fileID: 2800000, guid: c012cd004cede244c96a82228fed4480, type: 3}
+          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -69,10 +69,6 @@ Material:
         first:
           name: _TintColor
         second: 0
-      data:
-        first:
-          name: _DetailTex
-        second: 1
       data:
         first:
           name: _Cull
@@ -111,6 +107,10 @@ Material:
         second: 0
       data:
         first:
+          name: _DetailTex
+        second: 1
+      data:
+        first:
           name: _OutlineSize
         second: 4
       data:
@@ -123,12 +123,12 @@ Material:
         second: .204999998
       data:
         first:
-          name: _Parallax
-        second: .0199999996
-      data:
-        first:
           name: _Corruption
         second: 1
+      data:
+        first:
+          name: _Parallax
+        second: .0199999996
       data:
         first:
           name: _Dissolution
@@ -160,6 +160,10 @@ Material:
         second: {r: 0, g: .25, b: .5, a: 0}
       data:
         first:
+          name: _Emission
+        second: {r: 0, g: 0, b: 0, a: 0}
+      data:
+        first:
           name: _CorruptionColor
         second: {r: 1, g: 0, b: .931034565, a: 1}
       data:
@@ -178,10 +182,6 @@ Material:
         first:
           name: _CorruptedColor
         second: {r: .647058845, g: 0, b: .629209101, a: .627451003}
-      data:
-        first:
-          name: _Emission
-        second: {r: 0, g: 0, b: 0, a: 0}
       data:
         first:
           name: _OriginPoint

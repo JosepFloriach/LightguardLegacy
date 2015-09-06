@@ -59,7 +59,7 @@ public class TutorialManager : MonoBehaviour {
 	}
 
 	public void deactivateActualTutorial(){
-		if (!fadingIn) {
+		if (!fadingIn && !fadingOut) {
 			fadingOut = true;
 			timer = 0f;
 		}

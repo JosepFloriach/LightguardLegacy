@@ -25,19 +25,19 @@ public class BoarMinibossPlanetEventsManager : PlanetEventsManager {
 
 	public override void chargeSpaceJumping (){
 		if(!dragonSlideTutorialDone){
-			StartCoroutine (dragonslidesTutorial ());
+			//StartCoroutine (dragonslidesTutorial ());
 		}
 	}
 	
 
-	private IEnumerator dragonslidesTutorial(){
-		dragonSlideTutorialDone = true;
-		GameManager.tutorialManager.activateTutorial(TutorialSplashScreen.HowToDragonslide);
+	//private IEnumerator dragonslidesTutorial(){
+		//dragonSlideTutorialDone = true;
+		//GameManager.tutorialManager.activateTutorial(TutorialSplashScreen.HowToDragonslide);
 		//GUIManager.setTutorialText("You can jump to the DragonHeads to travel to another galaxy!");
 		//GUIManager.activateTutorialText();
-		yield return new WaitForSeconds (10f);
+		//yield return new WaitForSeconds (10f);
 		//GUIManager.deactivateTutorialText();
-	}
+	//}
 
 	public override void planetCleansed(){
 		if(isEnabled){
@@ -55,7 +55,7 @@ public class BoarMinibossPlanetEventsManager : PlanetEventsManager {
 		bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("I must keep on looking for Little G.!", 3f,false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 		yield return StartCoroutine(WaitInterruptable (3f,bigPappadaDialogue));
 
-		GameManager.inputController.enableInputController ();
+		GameManager.tutorialManager.activateTutorial(TutorialSplashScreen.HowToDragonslide);
 
 	}
 }
