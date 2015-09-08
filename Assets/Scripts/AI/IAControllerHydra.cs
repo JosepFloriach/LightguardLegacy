@@ -97,9 +97,18 @@ public class IAControllerHydra : IAController {
 
 		}
 	}
+	
+	protected override bool virtualGetHurt ()
+	{
+		GameManager.audioManager.PlaySound (SoundIDs.E_GENERICHIT,AudioManager.STABLE,AudioManager.ENEMY);
+		GameManager.audioManager.PlaySound(SoundIDs.E_HYDRAHURT,AudioManager.COOLDOWN,AudioManager.ENEMY);
+		return base.virtualGetHurt ();
+	}
 
 	protected override void virtualDie ()
 	{
+		GameManager.audioManager.PlaySound (SoundIDs.E_HYDRADIE,AudioManager.STABLE,AudioManager.ENEMY);
+		
 		if(platformDestroyed!=null){
 			platformDestroyed.GetComponent<HydraPlatform>().repositionPlatform();
 		}
@@ -113,16 +122,22 @@ public class IAControllerHydra : IAController {
 				isFinishedHidding = false;
 			}if(actualBehaviour.Equals(ActualBehaviour.Appear)){
 				if(attackController.doAttack(appearAttack,false)){
+					GameManager.audioManager.PlaySound (SoundIDs.E_HYDRAROAR,AudioManager.STABLE,AudioManager.ENEMY);
+					
 					isDoingAppearAttack = true;
 				}
 			}else if(actualBehaviour.Equals(ActualBehaviour.MeleeAttack)){
 				GetComponent<CharacterController> ().LookLeftOrRight (getPlayerDirection());
 				if(attackController.doAttack(meleeAttack,false)){
+					GameManager.audioManager.PlaySound (SoundIDs.E_HYDRABITE,AudioManager.STABLE,AudioManager.ENEMY);
+					
 					isDoingMeleeAttack = true;
 				}
 			}else if(actualBehaviour.Equals(ActualBehaviour.RangedAttack)){
 				GetComponent<CharacterController> ().LookLeftOrRight (getPlayerDirection());
 				if(attackController.doAttack(rangedAttack,false)){
+					GameManager.audioManager.PlaySound (SoundIDs.E_HYDRAFIRE,AudioManager.STABLE,AudioManager.ENEMY);
+					
 					isDoingRangedAttack = true;
 				}
 			}

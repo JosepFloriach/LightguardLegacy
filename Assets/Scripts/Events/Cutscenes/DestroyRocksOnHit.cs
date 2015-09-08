@@ -18,6 +18,7 @@ public class DestroyRocksOnHit : MonoBehaviour {
 			if(((Time.time - lastHit)>cooldownHit)){
 				lastHit = Time.time;
 				hitsMade++;
+				GameManager.audioManager.PlaySound (SoundIDs.E_GENERICHIT,AudioManager.STABLE,AudioManager.ENEMY);
 				particles.GetComponent<ParticleSystem>().Play();
 				if(hitsMade>=numberOfHitsNecessary){
 					GetComponentInParent<FirstPlanetBlockPathRocks>().informRocksHit();

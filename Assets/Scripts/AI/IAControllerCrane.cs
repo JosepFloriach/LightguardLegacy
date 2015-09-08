@@ -78,13 +78,13 @@ public class IAControllerCrane : IAController {
 	}
 
 	protected override bool virtualGetHurt(){
-		GameManager.audioManager.PlayStableSound(10);
+		GameManager.audioManager.PlaySound (SoundIDs.E_GENERICHIT,AudioManager.STABLE,AudioManager.ENEMY);
 		attackController.interruptActualAttacks ();
 		actualBehaviour = ActualBehaviour.FlyingFalling;
 		iaAnimator.SetBool ("isFlying",false);
 		GetComponent<GravityBody> ().setHasToApplyForce (true);
 		preferredHeight = 0f;
-		GameManager.audioManager.PlaySoundDontRepeat(15,1.0f);
+		GameManager.audioManager.PlaySound(SoundIDs.E_CRANEHURT,AudioManager.COOLDOWN,AudioManager.ENEMY);
 		return true;
 	}
 

@@ -68,6 +68,12 @@ public class IAControllerPenguin : IAController {
 		}
 	}
 
+	protected override bool virtualGetHurt ()
+	{
+		GameManager.audioManager.PlaySound (SoundIDs.E_GENERICHIT,AudioManager.STABLE,AudioManager.ENEMY);
+		return base.virtualGetHurt ();
+	}
+
 	//Does the action that corresponds to the actual behaviour unless it is dead
 	private void doActualBehaviour(){
 		if(!isDead && !attackController.isDoingAnyAttack()){

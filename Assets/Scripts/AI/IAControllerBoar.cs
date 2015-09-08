@@ -154,15 +154,15 @@ public class IAControllerBoar : IAController {
 
 	protected override bool virtualGetHurt ()
 	{
-		GameManager.audioManager.PlayStableSound(10);
-		GameManager.audioManager.PlaySoundDontRepeat(5,1.0f);
+		GameManager.audioManager.PlaySound (SoundIDs.E_GENERICHIT,AudioManager.STABLE,AudioManager.ENEMY);
+		GameManager.audioManager.PlaySound(SoundIDs.E_BOARHURT,AudioManager.COOLDOWN,AudioManager.ENEMY);
 		return base.virtualGetHurt ();
 	}
 
 	protected override void virtualDie ()
 	{
 		base.virtualDie ();
-		GameManager.audioManager.PlaySoundDontRepeat(6,1.0f);
+		GameManager.audioManager.PlaySound(SoundIDs.E_BOARDIE,AudioManager.COOLDOWN,AudioManager.ENEMY);
 	}
 
 	/***FUNCTIONS***/

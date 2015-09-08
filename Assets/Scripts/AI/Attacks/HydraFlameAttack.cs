@@ -32,7 +32,7 @@ public class HydraFlameAttack : Attack {
 		GetComponentInChildren<Collider> ().enabled = true;
 		GetComponent<ParticleSystem> ().Play ();
 
-		yield return new WaitForSeconds (3f);
+		yield return new WaitForSeconds (2.5f);
 		GetComponentInChildren<Collider> ().enabled = false;
 		yield return null;
 		isFinished = true;

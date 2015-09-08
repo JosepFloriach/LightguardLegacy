@@ -7,7 +7,15 @@ public class SoundIDs  {
 //Music
 
 //Enemies
-
+	public static int E_GENERICHIT = 0;
+	public static int E_BOARHURT = 1;
+	public static int E_BOARDIE = 2;
+	public static int E_CRANEHURT = 3;
+	public static int E_HYDRAROAR = 4;
+	public static int E_HYDRAHURT = 5;
+	public static int E_HYDRADIE = 6;
+	public static int E_HYDRAFIRE = 7;
+	public static int E_HYDRABITE = 8;
 //Big P
 	public static int P_JUMP = 0;
 	public static int P_ATTACK = 1;

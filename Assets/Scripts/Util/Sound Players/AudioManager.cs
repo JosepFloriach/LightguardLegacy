@@ -11,13 +11,9 @@ public class AudioManager : MonoBehaviour {
 
 //Music
 	public AudioClip[] music;
-	// 0 is opening
-	// 1 is main game peaceful
 	
 //SFX  
 	public AudioClip[] sfx;
-	// 0 for click on buttons
-	// 1 little g faling
 	
 //SFX Misc
 	public AudioClip[] sfxMisc;
@@ -40,14 +36,15 @@ public class AudioManager : MonoBehaviour {
 	private float volHighRange = 1.0f;
 	
 	//Tipos de reproduccion
-	public static int STABLE = 0;
-	public static int VARIABLE = 1;
+	public const int STABLE = 0;
+	public const int VARIABLE = 1;
+	public const int COOLDOWN = 2; 
 
 	//Categoria de sonido
-	private const  int MUSIC = 0;
-	private const int MISC = 1;
-	private const int BIGP = 2;
-	private const int ENEMY = 3;
+	public const  int MUSIC = 0;
+	public const int MISC = 1;
+	public const int BIGP = 2;
+	public const int ENEMY = 3;
 			
 			
 	void Awake () {
@@ -90,8 +87,8 @@ public class AudioManager : MonoBehaviour {
 			selectedSource = miscPlayer;
 			break;
 		default:
-			return null;
-			
+			selectedSource = miscPlayer;
+			break;			
 		}
 		return selectedSource;
 	
@@ -119,6 +116,33 @@ public class AudioManager : MonoBehaviour {
 		return selectedSource;
 	}
 	
+	
+	public void PlaySound(int id, int mode, int type) {
+		AudioClip mClip = getClip(id,type);
+		AudioSource mSource = getSource(type);
+	
+		switch (mode) {
+		case STABLE:
+			JustPlay(mClip,mSource);
+			break;
+		case VARIABLE:
+			mSource = getVariableSource(type);
+			PlayVariableSound(mClip,mSource);
+			break;
+		case COOLDOWN:
+			mSource = getVariableSource(type);
+			PlayNoRepeat(mClip,mSource);
+			break;
+		default:
+		break;
+		}
+	}
+		
+		
+
+		
+
+	
 	public void PlayMiscSound(int id, int type) {
 		AudioClip clipToPlay = getClip(id, MISC);
 		AudioSource mSource = getSource(MISC);
@@ -135,9 +159,17 @@ public class AudioManager : MonoBehaviour {
 			mSource = getVariableSource(BIGP);
 			PlayVariableSound(clipToPlay,mSource);
 		}
-		 
-		
 	}
+	
+	float cd = 1f;
+	private void PlayNoRepeat(AudioClip sound, AudioSource source) {
+		float now = Time.time;
+		if (lastplay +delta < now) {
+			lastplay = now;
+			delta = cd;
+			JustPlay(sound,source);
+		}
+	}		
 	
 	private void PlayVariableSound(AudioClip sound, AudioSource source) {
 		float hitVol = volLowRange;
@@ -212,14 +244,7 @@ public class AudioManager : MonoBehaviour {
 	float lastplay = 0.0f;
 	float delta = 0.0f;
 	
-	public void PlaySoundDontRepeat(int sound, float time) {
-		float now = Time.time;
-		if (lastplay +delta < now) {
-			lastplay = now;
-			delta = time;
-			PlaySound(sound);
-		}
-	}
+
 	
 	float lastVol = 1f;
 	float lastPitch = 1f;

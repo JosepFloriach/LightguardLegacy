@@ -163,4 +163,11 @@ public class IAControllerRat : IAController {
 			StopMoving ();
 		}
 	}
+	
+	protected override bool virtualGetHurt ()
+	{
+		GameManager.audioManager.PlaySound (SoundIDs.E_GENERICHIT,AudioManager.STABLE,AudioManager.ENEMY);
+		return base.virtualGetHurt ();
+	}
+	
 }
