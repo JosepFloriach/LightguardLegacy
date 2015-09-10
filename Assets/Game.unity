@@ -15200,6 +15200,7 @@ MonoBehaviour:
     type: 2}
   separateGravityAndAir: 0
   airDistance: 0
+  isBlackHole: 0
   gravityDistance: 12
 --- !u!23 &174930593
 MeshRenderer:
@@ -15535,6 +15536,7 @@ MonoBehaviour:
     type: 2}
   separateGravityAndAir: 0
   airDistance: 0
+  isBlackHole: 0
   gravityDistance: 8
 --- !u!23 &180771526
 MeshRenderer:
@@ -32368,6 +32370,7 @@ MonoBehaviour:
     type: 2}
   separateGravityAndAir: 0
   airDistance: 0
+  isBlackHole: 0
   gravityDistance: 8
 --- !u!23 &375058187
 MeshRenderer:
@@ -45409,6 +45412,7 @@ MonoBehaviour:
     type: 2}
   separateGravityAndAir: 0
   airDistance: 0
+  isBlackHole: 0
   gravityDistance: 11
 --- !u!135 &592220798
 SphereCollider:
@@ -51292,6 +51296,7 @@ MonoBehaviour:
     type: 2}
   separateGravityAndAir: 0
   airDistance: 0
+  isBlackHole: 0
   gravityDistance: 15
 --- !u!114 &730498448
 MonoBehaviour:
@@ -51304,7 +51309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6219b76d882b6d043822e9cd6d010af3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEnabled: 1
+  isEnabled: 0
   bigPappadaInitialPosition: {fileID: 2013654545}
   littleGHopper: {fileID: 1973452111}
   boarHuntingGO: {fileID: 1806287929}
@@ -53370,6 +53375,7 @@ MonoBehaviour:
     type: 2}
   separateGravityAndAir: 0
   airDistance: 0
+  isBlackHole: 0
   gravityDistance: 12
 --- !u!23 &762907674
 MeshRenderer:
@@ -61738,6 +61744,7 @@ MonoBehaviour:
     type: 2}
   separateGravityAndAir: 0
   airDistance: 0
+  isBlackHole: 0
   gravityDistance: 8
 --- !u!23 &893597213
 MeshRenderer:
@@ -62368,6 +62375,7 @@ MonoBehaviour:
     type: 2}
   separateGravityAndAir: 1
   airDistance: 30
+  isBlackHole: 0
   gravityDistance: 65
 --- !u!114 &910139949
 MonoBehaviour:
@@ -65037,6 +65045,7 @@ MonoBehaviour:
     type: 2}
   separateGravityAndAir: 0
   airDistance: 0
+  isBlackHole: 0
   gravityDistance: 8
 --- !u!23 &953917167
 MeshRenderer:
@@ -65524,6 +65533,7 @@ MonoBehaviour:
     type: 2}
   separateGravityAndAir: 0
   airDistance: 0
+  isBlackHole: 0
   gravityDistance: 12
 --- !u!23 &968582273
 MeshRenderer:
@@ -77068,6 +77078,7 @@ MonoBehaviour:
     type: 2}
   separateGravityAndAir: 0
   airDistance: 0
+  isBlackHole: 0
   gravityDistance: 11
 --- !u!23 &1142518785
 MeshRenderer:
@@ -80765,6 +80776,7 @@ MonoBehaviour:
     type: 2}
   separateGravityAndAir: 0
   airDistance: 0
+  isBlackHole: 1
   gravityDistance: 10
 --- !u!23 &1188702470
 MeshRenderer:
@@ -85555,6 +85567,7 @@ MonoBehaviour:
     type: 2}
   separateGravityAndAir: 0
   airDistance: 0
+  isBlackHole: 0
   gravityDistance: 8
 --- !u!23 &1269147242
 MeshRenderer:
@@ -93874,6 +93887,7 @@ MonoBehaviour:
     type: 2}
   separateGravityAndAir: 0
   airDistance: 0
+  isBlackHole: 1
   gravityDistance: 10
 --- !u!23 &1375892108
 MeshRenderer:
@@ -98310,6 +98324,7 @@ MonoBehaviour:
     type: 2}
   separateGravityAndAir: 0
   airDistance: 0
+  isBlackHole: 0
   gravityDistance: 12
 --- !u!23 &1404545851
 MeshRenderer:
@@ -98918,6 +98933,7 @@ MonoBehaviour:
     type: 2}
   separateGravityAndAir: 0
   airDistance: 0
+  isBlackHole: 1
   gravityDistance: 10
 --- !u!23 &1411787035
 MeshRenderer:
@@ -99024,6 +99040,7 @@ MonoBehaviour:
     type: 2}
   separateGravityAndAir: 0
   airDistance: 0
+  isBlackHole: 0
   gravityDistance: 8
 --- !u!23 &1412525679
 MeshRenderer:
@@ -99799,6 +99816,7 @@ MonoBehaviour:
     type: 2}
   separateGravityAndAir: 0
   airDistance: 0
+  isBlackHole: 1
   gravityDistance: 10
 --- !u!23 &1422244591
 MeshRenderer:
@@ -108326,6 +108344,7 @@ MonoBehaviour:
     type: 2}
   separateGravityAndAir: 0
   airDistance: 0
+  isBlackHole: 0
   gravityDistance: 8
 --- !u!23 &1502145013
 MeshRenderer:
@@ -117955,6 +117974,7 @@ MonoBehaviour:
     type: 2}
   separateGravityAndAir: 0
   airDistance: 0
+  isBlackHole: 0
   gravityDistance: 25
 --- !u!114 &1621289963
 MonoBehaviour:
@@ -120357,6 +120377,7 @@ MonoBehaviour:
     type: 2}
   separateGravityAndAir: 0
   airDistance: 0
+  isBlackHole: 0
   gravityDistance: 12
 --- !u!23 &1652798472
 MeshRenderer:
@@ -123422,6 +123443,7 @@ MonoBehaviour:
     type: 2}
   separateGravityAndAir: 0
   airDistance: 0
+  isBlackHole: 1
   gravityDistance: 10
 --- !u!23 &1685188331
 MeshRenderer:
@@ -125645,6 +125667,7 @@ MonoBehaviour:
     type: 2}
   separateGravityAndAir: 0
   airDistance: 0
+  isBlackHole: 1
   gravityDistance: 10
 --- !u!23 &1703976561
 MeshRenderer:
@@ -129774,6 +129797,7 @@ MonoBehaviour:
     type: 2}
   separateGravityAndAir: 0
   airDistance: 0
+  isBlackHole: 1
   gravityDistance: 10
 --- !u!23 &1754353061
 MeshRenderer:
@@ -136028,6 +136052,7 @@ MonoBehaviour:
     type: 2}
   separateGravityAndAir: 0
   airDistance: 0
+  isBlackHole: 0
   gravityDistance: 8
 --- !u!23 &1803900753
 MeshRenderer:
@@ -139913,6 +139938,7 @@ MonoBehaviour:
     type: 2}
   separateGravityAndAir: 0
   airDistance: 0
+  isBlackHole: 1
   gravityDistance: 10
 --- !u!23 &1856679817
 MeshRenderer:
@@ -144742,6 +144768,7 @@ MonoBehaviour:
     type: 2}
   separateGravityAndAir: 0
   airDistance: 0
+  isBlackHole: 0
   gravityDistance: 12
 --- !u!23 &1957295286
 MeshRenderer:
@@ -152193,6 +152220,7 @@ MonoBehaviour:
     type: 2}
   separateGravityAndAir: 0
   airDistance: 0
+  isBlackHole: 0
   gravityDistance: 8
 --- !u!23 &2090168716
 MeshRenderer:

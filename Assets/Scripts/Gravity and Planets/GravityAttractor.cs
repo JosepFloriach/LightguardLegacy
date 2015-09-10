@@ -10,6 +10,7 @@ public class GravityAttractor : MonoBehaviour {
 	public GameObject athmosphereMinimapPrefab;
 	public bool separateGravityAndAir = false;
 	public float airDistance = 0f;
+	public bool isBlackHole;
 
 	public float gravityDistance = Constants.GRAVITY_DISTANCE_FROM_PLANET_FLOOR;
 	private float sphereRadius;
@@ -95,6 +96,38 @@ public class GravityAttractor : MonoBehaviour {
 		return false;
 	}
 
+	private float getAngleOrbitStart(){
+		if (isBlackHole) {
+			return Constants.ANGLE_CAN_ENTER_ORBIT_START_BH;
+		} else {
+			return Constants.ANGLE_CAN_ENTER_ORBIT_START;
+		}
+	}
+
+	private float getAngleOrbitEnd(){
+		if (isBlackHole) {
+			return Constants.ANGLE_CAN_ENTER_ORBIT_END_BH;
+		} else {
+			return Constants.ANGLE_CAN_ENTER_ORBIT_END;
+		}
+	}
+
+	public float getPercentageAthmosphereStart(){
+		if (isBlackHole) {
+			return Constants.PERCENTAGE_ATHMOSPHERE_CAN_ENTER_ORBIT_START_BH;
+		} else {
+			return Constants.PERCENTAGE_ATHMOSPHERE_CAN_ENTER_ORBIT_START;
+		}
+	}
+
+	public float getPercentageAthmosphereEnd(){
+		if (isBlackHole) {
+			return Constants.PERCENTAGE_ATHMOSPHERE_CAN_ENTER_ORBIT_END_BH;
+		} else {
+			return Constants.PERCENTAGE_ATHMOSPHERE_CAN_ENTER_ORBIT_END;
+		}
+	}
+
 	private bool spaceAttract(Transform objectToAttract,out float distance,bool applyForce,bool hasToChangeFacing,float gravityMultiplyier){
 		//Only attract the body to the planet if it is close enough.
 		distance = Vector3.Distance (transform.position, objectToAttract.position);
@@ -120,20 +153,24 @@ public class GravityAttractor : MonoBehaviour {
 			if(body.getUsesSpaceGravity() && !body.getIsGettingOutOfOrbit()){
 				
 				bool isOrbiting = body.getIsOrbitingAroundPlanet();
+				bool isPlanetCorrupted = GetComponent<PlanetCorruption>()!=null && GetComponent<PlanetCorruption>().isCorrupted();
 				if(!isOrbiting  && !separateGravityAndAir){
 					
 					float angle = Vector3.Angle(body.GetComponent<Rigidbody>().velocity,targetDir);
 					angle = Mathf.Abs(angle);
-					if(angle>= Constants.ANGLE_CAN_ENTER_ORBIT_START && angle<= Constants.ANGLE_CAN_ENTER_ORBIT_END){
-						if(ratioDistance>= Constants.PERCENTAGE_ATHMOSPHERE_CAN_ENTER_ORBIT_START && ratioDistance<= Constants.PERCENTAGE_ATHMOSPHERE_CAN_ENTER_ORBIT_END){
+					if(angle>= getAngleOrbitStart() && angle<= getAngleOrbitEnd()){
+						if(ratioDistance>= getPercentageAthmosphereStart() && ratioDistance<= getPercentageAthmosphereEnd()){
 							GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().followObjective (gameObject);
 							isOrbiting = true;
-							body.setIsOrbitingAroundPlanet(true);
+							body.setIsOrbitingAroundPlanet(true,!isPlanetCorrupted);
+							if(isPlanetCorrupted){
+								body.setIsFallingIntoPlanet(true);
+							}
 						}
 					}
 				}
 
-				if(ratioDistance<=Constants.PERCENTAGE_ATHMOSPHERE_CAN_ENTER_ORBIT_START){
+				if(ratioDistance<=getPercentageAthmosphereStart()){
 					if(isOrbiting){
 						GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().unfollowObjective();
 					}

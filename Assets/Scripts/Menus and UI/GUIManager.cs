@@ -291,8 +291,10 @@ public class GUIManager : MonoBehaviour {
 
 
 	public static void activatePlayingGUIWithFadeIn(){
-		playingGUIO.SetActive (true);
-		fadeManager.fadeInCoroutine (playingGUIO,null,2f);
+		if (!playingGUIO.activeInHierarchy) {
+			playingGUIO.SetActive (true);
+			fadeManager.fadeInCoroutine (playingGUIO, null, 2f);
+		}
 	}
 
 	public static void deactivatePlayingGUI(){
@@ -340,7 +342,7 @@ public class GUIManager : MonoBehaviour {
 	}
 
 	public static void setPercentageOfBreathing(float percentage){
-		if(playingGUIO!=null){
+		if(playingGUIO!=null && playingGUIO.activeInHierarchy){
 			playingGUIO.GetComponentInChildren<BreathingGUI> ().setPercentage (percentage);
 		}
 	}

@@ -100,13 +100,13 @@ public class SpaceGravityBody : GravityBody {
 				if(isPlayer){
 					setClosestPlanet(closestTMP);
 				}
-				if(isGettingOutOfOrbit){
+				if(isGettingOutOfOrbit || (isOrbitingAroundPlanet && !isFallingIntoPlanet)){
 					GetComponent<Rigidbody>().drag = 0f;
 				}else if(usesSpaceGravity){
 					float dragProportion = minimumPlanetDistance / closestPlanet.GetComponent<GravityAttractor>().gravityDistance;
 					float invertDragProportion = 1f - dragProportion;
 					if(invertDragProportion>1f){invertDragProportion = 1f;}
-					else if(invertDragProportion<Constants.PERCENTAGE_DRAG_ATHMOSPHERE){invertDragProportion = 0.0f;}
+					if(invertDragProportion<closestPlanet.GetComponent<GravityAttractor>().getPercentageAthmosphereStart()){invertDragProportion = 0.0f;}
 					invertDragProportion*=dragMultiplyierOnCloseOrbit;
 					GetComponent<Rigidbody>().drag = invertDragProportion * Constants.GRAVITY_DRAG_OF_ATHMOSPHERE;
 				}else{
@@ -138,18 +138,26 @@ public class SpaceGravityBody : GravityBody {
 		return isOrbitingAroundPlanet;
 	}
 	
-	public void setIsOrbitingAroundPlanet(bool orbiting){
+	public void setIsOrbitingAroundPlanet(bool orbiting,bool activateGUI){
 		isOrbitingAroundPlanet = orbiting;
 		if (!orbiting) {
 			if(isPlayer){
-				GUIManager.deactivateOnRotatingPlanetMenu();
+				if(activateGUI){
+					GUIManager.deactivateOnRotatingPlanetMenu();
+				}
 				GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().unfollowObjective();
 			}
 		}else{
 			if(isPlayer){
-				GUIManager.activateOnRotatingPlanetMenu();
+				if(activateGUI){
+					GUIManager.activateOnRotatingPlanetMenu();
+				}
 			}
 		}
+	}
+
+	public void setIsOrbitingAroundPlanet(bool orbiting){
+		setIsOrbitingAroundPlanet (orbiting, true);
 	}
 	
 	public bool getIsGettingOutOfOrbit(){

@@ -146,7 +146,7 @@ public class PlanetSpawnerManager : MonoBehaviour {
 		if(!isFinished){
 			isActive = true;
 			GUIManager.activateCorruptionBar ();
-			GUIManager.setPercentageCorruption ((float)accumulatedPoints / (float)totalPoints);
+			GUIManager.setPercentageCorruption (0f);
 		}
 	}
 

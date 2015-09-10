@@ -17,8 +17,13 @@ public static class Constants{
 	public static float PERCENTAGE_ATHMOSPHERE_CAN_ENTER_ORBIT_END = 1f;
 	public static float ANGLE_CAN_ENTER_ORBIT_START = 70f;
 	public static float ANGLE_CAN_ENTER_ORBIT_END = 97f;
-	public static float PERCENTAGE_DRAG_ATHMOSPHERE = 0.5f;
 	public static float AMMOUNT_OF_DOWN_SPEED_ON_LANDING = 2f;
+
+	//ORBIT AROUND BLACK HOLES
+	public static float PERCENTAGE_ATHMOSPHERE_CAN_ENTER_ORBIT_START_BH = 0.4f;
+	public static float PERCENTAGE_ATHMOSPHERE_CAN_ENTER_ORBIT_END_BH = 1f;
+	public static float ANGLE_CAN_ENTER_ORBIT_START_BH = 60f;
+	public static float ANGLE_CAN_ENTER_ORBIT_END_BH = 125f;
 
 	//CAMERA CONSTANTS
 	public static float CAMERA_ANGLE_FOLLOWING_SPEED = 8f;
