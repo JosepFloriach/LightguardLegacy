@@ -30,6 +30,11 @@ public class OutlineChanging : MonoBehaviour {
 		StartCoroutine (changeColorBackToOriginalOverTime (color, time));
 	}
 
+	public void changeColorOverTime(Color color,float time){
+		resetMainColor ();
+		StartCoroutine (changeColorOverTimeCo (color, time));
+	}
+
 	private IEnumerator changeColorBackToOriginalOverTime(Color color,float time){
 		float timer = 0f;
 		while (timer<time){
@@ -38,6 +43,20 @@ public class OutlineChanging : MonoBehaviour {
 			for(int i = 0;i<materialsList.Count;i++){
 				if(materialsList[i].HasProperty("_Color")){
 					materialsList[i].SetColor("_Color",Color.Lerp(color,originalColors[i],ratio));
+				}
+			}
+			yield return null;
+		}
+	}
+
+	private IEnumerator changeColorOverTimeCo(Color color,float time){
+		float timer = 0f;
+		while (timer<time){
+			timer+=Time.deltaTime;
+			float ratio = timer/time;
+			for(int i = 0;i<materialsList.Count;i++){
+				if(materialsList[i].HasProperty("_Color")){
+					materialsList[i].SetColor("_Color",Color.Lerp(originalColors[i],color,ratio));
 				}
 			}
 			yield return null;

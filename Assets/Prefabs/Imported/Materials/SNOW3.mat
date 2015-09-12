@@ -6,9 +6,9 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Spikes
-  m_Shader: {fileID: 4800000, guid: a021b6bfcab3cc44fbf4bc8ded279bae, type: 3}
-  m_ShaderKeywords: _COLOR_ON _CORR_ON _OUTL_ON _TEX_ON _TRANSP_ON
+  m_Name: SNOW3
+  m_Shader: {fileID: 4800000, guid: af6e577fac5e6ba4c9e69f6a27e649c0, type: 3}
+  m_ShaderKeywords: _CORR_ON
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -18,7 +18,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: f57170910d989634489734268d96c927, type: 3}
+          m_Texture: {fileID: 2800000, guid: a776efc45d063574694a0e59a5178d8a, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -54,13 +54,6 @@ Material:
           name: _Ramp
         second:
           m_Texture: {fileID: 2800000, guid: 0d2d5756caa62a248b563de79e26635b, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _ToonShade
-        second:
-          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -109,7 +102,7 @@ Material:
       data:
         first:
           name: _Cutoff
-        second: .469999999
+        second: .5
       data:
         first:
           name: _SrcBlend
@@ -125,11 +118,11 @@ Material:
       data:
         first:
           name: _Outl
-        second: 1
+        second: 0
       data:
         first:
           name: _TintColor
-        second: 1
+        second: 0
       data:
         first:
           name: _VertexColor
@@ -145,7 +138,7 @@ Material:
       data:
         first:
           name: _Outline
-        second: .150000006
+        second: 20
       data:
         first:
           name: _Asym
@@ -153,11 +146,11 @@ Material:
       data:
         first:
           name: _Trans
-        second: 1
+        second: 0
       data:
         first:
           name: _TrOp
-        second: 1
+        second: 0
       data:
         first:
           name: _Corruption
@@ -174,10 +167,6 @@ Material:
         first:
           name: _TileSize
         second: .150000006
-      data:
-        first:
-          name: _DetailTex
-        second: 1
       data:
         first:
           name: _Parallax
@@ -218,18 +207,6 @@ Material:
         first:
           name: _Metallic
         second: 0
-      data:
-        first:
-          name: _BurningWidth
-        second: .0500000007
-      data:
-        first:
-          name: _Dissolution
-        second: 0
-      data:
-        first:
-          name: _DissolveThreshold
-        second: 1
     m_Colors:
       data:
         first:
@@ -238,11 +215,11 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .75, g: .879261613, b: 1, a: .337254912}
+        second: {r: .687716246, g: .882352948, b: .842083275, a: 1}
       data:
         first:
           name: _OutlineColor
-        second: {r: 1, g: 1, b: 1, a: 1}
+        second: {r: 0, g: 0, b: 0, a: 1}
       data:
         first:
           name: _Asymmetry
@@ -258,8 +235,4 @@ Material:
       data:
         first:
           name: _EmissionColorUI
-        second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
-          name: _BurningColor
         second: {r: 1, g: 1, b: 1, a: 1}
