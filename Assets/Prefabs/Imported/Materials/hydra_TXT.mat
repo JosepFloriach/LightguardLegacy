@@ -187,7 +187,7 @@ Material:
       data:
         first:
           name: _Outline
-        second: .00999999978
+        second: 12
       data:
         first:
           name: _Asym
@@ -212,7 +212,7 @@ Material:
       data:
         first:
           name: _OutlineColor
-        second: {r: .5, g: .5, b: .5, a: 1}
+        second: {r: 0, g: 0, b: 0, a: 1}
       data:
         first:
           name: _BurningColor
