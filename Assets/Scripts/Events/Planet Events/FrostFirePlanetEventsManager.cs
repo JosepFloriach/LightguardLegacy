@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using System.Collections.Generic;
 public class FrostFirePlanetEventsManager : PlanetEventsManager {
 
 	private GameObject bigPappadaDialogue;
@@ -10,6 +10,8 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 	public Material materialCoreOnSolidify;
 
 	public RunnerSegment[] runnerSegments;
+	private List<Material> materialsPlanetUnfreeze;
+	private float maxDistanceUnFreeze = 55f;
 
 	public Checkpoint planetCheckpoint;
 	public GameObject corruptionBlockade;
@@ -79,19 +81,35 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 			yield return StartCoroutine(doSegment());
 		}
 		if (!diedOnSegment) {
-			hydraEventCinematicOngoing = false;
-			hydraEventCinematicFinished = true;
-			burningCore.GetComponent<DieOnTouch>().enabled = false;
-			burningCore.layer = LayerMask.NameToLayer("Planets");
-			burningCore.tag = "Planet";
-			GetComponent<MeteoriteSpawner>().enabled = false;
-			burningCore.GetComponent<Renderer>().material = materialCoreOnSolidify;
-			burningCore.GetComponent<ScrollingUVs_Layers>().uvAnimationRate = Vector2.zero;
-			burningCore.GetComponent<ParticleSystem>().Stop();
-			GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().stopCameraShaking ();
-			rotatingFire.SetActive(false);
+
+			StartCoroutine(OnRunnerFinished());
 		}
 		//rotatingFire.SetActive(false);
+	}
+
+	private IEnumerator OnRunnerFinished(){
+		float timer = 0f;
+		float burningCoreRadius = burningCore.GetComponent<SphereCollider> ().radius * burningCore.transform.lossyScale.x;
+		float missingDistance = (maxDistanceUnFreeze - burningCoreRadius);
+		while (timer<3f) {
+			timer+=Time.deltaTime;
+			burningCoreRadius+= (Time.deltaTime * missingDistance)/3f;
+			setMaterialsFrozenDistance(burningCoreRadius);
+			yield return null;
+		}
+
+		hydraEventCinematicOngoing = false;
+		hydraEventCinematicFinished = true;
+
+		burningCore.GetComponent<DieOnTouch>().enabled = false;
+		burningCore.layer = LayerMask.NameToLayer("Planets");
+		burningCore.tag = "Planet";
+		GetComponent<MeteoriteSpawner>().enabled = false;
+		burningCore.GetComponent<Renderer>().material = materialCoreOnSolidify;
+		burningCore.GetComponent<ScrollingUVs_Layers>().uvAnimationRate = Vector2.zero;
+		burningCore.GetComponent<ParticleSystem>().Stop();
+		GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().stopCameraShaking ();
+		rotatingFire.SetActive(false);
 	}
 
 	private void resetPlatformsFromCombat(){
@@ -154,6 +172,8 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 			timer+=Time.deltaTime;
 			float ratio = timer/runnerSegments[lastCompletedSegment].timeItLasts;
 			burningCore.transform.localScale = Vector3.Lerp(startingScale,endScale,ratio);
+
+			setMaterialsFrozenDistance ((burningCore.GetComponent<SphereCollider>().radius * burningCore.transform.lossyScale.x)-1f);
 
 			float actualRotation = ((endingRotation - startingRotation) * ratio) + startingRotation;
 			Quaternion rotation = Quaternion.Euler (new Vector3 (burningCore.transform.localRotation.eulerAngles.x,burningCore.transform.localRotation.eulerAngles.y,actualRotation));
@@ -240,6 +260,18 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 
 	public override void initialize (){
 		if(isEnabled){
+			MeshRenderer[] meshes = GetComponentsInChildren<MeshRenderer>();
+			materialsPlanetUnfreeze = new List<Material>();
+			foreach(MeshRenderer mesh in meshes){
+				foreach(Material mat in mesh.materials){
+					if(mat.HasProperty("_OriginFrozenCore")){
+						materialsPlanetUnfreeze.Add(mat);
+					}
+				}
+			}
+			setMaterialsOriginPosition (transform.position);
+			setMaterialsFrozenDistance(0f);
+
 			GetComponent<PlanetSpawnerManager> ().enabled = false;
 			bigPappadaDialogueController = GameManager.player.GetComponent<DialogueController>();
 			corruptionBlockade.SetActive(true);
@@ -278,6 +310,22 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 			
 			GameManager.inputController.enableInputController ();
 			hasPlayedOnLandCinematic = true;
+		}
+	}
+
+	private void setMaterialsOriginPosition(Vector3 position){
+		foreach (Material material in materialsPlanetUnfreeze) {
+			material.SetVector("_OriginFrozenCore",position);
+		}
+	}
+
+	private void setMaterialsFrozenDistance(float distance){
+
+		foreach (Material material in materialsPlanetUnfreeze) {
+			material.SetFloat("_DistanceFreezeDisappear",distance);
+			if((distance/maxDistanceUnFreeze)>0.2f){
+				material.SetFloat("_Outline",0f);
+			}
 		}
 	}
 	
