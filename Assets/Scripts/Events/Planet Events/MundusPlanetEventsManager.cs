@@ -217,16 +217,16 @@ public class MundusPlanetEventsManager : PlanetEventsManager {
 		middlePosition.transform.up = middlePosition.transform.position - getInsidePlanetPosition ();
 		GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().followObjective (middlePosition);
 
-		mundusDialogue = mundusDialogueController.createNewDialogue ("You finally came!!", 2f, false,TextureDialogue.Mundus,!mundus.GetComponent<CharacterController>().getIsLookingRight());
+		mundusDialogue = mundusDialogueController.createNewDialogue ("You finally came!!", 2f, false,TextureDialogue.Mundus,false);
 		yield return StartCoroutine (WaitInterruptable (2f, mundusDialogue));
 
 		bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("I came here to destroy  you mundus!!", 2f, true,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 		yield return StartCoroutine (WaitInterruptable (2f, bigPappadaDialogue));
 
-		mundusDialogue = mundusDialogueController.createNewDialogue ("HA HA HA!", 1f,false,TextureDialogue.Mundus,!mundus.GetComponent<CharacterController>().getIsLookingRight());
+		mundusDialogue = mundusDialogueController.createNewDialogue ("HA HA HA!", 1f,false,TextureDialogue.Mundus,false);
 		yield return StartCoroutine (WaitInterruptable (1f, mundusDialogue));
 
-		mundusDialogue = mundusDialogueController.createNewDialogue ("Just try!", 2f,false,TextureDialogue.Mundus,!mundus.GetComponent<CharacterController>().getIsLookingRight());
+		mundusDialogue = mundusDialogueController.createNewDialogue ("Just try!", 2f,false,TextureDialogue.Mundus,false);
 		yield return StartCoroutine (WaitInterruptable (2f, mundusDialogue));
 
 		GameManager.inputController.enableInputController();

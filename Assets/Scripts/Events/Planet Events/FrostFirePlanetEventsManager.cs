@@ -378,6 +378,12 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 	public override void onFadeOutAfterDeath (){
 		if(diedOnSegment){
 			burningCore.transform.localScale = runnerSegments[lastCompletedSegment].startingScale * Vector3.one;
+			float burningCoreRadius = burningCore.GetComponent<SphereCollider> ().radius * burningCore.transform.lossyScale.x;
+			setMaterialsFrozenDistance(burningCoreRadius);
+
+			float startingRotation = runnerSegments [lastCompletedSegment].startingFireRotation;
+			Quaternion rotation = Quaternion.Euler (new Vector3 (burningCore.transform.localRotation.eulerAngles.x,burningCore.transform.localRotation.eulerAngles.y,startingRotation));
+			rotatingFire.transform.rotation = rotation;
 		}
 	}
 

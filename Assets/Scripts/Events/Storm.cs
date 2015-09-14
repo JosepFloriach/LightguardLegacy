@@ -48,6 +48,7 @@ public class Storm : MonoBehaviour {
 	private void stormSwitch() {
 		if (GameManager.getIsInsidePlanet ()) {
 			ps.Stop ();
+			GameManager.mainCamera.GetComponent<CameraFollowingPlayer>().stopCameraShaking();
 		} else {
 			if(!ps.isPlaying){
 				ps.Play();
@@ -60,6 +61,7 @@ public class Storm : MonoBehaviour {
 					timeElapsedOn = 0f; 
 					isHailing = true;
 					StartCoroutine(spawnRocks());
+					GameManager.mainCamera.GetComponent<CameraFollowingPlayer>().setCameraShaking();
 				}
 			}
 			
@@ -70,6 +72,7 @@ public class Storm : MonoBehaviour {
 					timeElapsedOff = 0f; 
 					timeElapsedOn = 0f; 
 					isHailing = false;
+					GameManager.mainCamera.GetComponent<CameraFollowingPlayer>().stopCameraShaking();
 				}
 			}
 		}

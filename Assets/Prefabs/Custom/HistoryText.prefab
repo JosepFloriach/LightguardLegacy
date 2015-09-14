@@ -1,5 +1,22 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &135240
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 414260}
+  - 33: {fileID: 3395074}
+  - 23: {fileID: 2341622}
+  m_Layer: 0
+  m_Name: monolito
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &145964
 GameObject:
   m_ObjectHideFlags: 0
@@ -34,7 +51,19 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!4 &414260
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 135240}
+  m_LocalRotation: {x: -.837053776, y: 7.10542736e-15, z: -1.2644054e-07, w: .54712069}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.2739687, y: 1.2739681, z: 1.27396786}
+  m_Children: []
+  m_Father: {fileID: 451190}
+  m_RootOrder: 1
 --- !u!4 &451190
 Transform:
   m_ObjectHideFlags: 1
@@ -46,6 +75,7 @@ Transform:
   m_LocalScale: {x: .184714735, y: .184714824, z: .184714764}
   m_Children:
   - {fileID: 468176}
+  - {fileID: 414260}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &468176
@@ -60,6 +90,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 451190}
   m_RootOrder: 0
+--- !u!23 &2341622
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 135240}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 115fa7a2e8fb36e42bdee6031ddc4c79, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!23 &2397680
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -90,7 +144,14 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 154826}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: 9b81e3982cb761f45a35f4403347f69d, type: 3}
+--- !u!33 &3395074
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 135240}
+  m_Mesh: {fileID: 4300000, guid: 9b81e3982cb761f45a35f4403347f69d, type: 3}
 --- !u!114 &11453378
 MonoBehaviour:
   m_ObjectHideFlags: 1

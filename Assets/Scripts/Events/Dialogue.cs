@@ -22,11 +22,11 @@ public class Dialogue : SpeechBubble {
 		if (isRight) {
 			leftImage.enabled = false;
 			rightImage.enabled = true;
-			rightImage.texture = GameManager.dialogueManager.getTextureDialogue (t);
+			rightImage.texture = GameManager.dialogueManager.getTextureDialogue (t,isRight);
 		} else {
 			rightImage.enabled = false;
 			leftImage.enabled = true;
-			leftImage.texture = GameManager.dialogueManager.getTextureDialogue (t);
+			leftImage.texture = GameManager.dialogueManager.getTextureDialogue (t,isRight);
 		}
 		textO.text = "";
 

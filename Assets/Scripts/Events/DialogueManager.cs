@@ -9,7 +9,8 @@ public class DialogueManager : MonoBehaviour {
 	public GameObject prefabDialogue;
 	public GameObject prefabExpression;
 
-	public Texture bigPTexture, littleGTexture, WhiteheartTexture, MundusTexture;
+	public Texture bigPTextureR, littleGTextureR, WhiteheartTextureR, MundusTextureR;
+	public Texture bigPTextureL, littleGTextureL, WhiteheartTextureL, MundusTextureL;
 
 	private List<GameObject> dialoguesPool;
 	private List<GameObject> expressionPool;
@@ -20,15 +21,31 @@ public class DialogueManager : MonoBehaviour {
 		GameManager.registerDialogueManager (this);
 	}
 
-	public Texture getTextureDialogue(TextureDialogue t){
+	public Texture getTextureDialogue(TextureDialogue t,bool isRight){
 		if(t.Equals(TextureDialogue.BigPappada)){
-			return bigPTexture;
+			if(isRight){
+				return bigPTextureR;
+			}else{
+				return bigPTextureL;
+			}
 		}else if(t.Equals(TextureDialogue.LittleG)){
-			return littleGTexture;
+			if(isRight){
+				return littleGTextureR;
+			}else{
+				return littleGTextureL;
+			}
 		}else if(t.Equals(TextureDialogue.Mundus)){
-			return MundusTexture;
+			if(isRight){
+				return MundusTextureR;
+			}else{
+				return MundusTextureL;
+			}
 		}else if(t.Equals(TextureDialogue.Whiteheart)){
-			return WhiteheartTexture;
+			if(isRight){
+				return WhiteheartTextureR;
+			}else{
+				return WhiteheartTextureL;
+			}
 		}
 		return null;
 	}
