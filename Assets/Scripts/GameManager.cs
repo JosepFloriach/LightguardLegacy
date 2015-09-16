@@ -31,6 +31,8 @@ public static class GameManager{
 	public static GalaxyCameraZone actualGalaxy;
 	public static TutorialManager tutorialManager;
 	public static HistoryTextManager historyTextManager;
+	public static PlayerHealManager playerHealManager;
+	public static bool loadAndSave = false;
 
 	public static bool isGameEnded = true;
 	public static bool isCameraLockedToPlayer = true;
@@ -107,10 +109,15 @@ public static class GameManager{
 	public static void startGame(){
 		isGameEnded = false;
 		GameManager.inputController.enableInputController ();
+		bool isEvent = false;;
 		if(GameManager.playerSpaceBody.getClosestPlanet()!=null){
 			if(GameManager.playerSpaceBody.getClosestPlanet().isPlanetCorrupted()){
 				(GameManager.playerSpaceBody.getClosestPlanet() as PlanetCorrupted).getPlanetEventsManager().startButtonPressed();
+				isEvent = true;
 			}
+		}
+		if (!isEvent) {
+			GameManager.playerController.resetLookingPosition ();
 		}
 
 		GameManager.audioManager.PlayMiscSound(SoundIDs.PRESS_BUTTON,AudioManager.STABLE);
@@ -166,6 +173,10 @@ public static class GameManager{
 			}
 		}
 		return false;
+	}
+
+	public static bool getIsActualPlanetCorrupted(){
+		return GameManager.playerSpaceBody.getClosestPlanet () != null && GameManager.playerSpaceBody.getClosestPlanet ().isPlanetCorrupted () && (GameManager.playerSpaceBody.getClosestPlanet () as PlanetCorrupted).getPlanetCorruption().isCorrupted();
 	}
 	
 	
@@ -244,6 +255,10 @@ public static class GameManager{
 
 	public static void registerHistoryTextManager(HistoryTextManager htm){
 		historyTextManager = htm;
+	}
+
+	public static void registerPlayerHealManager(PlayerHealManager phm){
+		playerHealManager = phm;
 	}
 
 }

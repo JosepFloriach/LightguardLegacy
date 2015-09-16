@@ -548,6 +548,28 @@ public class PlayerController : MonoBehaviour {
 		return bpAnimator;
 	}
 
+	public void setLookingToCameraInCranePosition(){
+		GameManager.playerAnimator.SetBool("isRecoveringHealth",true);
+		Quaternion objectiveRotation = GameManager.player.transform.rotation;
+		if (GameManager.playerController.getIsLookingRight ()) {
+			objectiveRotation *= Quaternion.Euler (0f, 90f, 0f);
+		} else {
+			objectiveRotation *= Quaternion.Euler (0f, -90f, 0f);
+		}
+		GameManager.player.transform.rotation = objectiveRotation;
+	}
+
+	public void resetLookingPosition(){
+		GameManager.playerAnimator.SetBool("isRecoveringHealth",false);
+		Quaternion objectiveRotation = GameManager.player.transform.rotation;
+		if (GameManager.playerController.getIsLookingRight ()) {
+			objectiveRotation *= Quaternion.Euler(0f,-90f,0f);
+		} else {
+			objectiveRotation *= Quaternion.Euler (0f, 90f, 0f);
+		}
+		GameManager.player.transform.rotation = objectiveRotation;
+	}
+
 	public bool getIsChargingSpaceJump(){
 		return isChargingSpaceJump;
 	}

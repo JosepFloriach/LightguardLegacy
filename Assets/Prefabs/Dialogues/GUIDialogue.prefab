@@ -284,7 +284,7 @@ RectTransform:
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: -232, y: -167}
-  m_SizeDelta: {x: 70.8999939, y: 68.2749939}
+  m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22425546
 RectTransform:
@@ -356,7 +356,7 @@ RectTransform:
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 257, y: -166}
-  m_SizeDelta: {x: 71.9000015, y: 68.2750015}
+  m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: .5, y: .5}
 --- !u!225 &22593554
 CanvasGroup:
