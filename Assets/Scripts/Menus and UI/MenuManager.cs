@@ -59,7 +59,9 @@ public class MenuManager : MonoBehaviour {
 	}
 
 	public void SaveAndQuit(){
+		GameManager.persistentData.save ();
 		GUIManager.fadeAllOut (restartGameAndFadeInMainMenu);
+		GameManager.playerController.setLookingToCameraInCranePosition ();
 		GameManager.unPauseGame ();
 		GameManager.inputController.disableInputController ();
 		GameManager.isGameEnded = true;

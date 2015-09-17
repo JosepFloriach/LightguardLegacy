@@ -25,6 +25,10 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 	public GameObject[] platforms;
 	private Vector3[] platformsOriginalPosition;
 	public GameObject rotatingFire;
+	public GameObject lavaRunner;
+	private Vector3 originalLavaRunnerPosition;
+	private float originalRadiusCore;
+
 
 	public float objectiveGrowingScale = 1.75f;
 	private Vector3 startingScale;
@@ -174,7 +178,7 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 			burningCore.transform.localScale = Vector3.Lerp(startingScale,endScale,ratio);
 
 			setMaterialsFrozenDistance ((burningCore.GetComponent<SphereCollider>().radius * burningCore.transform.lossyScale.x)-1f);
-
+			setActualLavaRunnerPosition();
 			float actualRotation = ((endingRotation - startingRotation) * ratio) + startingRotation;
 			Quaternion rotation = Quaternion.Euler (new Vector3 (burningCore.transform.localRotation.eulerAngles.x,burningCore.transform.localRotation.eulerAngles.y,actualRotation));
 			rotatingFire.transform.rotation = rotation;
@@ -258,6 +262,13 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 		}
 	}
 
+	private void setActualLavaRunnerPosition(){
+	/*	float actualCoreRadius = burningCore.GetComponent<SphereCollider> ().radius * burningCore.transform.lossyScale.z;
+		float extraOffset = actualCoreRadius - originalRadiusCore ;
+		Debug.Log (extraOffset);
+		lavaRunner.transform.localPosition = originalLavaRunnerPosition + new Vector3 (0f, extraOffset, 0f);*/
+	}
+
 	public override void initialize (){
 		if(isEnabled){
 			MeshRenderer[] meshes = GetComponentsInChildren<MeshRenderer>();
@@ -278,6 +289,8 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 			objectiveScale = new Vector3 (objectiveGrowingScale, objectiveGrowingScale, objectiveGrowingScale);
 			startingScale = new Vector3 (1f, 1f, 1f);
 			rotatingFire.SetActive(false);
+			originalLavaRunnerPosition = lavaRunner.transform.localPosition;
+			originalRadiusCore = (burningCore.GetComponent<SphereCollider>().radius * burningCore.transform.lossyScale.z);
 			startingFireRotation = rotatingFire.transform.rotation;
 			platformsOriginalPosition = new Vector3[platforms.Length];
 			for(int i = 0;i<platforms.Length;i++){
@@ -379,6 +392,7 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 		if(diedOnSegment){
 			burningCore.transform.localScale = runnerSegments[lastCompletedSegment].startingScale * Vector3.one;
 			float burningCoreRadius = burningCore.GetComponent<SphereCollider> ().radius * burningCore.transform.lossyScale.x;
+			setActualLavaRunnerPosition();
 			setMaterialsFrozenDistance(burningCoreRadius);
 
 			float startingRotation = runnerSegments [lastCompletedSegment].startingFireRotation;

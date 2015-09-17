@@ -70,6 +70,7 @@ public class InitialPlanetEventsManager : PlanetEventsManager {
 				rocksBlockingPathGO.GetComponent<FirstPlanetBlockPathRocks>().rocks.SetActive(false);
 				GameManager.persistentData.spaceJumpUnlocked = false;
 			}else{
+				GameManager.playerController.setLookingToCameraInCranePosition ();
 				GameManager.persistentData.spaceJumpUnlocked = true;
 				boarHuntingGO.GetComponent<FirstPlanetBoarHunting>().boar.SetActive(false);
 				boarHuntingGO.SetActive(false);
@@ -446,6 +447,7 @@ public class InitialPlanetEventsManager : PlanetEventsManager {
 		if(isEnabled && !firstCinematicPlayed){
 			StartCoroutine("initialCinematic");
 		}else{
+			GameManager.playerController.resetLookingPosition ();
 			GameManager.persistentData.spaceJumpUnlocked = true;
 		}
 	}

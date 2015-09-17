@@ -150,6 +150,8 @@ public class InputController : MonoBehaviour {
 					CancelChargingSpaceJump();
 				}else if(character.getIsSpaceJumping() && body.getIsOrbitingAroundPlanet()){
 					body.setIsFallingIntoPlanet(true);
+				}else if(GameManager.playerHealManager.isShowingMenu()){
+					GameManager.playerHealManager.healCompletly();
 				}else if (entity != null){ 
 					entity.doInteractAction();
 				}else if(Input.GetAxis("Vertical")<-0.5f && isCharacterAllowedToBlock()){
@@ -325,9 +327,11 @@ public class InputController : MonoBehaviour {
 		timeJumpPressed = 0f;
 	}
 
-	public void disableInputController(){
+	public void disableInputController(bool deactivateGUI = true){
 		character.StopMove ();
-		GUIManager.deactivatePlayingGUI ();
+		if (deactivateGUI) {
+			GUIManager.deactivatePlayingGUI ();
+		}
 		isEnabled = false;
 	}
 

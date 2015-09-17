@@ -15,6 +15,7 @@ public class GameTimelineManager : MonoBehaviour {
 	void gameBegins(){
 		//It's the start of the game
 		GameManager.rebuildGameFromGameState ();
+
 		GUIManager.deactivatePlayingGUI();
 		GameManager.inputController.disableInputController ();
 		GUIManager.activateMenu(GameManager.actualSceneManager.startingMenu);
@@ -22,8 +23,10 @@ public class GameTimelineManager : MonoBehaviour {
 
 		//Get the actual planet and initialize it
 		Planet planet = GameManager.playerSpaceBody.getClosestPlanet ();
-		if(planet!=null && planet.isPlanetCorrupted()){
-			(planet as PlanetCorrupted).getPlanetEventsManager().activate();
+		if (planet != null && planet.isPlanetCorrupted ()) {
+			(planet as PlanetCorrupted).getPlanetEventsManager ().activate ();
+		} else {
+			GameManager.playerController.setLookingToCameraInCranePosition ();
 		}
 	}
 
