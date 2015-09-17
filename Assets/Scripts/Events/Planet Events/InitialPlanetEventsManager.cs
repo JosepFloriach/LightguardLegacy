@@ -30,6 +30,7 @@ public class InitialPlanetEventsManager : PlanetEventsManager {
 	//Is called when the class is activated by the GameTimelineManager
 	public override void isActivated(){
 		if(!hasBeenActivated){
+			hasBeenActivated = true;
 			if(isEnabled){
 				GameObject middlePointBigPLittleG = new GameObject();
 				GameManager.mainCamera.GetComponent<CameraFollowingPlayer>().setObjectiveZStraight(3.3f);
@@ -41,7 +42,6 @@ public class InitialPlanetEventsManager : PlanetEventsManager {
 				middlePointBigPLittleG.transform.position = (littleGHopper.transform.position+GameManager.player.transform.position)/2f;
 				middlePointBigPLittleG.transform.up = middlePointBigPLittleG.transform.position - transform.position;
 				GameManager.mainCamera.GetComponent<CameraFollowingPlayer>().followObjective(middlePointBigPLittleG);
-				hasBeenActivated = true;
 				//First event is putting Big P in the initial position
 				GameManager.player.transform.position = bigPappadaInitialPosition.transform.position;
 				GameManager.player.transform.rotation = Quaternion.LookRotation (Vector3.forward*-1f, bigPappadaInitialPosition.transform.up*-1f);

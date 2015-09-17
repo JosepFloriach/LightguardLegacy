@@ -52339,7 +52339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6219b76d882b6d043822e9cd6d010af3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEnabled: 0
+  isEnabled: 1
   bigPappadaInitialPosition: {fileID: 2013654545}
   littleGHopper: {fileID: 1973452111}
   boarHuntingGO: {fileID: 1806287929}
@@ -151350,6 +151350,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1248d734e9b2d4a4d83fe62d267712e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  walkEffects: []
+  dSteep: 0
+  bigp: {fileID: 0}
 --- !u!4 &1982642250
 Transform:
   m_PrefabParentObject: {fileID: 451792, guid: 5913ca3260765e940849bd3199325f3f, type: 2}

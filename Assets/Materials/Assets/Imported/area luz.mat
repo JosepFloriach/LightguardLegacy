@@ -20,17 +20,17 @@ Material:
         second:
           m_Texture: {fileID: 2800000, guid: 7b7b345456b65ea49ac3f7b989d7e600, type: 3}
           m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 23.2155323, y: 0}
+          m_Offset: {x: 15.7499905, y: 0}
       data:
         first:
-          name: _ToonShade
+          name: _Ramp
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _Ramp
+          name: _ToonShade
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -43,10 +43,6 @@ Material:
       data:
         first:
           name: _TintColor
-        second: 1
-      data:
-        first:
-          name: _DetailTex
         second: 1
       data:
         first:
@@ -84,6 +80,10 @@ Material:
         first:
           name: _TrOp
         second: 0
+      data:
+        first:
+          name: _DetailTex
+        second: 1
     m_Colors:
       data:
         first:
