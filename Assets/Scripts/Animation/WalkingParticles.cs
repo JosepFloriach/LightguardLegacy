@@ -3,20 +3,21 @@ using System.Collections;
 
 public class WalkingParticles : MonoBehaviour, AnimationSubscriber {
 
-	ParticleSystem dust;
+	public ParticleSystem[] walkEffects;
+	public int dSteep = 0;
+	public Transform bigp;
 
 	// Use this for initialization
 	void Start () {
 		AnimationEventBroadcast eventHandler = GameManager.playerAnimator.gameObject.GetComponent<AnimationEventBroadcast>();
 		eventHandler.subscribe(this);
-		
-		dust = this.GetComponent<ParticleSystem>();
 	}
 	
 	void AnimationSubscriber.handleEvent(string idEvent) {
 		if(idEvent == "step"){
-			dust.Play();
+		//	transform.up = bigp.up;
 		
+			walkEffects[dSteep].Play();
 		}
 	}
 	
