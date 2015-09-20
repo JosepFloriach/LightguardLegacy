@@ -22,25 +22,25 @@ public class ManaGUIManager : MonoBehaviour {
 	void Update() {
 		float newEnergyNumber = GameManager.lightGemEnergyManager.pointsPercentage();
 		if (newEnergyNumber == 1f) {
-			transform.Find ("Fruit4").GetComponent<Image> ().color = new Color(180f,180f,180f,0.50f);
-			transform.Find ("Fruit3").GetComponent<Image> ().color = new Color(180f,180f,180f,0.50f);
-			transform.Find ("Fruit2").GetComponent<Image> ().color = new Color(180f,180f,180f,0.50f);
-			transform.Find ("Fruit1").GetComponent<Image> ().color = new Color(180f,180f,180f,0.50f);
+			transform.Find ("Fruit4").GetComponent<Image> ().color = new Color(180f,180f,180f,1f);
+			transform.Find ("Fruit3").GetComponent<Image> ().color = new Color(180f,180f,180f,1f);
+			transform.Find ("Fruit2").GetComponent<Image> ().color = new Color(180f,180f,180f,1f);
+			transform.Find ("Fruit1").GetComponent<Image> ().color = new Color(180f,180f,180f,1f);
 		} else if (newEnergyNumber > 0.75f) {
 			transform.Find ("Fruit4").GetComponent<Image> ().color = Color.clear;
-			transform.Find ("Fruit3").GetComponent<Image> ().color = new Color(180f,180f,180f,0.50f);
-			transform.Find ("Fruit2").GetComponent<Image> ().color = new Color(180f,180f,180f,0.50f);
-			transform.Find ("Fruit1").GetComponent<Image> ().color = new Color(180f,180f,180f,0.50f);
+			transform.Find ("Fruit3").GetComponent<Image> ().color = new Color(180f,180f,180f,1f);
+			transform.Find ("Fruit2").GetComponent<Image> ().color = new Color(180f,180f,180f,1f);
+			transform.Find ("Fruit1").GetComponent<Image> ().color = new Color(180f,180f,180f,1f);
 		} else if (newEnergyNumber > 0.50f) {
 			transform.Find ("Fruit4").GetComponent<Image> ().color = Color.clear;
 			transform.Find ("Fruit3").GetComponent<Image> ().color = Color.clear;
-			transform.Find ("Fruit2").GetComponent<Image> ().color = new Color(180f,180f,180f,0.50f);
-			transform.Find ("Fruit1").GetComponent<Image> ().color = new Color(180f,180f,180f,0.50f);
+			transform.Find ("Fruit2").GetComponent<Image> ().color = new Color(180f,180f,180f,1f);
+			transform.Find ("Fruit1").GetComponent<Image> ().color = new Color(180f,180f,180f,1f);
 		} else if (newEnergyNumber > 0.25f) {
 			transform.Find ("Fruit4").GetComponent<Image> ().color = Color.clear;
 			transform.Find ("Fruit3").GetComponent<Image> ().color = Color.clear;
 			transform.Find ("Fruit2").GetComponent<Image> ().color = Color.clear;
-			transform.Find ("Fruit1").GetComponent<Image> ().color = new Color(180f,180f,180f,0.50f);
+			transform.Find ("Fruit1").GetComponent<Image> ().color = new Color(180f,180f,180f,1f);
 		} else {
 			transform.Find ("Fruit4").GetComponent<Image> ().color = Color.clear;
 			transform.Find ("Fruit3").GetComponent<Image> ().color = Color.clear;
@@ -54,7 +54,7 @@ public class ManaGUIManager : MonoBehaviour {
 		for (int i = 1; i < 5; i++) {
 			strsprite =  "Fruit" + i.ToString (); 
 			Image img = transform.Find (strsprite).GetComponent<Image>();
-			img.color = new Color(180f,180f,180f,0.50f);
+			img.color = new Color(180f,180f,180f,1f);
 		}
 		currentMana = 4; 
 	}
