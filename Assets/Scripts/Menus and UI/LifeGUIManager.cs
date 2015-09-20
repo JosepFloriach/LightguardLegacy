@@ -7,61 +7,35 @@ public class LifeGUIManager : MonoBehaviour {
 
 	public GameObject[] lifeLeafs;
 	public float updateTime = 0.05f;
+	public Color originalColor;
 	private Color leafsColor;
 	private float timer = 0f;
 
 	void Awake(){
-		if (lifeLeafs.Length > 0) {
-			leafsColor = lifeLeafs [0].GetComponent<Image> ().color;
-		}
+		resetUI ();
 	}
-	//private int currentSprite = 1;
-
-	/*public static LifeGUIManager GetInstance() {
-		if (instance == null) {
-			instance = GameObject.FindObjectOfType<LifeGUIManager>();
-		}
-		return instance;
-	}*/
-
-	void LateUpdate(){
+	/*void LateUpdate(){
 		timer += Time.deltaTime;
 		if (timer > updateTime) {
 			updateUI();
 			timer = 0f;
 		}
+	}*/
+
+	public void updateUI(){
+		float lifeProportion = GameManager.player.GetComponent<Killable> ().proportionHP ();
+		int hitPoint = (int)(lifeLeafs.Length * lifeProportion);
+		lifeLeafs [hitPoint].GetComponent<VanishEffect> ().activateVanishEffect ();
 	}
 
-	void updateUI(){
-		float lifeProportion = GameManager.player.GetComponent<Killable> ().proportionHP ();
-		int elementsToShow = (int)(lifeLeafs.Length * lifeProportion);
-		for (int i = 0; i<lifeLeafs.Length; ++i) {
-			if(i>=elementsToShow){
-				lifeLeafs[i].GetComponent<Image>().color = Color.clear;
-			}else{
-				lifeLeafs[i].GetComponent<Image>().color = leafsColor;
+
+	public void resetUI() {
+		if (lifeLeafs.Length > 0) {
+			for (int i = 0; i<lifeLeafs.Length; ++i) {
+				lifeLeafs[i].GetComponent<Image>().color = originalColor;
+				lifeLeafs[i].transform.localScale = new Vector2(1f,1f);
+				lifeLeafs[i].GetComponent<VanishEffect>().deactivateVanishEffect();
 			}
 		}
 	}
-
-
-
-	/*public void resetHitPoints() {
-		string strsprite;
-		for (int i = 1; i < 8; i++) {
-			strsprite =  "Leaf" + i.ToString (); 
-			Image img = transform.Find (strsprite).GetComponent<Image>();
-			img.color = new Color(180f,180f,180f,0.50f);
-		}
-		currentSprite = 1; 
-	}*/
-	
-	/*public void addHitPoint() {
-		string strsprite = "Leaf" + currentSprite.ToString (); 
-		if (currentSprite < 8) {
-			Debug.Log(strsprite);
-			transform.Find (strsprite).GetComponent<Image> ().color = Color.clear;
-			currentSprite++;
-		}
-	}*/
 }

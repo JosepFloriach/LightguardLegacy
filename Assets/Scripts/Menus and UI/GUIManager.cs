@@ -267,6 +267,10 @@ public class GUIManager : MonoBehaviour {
 		}
 	}
 
+	public static GameObject getPlayingGUI () {
+		return playingGUIO; 
+	}
+
 	public static void registerSpaceJumpGUI(GameObject spaceJumpGUIGO){
 		if(spaceJumpGUIGO!=null && spaceJumpGUIO == null){
 			spaceJumpGUIO = GameObject.Instantiate (spaceJumpGUIGO) as GameObject;

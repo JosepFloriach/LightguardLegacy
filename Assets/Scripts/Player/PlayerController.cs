@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour {
 	public float spaceJumpForce = 100f;
 	public float continuousForceWhileJumping = 4f;
 	public float maxTimeApplyForce = 1f;
+	public GameObject guiObject;
 	public GameObject particleSystemJumpCharge;
 	public GameObject animationBigPappada;
 	public GameObject getHurtBigPappadaPrefab;
@@ -47,7 +48,7 @@ public class PlayerController : MonoBehaviour {
 	private ParticleSystem flyParticles;
 	private bool isFinishedSpaceJump;
 	public GameObject explosionOnDieInSpacePrefab;
-	public GameObject weapon;
+	public GameObject weapon; 
 	public float invulnerableTimeOnFallDown = 1f;
 	public float invulnerableTimeAfterFallDown = 1f;
 
@@ -371,6 +372,7 @@ public class PlayerController : MonoBehaviour {
 			GameManager.audioManager.PlayStableSound(8);
 			killable.TakeDamage (hitPointsToSubstract);
 			pappadaC.newProportionOfLife (killable.proportionHP ());
+			GUIManager.getPlayingGUI ().GetComponentInChildren <LifeGUIManager> ().updateUI ();
 			if (killable.HP <= 0 && !GameManager.isGameEnded) {
 				onDieCallEvent();
 				GameManager.playerAnimator.SetBool("isDerribado",true);
@@ -379,6 +381,8 @@ public class PlayerController : MonoBehaviour {
 				GUIManager.setPercentageOfBreathing(100);
 				GameManager.audioManager.StopSong();
 				GameManager.audioManager.PlayStableSound(9);
+				//GUIManager.getPlayingGUI ().GetComponentInChildren <LifeGUIManager> ().updateUI ();
+				GUIManager.getPlayingGUI ().GetComponentInChildren <LifeGUIManager> ().resetUI ();
 				StartCoroutine(dissolveAndLose());
 			}
 		}
