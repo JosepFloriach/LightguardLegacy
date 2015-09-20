@@ -101,7 +101,7 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 			setMaterialsFrozenDistance(burningCoreRadius);
 			yield return null;
 		}
-
+		GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().stopCameraShaking ();
 		hydraEventCinematicOngoing = false;
 		hydraEventCinematicFinished = true;
 
@@ -149,6 +149,7 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 		yield return StartCoroutine (WaitInterruptable (1f, bigPappadaDialogue));
 
 		GameManager.inputController.enableInputController ();
+		GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().setCameraShaking ();
 		runnerStarted = true;
 		runningEvent ();
 

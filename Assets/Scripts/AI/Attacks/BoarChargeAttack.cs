@@ -101,7 +101,9 @@ public class BoarChargeAttack : Attack {
 			yield return null;
 		}
 
-		parent.layer = LayerMask.NameToLayer ("Enemy");
+		if (!parent.GetComponent<IAController> ().isDead) {
+			parent.layer = LayerMask.NameToLayer ("Enemy");
+		}
 
 		interrupted = false;
 		outlineChanger.setOutlineColor (Color.black);
