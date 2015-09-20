@@ -52519,7 +52519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6219b76d882b6d043822e9cd6d010af3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEnabled: 1
+  isEnabled: 0
   bigPappadaInitialPosition: {fileID: 2013654545}
   littleGHopper: {fileID: 1973452111}
   boarHuntingGO: {fileID: 1806287929}
@@ -63840,7 +63840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnabled: 1
-  corruptionPlanetPrefab: {fileID: 109976, guid: d7e4de5cb5ac8a941af54f2623f20005,
+  corruptionPlanetPrefab: {fileID: 196006, guid: d7e4de5cb5ac8a941af54f2623f20005,
     type: 2}
   whiteHeartEncounter: {fileID: 1382910046}
   corruptionChasing: {fileID: 955615383}
