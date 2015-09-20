@@ -1626,6 +1626,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68fb2531b02542148b22e681eced16c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collision: 1
+  trigger: 1
 --- !u!114 &11448660
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1998,9 +2000,14 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 1
+          value: .0869566202
           inSlope: 0
           outSlope: 0
+          tangentMode: 0
+        - time: .175433487
+          value: 1
+          inSlope: -.04991889
+          outSlope: -.04991889
           tangentMode: 0
         - time: 1
           value: 0
@@ -2916,7 +2923,7 @@ ParticleSystem:
         rgba: 4278190080
       minMaxState: 0
     startSize:
-      scalar: 10
+      scalar: 12
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -3821,11 +3828,11 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_MaxParticleSize: .5
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
-  m_LengthScale: 2
+  m_LengthScale: 5
   m_SortingFudge: 0
   m_NormalDirection: 1
   m_SortMode: 0

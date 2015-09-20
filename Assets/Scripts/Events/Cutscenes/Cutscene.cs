@@ -17,7 +17,8 @@ public enum CutsceneIdentifyier {
 	TowerPlanetJumpingToMundus,
     FrostFirePlanetPenguinAttack,
 	FrostFirePlanetHydraAppearence,
-	FrostFirePlanetGoToRunner};
+	FrostFirePlanetGoToRunner,
+    FrostFireEndRunner};
 
 abstract public class Cutscene: MonoBehaviour  {
 

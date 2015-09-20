@@ -49,6 +49,8 @@ public class MundusBaseAttack : Attack {
 	private void setParticles(bool setEnabled){
 		attackParticlesRight.GetComponent<Collider> ().enabled = setEnabled;
 		attackParticlesLeft.GetComponent<Collider> ().enabled = setEnabled;
+		leftClawParticles.GetComponent<MeshRenderer> ().enabled = setEnabled;
+		rightClawParticles.GetComponent<MeshRenderer> ().enabled = setEnabled;
 		if (setEnabled) {
 			attackParticlesRight.Play ();
 			attackParticlesLeft.Play ();
@@ -119,7 +121,7 @@ public class MundusBaseAttack : Attack {
 	public override void informParent(GameObject parentObject){
 		transform.parent = parentObject.transform;
 		transform.rotation = parentObject.transform.rotation;
-		transform.position = parentObject.GetComponent<Rigidbody>().worldCenterOfMass + (parentObject.transform.forward*parentObject.GetComponent<WalkOnMultiplePaths>().centerToExtremesDistance*1.3f);
+		transform.position = parentObject.GetComponent<Rigidbody> ().worldCenterOfMass + (parentObject.transform.forward * parentObject.GetComponent<WalkOnMultiplePaths> ().centerToExtremesDistance * 1.3f);
 		parent = parentObject;
 		iaAnimator = parent.GetComponent<IAController> ().getIAAnimator ();
 		outlineChanger = parent.GetComponent<OutlineChanging> ();
@@ -132,5 +134,6 @@ public class MundusBaseAttack : Attack {
 		setOriginalParticlesPosition ();
 		attackParticlesRight = rightClawParticles.GetComponent<ParticleSystem> ();
 		attackParticlesLeft = leftClawParticles.GetComponent<ParticleSystem> ();
+		setParticles (false);
 	}
 }

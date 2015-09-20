@@ -12,6 +12,8 @@ GameObject:
   - 199: {fileID: 19969760}
   - 114: {fileID: 11454322}
   - 135: {fileID: 13598976}
+  - 33: {fileID: 3316160}
+  - 23: {fileID: 2329862}
   m_Layer: 16
   m_Name: ParticlesMundusBaseAttack
   m_TagString: Untagged
@@ -26,11 +28,42 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 197920}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -.920583487, z: 1.77252603}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -.920580029, z: 1.77250004}
+  m_LocalScale: {x: .439301729, y: .439301729, z: .439301729}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!23 &2329862
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 197920}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 2100000, guid: cb7e2e891fa64ad47b624a3af050bf7e, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!33 &3316160
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 197920}
+  m_Mesh: {fileID: 4300268, guid: 4e0475d0a8a28e648b53b557f808eeca, type: 3}
 --- !u!114 &11454322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -227,7 +260,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
       minColor:
         serializedVersion: 2
-        rgba: 4282259228
+        rgba: 4294901793
       maxColor:
         serializedVersion: 2
         rgba: 4283301991
@@ -300,7 +333,7 @@ ParticleSystem:
       minMaxState: 0
     gravityModifier: 0
     inheritVelocity: 0
-    maxNumParticles: 100
+    maxNumParticles: 500
   ShapeModule:
     serializedVersion: 2
     enabled: 1
@@ -319,7 +352,7 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 100
+      scalar: 500
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -368,16 +401,26 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 0
-          inSlope: 0
-          outSlope: 0
+          value: .0737047568
+          inSlope: .25334245
+          outSlope: .25334245
+          tangentMode: 0
+        - time: .0836283565
+          value: 1
+          inSlope: 2.648458
+          outSlope: 2.648458
           tangentMode: 0
         - time: .475073308
           value: 1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
-        - time: 1
+        - time: .592829347
+          value: .608695686
+          inSlope: -2.27361917
+          outSlope: -2.27361917
+          tangentMode: 0
+        - time: .804878056
           value: 0
           inSlope: 0
           outSlope: 0
@@ -444,7 +487,7 @@ ParticleSystem:
           rgba: 4294967295
         key1:
           serializedVersion: 2
-          rgba: 4294967295
+          rgba: 4278190335
         key2:
           serializedVersion: 2
           rgba: 0
@@ -1124,7 +1167,7 @@ ParticleSystemRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 44b16b00fe950934e9c7e2eb2e3e4227, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1

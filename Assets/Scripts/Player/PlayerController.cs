@@ -363,6 +363,7 @@ public class PlayerController : MonoBehaviour {
 		if (!isInvulnerable && !attackController.isDoingBlock () && !GameManager.isGameEnded && !GameManager.isGamePaused) {
 			getHurtBigPappada.transform.position = positionImpact;
 			getHurtBigPappada.GetComponent<ParticleSystem>().Play();
+			GUIManager.fadeManager.getHurtEffect();
 			if(!getIsSpaceJumping()){
 				//fallDown();
 			}

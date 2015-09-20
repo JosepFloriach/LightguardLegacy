@@ -18,6 +18,7 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 	public GameObject penguinAttackEvent;
 	public GameObject hydraAttackEvent;
 	public GameObject goToRunnerEvent;
+	public GameObject endRunnerEvent;
 
 	public bool runnerActivated = false; 
 
@@ -49,7 +50,7 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 	private bool hasBeenAttackedByPenguins = false;
 
 	private bool onGoingRunnerCinematic;
-	
+	private bool runnerEnded = false;
 	public override void informEventActivated (CutsceneIdentifyier identifyier){
 		if(identifyier.Equals(CutsceneIdentifyier.FrostFirePlanetPenguinAttack)){
 			if(!hasBeenAttackedByPenguins){
@@ -65,6 +66,11 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 		}else if(identifyier.Equals(CutsceneIdentifyier.FrostFirePlanetGoToRunner)){
 			if(!runnerStarted){
 				StartCoroutine(startRunner());
+			}
+		}else if(identifyier.Equals(CutsceneIdentifyier.FrostFireEndRunner)){
+			if(!runnerEnded){
+				runnerEnded = true;
+				StartCoroutine(endRunnerCinematic());
 			}
 		}
 	}
@@ -89,6 +95,27 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 			StartCoroutine(OnRunnerFinished());
 		}
 		//rotatingFire.SetActive(false);
+	}
+
+	private IEnumerator endRunnerCinematic(){
+		GameManager.inputController.disableInputController ();
+		yield return new WaitForSeconds (1f);
+		bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("Waaah!! There's nowhere else to run!!", 2f, false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
+		yield return StartCoroutine (WaitInterruptable (2f, bigPappadaDialogue));
+
+		while (!hydraEventCinematicFinished) {
+			yield return null;
+		}
+
+		bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("It stopped!! That was close!", 2f, false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
+		yield return StartCoroutine (WaitInterruptable (2f, bigPappadaDialogue));
+
+
+		bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("It looks like now I can leave this planet! Little G. Wait for me!", 4f, false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
+		yield return StartCoroutine (WaitInterruptable (4f, bigPappadaDialogue));
+
+		GameManager.inputController.enableInputController ();
+
 	}
 
 	private IEnumerator OnRunnerFinished(){
@@ -144,6 +171,7 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 
 	private IEnumerator startRunner(){
 		GameManager.playerController.StopMove ();
+		endRunnerEvent.SetActive (true);
 		GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().setCameraShaking ();
 		bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("Woooah!!", 1f, false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 		yield return StartCoroutine (WaitInterruptable (1f, bigPappadaDialogue));
@@ -298,9 +326,11 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 				platformsOriginalPosition[i] = platforms[i].transform.position;
 			}
 			goToRunnerEvent.SetActive(false);
+			endRunnerEvent.SetActive(false);
 		}else{
 			goToRunnerEvent.SetActive(false);
 			corruptionBlockade.SetActive(false);
+			endRunnerEvent.SetActive(false);
 		}
 	}
 
