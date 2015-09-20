@@ -17,7 +17,7 @@ public class WalkingParticles : MonoBehaviour, AnimationSubscriber {
 		if(idEvent == "step"){
 		//	transform.up = bigp.up;
 		
-			walkEffects[dSteep].Play();
+			//walkEffects[dSteep].Play();
 		}
 	}
 	

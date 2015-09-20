@@ -28,7 +28,7 @@ public class ComboManagerUI : MonoBehaviour {
 	void Update () {
 		int newComboNum = GameManager.comboManager.getComboNum ();
 		if (lastCombo != newComboNum) {
-			if(newComboNum==0){
+			if(newComboNum==0 && lastCombo>minComboAppear){
 				fadingOut = true;
 				fadeOutTimer = 0f;
 			}else if(newComboNum>=minComboAppear){

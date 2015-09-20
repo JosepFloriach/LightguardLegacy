@@ -143,7 +143,7 @@ public class InputController : MonoBehaviour {
 			}
 
 			if (Input.GetButtonDown("Block")) {
-				Interactuable entity = EntityManager.getClosestInteractuable();
+				//Interactuable entity = EntityManager.getClosestInteractuable();
 				SpaceGravityBody body = GetComponent<SpaceGravityBody>();
 
 				if(character.isSpaceJumpCharged){
@@ -152,8 +152,6 @@ public class InputController : MonoBehaviour {
 					body.setIsFallingIntoPlanet(true);
 				}else if(GameManager.playerHealManager.isShowingMenu()){
 					GameManager.playerHealManager.healCompletly();
-				}else if (entity != null){ 
-					entity.doInteractAction();
 				}else if(Input.GetAxis("Vertical")<-0.5f && isCharacterAllowedToBlock()){
 					attackController.doBlock();
 				}else if(GameManager.historyTextManager.hasAnyInRangeHistoryText()){

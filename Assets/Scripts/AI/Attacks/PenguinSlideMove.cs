@@ -78,7 +78,9 @@ public class PenguinSlideMove : Attack {
 
 		interrupted = false;
 		isFinished = true;
-		parent.layer = LayerMask.NameToLayer("Enemy");
+		if (!parent.GetComponent<IAController> ().isDead){
+			parent.layer = LayerMask.NameToLayer ("Enemy");
+		}
 	}
 
 	public override void interruptAttack(){

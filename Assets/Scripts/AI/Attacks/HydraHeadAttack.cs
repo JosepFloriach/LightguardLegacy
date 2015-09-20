@@ -29,7 +29,7 @@ public class HydraHeadAttack : Attack {
 		yield return new WaitForSeconds (1f);
 		iaParent.getIAAnimator().SetTrigger("isDoingHeadAttack");
 		GetComponentInChildren<Collider> ().enabled = true;
-		yield return new WaitForSeconds (3f);
+		yield return new WaitForSeconds (1.5f);
 		GetComponentInChildren<Collider> ().enabled = false;
 		yield return null;
 		isFinished = true;

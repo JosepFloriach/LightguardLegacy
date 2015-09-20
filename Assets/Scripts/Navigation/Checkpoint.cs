@@ -18,12 +18,12 @@ public class Checkpoint : MonoBehaviour {
 		planet = planetGO.GetComponent<Planet> ();
 	}
 
-	void OnTriggerEnter (Collider col)
-	{
+	void OnTriggerEnter (Collider col){
 		if(col.gameObject.tag == "Player"){
-
 			if(!GameManager.playerHealManager.isActuallyHealing() && GameManager.player.GetComponent<Killable>().proportionHP()<1f && !GameManager.getIsActualPlanetCorrupted() && healsPlayer){
-				GameManager.playerHealManager.activateMenuHeal();
+				if(GameManager.mainCamera.GetComponent<CameraFollowingPlayer>().isInCloseRangeMode()){
+					GameManager.playerHealManager.activateMenuHeal();
+				}
 			}
 			if(onActivationParticleSystem!=null && GameManager.persistentData.playerLastCheckpoint != checkPointIndex){
 				GameManager.persistentData.save ();

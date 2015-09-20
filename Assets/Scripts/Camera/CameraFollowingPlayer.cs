@@ -168,6 +168,10 @@ public class CameraFollowingPlayer : MonoBehaviour {
 		return cameraDistance.Equals (CameraDistanceOfPlayer.GalaxyOverview);
 	}
 
+	public bool isInCloseRangeMode(){
+		return cameraDistance.Equals (CameraDistanceOfPlayer.Close);
+	}
+
 	
 	public void setObjectiveZInclined(float newObjectiveZ){
 		timerZPosition = 0f;

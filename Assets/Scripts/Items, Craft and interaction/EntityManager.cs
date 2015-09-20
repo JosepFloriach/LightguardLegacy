@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class EntityManager : MonoBehaviour {
-
+	/*
 	private static EntityManager singleton;
 
 	private static bool isInteractuablePopupActivated = false;
@@ -17,13 +17,6 @@ public class EntityManager : MonoBehaviour {
 	public static EntityManager Instance {
 		get{ return singleton ?? (singleton = new GameObject("EntityManager").AddComponent<EntityManager>());}
 	}	
-
-	/**************************************************
-	 * Gets the interactuable entity closest to the GameObject 
-	 * passed by parameter.
-	 * 
-	 * Returns an Interactuable object. 
-	 **************************************************/
 	public static Interactuable GetClosestInteractuableEntity(GameObject player)
 	{
 		Interactuable[] closeInteractEntities;
@@ -67,5 +60,5 @@ public class EntityManager : MonoBehaviour {
 	public  static Interactuable getClosestInteractuable(){
 		return closestInteractuable;
 	}
-
+*/
 }

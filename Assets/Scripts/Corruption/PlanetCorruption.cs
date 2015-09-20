@@ -48,11 +48,11 @@ public class PlanetCorruption : MonoBehaviour {
 	public void initialize(){
 		materials = new List<Material> (0);
 		foreach(Renderer renderer in GetComponentsInChildren<Renderer>(true)){
-				foreach(Material material in renderer.materials){
-					if(material.HasProperty("_YCutOut")){
-						materials.Add(material);
-					}
+			foreach(Material material in renderer.materials){
+				if(material.HasProperty("_YCutOut")){
+					materials.Add(material);
 				}
+			}
 		}
 
 	}
@@ -129,6 +129,8 @@ public class PlanetCorruption : MonoBehaviour {
 		GameManager.persistentData.spaceJumpUnlocked = true;
 		GameManager.audioManager.playSong(1);
 	}
+
+	bool athmosphereInitialized = false;
 	// Update is called once per frame
 	void Update () {
 		offset += Time.deltaTime/100f;
@@ -143,21 +145,29 @@ public class PlanetCorruption : MonoBehaviour {
 			yValue = yMin;
 		}
 		
-			foreach(Material material in materials){
-				if(material.HasProperty("_YCutOut")){
-					material.SetFloat("_YCutOut",yValue);
-					material.SetTextureOffset("_CorruptionTexture",new Vector2(offset,0));
+		foreach(Material material in materials){
+			if(material.HasProperty("_YCutOut")){
+				material.SetFloat("_YCutOut",yValue);
+				material.SetTextureOffset("_CorruptionTexture",new Vector2(offset,0));
+				if(!athmosphereInitialized){
 					material.SetVector("_OriginCorruption",originPosition);
 				}
 			}
+		}
 
 		Renderer athmosphereRenderer = GetComponent<GravityAttractor> ().getAthmosphere ().GetComponent<Renderer> ();
 		foreach(Material material in athmosphereRenderer.materials){
 			if(material.HasProperty("_YCutOut")){
 				material.SetFloat("_YCutOut",yValue);
-				material.SetVector("_OriginCorruption",originPosition);
+				if(!athmosphereInitialized){
+					material.SetVector("_OriginCorruption",originPosition);
+				}
 			}
 		}
+
+		athmosphereInitialized = true;
+
+
 	}
 
 	public bool getSpawningEnabled(){

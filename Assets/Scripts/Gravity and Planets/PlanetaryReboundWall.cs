@@ -28,7 +28,7 @@ public class PlanetaryReboundWall : MonoBehaviour {
 		}
 	}
 
-	void FixedUpdate(){
+	void Update(){
 		if(isRotating && planetRotatingOver!=null){
 			transform.position = OrbitAroundPoint (transform.position, transform.parent.position, Quaternion.Euler (0, 0, speed * Time.deltaTime));
 			transform.up = transform.position - planetRotatingOver.transform.position;
