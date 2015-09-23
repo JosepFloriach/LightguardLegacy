@@ -12,6 +12,7 @@ public class MundusPlanetEventsManager : PlanetEventsManager {
 	public GameObject positionEndingBigP;
 	public GameObject littleGHopper;
 	public LayerMask layersToCollideRaycastPlatforms;
+	public GameObject outroPrefab;
 
 	private DialogueController mundusDialogueController; 
 	private DialogueController bigPappadaDialogueController;
@@ -30,6 +31,7 @@ public class MundusPlanetEventsManager : PlanetEventsManager {
 	private GameObject lastPlanet;
 	private bool isInSecondPhase = false;
 	private bool isFinishedTransition = false;
+	private bool endCinematicHappened = false;
 
 	
 	//Is called when the class is activated by the GameTimelineManager
@@ -105,10 +107,14 @@ public class MundusPlanetEventsManager : PlanetEventsManager {
 
 	private IEnumerator CinematicEndGame(){
 
+		GameManager.inputController.disableInputController ();
+		GameManager.playerController.isInvulnerable = true;
 		GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().resetCameraRange ();
 		//GameObject closestPlatform = getClosestPlatformTop (GameManager.player.transform.position);
 		GUIManager.fadeIn (Menu.BlackMenu);
-		littleGHopper.GetComponent<CharacterController> ().LookLeftOrRight (1f);
+
+		//OLD CINEMATIC
+		/*littleGHopper.GetComponent<CharacterController> ().LookLeftOrRight (1f);
 		GameManager.playerController.isInvulnerable = true;
 		yield return new WaitForSeconds (1f);
 		GameManager.inputController.disableInputController ();
@@ -140,11 +146,22 @@ public class MundusPlanetEventsManager : PlanetEventsManager {
 		littleGDialogue = littleGDialogueController.createNewDialogue ("Nooooo!!", 2f, false,TextureDialogue.LittleG,!littleGHopper.GetComponent<CharacterController>().getIsLookingRight());
 		yield return StartCoroutine (WaitInterruptable (2f, littleGDialogue));
 
-		GUIManager.fadeIn (Menu.BlackMenu);
+		*/
 		yield return new WaitForSeconds (1f);
+		GameObject outro = GameObject.Instantiate (outroPrefab) as GameObject;
+
+		IntroVideoManager m = outro.GetComponent<IntroVideoManager> ();
+
+		while (!m.isFinished()) {
+			yield return null;
+		}
+
 		GameManager.persistentData.playerLastCheckpoint = 0;
 		GameManager.restartGame ();
-		GUIManager.fadeOut(null);
+		Destroy (outro);
+		GameManager.inputController.disableInputController ();
+		GameManager.playerController.setLookingToCameraInCranePosition ();
+		GameManager.isGameEnded = true;
 		yield return new WaitForSeconds (1f);
 		GUIManager.fadeIn (Menu.MainMenu);
 	}
@@ -280,7 +297,8 @@ public class MundusPlanetEventsManager : PlanetEventsManager {
 		if(isEnabled){
 			if(identifyier.Equals(CutsceneIdentifyier.LastPlanetMundusSecondPhase)){
 				StartCoroutine(CinematicChangeToPhase2());
-			}if(identifyier.Equals(CutsceneIdentifyier.MundusDies)){
+			}if(identifyier.Equals(CutsceneIdentifyier.MundusDies) && !endCinematicHappened){
+				endCinematicHappened = true;
 				StartCoroutine(CinematicEndGame());
 			}
 		}
@@ -288,6 +306,7 @@ public class MundusPlanetEventsManager : PlanetEventsManager {
 
 	public void mundusInRangeOfCinematic(){
 		StartCoroutine (startingCinematic ());
+		//StartCoroutine (CinematicEndGame ());
 	}
 
 	

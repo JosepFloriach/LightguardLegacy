@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class IntroVideoManager : MonoBehaviour {
 
-
 	private bool hasBeenDeactivated = false;
 	private MovieTexture mt;
 	private Material mat;
@@ -13,7 +12,6 @@ public class IntroVideoManager : MonoBehaviour {
 	private float timer = 0f;
 	// Use this for initialization
 	void Awake () {
-
 		timer = 0f;
 		RawImage ri = this.GetComponent<RawImage>();
 		mat = ri.material;
@@ -21,7 +19,7 @@ public class IntroVideoManager : MonoBehaviour {
 		mat.SetColor ("_Color", Color.black);
 		mt = mat.mainTexture as MovieTexture;
 		mt.Play();
-		GameManager.audioManager.PlaySong( mt.audioClip);
+		//GameManager.audioManager.PlaySong( mt.audioClip);
 	}
 	
 	// Update is called once per frame
@@ -32,7 +30,7 @@ public class IntroVideoManager : MonoBehaviour {
 			hasStarted = true;
 			mt.Play();
 		}
-		if (Input.anyKeyDown && !hasBeenDeactivated) {
+		if (Input.anyKeyDown && !hasBeenDeactivated && hasStarted) {
 			hasBeenDeactivated = true;
 			StartCoroutine(deactivateIntroScene());
 		}
@@ -44,9 +42,16 @@ public class IntroVideoManager : MonoBehaviour {
 		
 	}
 
+	public bool isFinished(){
+		return (!mt.isPlaying || isFading) && hasStarted;
+	}
+
+	bool isFading = false;
+
 	IEnumerator deactivateIntroScene(){
 		float timer = 0f;
 		float timeItLasts = 1f;
+		isFading = true;
 		GUIManager.fadeOutChangeMenuFadeIn(Menu.MainMenu);
 		GameManager.audioManager.playSong(0);
 		while(timer<timeItLasts){
@@ -55,6 +60,7 @@ public class IntroVideoManager : MonoBehaviour {
 			mat.SetFloat("_DissolveThreshold",ratio);
 			yield return null;
 		}
+		isFading = false;
 		mt.Stop ();
 		yield return null;
 	}

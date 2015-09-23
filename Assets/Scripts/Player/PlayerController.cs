@@ -554,7 +554,9 @@ public class PlayerController : MonoBehaviour {
 		return bpAnimator;
 	}
 
+	bool craned = false;
 	public void setLookingToCameraInCranePosition(){
+		craned = true;
 		GameManager.playerAnimator.SetBool("isRecoveringHealth",true);
 		Quaternion objectiveRotation = GameManager.player.transform.rotation;
 		if (GameManager.playerController.getIsLookingRight ()) {
@@ -568,11 +570,16 @@ public class PlayerController : MonoBehaviour {
 	public void resetLookingPosition(){
 		GameManager.playerAnimator.SetBool("isRecoveringHealth",false);
 		Quaternion objectiveRotation = GameManager.player.transform.rotation;
-		if (GameManager.playerController.getIsLookingRight ()) {
-			objectiveRotation *= Quaternion.Euler(0f,-90f,0f);
-		} else {
-			objectiveRotation *= Quaternion.Euler (0f, 90f, 0f);
+
+		if (craned) {
+			if (GameManager.playerController.getIsLookingRight ()) {
+				objectiveRotation *= Quaternion.Euler (0f, -90f, 0f);
+			} else {
+				objectiveRotation *= Quaternion.Euler (0f, 90f, 0f);
+			}
 		}
+		craned = false;
+		characterController.setOriginalOrientation ();
 		GameManager.player.transform.rotation = objectiveRotation;
 	}
 
