@@ -384,11 +384,12 @@ public class InitialPlanetEventsManager : PlanetEventsManager {
 			
 			yield return new WaitForSeconds(0.25f);
 			GameManager.player.GetComponent<PlayerController>().StopMove();
+			GameManager.player.GetComponent<CharacterController>().LookLeftOrRight(1f);
 
 			float timer = 0f;
-			float time = 3f;
+			float time = 2f;
 			Vector3 lightGemOriginalPosition = GameManager.player.GetComponent<Rigidbody>().worldCenterOfMass;
-
+			GameManager.playerAnimator.SetBool("isGrabbingSomething",true);
 			while(timer<time){
 				timer+=Time.deltaTime;
 				float proportion = timer/time;
@@ -398,6 +399,7 @@ public class InitialPlanetEventsManager : PlanetEventsManager {
 			foreach(ParticleSystem particles in lightGemGO.GetComponentsInChildren<ParticleSystem>()){
 				particles.Stop();
 			}
+			GameManager.playerAnimator.SetBool("isGrabbingSomething",false);
 			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("Maybe I can use this  to get out of here!", 3f, true,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			yield return StartCoroutine(WaitInterruptable (3f,bigPappadaDialogue));
 			GameManager.audioManager.playSong(4);

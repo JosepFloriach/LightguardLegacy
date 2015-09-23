@@ -7,8 +7,8 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: volcan
-  m_Shader: {fileID: 4800000, guid: af6e577fac5e6ba4c9e69f6a27e649c0, type: 3}
-  m_ShaderKeywords: _COLOR_ON _CORR_ON _OUTL_ON
+  m_Shader: {fileID: 4800000, guid: 826e21939cfdfd745b8bc4c43fac6a9a, type: 3}
+  m_ShaderKeywords: _COLOR_ON _CORR_ON _DISS_ON _OUTL_ON _TEX_ON
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -98,6 +98,13 @@ Material:
           m_Texture: {fileID: 2800000, guid: c012cd004cede244c96a82228fed4480, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _ToonShade
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
@@ -158,7 +165,7 @@ Material:
       data:
         first:
           name: _Cull
-        second: 2
+        second: 0
       data:
         first:
           name: _Outl
@@ -207,6 +214,26 @@ Material:
         first:
           name: _Corruption
         second: 1
+      data:
+        first:
+          name: _Dissolution
+        second: 1
+      data:
+        first:
+          name: _BurningWidth
+        second: 0
+      data:
+        first:
+          name: _DissolveThreshold
+        second: 1
+      data:
+        first:
+          name: _DetailTex
+        second: 1
+      data:
+        first:
+          name: _AbsoluteAlpha
+        second: 1
     m_Colors:
       data:
         first:
@@ -218,12 +245,12 @@ Material:
         second: {r: .477941155, g: .232039347, b: .210856393, a: 1}
       data:
         first:
-          name: _OutlineColor
-        second: {r: 0, g: 0, b: 0, a: 1}
-      data:
-        first:
           name: _EmissionColorUI
         second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _OutlineColor
+        second: {r: 0, g: 0, b: 0, a: 1}
       data:
         first:
           name: _Asymmetry
@@ -236,3 +263,7 @@ Material:
         first:
           name: _OriginCorruption
         second: {r: 0, g: 0, b: 0, a: 0}
+      data:
+        first:
+          name: _BurningColor
+        second: {r: 1, g: 1, b: 1, a: 1}

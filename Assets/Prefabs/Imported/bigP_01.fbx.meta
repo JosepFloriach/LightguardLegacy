@@ -246,6 +246,7 @@ ModelImporter:
     7400060: DisparaKameRecto
     7400062: DispararKameArriba
     7400064: DispararKameAbajo
+    7400066: GrabbingSomething
     9500000: //RootNode
     13700000: Cube
   materials:
@@ -6960,6 +6961,234 @@ ModelImporter:
       takeName: Armature|ArmatureAction
       firstFrame: 544
       lastFrame: 547
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Spine
+        weight: 1
+      - path: Armature/Spine/Hip_L
+        weight: 1
+      - path: Armature/Spine/Hip_L/Leg_L
+        weight: 1
+      - path: Armature/Spine/Hip_L/Leg_L/Leg_L.001
+        weight: 1
+      - path: Armature/Spine/Hip_L/Leg_L/Leg_L.001/Leg_L.002
+        weight: 1
+      - path: Armature/Spine/Hip_L/Leg_L/Leg_L.001/Leg_L.002/Leg_L.003
+        weight: 1
+      - path: Armature/Spine/Hip_L/Leg_L/Leg_L.001/Leg_L.002/Leg_L.003/Leg_L.003_end
+        weight: 1
+      - path: Armature/Spine/Hip_L/Leg_L/Leg_L.001/Leg_L.002/Leg_L.004
+        weight: 1
+      - path: Armature/Spine/Hip_L/Leg_L/Leg_L.001/Leg_L.002/Leg_L.004/Leg_L.005
+        weight: 1
+      - path: Armature/Spine/Hip_L/Leg_L/Leg_L.001/Leg_L.002/Leg_L.004/Leg_L.005/Leg_L.005_end
+        weight: 1
+      - path: Armature/Spine/Hip_R
+        weight: 1
+      - path: Armature/Spine/Hip_R/Leg_R
+        weight: 1
+      - path: Armature/Spine/Hip_R/Leg_R/Leg_R.001
+        weight: 1
+      - path: Armature/Spine/Hip_R/Leg_R/Leg_R.001/Leg_R.002
+        weight: 1
+      - path: Armature/Spine/Hip_R/Leg_R/Leg_R.001/Leg_R.002/Leg_R.003
+        weight: 1
+      - path: Armature/Spine/Hip_R/Leg_R/Leg_R.001/Leg_R.002/Leg_R.003/Leg_R.003_end
+        weight: 1
+      - path: Armature/Spine/Hip_R/Leg_R/Leg_R.001/Leg_R.002/Leg_R.004
+        weight: 1
+      - path: Armature/Spine/Hip_R/Leg_R/Leg_R.001/Leg_R.002/Leg_R.004/Leg_R.005
+        weight: 1
+      - path: Armature/Spine/Hip_R/Leg_R/Leg_R.001/Leg_R.002/Leg_R.004/Leg_R.005/Leg_R.005_end
+        weight: 1
+      - path: Armature/Spine/Spine.001
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Shoulder_L
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Shoulder_L/Arm_L
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Shoulder_L/Arm_L/Arm_L.001
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Shoulder_L/Arm_L/Arm_L.001/Hand_L
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Shoulder_L/Arm_L/Arm_L.001/Hand_L/Fingers_L
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Shoulder_L/Arm_L/Arm_L.001/Hand_L/Fingers_L/Fingers_L.001
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Shoulder_L/Arm_L/Arm_L.001/Hand_L/Fingers_L/Fingers_L.001/Fingers_L.001_end
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Shoulder_L/Arm_L/Arm_L.001/Thumb_L
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Shoulder_L/Arm_L/Arm_L.001/Thumb_L/Thumb_L.001
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Shoulder_L/Arm_L/Arm_L.001/Thumb_L/Thumb_L.001/Thumb_L.001_end
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Shoulder_R
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Shoulder_R/Arm_R
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Shoulder_R/Arm_R/Arm_R.001
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Shoulder_R/Arm_R/Arm_R.001/Hand_R
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Shoulder_R/Arm_R/Arm_R.001/Hand_R/Cylinder
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Shoulder_R/Arm_R/Arm_R.001/Hand_R/Fingers_R
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Shoulder_R/Arm_R/Arm_R.001/Hand_R/Fingers_R/Fingers_R.001
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Shoulder_R/Arm_R/Arm_R.001/Hand_R/Fingers_R/Fingers_R.001/Fingers_R.001_end
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Shoulder_R/Arm_R/Arm_R.001/Thumb_R
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Shoulder_R/Arm_R/Arm_R.001/Thumb_R/Thumb_R.001
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Shoulder_R/Arm_R/Arm_R.001/Thumb_R/Thumb_R.001/Thumb_R.001_end
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Neck
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Neck/Head
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Neck/Head/Neck.005
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Neck/Head/Neck.005/Neck.005_end
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Neck/Neck.001
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Neck/Neck.001/Neck.002
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Neck/Neck.001/Neck.002/Neck.003
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Neck/Neck.001/Neck.002/Neck.003/Neck.003_end
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Neck/Tongue
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Neck/Tongue/Tongue.001
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Neck/Tongue/Tongue.001/Tongue.002
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Neck/Tongue/Tongue.001/Tongue.002/Tongue.003
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Neck/Tongue/Tongue.001/Tongue.002/Tongue.003/Tongue.003_end
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.010
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.010/Spine.011
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.010/Spine.011/Spine.012
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.010/Spine.011/Spine.012/Spine.013
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.010/Spine.011/Spine.012/Spine.013/Spine.013_end
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.014
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.014/Spine.014_L.001
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.014/Spine.014_L.001/Spine.014_L.002
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.014/Spine.014_L.001/Spine.014_L.002/Spine.014_L.003
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.014/Spine.014_L.001/Spine.014_L.002/Spine.014_L.003/Spine.014_L.004
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.014/Spine.014_L.001/Spine.014_L.002/Spine.014_L.003/Spine.014_L.004/Spine.014_L.005
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.014/Spine.014_L.001/Spine.014_L.002/Spine.014_L.003/Spine.014_L.004/Spine.014_L.005/Spine.014_L.006
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.014/Spine.014_L.001/Spine.014_L.002/Spine.014_L.003/Spine.014_L.004/Spine.014_L.005/Spine.014_L.006/Spine.014_L.006_end
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.014/Spine.014_R.001
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.014/Spine.014_R.001/Spine.014_R.002
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.014/Spine.014_R.001/Spine.014_R.002/Spine.014_R.003
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.014/Spine.014_R.001/Spine.014_R.002/Spine.014_R.003/Spine.014_R.004
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.014/Spine.014_R.001/Spine.014_R.002/Spine.014_R.003/Spine.014_R.004/Spine.014_R.005
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.014/Spine.014_R.001/Spine.014_R.002/Spine.014_R.003/Spine.014_R.004/Spine.014_R.005/Spine.014_R.006
+        weight: 1
+      - path: Armature/Spine/Spine.001/Spine.002/Spine.003/Spine.004/Spine.014/Spine.014_R.001/Spine.014_R.002/Spine.014_R.003/Spine.014_R.004/Spine.014_R.005/Spine.014_R.006/Spine.014_R.006_end
+        weight: 1
+      - path: Armature/Spine/Spine.001/Stomach
+        weight: 1
+      - path: Armature/Spine/Spine.001/Stomach/Stomach_end
+        weight: 1
+      - path: Armature/Spine/Spine.005
+        weight: 1
+      - path: Armature/Spine/Spine.005/Spine.006
+        weight: 1
+      - path: Armature/Spine/Spine.005/Spine.006/Spine.007
+        weight: 1
+      - path: Armature/Spine/Spine.005/Spine.006/Spine.007/Spine.008
+        weight: 1
+      - path: Armature/Spine/Spine.005/Spine.006/Spine.007/Spine.008/Spine.009
+        weight: 1
+      - path: Armature/Spine/Spine.005/Spine.006/Spine.007/Spine.008/Spine.009/Spine.009_end
+        weight: 1
+      - path: Armature/Spine/Spine_L
+        weight: 1
+      - path: Armature/Spine/Spine_L/Spine_L.001
+        weight: 1
+      - path: Armature/Spine/Spine_L/Spine_L.001/Spine_L.002
+        weight: 1
+      - path: Armature/Spine/Spine_L/Spine_L.001/Spine_L.002/Spine_L.003
+        weight: 1
+      - path: Armature/Spine/Spine_L/Spine_L.001/Spine_L.002/Spine_L.003/Spine_L.004
+        weight: 1
+      - path: Armature/Spine/Spine_L/Spine_L.001/Spine_L.002/Spine_L.003/Spine_L.004/Spine_L.004_end
+        weight: 1
+      - path: Armature/Spine/Spine_R
+        weight: 1
+      - path: Armature/Spine/Spine_R/Spine_R.001
+        weight: 1
+      - path: Armature/Spine/Spine_R/Spine_R.001/Spine_R.002
+        weight: 1
+      - path: Armature/Spine/Spine_R/Spine_R.001/Spine_R.002/Spine_R.003
+        weight: 1
+      - path: Armature/Spine/Spine_R/Spine_R.001/Spine_R.002/Spine_R.003/Spine_R.004
+        weight: 1
+      - path: Armature/Spine/Spine_R/Spine_R.001/Spine_R.002/Spine_R.003/Spine_R.004/Spine_R.004_end
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Lamp
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: GrabbingSomething
+      takeName: Armature|ArmatureAction
+      firstFrame: 449
+      lastFrame: 461
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

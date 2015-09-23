@@ -5,17 +5,20 @@ public class HideFrontPlanetFaceOnEnter : MonoBehaviour {
 
 	public bool changeLightsInsidePlanet = true;
 	private bool isInsidePlanet = false;
+	private Renderer[] renderers;
 	// Use this for initialization
 	void Start () {
-		
+		renderers = GetComponentsInChildren<Renderer> ();
 	}
 
 	void enableAll(bool enabled){
-		Renderer[] renderers = GetComponentsInChildren<Renderer> ();
-		foreach(Renderer renderer in renderers){
-			renderer.enabled = enabled;
+		if (enabled == isInsidePlanet) {
+			foreach (Renderer renderer in renderers) {
+				renderer.enabled = enabled;
+			}
 		}
 	}
+
 	// Update is called once per frame
 	void Update () {
 		SphereCollider sphereCollider = (SphereCollider)GetComponent<Collider>();
@@ -26,7 +29,6 @@ public class HideFrontPlanetFaceOnEnter : MonoBehaviour {
 				GetComponent<Renderer>().enabled = false;
 			}
 			enableAll(false);
-
 			isInsidePlanet = true;
 		}else{
 			if(GetComponent<Renderer>()!=null){
