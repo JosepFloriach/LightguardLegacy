@@ -12,9 +12,6 @@ public class AudioManager : MonoBehaviour {
 //Music
 	public AudioClip[] music;
 	
-//SFX  
-	public AudioClip[] sfx;
-	
 //SFX Misc
 	public AudioClip[] sfxMisc;
 	
@@ -27,8 +24,8 @@ public class AudioManager : MonoBehaviour {
 									
 //SFX parameters
 
-	private float lowPitchRange = .75F;
-	private float highPitchRange = 1.5F;
+	private float lowPitchRange = .95F;
+	private float highPitchRange = 1.2F;
 	private float velToVol = .2F;
 	private float velocityClipSplit = 10F;
 	
@@ -77,7 +74,7 @@ public class AudioManager : MonoBehaviour {
 		}
 	}
 	
-	public AudioSource getVariableSource(int type) {
+	private AudioSource getVariableSource(int type) {
 		AudioSource selectedSource;
 		switch (type) {
 		case BIGP:
@@ -94,7 +91,7 @@ public class AudioManager : MonoBehaviour {
 	
 	}
 	
-	public AudioSource getSource(int type) {
+	private AudioSource getSource(int type) {
 		AudioSource selectedSource;
 		switch (type) {
 		case MUSIC: 
@@ -138,10 +135,6 @@ public class AudioManager : MonoBehaviour {
 		}
 	}
 		
-		
-
-		
-
 	
 	public void PlayMiscSound(int id, int type) {
 		AudioClip clipToPlay = getClip(id, MISC);
@@ -212,33 +205,7 @@ public class AudioManager : MonoBehaviour {
 	}
 	
 	public void StopSong() {
-	
 		musicplayer.Stop();
-	}
-	
-	public void PlaySound(int i) {
-		if (0 <= i && i < sfx.Length) 
-		{
-			float hitVol = volLowRange;
-			if (!bigpplayer.isPlaying) {
-				bigpplayer.pitch = Random.Range (lowPitchRange,highPitchRange);
-				hitVol = Random.Range (volLowRange, volHighRange);
-			}
-			
-			bigpplayer.PlayOneShot(sfx[i],hitVol);
-		}
-	
-	}
-	
-	/** Plays the sound with a constant pitch and volume, used for things that won-t repeat 
-	*/
-	public void PlayStableSound(int i) {
-		if (0 <= i && i < sfx.Length) 
-		{
-		
-		bigpplayer.pitch = 1f;
-		bigpplayer.PlayOneShot(sfx[i],volLowRange);
-		}
 	}
 	
 	float lastplay = 0.0f;

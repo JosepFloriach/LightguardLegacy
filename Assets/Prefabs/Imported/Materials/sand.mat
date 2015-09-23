@@ -20,7 +20,7 @@ Material:
         second:
           m_Texture: {fileID: 2800000, guid: a2bdef6d3860db943b84ae3bd2bdba93, type: 3}
           m_Scale: {x: 5, y: 5}
-          m_Offset: {x: 0, y: 1.05623341}
+          m_Offset: {x: 0, y: .224330068}
       data:
         first:
           name: _BumpMap
@@ -33,13 +33,6 @@ Material:
           name: _DetailNormalMap
         second:
           m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _Ramp
-        second:
-          m_Texture: {fileID: 2800000, guid: 0d2d5756caa62a248b563de79e26635b, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -86,6 +79,13 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
+          name: _Ramp
+        second:
+          m_Texture: {fileID: 2800000, guid: 0d2d5756caa62a248b563de79e26635b, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
           name: _DissolveNoise
         second:
           m_Texture: {fileID: 2800000, guid: fdcc49f69a12f0e41b9ed2c94e230662, type: 3}
@@ -110,46 +110,6 @@ Material:
       data:
         first:
           name: _DstBlend
-        second: 0
-      data:
-        first:
-          name: _TintColor
-        second: 0
-      data:
-        first:
-          name: _Cull
-        second: 2
-      data:
-        first:
-          name: _Outl
-        second: 0
-      data:
-        first:
-          name: _VertexColor
-        second: 0
-      data:
-        first:
-          name: _Brightness
-        second: 1
-      data:
-        first:
-          name: _DS
-        second: 0
-      data:
-        first:
-          name: _Outline
-        second: .00999999978
-      data:
-        first:
-          name: _Asym
-        second: 0
-      data:
-        first:
-          name: _Trans
-        second: 0
-      data:
-        first:
-          name: _TrOp
         second: 0
       data:
         first:
@@ -193,6 +153,46 @@ Material:
         second: 0
       data:
         first:
+          name: _TintColor
+        second: 0
+      data:
+        first:
+          name: _Cull
+        second: 2
+      data:
+        first:
+          name: _Outl
+        second: 0
+      data:
+        first:
+          name: _VertexColor
+        second: 0
+      data:
+        first:
+          name: _Brightness
+        second: 1
+      data:
+        first:
+          name: _DS
+        second: 0
+      data:
+        first:
+          name: _Outline
+        second: .00999999978
+      data:
+        first:
+          name: _Asym
+        second: 0
+      data:
+        first:
+          name: _Trans
+        second: 0
+      data:
+        first:
+          name: _TrOp
+        second: 0
+      data:
+        first:
           name: _OutlineSize
         second: 10
       data:
@@ -218,16 +218,16 @@ Material:
         second: {r: .800000012, g: .800000012, b: .800000012, a: 1}
       data:
         first:
+          name: _EmissionColorUI
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
           name: _OutlineColor
         second: {r: .380136222, g: .580882311, b: .572575569, a: 1}
       data:
         first:
           name: _Asymmetry
         second: {r: 0, g: .25, b: .5, a: 0}
-      data:
-        first:
-          name: _EmissionColorUI
-        second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _CorruptionColor

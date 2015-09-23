@@ -45,7 +45,7 @@ public class MundusBallOfDeathAttack : Attack {
 		float timer = 0f;
 
 		iaAnimator.SetBool ("isChargingBallAttack", true);
-
+		
 		while (timer<timeToCharge) {
 			timer+=Time.deltaTime;
 			float ratio = timer/timeToCharge;
@@ -56,6 +56,8 @@ public class MundusBallOfDeathAttack : Attack {
 		iaAnimator.SetBool ("isChargingBallAttack", false);
 
 		for (int i =0; i<numBalls; i++) {
+			GameManager.audioManager.PlaySound (SoundIDs.E_MUNDUSBALL,AudioManager.STABLE,AudioManager.ENEMY);	
+			
 			Vector3 ballPosition;
 			float direction = 0f;
 			if(i%2 == 0){

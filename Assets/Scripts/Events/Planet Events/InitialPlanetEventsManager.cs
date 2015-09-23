@@ -93,7 +93,7 @@ public class InitialPlanetEventsManager : PlanetEventsManager {
 				float time = 0.2f;
 				littleGHopper.GetComponentInChildren<Animator>().SetBool("isFallingDown",true);
 				yield return new WaitForSeconds (1f);
-				GameManager.audioManager.PlayStableSound(1);
+				GameManager.audioManager.PlaySound(SoundIDs.INTRO_LITTLEG, AudioManager.STABLE, AudioManager.MISC);
 				littleGHopper.GetComponent<SpaceGravityBody> ().setStatic (false);
 				float originalZ = littleGHopper.transform.position.z;
 
