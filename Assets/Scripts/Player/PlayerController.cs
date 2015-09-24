@@ -369,7 +369,7 @@ public class PlayerController : MonoBehaviour {
 			}
 			GameManager.playerAnimator.SetTrigger("isHurt");
 			GetComponent<DialogueController>().createNewExpression("Ouch!",0.5f,true);
-			GameManager.audioManager.PlayStableSound(8);
+			GameManager.audioManager.PlaySound(SoundIDs.P_GETHIT,AudioManager.STABLE,AudioManager.BIGP);
 			killable.TakeDamage (hitPointsToSubstract);
 			pappadaC.newProportionOfLife (killable.proportionHP ());
 			GUIManager.getPlayingGUI ().GetComponentInChildren <LifeGUIManager> ().updateUI ();
@@ -380,7 +380,8 @@ public class PlayerController : MonoBehaviour {
 				isInvulnerable = true;
 				GUIManager.setPercentageOfBreathing(100);
 				GameManager.audioManager.StopSong();
-				GameManager.audioManager.PlayStableSound(9);
+				GameManager.audioManager.PlaySound(SoundIDs.P_DIE,AudioManager.STABLE,AudioManager.BIGP);
+				
 				//GUIManager.getPlayingGUI ().GetComponentInChildren <LifeGUIManager> ().updateUI ();
 				GUIManager.getPlayingGUI ().GetComponentInChildren <LifeGUIManager> ().resetUI ();
 				StartCoroutine(dissolveAndLose());

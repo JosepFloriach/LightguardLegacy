@@ -25,7 +25,6 @@ public class HealthFirefly : MonoBehaviour,AnimationSubscriber {
 			disappearing = true;
 			GameManager.player.GetComponent<PlayerController>().gainLife(lifeToGain);
 			
-			GameManager.audioManager.PlaySound(7);
 			
 			StartCoroutine("disappear");
 		}

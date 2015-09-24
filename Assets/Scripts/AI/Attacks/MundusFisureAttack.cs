@@ -64,6 +64,7 @@ public class MundusFisureAttack : Attack {
 			Vector3 ballOriginalPosition = surroundingBall.transform.position;
 			Vector3 objectivePosition = parent.GetComponent<Rigidbody> ().worldCenterOfMass + new Vector3(0f,0f,-2f);
 			iaAnimator.SetBool ("isChargingFisureAttack", true);
+					
 			timer = 0f;
 			while(timer<timeToChargeAttack){
 				timer+=Time.deltaTime;
@@ -76,6 +77,9 @@ public class MundusFisureAttack : Attack {
 			timer = 0f;
 			GameManager.mainCamera.GetComponent<CameraFollowingPlayer>().setObjectiveZInclined(cameraZPositionTotal);
 			GameManager.mainCamera.GetComponent<CameraFollowingPlayer>().setCameraShaking();
+			
+			GameManager.audioManager.PlaySound (SoundIDs.E_MUNDUSBIGATTACK,AudioManager.STABLE,AudioManager.ENEMY);	
+			
 			while(timer<timeToGrow){
 				timer+=Time.deltaTime;
 				float ratio = timer/timeToGrow;

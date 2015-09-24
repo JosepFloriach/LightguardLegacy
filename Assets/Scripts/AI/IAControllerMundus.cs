@@ -127,6 +127,7 @@ public class IAControllerMundus : IAController {
 					if(random<0.6f){
 						attackController.doAttack(baseAttack,false);
 					}else{
+					
 						attackController.doAttack(ballOfDeathAttack,false);
 					}
 				}
@@ -192,24 +193,25 @@ public class IAControllerMundus : IAController {
 	}
 
 	protected override void virtualDie(){
-		GameManager.audioManager.PlayStableSound(14);
+		GameManager.audioManager.PlaySound (SoundIDs.E_DIEMUNDUS,AudioManager.STABLE,AudioManager.ENEMY);
 		eventsManager.informEventActivated (CutsceneIdentifyier.MundusDies);
 	}
 
 	protected override bool virtualGetHurt(){
 		if (fase == 2) {
 			damageReceived++;
+			GameManager.audioManager.PlaySound (SoundIDs.E_GENERICHIT,AudioManager.STABLE,AudioManager.ENEMY);
 			return true;
 		}
 		if(!attackController.isDoingAnyAttack() || isSpawning){
 			if(!protecting){
 				StartCoroutine(Protect());
 			}
-			GameManager.audioManager.PlayStableSound(13);
+			GameManager.audioManager.PlaySound (SoundIDs.E_SHIELDED,AudioManager.STABLE,AudioManager.ENEMY);
 			return false;
 		}else{
 			damageReceived++;
-			GameManager.audioManager.PlayStableSound(10);
+			GameManager.audioManager.PlaySound (SoundIDs.E_GENERICHIT,AudioManager.STABLE,AudioManager.ENEMY);
 			return true;
 		}
 	}

@@ -31,6 +31,8 @@ public class Dash : MonoBehaviour {
 		cooldownFinished = false;
 
 		dashStartParticles.SetActive (true);
+		GameManager.audioManager.PlayBigpSound(SoundIDs.P_DASH,AudioManager.VARIABLE);
+		
 		dashStartParticles.GetComponent<ParticleSystem> ().Play ();
 		dashStartParticles.transform.position = GameManager.player.GetComponent<Rigidbody>().worldCenterOfMass;
 		originalMovement = GameManager.player.GetComponent<CharacterController>().getMoveAmout ();
