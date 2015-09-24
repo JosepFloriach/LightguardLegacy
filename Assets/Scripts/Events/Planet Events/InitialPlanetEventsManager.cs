@@ -5,6 +5,8 @@ public class InitialPlanetEventsManager : PlanetEventsManager {
 
 	public GameObject bigPappadaInitialPosition;
 	public GameObject littleGHopper;
+	public GameObject mundus;
+	public GameObject mundusParticles;
 
 	public GameObject boarHuntingGO;
 	public GameObject shintoDoorGO;
@@ -32,6 +34,7 @@ public class InitialPlanetEventsManager : PlanetEventsManager {
 		if(!hasBeenActivated){
 			hasBeenActivated = true;
 			if(isEnabled){
+				mundus.SetActive(false);
 				GameObject middlePointBigPLittleG = new GameObject();
 				GameManager.mainCamera.GetComponent<CameraFollowingPlayer>().setObjectiveZStraight(3.3f);
 				GameManager.mainCamera.GetComponent<CameraFollowingPlayer>().setNewXAngle(0f);
@@ -75,6 +78,7 @@ public class InitialPlanetEventsManager : PlanetEventsManager {
 				boarHuntingGO.GetComponent<FirstPlanetBoarHunting>().boar.SetActive(false);
 				boarHuntingGO.SetActive(false);
 				littleGHopper.SetActive(false);
+				mundus.SetActive(false);
 			}
 		}
 	}
@@ -248,18 +252,19 @@ public class InitialPlanetEventsManager : PlanetEventsManager {
 	}
 	IEnumerator toTheBridgeCinematic(){
 		if (isEnabled) {
-			littleGHopper.GetComponentInChildren<ParticleSystem>().Play();
+			//littleGHopper.GetComponentInChildren<ParticleSystem>().Play();
 			GameManager.player.GetComponent<PlayerController>().Jump(15f);
 			GameManager.player.GetComponent<PlayerController>().Move(1f);
 			toTheBridgeGO.GetComponent<Cutscene>().isActive = false;
 			toTheBridge2GO.GetComponent<Cutscene>().isActive = true;
+			mundus.SetActive(true);
 			yield return null;
 		}
 	}
 
 	IEnumerator toTheBridge2Cinematic(){
 		if (isEnabled) {
-			littleGHopper.GetComponentInChildren<ParticleSystem>().Play();
+			//littleGHopper.GetComponentInChildren<ParticleSystem>().Play();
 			GameManager.player.GetComponent<PlayerController>().Jump(10f);
 			GameManager.player.GetComponent<PlayerController>().Move(1f);
 			toTheBridge2GO.GetComponent<Cutscene>().isActive = false;
@@ -267,15 +272,44 @@ public class InitialPlanetEventsManager : PlanetEventsManager {
 			yield return null;
 		}
 	}
+
+	IEnumerator littleGAndMundusDisappear(){
+		float time = 1f;
+		float timer = 0f;
+		Vector3 originalLittleGScale = littleGHopper.transform.localScale;
+		Vector3 originalMundusScale = mundus.transform.localScale;
+		mundusParticles.GetComponent<ParticleSystem> ().Play ();
+		float ratio = timer/time;
+		while (ratio<0.8f) {
+			timer+=Time.deltaTime;
+			ratio = timer/time;
+			//littleGHopper.transform.localScale = Vector3.Lerp(originalLittleGScale,Vector3.zero,ratio);
+			//mundus.transform.localScale = Vector3.Lerp(originalMundusScale,Vector3.zero,ratio);
+
+			yield return null;
+		}
+		
+		mundus.SetActive (false);
+		littleGHopper.SetActive (false);
+		mundusParticles.GetComponent<ParticleSystem> ().Stop();
+
+	}
+
 	IEnumerator fallFromBridgeCinematic(){
 		if(isEnabled){
+			mundus.GetComponentInChildren<Animator>().SetBool("isProtecting",true);
 			bridgeFallGO.GetComponent<FirstPlanetFallingFromTheBridge>().isActive = false;
 			GameManager.player.GetComponent<PlayerController>().StopMove();
 			littleGDialogue = littleGHopper.GetComponent<DialogueController> ().createNewDialogue ("Aaahhh!! MASTEEER!!", 1.5f,false,TextureDialogue.LittleG,!littleGHopper.GetComponent<CharacterController>().getIsLookingRight());
 			yield return StartCoroutine(WaitInterruptable (1f,littleGDialogue));
-			littleGHopper.GetComponent<CharacterController>().Jump(25f);
-			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("¡Hold on!!", 1f,false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
+
+			GameObject mundusDialogue = mundus.GetComponent<DialogueController> ().createNewDialogue ("Ha Ha Ha!!", 1.5f,false,TextureDialogue.Mundus,true);
+			yield return StartCoroutine(WaitInterruptable (1f,mundusDialogue));
+
+			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("Hold on! Little G.!", 1f,false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			yield return StartCoroutine(WaitInterruptable (1f,bigPappadaDialogue));
+			StartCoroutine(littleGAndMundusDisappear());
+			yield return new WaitForSeconds(2f);
 			GameManager.inputController.disableInputController ();
 			//bridgeFallGO.GetComponent<FirstPlanetFallingFromTheBridge>().bridge.GetComponent<Collider>().enabled = false;
 			bridgeFallGO.GetComponent<FirstPlanetFallingFromTheBridge>().bridge.GetComponent<RotateAndMoveOverTime>().changeOverTime(2f);
