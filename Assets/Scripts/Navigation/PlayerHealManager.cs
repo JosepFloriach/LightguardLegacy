@@ -38,6 +38,7 @@ public class PlayerHealManager : MonoBehaviour {
 	private IEnumerator healCompletlyCo(){
 		float timerToChangePosition = 1f;
 		float timer = 0f;
+		GameManager.inputController.disableInputController (false);
 		GameManager.playerController.setLookingToCameraInCranePosition ();
 		isHealing = true;
 		deactivateMenuHeal ();
@@ -46,7 +47,7 @@ public class PlayerHealManager : MonoBehaviour {
 
 			yield return null;
 		}
-		GameManager.inputController.disableInputController (false);
+
 		while (GameManager.player.GetComponent<Killable>().proportionHP()<1f) {
 			float timeToWaitForGainLife = 1f;
 
