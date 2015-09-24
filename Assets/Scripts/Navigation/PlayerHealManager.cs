@@ -51,6 +51,7 @@ public class PlayerHealManager : MonoBehaviour {
 			float timeToWaitForGainLife = 1f;
 
 			yield return new WaitForSeconds(timeToWaitForGainLife);
+			GUIManager.getPlayingGUI ().GetComponentInChildren <LifeGUIManager> ().healHitPoints(1);
 			GameManager.player.GetComponent<Killable>().GainHealth(1);
 		}
 		GameManager.inputController.enableInputController ();

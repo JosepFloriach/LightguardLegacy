@@ -6,28 +6,33 @@ public class LifeGUIManager : MonoBehaviour {
 	//public static LifeGUIManager instance { get; private set; }
 
 	public GameObject[] lifeLeafs;
-	public float updateTime = 0.05f;
 	public Color originalColor;
-	private Color leafsColor;
-	private float timer = 0f;
 
 	void Awake(){
 		resetUI ();
 	}
-	/*void LateUpdate(){
-		timer += Time.deltaTime;
-		if (timer > updateTime) {
-			updateUI();
-			timer = 0f;
-		}
-	}*/
 
-	public void updateUI(){
+	public void addHitPoints(int hitPoints){
 		float lifeProportion = GameManager.player.GetComponent<Killable> ().proportionHP ();
-		int hitPoint = (int)(lifeLeafs.Length * lifeProportion);
-		lifeLeafs [hitPoint].GetComponent<VanishEffect> ().activateVanishEffect ();
+		int startHitPoint = (int)(lifeLeafs.Length * lifeProportion);
+		int endHitPoint = startHitPoint - hitPoints-1;
+		int i = startHitPoint-1;
+		while (i > endHitPoint && i>=0) {
+			lifeLeafs[i].GetComponent <VanishEffect>().activateVanishEffect();
+			i--;
+		}
 	}
 
+	public void healHitPoints(int healPoints) {
+		float lifeProportion = GameManager.player.GetComponent<Killable> ().proportionHP ();
+		int startHealPoint = (int)(lifeLeafs.Length * lifeProportion);
+		int endHealPoint = startHealPoint + healPoints;
+		int i = startHealPoint;
+		while (i < endHealPoint && i <= GameManager.player.GetComponent<Killable> ().getMaxHP()) {
+			lifeLeafs[i].GetComponent <VanishEffect>().activateRevertEffect();
+			i++;
+		}
+	}
 
 	public void resetUI() {
 		if (lifeLeafs.Length > 0) {
@@ -35,6 +40,7 @@ public class LifeGUIManager : MonoBehaviour {
 				lifeLeafs[i].GetComponent<Image>().color = originalColor;
 				lifeLeafs[i].transform.localScale = new Vector2(1f,1f);
 				lifeLeafs[i].GetComponent<VanishEffect>().deactivateVanishEffect();
+				lifeLeafs[i].GetComponent<VanishEffect>().deactivateRevertVanishEffect();
 			}
 		}
 	}

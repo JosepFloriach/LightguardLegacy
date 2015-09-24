@@ -226,7 +226,7 @@ public class InitialPlanetEventsManager : PlanetEventsManager {
 			GameManager.inputController.disableInputController ();
 			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("That's weird... ", 1.5f,false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			yield return StartCoroutine(WaitInterruptable (1.5f,bigPappadaDialogue));
-			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("I had never seen  the seals shine this way...", 4f,false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
+			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("I had never seen the seals shine this way...", 4f,false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			yield return StartCoroutine(WaitInterruptable (4f,bigPappadaDialogue));
 			GetComponent<PlanetCorruption>().corrupt();
 			GameManager.mainCamera.GetComponent<CameraFollowingPlayer>().setCameraShaking();
@@ -234,7 +234,7 @@ public class InitialPlanetEventsManager : PlanetEventsManager {
 			
 			shintoDoorGO.GetComponent<FirstPlanetShintoDoor>().shintoDoor.GetComponent<ShintoDoor>().disableKanjis();
 			yield return new WaitForSeconds(2f);
-			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("Woah!!", 1f,false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
+			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("¡¡Woah!!", 1f,false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			yield return StartCoroutine(WaitInterruptable (1f,bigPappadaDialogue));
 			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("¡¿What's this?!", 1f,false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			yield return StartCoroutine(WaitInterruptable (5f,bigPappadaDialogue));
