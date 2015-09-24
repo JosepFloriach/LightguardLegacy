@@ -70,6 +70,13 @@ public class MundusPlanetEventsManager : PlanetEventsManager {
 		StartCoroutine(CinematicChangeToPhase2());
 	}
 
+	private void spawnPlatformsGroup(){
+
+		for(int i = 0; i<100;++i){
+			SpawnPlatform(35f*Random.value,true);
+		}
+	}
+
 	private IEnumerator spawnPlatforms(){
 		float timer = 0f;
 		while(isInSecondPhase){
@@ -77,31 +84,36 @@ public class MundusPlanetEventsManager : PlanetEventsManager {
 			if(timer>=0.05f){
 				timer = 0f;
 
-				float distance = 45f;
-				Vector3 position = Vector3.up * 35f;
-				position = Quaternion.Euler(new Vector3(0f,0f,Random.value*360f))*position;
-				position += transform.position;
-				position.z = GameManager.player.transform.position.z;
-				bool isGoodPosition = true;
-				Vector3 direction = transform.position - position;
-				RaycastHit hit;
-				if(Physics.SphereCast(position,1f,direction,out hit,50f,layersToCollideRaycastPlatforms)){
-					if(hit.collider.gameObject.tag.Equals("MundusPlanetFragment") || hit.distance<1f){
-						isGoodPosition = false;
-					}
-				}
-				Collider[] colliders = Physics.OverlapSphere(position,3f);
-				if(colliders.Length>1){
-					isGoodPosition = false;
-				}
-				
-				if(isGoodPosition){
-					GameObject platform = GameObject.Instantiate(platformPrefab) as GameObject;
-					platform.transform.parent = lastPlanet.transform;
-					platform.transform.position = position;
-				}
+				float upDistance = 35f;
+				SpawnPlatform(upDistance,false);
 			}
 			yield return null;
+		}
+	}
+
+	void SpawnPlatform(float upDistance,bool fastInitialize){
+		float distance = 45f;
+		Vector3 position = Vector3.up * upDistance;
+		position = Quaternion.Euler(new Vector3(0f,0f,Random.value*360f))*position;
+		position += transform.position;
+		position.z = GameManager.player.transform.position.z;
+		bool isGoodPosition = true;
+		Vector3 direction = transform.position - position;
+		RaycastHit hit;
+		if(Physics.SphereCast(position,1f,direction,out hit,50f,layersToCollideRaycastPlatforms)){
+			if(hit.collider.gameObject.tag.Equals("MundusPlanetFragment") || hit.distance<1f){
+				isGoodPosition = false;
+			}
+		}
+		Collider[] colliders = Physics.OverlapSphere(position,3f);
+		if(colliders.Length>1){
+			isGoodPosition = false;
+		}
+		
+		if(isGoodPosition){
+			GameObject platform = GameObject.Instantiate(platformPrefab) as GameObject;
+			platform.GetComponent<PlatformAbsorbed>().initialize(lastPlanet,fastInitialize);
+			platform.transform.position = position;
 		}
 	}
 
@@ -219,8 +231,8 @@ public class MundusPlanetEventsManager : PlanetEventsManager {
 		lastPlanet.GetComponent<MundusFightPlanet> ().coreParticlesImplosion.GetComponent<ParticleSystem> ().Play ();
 
 
-
-		mundus.GetComponent<IAControllerMundus> ().setPhase (2);
+		spawnPlatformsGroup ();
+		//mundus.GetComponent<IAControllerMundus> ().setPhase (2);
 		GameManager.inputController.enableInputController ();
 		GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().stopCameraShaking ();
 		GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().setObjectiveZInclined (20f);

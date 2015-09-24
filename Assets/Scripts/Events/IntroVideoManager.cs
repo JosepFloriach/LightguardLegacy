@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class IntroVideoManager : MonoBehaviour {
 
+	public bool interruptable = true;
 	private bool hasBeenDeactivated = false;
 	private MovieTexture mt;
 	private Material mat;
@@ -30,7 +31,8 @@ public class IntroVideoManager : MonoBehaviour {
 			hasStarted = true;
 			mt.Play();
 		}
-		if (Input.anyKeyDown && !hasBeenDeactivated && hasStarted) {
+
+		if (interruptable && Input.anyKeyDown && !hasBeenDeactivated && hasStarted) {
 			hasBeenDeactivated = true;
 			StartCoroutine(deactivateIntroScene());
 		}

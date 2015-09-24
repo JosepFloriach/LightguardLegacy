@@ -245,6 +245,7 @@ public class IAControllerMundus : IAController {
 	}
 
 	public IEnumerator shrinkPlatformToCenter(GameObject platform){
+		yield return new WaitForSeconds (2f);
 		Vector3 center = eventsManager.getInsidePlanetPosition ();
 		Vector3 position = platform.transform.position;
 		Vector3 startingLocalScale = platform.transform.localScale;
