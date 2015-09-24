@@ -57,4 +57,8 @@ public class Killable:MonoBehaviour {
 	public void setLife(int life){
 		HP = life;
 	}
+
+	public int getMaxHP() {
+		return maxHP;
+	}
 }

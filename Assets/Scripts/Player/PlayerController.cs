@@ -370,9 +370,9 @@ public class PlayerController : MonoBehaviour {
 			GameManager.playerAnimator.SetTrigger("isHurt");
 			GetComponent<DialogueController>().createNewExpression("Ouch!",0.5f,true);
 			GameManager.audioManager.PlaySound(SoundIDs.P_GETHIT,AudioManager.STABLE,AudioManager.BIGP);
+			GUIManager.getPlayingGUI ().GetComponentInChildren <LifeGUIManager> ().addHitPoints (hitPointsToSubstract);
 			killable.TakeDamage (hitPointsToSubstract);
 			pappadaC.newProportionOfLife (killable.proportionHP ());
-			GUIManager.getPlayingGUI ().GetComponentInChildren <LifeGUIManager> ().updateUI ();
 			if (killable.HP <= 0 && !GameManager.isGameEnded) {
 				onDieCallEvent();
 				GameManager.playerAnimator.SetBool("isDerribado",true);
