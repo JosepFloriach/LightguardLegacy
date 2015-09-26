@@ -25,12 +25,21 @@ public class ThrowAttack : Attack, AnimationSubscriber {
 	public override void enemyCollisionEnter(GameObject enemy,Vector3 point){
 		if(!enemiesHit.Contains(enemy) && !enemy.GetComponent<IAController>().isDead){
 			enemiesHit.Add(enemy);
-			enemy.GetComponent<IAController>().getHurt(damage,point,true);
-			enemy.GetComponent<IAController>().hitCanSendFlying();
-			Vector3 direction = enemy.GetComponent<Rigidbody>().worldCenterOfMass - GameManager.player.transform.position;
-			enemy.GetComponent<IAController>().sendFlyingByConsecutiveHits(direction * 3f);
+
+
+			ComboStep cStep = GameManager.comboManager.getCurrentComboStep();
+			int damageToDo = damage;
+			if(cStep != null){
+				Vector3 direction = enemy.GetComponent<Rigidbody>().worldCenterOfMass - GameManager.player.transform.position;
+				damageToDo *= cStep.damageMultiplyier;
+				enemy.GetComponent<IAController>().sendFlyingByConsecutiveHits(direction * cStep.throwStrength);
+			}
+
+			enemy.GetComponent<IAController>().getHurt(damageToDo,point,true);
+
+
 			//enemy.GetComponent<IAController> ().interruptAttack ();
-			GameManager.comboManager.addCombo ();
+			//GameManager.comboManager.addCombo ();
 			
 			if(!hasHitEnemy){
 				hasHitEnemy = true;

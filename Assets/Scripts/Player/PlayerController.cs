@@ -361,7 +361,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	public void getHurt(int hitPointsToSubstract,Vector3 positionImpact){
-		if (!isInvulnerable && !attackController.isDoingBlock () && !GameManager.isGameEnded && !GameManager.isGamePaused) {
+		if (!isInvulnerable && !attackController.isDoingBlock () && !GameManager.isGameEnded && !GameManager.isGamePaused && !killable.isDead()) {
 			getHurtBigPappada.transform.position = positionImpact;
 			getHurtBigPappada.GetComponent<ParticleSystem>().Play();
 			if(!getIsSpaceJumping()){
@@ -370,7 +370,9 @@ public class PlayerController : MonoBehaviour {
 			GameManager.playerAnimator.SetTrigger("isHurt");
 			GetComponent<DialogueController>().createNewExpression("Ouch!",0.5f,true);
 			GameManager.audioManager.PlaySound(SoundIDs.P_GETHIT,AudioManager.STABLE,AudioManager.BIGP);
+			LifeGUIManager lgm = GUIManager.getPlayingGUI ().GetComponentInChildren <LifeGUIManager> ();
 			GUIManager.getPlayingGUI ().GetComponentInChildren <LifeGUIManager> ().addHitPoints (hitPointsToSubstract);
+
 			killable.TakeDamage (hitPointsToSubstract);
 			pappadaC.newProportionOfLife (killable.proportionHP ());
 			if (killable.HP <= 0 && !GameManager.isGameEnded) {

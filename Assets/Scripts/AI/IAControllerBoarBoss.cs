@@ -14,6 +14,8 @@ public class IAControllerBoarBoss : IAController {
 	public float phase1Duration = 10f;
 	public float stunDuration = 5f;
 
+	public ParticleSystem particleSystem;
+
 	private float patrolTime = 0f;
 	private float changeBehaviourTimer = 0f;
 
@@ -140,6 +142,7 @@ public class IAControllerBoarBoss : IAController {
 	protected override void virtualDie ()
 	{
 		base.virtualDie ();
+		particleSystem.Stop ();
 		GameManager.audioManager.PlaySound(SoundIDs.E_BOARDIE,AudioManager.COOLDOWN,AudioManager.ENEMY);
 	}
 

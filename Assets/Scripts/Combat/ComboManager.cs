@@ -4,6 +4,7 @@ using System.Collections;
 public class ComboManager : MonoBehaviour {
 
 	public float timeToLooseCombo = 1f;
+	public ComboStep[] throwComboSteps;
 
 	int comboNum = 0;
 	float timerSinceLastComboed;
@@ -31,5 +32,19 @@ public class ComboManager : MonoBehaviour {
 
 	public int getComboNum(){
 		return comboNum;
+	}
+
+	public ComboStep getCurrentComboStep(){
+		ComboStep best = null;
+		foreach (ComboStep c in throwComboSteps) {
+			if(c.minStep<=comboNum){
+				if(best == null){
+					best = c;
+				}else if(best.minStep<=c.minStep){
+					best = c;
+				}
+			}
+		}
+		return best;
 	}
 }

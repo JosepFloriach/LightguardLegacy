@@ -28,11 +28,18 @@ public class ComboManagerUI : MonoBehaviour {
 	void Update () {
 		int newComboNum = GameManager.comboManager.getComboNum ();
 		if (lastCombo != newComboNum) {
-			if(newComboNum==0 && lastCombo>minComboAppear){
+			if(GameManager.comboManager.getCurrentComboStep()!=null){
+
+			}
+			if(newComboNum==0 && lastCombo>=minComboAppear){
 				fadingOut = true;
 				fadeOutTimer = 0f;
 			}else if(newComboNum>=minComboAppear){
 				GetComponent<Text>().text = "Combo x"+newComboNum;
+				ComboStep c = GameManager.comboManager.getCurrentComboStep();
+				if(c!=null){
+					GetComponent<Text>().color = GameManager.comboManager.getCurrentComboStep().color;
+				}
 				GetComponent<CanvasGroup>().alpha = 1f;
 				fadingOut = false;
 				beating = true;
