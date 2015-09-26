@@ -107,12 +107,17 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 			yield return null;
 		}
 
+		yield return new WaitForSeconds (2f);
+
 		bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("It stopped!! That was close!", 2f, false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 		yield return StartCoroutine (WaitInterruptable (2f, bigPappadaDialogue));
 
 
-		bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("It looks like now I can leave this planet! Little G. Wait for me!", 4f, false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
-		yield return StartCoroutine (WaitInterruptable (4f, bigPappadaDialogue));
+		bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("It looks like now I can leave this planet!", 2f, false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
+		yield return StartCoroutine (WaitInterruptable (2f, bigPappadaDialogue));
+
+		bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue (" Little G. Wait for me!", 2f, false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
+		yield return StartCoroutine (WaitInterruptable (2f, bigPappadaDialogue));
 
 		GameManager.inputController.enableInputController ();
 
@@ -175,11 +180,14 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 		GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().setCameraShaking ();
 		bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("Woooah!!", 1f, false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 		yield return StartCoroutine (WaitInterruptable (1f, bigPappadaDialogue));
-
 		GameManager.inputController.enableInputController ();
+
 		GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().setCameraShaking ();
 		runnerStarted = true;
 		runningEvent ();
+
+		bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("The planet is collapsing!!", 1f, false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
+		yield return StartCoroutine (WaitInterruptable (1f, bigPappadaDialogue));
 
 	}
 

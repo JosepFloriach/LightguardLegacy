@@ -32,7 +32,7 @@ public class ThrowAttack : Attack, AnimationSubscriber {
 			if(cStep != null){
 				Vector3 direction = enemy.GetComponent<Rigidbody>().worldCenterOfMass - GameManager.player.transform.position;
 				damageToDo *= cStep.damageMultiplyier;
-				enemy.GetComponent<IAController>().sendFlyingByConsecutiveHits(direction * cStep.throwStrength);
+				enemy.GetComponent<IAController>().sendFlyingByForce(direction.normalized * cStep.throwStrength);
 			}
 
 			enemy.GetComponent<IAController>().getHurt(damageToDo,point,true);

@@ -27,11 +27,13 @@ public class HydraAppearAttack : Attack {
 	}
 	
 	IEnumerator doAppearAttack(){
+		iaParent.GetComponent<IAControllerHydra> ().enableHydraHitting (false);
 		hasHurtPlayer = false; 
 		iaParent.mesh.GetComponent<SkinnedMeshRenderer> ().enabled = false;
 		yield return new WaitForSeconds (2f);
 		GetComponentInChildren<ParticleSystem> ().Play ();
 		yield return new WaitForSeconds (4f);
+		iaParent.GetComponent<IAControllerHydra> ().enableHydraHitting (true);
 		GetComponentInChildren<ParticleSystem> ().Stop ();
 		iaParent.mesh.GetComponent<SkinnedMeshRenderer> ().enabled = true;
 		iaParent.getIAAnimator().SetBool("isHidden",false);

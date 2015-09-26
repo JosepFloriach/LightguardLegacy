@@ -38,7 +38,6 @@ public class HideOnCameraCollide : MonoBehaviour {
 					m.material.SetFloat("_AbsoluteAlpha",0.4f);
 					m.material.SetColor("_OutlineColor",Color.clear);
 				}else{
-					wasEnabled = m.enabled;
 					m.enabled = false;
 				}
 			}else{
@@ -46,7 +45,7 @@ public class HideOnCameraCollide : MonoBehaviour {
 					m.material.SetFloat("_AbsoluteAlpha",1f);
 					m.material.SetColor("_OutlineColor",Color.black);
 				}else{
-					if(wasEnabled){
+					if(!GameManager.getIsInsidePlanet()){
 						m.enabled = true;
 					}
 				}

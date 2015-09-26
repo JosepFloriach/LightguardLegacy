@@ -24,14 +24,16 @@ public class HydraHeadAttack : Attack {
 	}
 
 	IEnumerator doHeadAttack(){
+		iaParent.getIAAnimator().ResetTrigger("isDoingHeadAttack");
 		hasHurtPlayer = false;
 		iaParent.getIAAnimator().SetTrigger("isChargingHeadAttack");
-		yield return new WaitForSeconds (1f);
+		yield return new WaitForSeconds (1.2f);
 		iaParent.getIAAnimator().SetTrigger("isDoingHeadAttack");
+		yield return new WaitForSeconds (0.5f);
 		GetComponentInChildren<Collider> ().enabled = true;
-		yield return new WaitForSeconds (1.5f);
+		yield return new WaitForSeconds (0.2f);
 		GetComponentInChildren<Collider> ().enabled = false;
-		yield return null;
+		yield return new WaitForSeconds (0.4f);
 		isFinished = true;
 	}
 	

@@ -25,10 +25,13 @@ public class IAControllerHydra : IAController {
 	private bool isFinishedHidding = true;
 	private bool isFinishedUnhidding = true;
 
+	Collider collider;
+
 	private float timerHidding = 0f;
 	private float timerUnHidding = 0f;
 
 	protected override void initialize(){
+		collider = GetComponent<Collider> ();
 		Attack rangedAttackA = attackController.getAttack(rangedAttack);
 		rangedAttackA.informParent(gameObject);
 
@@ -56,6 +59,9 @@ public class IAControllerHydra : IAController {
 		
 		if (!isFinishedHidding) {
 			timerHidding+=Time.deltaTime;
+			if(collider.enabled && timerHidding>2f){
+				enableHydraHitting(false);
+			}
 			if(timerHidding>5f){
 				isFinishedHidding = true;
 				timerHidding = 0f;
@@ -111,16 +117,20 @@ public class IAControllerHydra : IAController {
 	}
 
 	private IEnumerator hydraDying(){
-		yield return new WaitForSeconds (2f);
-		GameManager.audioManager.PlaySound (SoundIDs.E_HYDRADIE,AudioManager.STABLE,AudioManager.ENEMY);
-		
 		if(platformDestroyed!=null){
 			platformDestroyed.GetComponent<HydraPlatform>().repositionPlatform();
 		}
+		yield return new WaitForSeconds (2f);
+		GameManager.audioManager.PlaySound (SoundIDs.E_HYDRADIE,AudioManager.STABLE,AudioManager.ENEMY);
+		
+		/*if(platformDestroyed!=null){
+			platformDestroyed.GetComponent<HydraPlatform>().repositionPlatform();
+		}*/
+
 	}
 
-	private void enableHydraHitting(bool enable){
-		GetComponent<Collider> ().enabled = enable;
+	public void enableHydraHitting(bool enable){
+		collider.enabled = enable;
 	}
 
 	private void doActualBehaviour(){

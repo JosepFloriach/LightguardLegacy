@@ -9,6 +9,8 @@ public class HydraPlatform : MonoBehaviour {
 
 	private bool activated = true;
 
+	private bool repositioning = false;
+
 	void Awake(){
 		originalPosition = transform.position;
 		originalMaterial = GetComponent<MeshRenderer> ().material;
@@ -27,6 +29,7 @@ public class HydraPlatform : MonoBehaviour {
 	}
 
 	IEnumerator cleanAndGoUp(){
+		repositioning = true;
 		float timer = 0f;
 		float time = 1.5f;
 		
@@ -37,19 +40,33 @@ public class HydraPlatform : MonoBehaviour {
 			yield return null;
 		}
 		activated = true;
+		repositioning = false;
 	}
 
 	IEnumerator burnAndGoDown(){
 		yield return new WaitForSeconds (1f);
-		GetComponent<MeshRenderer> ().material = burningMaterial;
-		yield return new WaitForSeconds (1.5f);
+		float time = 1f;
 		float timer = 0f;
-		float time = 1.5f;
+		while (timer<time && !repositioning) {
+			timer+=Time.deltaTime;
+			yield return null;
+		}
+		if (!repositioning) {
+			GetComponent<MeshRenderer> ().material = burningMaterial;
+		}
+		time = 1.5f;
+		timer = 0f;
+		while (timer<time && !repositioning) {
+			timer+=Time.deltaTime;
+			yield return null;
+		}
+		timer = 0f;
+		time = 1.5f;
 		Vector3 platformPosition = GetComponent<Renderer>().bounds.center;
 		Vector3 direction = platformPosition - transform.position;
 		Vector3 objective = originalPosition - (direction.normalized * 1f);
 
-		while (timer<time) {
+		while (timer<time && !repositioning) {
 			timer+=Time.deltaTime;
 			float ratio = timer/time;
 			transform.position = Vector3.Lerp(originalPosition,objective,ratio);

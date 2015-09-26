@@ -25,18 +25,19 @@ public class HydraFlameAttack : Attack {
 	}
 
 	IEnumerator doFlameAttack(){
+		iaParent.getIAAnimator().ResetTrigger("isDoingFlameAttack");
 		hasHurtPlayer = false;
 		iaParent.getIAAnimator().SetTrigger("isChargingFlameAttack");
-		yield return new WaitForSeconds (1.7f);
+		yield return new WaitForSeconds (1.5f);
 		iaParent.getIAAnimator().SetTrigger("isDoingFlameAttack");
 		GetComponentInChildren<Collider> ().enabled = true;
 		GetComponent<ParticleSystem> ().Play ();
 
-		yield return new WaitForSeconds (2.5f);
+		yield return new WaitForSeconds (1.5f);
 		GetComponentInChildren<Collider> ().enabled = false;
-		yield return null;
-		isFinished = true;
 		GetComponent<ParticleSystem> ().Stop ();
+		yield return new WaitForSeconds (0.5f);
+		isFinished = true;
 	}
 	
 	public override void informParent(GameObject parentObject){
