@@ -107,6 +107,11 @@ public class IAControllerHydra : IAController {
 
 	protected override void virtualDie ()
 	{
+		StartCoroutine (hydraDying ());
+	}
+
+	private IEnumerator hydraDying(){
+		yield return new WaitForSeconds (2f);
 		GameManager.audioManager.PlaySound (SoundIDs.E_HYDRADIE,AudioManager.STABLE,AudioManager.ENEMY);
 		
 		if(platformDestroyed!=null){
@@ -114,6 +119,9 @@ public class IAControllerHydra : IAController {
 		}
 	}
 
+	private void enableHydraHitting(bool enable){
+		GetComponent<Collider> ().enabled = enable;
+	}
 
 	private void doActualBehaviour(){
 		if(!isDead && !attackController.isDoingAnyAttack() && isFinishedHidding){

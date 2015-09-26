@@ -55,8 +55,8 @@ public class PlayerHealManager : MonoBehaviour {
 			GUIManager.getPlayingGUI ().GetComponentInChildren <LifeGUIManager> ().healHitPoints(1);
 			GameManager.player.GetComponent<Killable>().GainHealth(1);
 		}
-		GameManager.inputController.enableInputController ();
 		GameManager.playerController.resetLookingPosition ();
+		GameManager.inputController.enableInputController ();
 		isHealing = false;
 
 	}

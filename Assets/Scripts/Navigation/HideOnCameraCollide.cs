@@ -6,6 +6,7 @@ public class HideOnCameraCollide : MonoBehaviour {
 
 	List<MeshRenderer> meshRenderers = new List<MeshRenderer> (0);
 	public bool fade = true;
+	bool wasEnabled;
 
 	void Start(){
 		MeshRenderer m = GetComponent<MeshRenderer> ();
@@ -37,6 +38,7 @@ public class HideOnCameraCollide : MonoBehaviour {
 					m.material.SetFloat("_AbsoluteAlpha",0.4f);
 					m.material.SetColor("_OutlineColor",Color.clear);
 				}else{
+					wasEnabled = m.enabled;
 					m.enabled = false;
 				}
 			}else{
@@ -44,7 +46,9 @@ public class HideOnCameraCollide : MonoBehaviour {
 					m.material.SetFloat("_AbsoluteAlpha",1f);
 					m.material.SetColor("_OutlineColor",Color.black);
 				}else{
-					m.enabled = true;
+					if(wasEnabled){
+						m.enabled = true;
+					}
 				}
 			}
 		}

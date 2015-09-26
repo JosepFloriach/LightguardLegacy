@@ -563,10 +563,11 @@ public class PlayerController : MonoBehaviour {
 		Quaternion objectiveRotation = GameManager.player.transform.rotation;
 		if (GameManager.playerController.getIsLookingRight ()) {
 			objectiveRotation *= Quaternion.Euler (0f, 90f, 0f);
+			wasLookingRight = true;
 		} else {
 			objectiveRotation *= Quaternion.Euler (0f, -90f, 0f);
+			wasLookingRight  = false;
 		}
-		wasLookingRight = GameManager.playerController.getIsLookingRight ();
 		GameManager.player.transform.rotation = objectiveRotation;
 	}
 
@@ -582,7 +583,6 @@ public class PlayerController : MonoBehaviour {
 			}
 		}
 		craned = false;
-		characterController.setOriginalOrientation ();
 		GameManager.player.transform.rotation = objectiveRotation;
 	}
 

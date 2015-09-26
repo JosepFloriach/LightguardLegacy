@@ -250,9 +250,12 @@ public class InputController : MonoBehaviour {
 	}
 
 	bool isCharacterAllowedToMove(){
-		/*if(GetComponent<CharacterAttackController>().isDoingAnyAttack() && !character.getIsJumping()){
+		if(character.getIsSpaceJumping()){
 			return false;
-		}else */
+		}
+		if(GameManager.playerHealManager.isActuallyHealing()){
+			return false;
+		}
 		if(attackController.isMovementLocked()){
 			return false;
 		}
