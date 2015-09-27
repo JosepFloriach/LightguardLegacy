@@ -13,6 +13,7 @@ public class HailRock : MonoBehaviour {
 
 	IEnumerator disappearCorroutine(){
 		isDisappearing = true;
+		GetComponentInChildren<ParticleSystem> ().Play ();
 		GetComponentInChildren<DamageOnCollide>().enabled = false;
 		GetComponentInChildren<OutlineChanging> ().changeColorOverTime (Color.clear, 1f);
 		GetComponent<Collider>().enabled = false;

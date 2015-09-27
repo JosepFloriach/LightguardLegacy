@@ -106,18 +106,6 @@ Material:
         second: 0
       data:
         first:
-          name: _Dissolution
-        second: 1
-      data:
-        first:
-          name: _BurningWidth
-        second: 0
-      data:
-        first:
-          name: _DissolveThreshold
-        second: .00916409492
-      data:
-        first:
           name: _Parallax
         second: .0199999996
       data:
@@ -162,10 +150,6 @@ Material:
         second: 1
       data:
         first:
-          name: _DetailTex
-        second: 1
-      data:
-        first:
           name: _Cull
         second: 2
       data:
@@ -200,6 +184,22 @@ Material:
         first:
           name: _TrOp
         second: 0
+      data:
+        first:
+          name: _Dissolution
+        second: 1
+      data:
+        first:
+          name: _BurningWidth
+        second: 0
+      data:
+        first:
+          name: _DissolveThreshold
+        second: .000209510326
+      data:
+        first:
+          name: _DetailTex
+        second: 1
     m_Colors:
       data:
         first:
@@ -215,13 +215,13 @@ Material:
         second: {r: .5, g: .5, b: .5, a: 1}
       data:
         first:
-          name: _BurningColor
-        second: {r: 1, g: .848275781, b: 0, a: 1}
-      data:
-        first:
           name: _EmissionColorUI
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _Asymmetry
         second: {r: 0, g: .25, b: .5, a: 0}
+      data:
+        first:
+          name: _BurningColor
+        second: {r: 1, g: .848275781, b: 0, a: 1}
