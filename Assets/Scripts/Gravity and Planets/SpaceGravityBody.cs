@@ -190,6 +190,9 @@ public class SpaceGravityBody : GravityBody {
 
 	//Sets the gameObject as the closest planet, and activates or deactivates the planets accordingly
 	private void setClosestPlanet(GameObject closestPlanet){
+		if (closestPlanet == null && this.closestPlanet != null) {
+			Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Player"),LayerMask.NameToLayer("Planets"),false);
+		}
 		if(closestPlanet!=null && closestPlanet!=this.closestPlanet){
 			if(this.closestPlanet!=null){
 				this.closestPlanet.GetComponent<Planet> ().deactivate();

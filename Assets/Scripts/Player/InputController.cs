@@ -267,6 +267,8 @@ public class InputController : MonoBehaviour {
 			return false;
 		}else if(!GetComponent<CharacterAttackController>().canDoAttack()){
 			return false;
+		}else if(!GameManager.persistentData.isKameUnlocked){
+			return false;
 		}
 		return true;
 	}

@@ -7,9 +7,12 @@ public class PersistentData{
 
 	public bool spaceJumpUnlocked;
 
+	public bool isKameUnlocked;
+
 	private void initializeGameState(){
 		playerLastCheckpoint = 0;
 		spaceJumpUnlocked = false;
+		isKameUnlocked = false;
 
 	}
 

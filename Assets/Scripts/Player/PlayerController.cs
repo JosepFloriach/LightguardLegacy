@@ -245,6 +245,7 @@ public class PlayerController : MonoBehaviour {
 	public void SpaceJump() {
 		//GUIManager.activateSpaceJumpGUI();
 		characterController.Jump (spaceJumpForce);
+		Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Player"),LayerMask.NameToLayer("Planets"),true);
 		GetComponent<Rigidbody> ().velocity = lineJumpDirection * spaceJumpForce;
 		//If we jump into the space, stop the particle system.
 		ParticleSystem particles = particleSystemJumpCharge.GetComponent<ParticleSystem> ();

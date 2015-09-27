@@ -75,6 +75,7 @@ public class InitialPlanetEventsManager : PlanetEventsManager {
 			}else{
 				GameManager.playerController.setLookingToCameraInCranePosition ();
 				GameManager.persistentData.spaceJumpUnlocked = true;
+				GameManager.persistentData.isKameUnlocked = true;
 				boarHuntingGO.GetComponent<FirstPlanetBoarHunting>().boar.SetActive(false);
 				boarHuntingGO.SetActive(false);
 				littleGHopper.SetActive(false);
@@ -443,6 +444,9 @@ public class InitialPlanetEventsManager : PlanetEventsManager {
 			foreach(Collider collider in lightGemGO.GetComponent<SanctuaryLightGem>().rocksGO.GetComponentsInChildren<Collider>()){
 				collider.enabled = false;
 			}
+
+			//Unlock Kame attack
+			GameManager.persistentData.isKameUnlocked = true;
 
 			bridgeFallGO.GetComponent<FirstPlanetFallingFromTheBridge>().hideOutsidePlane.SetActive(false);
 			GameManager.playerAnimator.SetBool("isChargingSpaceJumping",true);

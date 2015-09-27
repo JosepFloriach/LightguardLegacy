@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: plataformasHielo_TXT
-  m_Shader: {fileID: 4800000, guid: a021b6bfcab3cc44fbf4bc8ded279bae, type: 3}
+  m_Shader: {fileID: 4800000, guid: af6e577fac5e6ba4c9e69f6a27e649c0, type: 3}
   m_ShaderKeywords: _COLOR_ON _CORR_ON _DISS_ON _OUTL_ON _TEX_ON _TRANSP_ON
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
@@ -93,16 +93,16 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _Ramp
+          name: _CorruptionTexture
         second:
-          m_Texture: {fileID: 2800000, guid: 0d2d5756caa62a248b563de79e26635b, type: 3}
+          m_Texture: {fileID: 2800000, guid: c012cd004cede244c96a82228fed4480, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _CorruptionTexture
+          name: _Ramp
         second:
-          m_Texture: {fileID: 2800000, guid: c012cd004cede244c96a82228fed4480, type: 3}
+          m_Texture: {fileID: 2800000, guid: 0d2d5756caa62a248b563de79e26635b, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -120,12 +120,24 @@ Material:
         second: 0
       data:
         first:
+          name: _OutlineSize
+        second: 10
+      data:
+        first:
+          name: _YCutOut
+        second: 1000
+      data:
+        first:
           name: _Dissolution
         second: 1
       data:
         first:
           name: _BurningWidth
         second: .0500000007
+      data:
+        first:
+          name: _TileSize
+        second: .150000006
       data:
         first:
           name: _DissolveThreshold
@@ -216,18 +228,6 @@ Material:
         second: 1
       data:
         first:
-          name: _OutlineSize
-        second: 10
-      data:
-        first:
-          name: _YCutOut
-        second: 1000
-      data:
-        first:
-          name: _TileSize
-        second: .150000006
-      data:
-        first:
           name: _Corruption
         second: 1
     m_Colors:
@@ -238,7 +238,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .683853447, g: .632569194, b: .95588237, a: 1}
+        second: {r: .852941155, g: .852941155, b: .852941155, a: 1}
       data:
         first:
           name: _OutlineColor
