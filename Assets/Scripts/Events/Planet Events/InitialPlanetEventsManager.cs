@@ -231,7 +231,7 @@ public class InitialPlanetEventsManager : PlanetEventsManager {
 			yield return StartCoroutine(WaitInterruptable (4f,bigPappadaDialogue));
 			GetComponent<PlanetCorruption>().corrupt();
 			GameManager.mainCamera.GetComponent<CameraFollowingPlayer>().setCameraShaking();
-			GameManager.audioManager.playSong(2);
+			GameManager.audioManager.PlayMusic(SoundIDs.M_QUAKE);
 			
 			shintoDoorGO.GetComponent<FirstPlanetShintoDoor>().shintoDoor.GetComponent<ShintoDoor>().disableKanjis();
 			yield return new WaitForSeconds(2f);
@@ -327,7 +327,7 @@ public class InitialPlanetEventsManager : PlanetEventsManager {
 			bridgeFallGO.GetComponent<FirstPlanetFallingFromTheBridge>().fallenRocks.SetActive(true);
 			GUIManager.fadeOut(null);
 			rocksBlockingPathGO.GetComponent<FirstPlanetBlockPathRocks>().rocks.SetActive(true);
-			GameManager.audioManager.playSong(3);
+			GameManager.audioManager.PlayMusic(SoundIDs.M_CORRUPTION);
 			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("¿Where am I?  ¿What is this place?", 3f, false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			yield return StartCoroutine(WaitInterruptable (3f,bigPappadaDialogue));
 			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("Looks like i have no choice... I must press onwards...", 3f, false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
@@ -437,7 +437,7 @@ public class InitialPlanetEventsManager : PlanetEventsManager {
 			GameManager.playerAnimator.SetBool("isGrabbingSomething",false);
 			bigPappadaDialogue = GameManager.player.GetComponent<DialogueController> ().createNewDialogue ("Maybe I can use this  to get out of here!", 3f, true,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 			yield return StartCoroutine(WaitInterruptable (3f,bigPappadaDialogue));
-			GameManager.audioManager.playSong(4);
+			GameManager.audioManager.PlayMusic(SoundIDs.M_COMBAT);
 			foreach(Collider collider in bridgeFallGO.GetComponent<FirstPlanetFallingFromTheBridge>().fallenRocks.GetComponentsInChildren<Collider>()){
 				collider.enabled = false;
 			}

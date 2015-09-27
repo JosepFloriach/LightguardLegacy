@@ -382,7 +382,7 @@ public class PlayerController : MonoBehaviour {
 				StopMove();
 				isInvulnerable = true;
 				GUIManager.setPercentageOfBreathing(100);
-				GameManager.audioManager.StopSong();
+				GameManager.audioManager.EndMusic();
 				GameManager.audioManager.PlaySound(SoundIDs.P_DIE,AudioManager.STABLE,AudioManager.BIGP);
 				
 				//GUIManager.getPlayingGUI ().GetComponentInChildren <LifeGUIManager> ().updateUI ();

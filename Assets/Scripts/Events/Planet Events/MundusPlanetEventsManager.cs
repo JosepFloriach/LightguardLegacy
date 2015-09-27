@@ -45,8 +45,8 @@ public class MundusPlanetEventsManager : PlanetEventsManager {
 
 				//We create the new mundus
 
-				GameManager.audioManager.playSong(4);
-
+				GameManager.audioManager.PlayMusic(SoundIDs.M_COMBAT);
+				
 				mundus = GameObject.Instantiate(mundusPrefab) as GameObject;
 				mundus.GetComponent<IAControllerMundus>().informPlanetEventManager(this);
 				mundus.transform.position = mundusSpawnPosition.transform.position;
@@ -287,7 +287,7 @@ public class MundusPlanetEventsManager : PlanetEventsManager {
 
 	public override void isDeactivated(){
 		GUIManager.activateMinimapGUI();
-		GameManager.audioManager.playSong(1);
+		GameManager.audioManager.PlayMusic(SoundIDs.M_PEACE);
 		isInSecondPhase = false;
 		Destroy(mundus);
 		DestroyImmediate(lastPlanet);

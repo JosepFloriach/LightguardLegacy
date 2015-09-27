@@ -24,7 +24,10 @@ public class PlanetaryReboundWall : MonoBehaviour {
 			}else{
 				normal =(transform.position - planetRotatingOver.transform.position).normalized;
 			}
+			
 			GameManager.player.GetComponent<Rigidbody>().velocity = Vector3.Reflect(GameManager.player.GetComponent<Rigidbody>().velocity,normal);
+			GameManager.audioManager.PlaySound(SoundIDs.P_BOUNCE, AudioManager.VARIABLE, AudioManager.BIGP);
+			
 		}
 	}
 

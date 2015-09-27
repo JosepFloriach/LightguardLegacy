@@ -8,6 +8,8 @@ public class AudioManager : MonoBehaviour {
 	public AudioSource variablebigpPlayer;
 	public AudioSource miscPlayer;
 	
+	private int checkpointSong = -1;
+	private int currentSong;
 
 //Music
 	public AudioClip[] music;
@@ -47,6 +49,71 @@ public class AudioManager : MonoBehaviour {
 	void Awake () {
 		GameManager.RegisterAudioManager(this);	
 	}			
+	
+	bool swap = false;
+	bool down = false;
+	
+	void Update() {
+		if (swap) {
+			if (down) {
+				if (vol < 0.0) {
+					musicplayer.volume = mVol;
+					PlayMusic ();
+				} else {
+					vol-= 1.5f*Time.deltaTime;
+					musicplayer.volume = vol;
+				} 
+			} 
+		}
+	}
+	
+	//Music
+	
+	float mVol;
+	float vol;
+	
+	
+	private void PlayMusic() {
+		down = false; swap = false;
+		musicplayer.clip = music[currentSong];
+		musicplayer.Play();
+	}
+	
+	public void PlayMusic(int song) {
+	//check if song is in list
+	if (song < 0 || music.Length <= song) {
+		return;
+	}
+	currentSong = song;
+	
+	if (musicplayer.isPlaying) {
+		swap = true; down = true;
+		mVol = musicplayer.volume;
+		vol = mVol;
+	} else {
+		PlayMusic();
+	}
+	}
+	
+	public void SetCheckpointMusic() {
+		checkpointSong = currentSong;
+	}
+
+	public void SetCheckpointMusic(int Song) {
+		checkpointSong = Song;
+	}
+	
+		
+	public void RestartMusic() {
+		PlayMusic(checkpointSong);
+	}
+	
+	public void EndMusic() {
+		musicplayer.Stop();
+	}
+	
+	//FXs
+	
 	
 	private AudioClip getClip(int id, int type) {
 		AudioClip[] selectedSoundType;
@@ -178,35 +245,7 @@ public class AudioManager : MonoBehaviour {
 		audioSource.PlayOneShot(sound,volHighRange);
 	}
 	
-	public void PlaySong(AudioClip mySong) {
-		if (musicplayer.isPlaying) {
-			//please stop the music
-			musicplayer.Stop();
-		}
-		musicplayer.clip = mySong;
-		musicplayer.Play();
-	}
-	
-	//Plays the song at position n
-	public void playSong(int n) {
-		if (0 <= n && n < music.Length) 
-		{
-			if (musicplayer.isPlaying) {
-			//please stop the music
-				musicplayer.Stop();
-			}
-			musicplayer.clip = music[n];
-			musicplayer.Play();
-		}
-	}
-	
-	public void RestartSong() {
-		musicplayer.Play();
-	}
-	
-	public void StopSong() {
-		musicplayer.Stop();
-	}
+
 	
 	float lastplay = 0.0f;
 	float delta = 0.0f;

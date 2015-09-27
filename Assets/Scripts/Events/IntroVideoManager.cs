@@ -55,7 +55,7 @@ public class IntroVideoManager : MonoBehaviour {
 		float timeItLasts = 1f;
 		isFading = true;
 		GUIManager.fadeOutChangeMenuFadeIn(Menu.MainMenu);
-		GameManager.audioManager.playSong(0);
+		GameManager.audioManager.PlayMusic(SoundIDs.M_MENU);
 		while(timer<timeItLasts){
 			timer+=Time.deltaTime;
 			float ratio = 1f-(timer/timeItLasts);

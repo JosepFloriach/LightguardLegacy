@@ -54,7 +54,7 @@ public static class GameManager{
 	public static void rebuildGameFromGameState(){
 		//We put the player in the last checkpoint
 		CheckpointStub lastCheckpoint = checkPointManager.getLastCheckpoint();
-		GameManager.audioManager.RestartSong();
+		GameManager.audioManager.RestartMusic();
 		if(lastCheckpoint!=null){
 			player.transform.position = lastCheckpoint.checkPointObject.transform.position;
 		}else{
@@ -121,7 +121,7 @@ public static class GameManager{
 		}
 
 		GameManager.audioManager.PlayMiscSound(SoundIDs.PRESS_BUTTON,AudioManager.STABLE);
-		GameManager.audioManager.playSong(1);
+		GameManager.audioManager.PlayMusic(SoundIDs.M_PEACE);
 	}
 
 	public static void restartGame(){

@@ -186,6 +186,10 @@ Material:
         second: 0
       data:
         first:
+          name: _DetailTex
+        second: 1
+      data:
+        first:
           name: _Dissolution
         second: 1
       data:
@@ -195,11 +199,7 @@ Material:
       data:
         first:
           name: _DissolveThreshold
-        second: .000209510326
-      data:
-        first:
-          name: _DetailTex
-        second: 1
+        second: .0407934785
     m_Colors:
       data:
         first:

@@ -30,6 +30,10 @@ public class Checkpoint : MonoBehaviour {
 				onActivationParticleSystem.Play();
 			}
 			GameManager.persistentData.playerLastCheckpoint = checkPointIndex;
+			
+			GameManager.audioManager.SetCheckpointMusic();
+			GameManager.audioManager.PlaySound(SoundIDs.P_CHECKPOINT,AudioManager.STABLE,AudioManager.BIGP);
+			
 		}
 	}
 

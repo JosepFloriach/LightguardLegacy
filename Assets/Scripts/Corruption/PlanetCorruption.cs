@@ -94,7 +94,7 @@ public class PlanetCorruption : MonoBehaviour {
 			GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().setCameraRangeCleansePlanet();
 			corruptionOrigin.transform.up = corruptionOrigin.transform.position - transform.position;
 			GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().followObjective(corruptionOrigin,13f,2.5f);
-			GameManager.audioManager.playSong(5);
+			GameManager.audioManager.PlayMusic(SoundIDs.M_PURIFICATION);
 			StartCoroutine("startCleaningWithDelay");
 		}
 	}
@@ -127,7 +127,7 @@ public class PlanetCorruption : MonoBehaviour {
 			}
 		}
 		GameManager.persistentData.spaceJumpUnlocked = true;
-		GameManager.audioManager.playSong(1);
+		GameManager.audioManager.PlayMusic(SoundIDs.M_PEACE);
 	}
 
 	bool athmosphereInitialized = false;
