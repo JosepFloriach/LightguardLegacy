@@ -9,12 +9,14 @@ public class SoundIDs  {
 	public static int M_MENU = 0;
 	public static int M_PEACE = 1;
 	public static int M_QUAKE = 2;
-	public static int M_COMBAT = 3;
+	public static int M_CORRUPTION = 3;
 	public static int M_PURIFICATION = 4;
-	public static int M_CORRUPTION = 5;
+	public static int M_COMBAT = 5;
 	public static int M_SPACE = 6;
 	public static int M_MUNDUS = 7;
 	public static int M_BOSS = 8;
+	public static int M_INTRO = 9;
+	public static int M_RUNNER = 10;
 	
 	
 	

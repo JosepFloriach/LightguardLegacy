@@ -233,6 +233,7 @@ public class PlayerController : MonoBehaviour {
 
 	public void dieInSpace(){
 		if(!killable.isDead()){
+			GameManager.audioManager.PlayMusic (SoundIDs.M_PEACE);
 			kill ();
 			flyParticles.Stop();
 			GetComponent<Rigidbody>().velocity = new Vector3(0f,0f,0f);
@@ -244,6 +245,7 @@ public class PlayerController : MonoBehaviour {
 
 	public void SpaceJump() {
 		//GUIManager.activateSpaceJumpGUI();
+		GameManager.audioManager.PlayMusic (SoundIDs.M_SPACE);
 		characterController.Jump (spaceJumpForce);
 		Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Player"),LayerMask.NameToLayer("Planets"),true);
 		GetComponent<Rigidbody> ().velocity = lineJumpDirection * spaceJumpForce;
@@ -382,7 +384,7 @@ public class PlayerController : MonoBehaviour {
 				StopMove();
 				isInvulnerable = true;
 				GUIManager.setPercentageOfBreathing(100);
-				GameManager.audioManager.EndMusic();
+				//GameManager.audioManager.EndMusic();
 				GameManager.audioManager.PlaySound(SoundIDs.P_DIE,AudioManager.STABLE,AudioManager.BIGP);
 				
 				//GUIManager.getPlayingGUI ().GetComponentInChildren <LifeGUIManager> ().updateUI ();

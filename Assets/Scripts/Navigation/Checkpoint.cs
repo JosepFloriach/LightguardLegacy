@@ -28,11 +28,12 @@ public class Checkpoint : MonoBehaviour {
 			if(onActivationParticleSystem!=null && GameManager.persistentData.playerLastCheckpoint != checkPointIndex){
 				GameManager.persistentData.save ();
 				onActivationParticleSystem.Play();
+
+				GameManager.audioManager.SetCheckpointMusic();
+				GameManager.audioManager.PlaySound(SoundIDs.P_CHECKPOINT,AudioManager.STABLE,AudioManager.BIGP);
 			}
 			GameManager.persistentData.playerLastCheckpoint = checkPointIndex;
-			
-			GameManager.audioManager.SetCheckpointMusic();
-			GameManager.audioManager.PlaySound(SoundIDs.P_CHECKPOINT,AudioManager.STABLE,AudioManager.BIGP);
+		
 			
 		}
 	}

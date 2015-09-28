@@ -54,6 +54,7 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 	public override void informEventActivated (CutsceneIdentifyier identifyier){
 		if(identifyier.Equals(CutsceneIdentifyier.FrostFirePlanetPenguinAttack)){
 			if(!hasBeenAttackedByPenguins){
+				GameManager.audioManager.PlayMusic (SoundIDs.M_COMBAT);
 				penguinAttackEvent.SetActive(false);
 				GetComponent<PlanetSpawnerManager> ().enabled = true;
 				hasBeenAttackedByPenguins = true;
@@ -108,7 +109,7 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 		}
 
 		yield return new WaitForSeconds (2f);
-
+		GameManager.audioManager.PlayMusic (SoundIDs.M_PEACE);
 		bigPappadaDialogue = bigPappadaDialogueController.createNewDialogue ("It stopped!! That was close!", 2f, false,TextureDialogue.BigPappada,!GameManager.playerController.getIsLookingRight());
 		yield return StartCoroutine (WaitInterruptable (2f, bigPappadaDialogue));
 
@@ -175,6 +176,7 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 	}
 
 	private IEnumerator startRunner(){
+		GameManager.audioManager.PlayMusic (SoundIDs.M_RUNNER);
 		GameManager.playerController.StopMove ();
 		endRunnerEvent.SetActive (true);
 		GameManager.mainCamera.GetComponent<CameraFollowingPlayer> ().setCameraShaking ();
@@ -382,6 +384,7 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 	}
 	
 	IEnumerator planetCleansedCinematic() {
+		GameManager.audioManager.PlayMusic (SoundIDs.M_CORRUPTION);
 		GameManager.inputController.disableInputController ();
 		yield return new WaitForSeconds(2.5f);
 		
@@ -408,6 +411,7 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 	}
 	
 	public override void isActivated (){
+		GameManager.audioManager.PlayMusic (SoundIDs.M_CORRUPTION);
 		StartCoroutine (onLandCinematic ());
 	}
 

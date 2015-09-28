@@ -20,7 +20,7 @@ public class IntroVideoManager : MonoBehaviour {
 		mat.SetColor ("_Color", Color.black);
 		mt = mat.mainTexture as MovieTexture;
 		mt.Play();
-		//GameManager.audioManager.PlaySong( mt.audioClip);
+		GameManager.audioManager.PlayMusic (SoundIDs.M_INTRO);
 	}
 	
 	// Update is called once per frame

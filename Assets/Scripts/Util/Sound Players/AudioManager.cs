@@ -81,7 +81,7 @@ public class AudioManager : MonoBehaviour {
 	
 	public void PlayMusic(int song) {
 	//check if song is in list
-	if (song < 0 || music.Length <= song) {
+	if (song < 0 || music.Length <= song || song == currentSong) {
 		return;
 	}
 	currentSong = song;

@@ -24,8 +24,9 @@ public class PlanetCorrupted : Planet {
 	}
 
 	protected override void virtualActivate(){
-		if(planetCorruption!=null && planetCorruption.isCorrupted()){
-			planetCorruption.activateSpawning();
+		if (planetCorruption != null && planetCorruption.isCorrupted ()) {
+			planetCorruption.activateSpawning ();
+			GameManager.audioManager.PlayMusic (SoundIDs.M_COMBAT);
 		}
 		if(planetEventsManager!=null){
 			planetEventsManager.activate();
