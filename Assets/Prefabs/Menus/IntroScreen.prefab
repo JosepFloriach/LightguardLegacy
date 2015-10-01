@@ -52,7 +52,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1600, y: 900}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -70,6 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeb278c5530d57f408b060818cf0edb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interruptable: 1
 --- !u!114 &11479926
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -83,7 +84,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: a0ec947576ca8164da839e8f9250d312, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Texture: {fileID: 15200000, guid: a053d0aa32349af41bb2f214fc9d0593, type: 3}
+  m_Texture: {fileID: 15200000, guid: 6e714f20d162c3e4088c9f840a627ca4, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
