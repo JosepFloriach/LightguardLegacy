@@ -20,7 +20,7 @@ Material:
         second:
           m_Texture: {fileID: 2800000, guid: a2bdef6d3860db943b84ae3bd2bdba93, type: 3}
           m_Scale: {x: 5, y: 5}
-          m_Offset: {x: 0, y: 1.55297625}
+          m_Offset: {x: 0, y: .171024755}
       data:
         first:
           name: _BumpMap
@@ -86,16 +86,16 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _Ramp
+          name: _CorruptionTexture
         second:
-          m_Texture: {fileID: 2800000, guid: 0d2d5756caa62a248b563de79e26635b, type: 3}
+          m_Texture: {fileID: 2800000, guid: c012cd004cede244c96a82228fed4480, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _CorruptionTexture
+          name: _Ramp
         second:
-          m_Texture: {fileID: 2800000, guid: c012cd004cede244c96a82228fed4480, type: 3}
+          m_Texture: {fileID: 2800000, guid: 0d2d5756caa62a248b563de79e26635b, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -110,6 +110,10 @@ Material:
       data:
         first:
           name: _DstBlend
+        second: 0
+      data:
+        first:
+          name: _TintColor
         second: 0
       data:
         first:
@@ -162,10 +166,6 @@ Material:
       data:
         first:
           name: _Metallic
-        second: 0
-      data:
-        first:
-          name: _TintColor
         second: 0
       data:
         first:

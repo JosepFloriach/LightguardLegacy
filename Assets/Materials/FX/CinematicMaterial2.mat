@@ -106,16 +106,16 @@ Material:
         second: 0
       data:
         first:
+          name: _TintColor
+        second: 1
+      data:
+        first:
           name: _Dissolution
         second: 1
       data:
         first:
           name: _BurningWidth
         second: 0
-      data:
-        first:
-          name: _DissolveThreshold
-        second: .98827076
       data:
         first:
           name: _Parallax
@@ -158,10 +158,6 @@ Material:
         second: 0
       data:
         first:
-          name: _TintColor
-        second: 1
-      data:
-        first:
           name: _DetailTex
         second: 1
       data:
@@ -200,6 +196,10 @@ Material:
         first:
           name: _TrOp
         second: 0
+      data:
+        first:
+          name: _DissolveThreshold
+        second: 1
     m_Colors:
       data:
         first:

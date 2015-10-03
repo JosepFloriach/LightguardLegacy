@@ -8,6 +8,7 @@ public class IntroVideoManager : MonoBehaviour {
 	private bool hasBeenDeactivated = false;
 	private MovieTexture mt;
 	private Material mat;
+	public bool intro = true;
 	private float timeToWaitTillStart = 0.5f;
 	private bool hasStarted = false;
 	private float timer = 0f;
@@ -20,7 +21,11 @@ public class IntroVideoManager : MonoBehaviour {
 		mat.SetColor ("_Color", Color.black);
 		mt = mat.mainTexture as MovieTexture;
 		mt.Play();
-		GameManager.audioManager.PlayMusic (SoundIDs.M_INTRO);
+		if (intro) {
+			GameManager.audioManager.PlayMusic (SoundIDs.M_INTRO);
+		} else {
+			GameManager.audioManager.PlayMusic (SoundIDs.M_OUTRO);
+		}
 	}
 	
 	// Update is called once per frame

@@ -17,6 +17,7 @@ public class SoundIDs  {
 	public static int M_BOSS = 8;
 	public static int M_INTRO = 9;
 	public static int M_RUNNER = 10;
+	public static int M_OUTRO = 11;
 	
 	
 	

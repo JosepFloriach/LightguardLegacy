@@ -34,6 +34,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interruptable: 1
+  intro: 0
 --- !u!114 &11434332
 MonoBehaviour:
   m_ObjectHideFlags: 1
