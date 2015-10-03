@@ -276,7 +276,10 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	public void Jump(float force){
-		GameManager.audioManager.PlayBigpSound(SoundIDs.P_JUMP, AudioManager.STABLE);
+		int randomN = Random.Range (1, 100);
+		if (randomN > 40) {
+			GameManager.audioManager.PlayBigpSound (SoundIDs.P_JUMP, AudioManager.STABLE);
+		}
 		
 		ParticleSystem particles = particleSystemJumpCharge.GetComponent<ParticleSystem> ();
 		particles.Stop ();
