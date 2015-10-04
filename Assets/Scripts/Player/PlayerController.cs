@@ -243,9 +243,11 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
-	public void SpaceJump() {
+	public void SpaceJump(bool changeMusic = true) {
 		//GUIManager.activateSpaceJumpGUI();
-		GameManager.audioManager.PlayMusic (SoundIDs.M_SPACE);
+		if (changeMusic) {
+			GameManager.audioManager.PlayMusic (SoundIDs.M_SPACE);
+		}
 		characterController.Jump (spaceJumpForce);
 		Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Player"),LayerMask.NameToLayer("Planets"),true);
 		GetComponent<Rigidbody> ().velocity = lineJumpDirection * spaceJumpForce;
@@ -267,7 +269,7 @@ public class PlayerController : MonoBehaviour {
 
 	public void SpaceJump(Vector3 direction,bool isGettingOut){
 		lineJumpDirection = direction;
-		SpaceJump ();
+		SpaceJump (false);
 		body.setIsGettingOutOfOrbit (isGettingOut);
 	}
 
