@@ -30,6 +30,7 @@ public class TowerPlanetEventsManager : PlanetEventsManager {
 
 	private void stopCorruptionChasingEvent(){
 		if(corruptionOngoing!=null){
+			GameManager.audioManager.PlayMusic(SoundIDs.M_PEACE);
 			GameManager.mainCamera.GetComponent<CameraFollowingPlayer>().stopCameraShaking();
 			Destroy(corruptionOngoing);
 		}
@@ -37,6 +38,7 @@ public class TowerPlanetEventsManager : PlanetEventsManager {
 
 	private IEnumerator towerPlanetCorruptionCutscene(){
 		if(!corruptionChased){
+			GameManager.audioManager.PlayMusic(SoundIDs.M_RUNNER);
 			corruptionChasing.GetComponent<TowerPlanetCorruptionChasing>().isActive = false;
 			GameManager.inputController.disableInputController();
 			GameManager.mainCamera.GetComponent<CameraFollowingPlayer>().setCameraShaking();
@@ -115,7 +117,7 @@ public class TowerPlanetEventsManager : PlanetEventsManager {
 	}
 
 	public override void isActivated (){
-
+		GameManager.audioManager.PlayMusic(SoundIDs.M_PEACE);
 	}
 
 	public override void isDeactivated (){

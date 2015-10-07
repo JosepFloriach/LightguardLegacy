@@ -45,7 +45,7 @@ public class MundusPlanetEventsManager : PlanetEventsManager {
 
 				//We create the new mundus
 
-				GameManager.audioManager.PlayMusic(SoundIDs.M_COMBAT);
+				GameManager.audioManager.PlayMusic(SoundIDs.M_BOSS);
 				
 				mundus = GameObject.Instantiate(mundusPrefab) as GameObject;
 				mundus.GetComponent<IAControllerMundus>().informPlanetEventManager(this);

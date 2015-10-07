@@ -61,6 +61,7 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 			}
 		}else if(identifyier.Equals(CutsceneIdentifyier.FrostFirePlanetHydraAppearence)){
 			if(!hydraEventCinematicFinished && !hydraEventCinematicOngoing){
+				GameManager.audioManager.PlayMusic (SoundIDs.M_BOSS);
 				hydraEventCinematicOngoing = true;
 				startHydraCombat();
 			}
@@ -427,6 +428,7 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 
 	public override void playerRespawned (){
 		if (diedOnSegment) {
+			GameManager.audioManager.PlayMusic (SoundIDs.M_RUNNER);
 			runningEvent ();
 		}
 	}
