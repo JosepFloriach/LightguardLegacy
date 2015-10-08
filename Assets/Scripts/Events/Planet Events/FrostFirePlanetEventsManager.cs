@@ -385,7 +385,7 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 	}
 	
 	IEnumerator planetCleansedCinematic() {
-		GameManager.audioManager.PlayMusic (SoundIDs.M_CORRUPTION);
+		GameManager.audioManager.PlayMusic (SoundIDs.M_COMBAT);
 		GameManager.inputController.disableInputController ();
 		yield return new WaitForSeconds(2.5f);
 		
@@ -412,7 +412,7 @@ public class FrostFirePlanetEventsManager : PlanetEventsManager {
 	}
 	
 	public override void isActivated (){
-		GameManager.audioManager.PlayMusic (SoundIDs.M_CORRUPTION);
+		GameManager.audioManager.PlayMusic (SoundIDs.M_COMBAT);
 		StartCoroutine (onLandCinematic ());
 	}
 

@@ -107,7 +107,6 @@ public class IAControllerHydra : IAController {
 	protected override bool virtualGetHurt ()
 	{
 		GameManager.audioManager.PlaySound (SoundIDs.E_GENERICHIT,AudioManager.STABLE,AudioManager.ENEMY);
-		GameManager.audioManager.PlaySound(SoundIDs.E_HYDRAHURT,AudioManager.COOLDOWN,AudioManager.ENEMY);
 		return base.virtualGetHurt ();
 	}
 

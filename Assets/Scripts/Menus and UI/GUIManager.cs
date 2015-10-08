@@ -18,7 +18,8 @@ public enum Menu{None,
 				BlackMenu,
 				TutorialMenu,
 				OptionsMenu,
-				IntroScene
+				IntroScene,
+				MusicMenu
 			    };
 
 public class GUIManager : MonoBehaviour {
@@ -47,6 +48,7 @@ public class GUIManager : MonoBehaviour {
 	private static GameObject optionsMenuO;
 	private static GameObject introSceneO;
 	private static GameObject rotatingOnPlanetMenuO;
+	private static GameObject musicMenuO;
 	
 	private static Text tutorialText;
 
@@ -100,6 +102,9 @@ public class GUIManager : MonoBehaviour {
 		if(optionsMenuO!=null){
 			optionsMenuO.SetActive(false);
 		}
+		if(musicMenuO!=null){
+			musicMenuO.SetActive(false);
+		}
 	}
 	
 	private static void changeMenuAndFadeIn(){
@@ -139,6 +144,8 @@ public class GUIManager : MonoBehaviour {
 			return blackMenuO;
 		}else if(menu.Equals(Menu.OptionsMenu)){
 			return optionsMenuO;
+		}else if(menu.Equals(Menu.MusicMenu)){
+			return musicMenuO;
 		}
 		return null;
 	}
@@ -186,6 +193,14 @@ public class GUIManager : MonoBehaviour {
 			creditsO = GameObject.Instantiate (creditsGO) as GameObject;
 			creditsO.transform.SetParent(allMenus.transform);
 			creditsO.SetActive (false);
+		}
+	}
+
+	public static void registerMusicMenu(GameObject mmenuGO){
+		if(mmenuGO!=null && musicMenuO == null){
+			musicMenuO = GameObject.Instantiate (mmenuGO) as GameObject;
+			musicMenuO.transform.SetParent(allMenus.transform);
+			musicMenuO.SetActive (false);
 		}
 	}
 

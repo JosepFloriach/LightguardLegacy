@@ -29,6 +29,11 @@ public class MenuManager : MonoBehaviour {
 		GameManager.audioManager.PlayMiscSound(SoundIDs.PRESS_BUTTON,AudioManager.STABLE);
 		GUIManager.fadeOutChangeMenuFadeIn (Menu.CreditsMenu);
 	}
+	
+	public void GoToMusicMenu(){
+		GameManager.audioManager.PlayMiscSound(SoundIDs.PRESS_BUTTON,AudioManager.STABLE);
+		GUIManager.fadeOutChangeMenuFadeIn (Menu.MusicMenu);
+	}
 
 	public void GoToPauseMenu(){
 		GameManager.audioManager.PlayMiscSound(SoundIDs.PRESS_BUTTON,AudioManager.STABLE);
