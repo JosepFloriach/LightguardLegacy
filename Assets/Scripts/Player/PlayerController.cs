@@ -170,7 +170,6 @@ public class PlayerController : MonoBehaviour {
 			float ratio = 1f - (timeHasBeenInSpace/timeToDieInSpace);
 			GUIManager.setPercentageOfBreathing(ratio);
 		}
-
 		
 		if((body.getIsOutsideAthmosphere() || !canBreatheInActualPlanet) && canDrownInSpace){
 
